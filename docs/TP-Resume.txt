@@ -1,0 +1,124 @@
+Contact
+Address:
+Hangzhou, Zhejiang, China
+
+Mobile:
++86-15858108106
+
+Email:
+xie.jinian@gmail.com
+Languages
+English – CET-6 
+Good at Reading and writing
+
+Chinese – Native
+Education
+Bachelor of Technology: 
+Computer Science and Technology, 2001
+National Huaqiao University, China
+Certifications
+2001 National Senior programmer Certification 
+2005 PMP Certification At Huawei
+
+
+
+
+
+Summary
+Now CTO at a startup company 
+Former Staff Engineer and Software Architect at Huawei and Alibaba/Ant Group
+Former Business Platform Team Lead at Taobao
+Former E-commerce Platform Team Lead at Mogu
+Co-founder of Alibaba's E-commerce Middle Platform
+
+Experienced in
+	Enterprise-level software architecture design
+	Large-scale software platform stability assurance
+	Agile project management
+Led teams to achieve excellent business and technical goals.
+Work Experiences
+CTO - 06/2023 to present
+Feifan Tech , Hangzhou. Team Size: 10
+Led our development team to deliver software products to clients
+Especially provide technical support for two e-commerce start-up companies.
+Provide consulting services to various enterprises on software architecture and project management. 
+
+Staff Engineer/Team Lead - 04/2021 to 06/2023
+Ant Group, Hangzhou. Team Size:7
+Managed the base service team for the low-code platform and led product development
+Enabled business staff to accelerate Ant Group’s business expansion
+
+Staff Engineer/Team Lead - 07/2018 to 04/2021
+Alibaba Cloud Intelligent Group DingTalk Devision (NYSE: BABA), Hangzhou. Team Size:20
+Led R&D for DingTalk international products, growing overseas daily active users (DAU) from 0 to millions
+Directed the development of the DingTalk Operations Middle Platform, achieving FY20 business goals.
+Led the team in developing DingTalk's IDaaS platform, helping domestic enterprises resume work during the COVID-19 pandemic
+Member of DingTalk Technical Committee, contributing to software quality improvement and technical architecture upgrades
+
+Staff Director - 06/2015 to 02/2018
+Mogu Street (NYSE: MOGU), Hangzhou. Team size: 110
+Managed the daily operations of Mogu's E-commerce Middle Platform and quality assurance team.
+Led R&D for e-commerce products, ensuring process and functional test assurance.
+Chaired the Technical Committee, overseeing technical architecture improvements and trend tracking. 
+
+Senior Engineer~Staff Engineer - 05/2007- 06/2015 
+Alibaba Group Taobao (NYSE:BABA), Hangzhou Team Size: 30
+Managed teams for the R&D of Taobao's trading platform and business support platform
+Co-founder of Alibaba’s Business Middle Platform
+Member of Alibaba Trading Technical Committee
+
+Project Manager/Architect/Engineer - 12/2003 - 02/2006 
+Huawei Tech, Shenzhen. Team size: 15
+• Participated in the R&D and delivery of telecommunications operation support systems
+• Pioneered agile project management at Huawei, leading a team to complete an agile transformation
+
+
+Others:
+Engineer - 09/2001 - 04/2002 Trumptech Information Technology (Shenzhen) Co., Ltd., Shenzhen.     
+R&D of online education software
+Engineer/Project Manager - 2002/04 - 2003/12 Shanghai Shanda.  Shenzhen.  
+R&D of Shenzhen Online Community
+Project Manager - 02/2006 - 05/2007 Ruite Information Technology (Shenzhen) Co., Ltd., Shenzhen.
+R&D of online education products of Southern Power Grid
+
+
+
+
+
+
+Project Records
+Alibaba e-commerce middle platform : the top 1 e-commerce platform in China
+Order: htttps://buy.taobao.com 
+Detail: https://item.taobao.com
+Buyer: https://buyertrade.taobao.com
+Cart: https://cart.taobao.com
+Taobao search platform: https://s.taobao.com/
+logistics platform: https://www.cainiao.com/
+As the leader of  the Taobao BU Team, based on Java platform
+Mogu Street e-commerce platform: the top 1 fashion e-commerce platform in China 
+Detail: https://shop.mogu.com/detail
+Buyer: https://order.mogu.com/order/list4buyer
+Cart: https://cart.mogu.com/cart/mycart
+Order: https://buy.mogu.com/buy
+As the leader of  the core platform team, based on Java platform
+Dingtalk(International version): Alibaba Group All-in-one workplace application
+https://www.dingtalk.com/wow/dingtalk/act/en-download
+As the leader of the international team, based on Java platform
+Yunfengdie:  Ant Group official low-code and no-code platform for enterprise application development
+As the leader of the base service team, based on Java platform
+Huawei OSS Products: 
+As the core engineer of the development team, based on Java platform
+My Teams
+  
+2007  Taobao architect group , as software architect with Jeff Zhang and other colleagues
+
+  
+2008 Taobao platform and architect team , as software architect with Jeff Zhang and other colleagues
+
+ 
+2014.11.11 as team lead with other colleagues in Double 11
+
+
+2015 as team lead with other colleagues 
+
+
