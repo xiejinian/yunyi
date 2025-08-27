@@ -10,7 +10,7 @@
     </filter>
   </defs>
   <rect width="512" height="512" rx="64" fill="url(#grad512)" filter="url(#shadow512)"/>
-  <text x="256" y="340" font-family="Arial, sans-serif" font-size="180" font-weight="bold" text-anchor="middle" fill="white">XJ</text>
+  <text x="256" y="340" font-family="Arial, sans-serif" font-size="180" font-weight="bold" text-anchor="middle" fill="white">JN</text>
   <rect x="50" y="50" width="412" height="8" rx="4" fill="rgba(255,255,255,0.3)"/>
   <rect x="50" y="454" width="412" height="8" rx="4" fill="rgba(255,255,255,0.3)"/>
   <circle cx="100" cy="100" r="8" fill="rgba(255,255,255,0.4)"/>
