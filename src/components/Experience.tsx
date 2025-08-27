@@ -221,7 +221,7 @@ const Experience = () => {
                       {exp.company.includes('Ant Group') ? (
                         <Box 
                           sx={{ 
-                            width: 56,
+                            width: 72,
                             height: 56,
                             borderRadius: '8px',
                             background: 'linear-gradient(135deg, #1677ff 0%, #0958d9 100%)',
@@ -230,24 +230,26 @@ const Experience = () => {
                             justifyContent: 'center',
                             boxShadow: `0 4px 12px ${exp.logoColor}40`,
                             position: 'relative',
-                            overflow: 'hidden'
+                            overflow: 'hidden',
+                            p: 1
                           }}
                         >
-                          <Box
-                            sx={{
-                              color: 'white',
-                              fontWeight: 'bold',
-                              fontSize: '24px',
-                              fontFamily: 'Arial, sans-serif'
+                          <img 
+                            src="https://gw.alipayobjects.com/mdn/rms_27e257/afts/img/A*CEPTSaeqMqUAAAAAAAAAAAAAARQnAQ"
+                            alt="Ant Group Logo"
+                            style={{
+                              width: '100%',
+                              height: 'auto',
+                              maxWidth: '60px',
+                              objectFit: 'contain',
+                              filter: 'brightness(0) invert(1)'
                             }}
-                          >
-                            蚂蚁
-                          </Box>
+                          />
                         </Box>
                       ) : exp.company.includes('Alibaba') || exp.company.includes('Taobao') || exp.company.includes('DingTalk') ? (
                         <Box 
                           sx={{ 
-                            width: 56,
+                            width: 72,
                             height: 56,
                             borderRadius: '8px',
                             background: 'linear-gradient(135deg, #ff6a00 0%, #ff4d00 100%)',
@@ -255,25 +257,27 @@ const Experience = () => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             boxShadow: `0 4px 12px ${exp.logoColor}40`,
-                            position: 'relative'
+                            position: 'relative',
+                            overflow: 'hidden',
+                            p: 1
                           }}
                         >
-                          <Box
-                            sx={{
-                              color: 'white',
-                              fontWeight: 'bold',
-                              fontSize: '20px',
-                              fontFamily: 'Arial, sans-serif',
-                              textAlign: 'center'
+                          <img 
+                            src="https://img.alicdn.com/imgextra/i1/O1CN01VqEqIZ1gxJbsTpgfG_!!6000000004208-2-tps-296-46.png"
+                            alt="Alibaba Group Logo"
+                            style={{
+                              width: '100%',
+                              height: 'auto',
+                              maxWidth: '60px',
+                              objectFit: 'contain',
+                              filter: 'brightness(0) invert(1)'
                             }}
-                          >
-                            阿里
-                          </Box>
+                          />
                         </Box>
                       ) : exp.company.includes('Mogu') ? (
                         <Box 
                           sx={{ 
-                            width: 56,
+                            width: 72,
                             height: 56,
                             borderRadius: '8px',
                             background: 'linear-gradient(135deg, #e91e63 0%, #c2185b 100%)',
@@ -281,24 +285,27 @@ const Experience = () => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             boxShadow: `0 4px 12px ${exp.logoColor}40`,
-                            position: 'relative'
+                            position: 'relative',
+                            overflow: 'hidden',
+                            p: 1
                           }}
                         >
-                          <Box
-                            sx={{
-                              color: 'white',
-                              fontWeight: 'bold',
-                              fontSize: '18px',
-                              fontFamily: 'Arial, sans-serif'
+                          <img 
+                            src="https://s10.mogucdn.com/mlcdn/c45406/220221_3a7fk34bdehdbk3c76j24j18l4g23_192x60.png"
+                            alt="Mogu Street Logo"
+                            style={{
+                              width: '100%',
+                              height: 'auto',
+                              maxWidth: '60px',
+                              objectFit: 'contain',
+                              filter: 'brightness(0) invert(1)'
                             }}
-                          >
-                            蘑菇街
-                          </Box>
+                          />
                         </Box>
                       ) : exp.company.includes('Huawei') ? (
                         <Box 
                           sx={{ 
-                            width: 56,
+                            width: 72,
                             height: 56,
                             borderRadius: '8px',
                             background: 'linear-gradient(135deg, #ff0000 0%, #cc0000 100%)',
@@ -306,19 +313,22 @@ const Experience = () => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             boxShadow: `0 4px 12px ${exp.logoColor}40`,
-                            position: 'relative'
+                            position: 'relative',
+                            overflow: 'hidden',
+                            p: 1
                           }}
                         >
-                          <Box
-                            sx={{
-                              color: 'white',
-                              fontWeight: 'bold',
-                              fontSize: '18px',
-                              fontFamily: 'Arial, sans-serif'
+                          <img 
+                            src="https://www.huawei.com/-/media/hcomponent-header/1.0.1.20250724165002/component/img/huawei_logo.png"
+                            alt="Huawei Logo"
+                            style={{
+                              width: '100%',
+                              height: 'auto',
+                              maxWidth: '60px',
+                              objectFit: 'contain',
+                              filter: 'brightness(0) invert(1)'
                             }}
-                          >
-                            华为
-                          </Box>
+                          />
                         </Box>
                       ) : (
                         <Avatar 
