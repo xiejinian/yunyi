@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Grid, Paper, Chip, LinearProgress, Stack, Avatar } from '@mui/material';
+import { Container, Typography, Box, Grid, Paper, Chip, LinearProgress, Avatar } from '@mui/material';
 import { motion } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
@@ -49,8 +49,10 @@ const Skills = () => {
   ];
 
   const languages = [
-    { name: 'Chinese', level: 'Native', proficiency: 100 },
-    { name: 'English', level: 'CET-6 (Good at Reading and Writing)', proficiency: 80 }
+    { name: 'Chinese', level: 'Native', proficiency: 100, description: 'Mandarin (Native Speaker)' },
+    { name: 'English', level: 'CET-6 (Good at Reading and Writing)', proficiency: 80, description: 'Business English, Technical Writing' },
+    { name: 'Technical Languages', level: 'Java, JavaScript, SQL', proficiency: 95, description: 'Programming Languages Proficiency' },
+    { name: 'Business Communication', level: 'Cross-cultural Teams', proficiency: 85, description: 'International Team Leadership' }
   ];
 
   const platforms = [
@@ -91,7 +93,7 @@ const Skills = () => {
 
         <Grid container spacing={4}>
           {/* Technical Skills */}
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={12}>
             <Paper
               component={motion.div}
               whileHover={{ 
@@ -106,9 +108,6 @@ const Skills = () => {
                 backdropFilter: 'blur(20px)',
                 borderRadius: 3,
                 border: '1px solid rgba(37, 99, 235, 0.1)',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
                 position: 'relative',
                 overflow: 'hidden',
                 '&::before': {
@@ -209,67 +208,76 @@ const Skills = () => {
             </Paper>
           </Grid>
 
-          {/* Management Skills & Languages */}
-          <Grid item xs={12} lg={6}>
-            {/* Management Skills */}
-            <Stack spacing={3} sx={{ height: '100%' }}>
-              <Paper
-                component={motion.div}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -2,
-                  boxShadow: '0 20px 40px rgba(139, 92, 246, 0.15)'
-                }}
-                elevation={3}
-                sx={{
-                  p: 3,
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  borderRadius: 3,
-                  border: '1px solid rgba(139, 92, 246, 0.1)',
-                  flex: 1,
-                  position: 'relative',
-                  overflow: 'hidden',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: 4,
-                    background: 'linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, position: 'relative', zIndex: 2 }}>
-                  <Avatar
-                    sx={{
-                      bgcolor: '#8b5cf6',
-                      width: 56,
-                      height: 56,
-                      mr: 2,
-                      boxShadow: '0 4px 12px rgba(139, 92, 246, 0.3)',
-                    }}
-                  >
-                    <ManageAccountsIcon sx={{ fontSize: 28 }} />
-                  </Avatar>
-                  <Typography variant="h6" sx={{ color: '#7c3aed', fontWeight: 600 }}>
+          {/* Management Skills */}
+          <Grid item xs={12}>
+            <Paper
+              component={motion.div}
+              whileHover={{ 
+                scale: 1.02,
+                y: -2,
+                boxShadow: '0 20px 40px rgba(139, 92, 246, 0.15)'
+              }}
+              elevation={3}
+              sx={{
+                p: 4,
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
+                backdropFilter: 'blur(20px)',
+                borderRadius: 3,
+                border: '1px solid rgba(139, 92, 246, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 4,
+                  background: 'linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%)',
+                },
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
+                <Avatar
+                  sx={{
+                    bgcolor: '#8b5cf6',
+                    width: 64,
+                    height: 64,
+                    mr: 3,
+                    boxShadow: '0 8px 25px rgba(139, 92, 246, 0.3)',
+                  }}
+                >
+                  <ManageAccountsIcon sx={{ fontSize: 32 }} />
+                </Avatar>
+                <Box>
+                  <Typography variant="h4" sx={{ color: '#7c3aed', fontWeight: 700, mb: 1 }}>
                     Management Skills
                   </Typography>
+                  <Chip 
+                    label="Leadership Expert"
+                    icon={<EmojiEventsIcon />}
+                    sx={{
+                      bgcolor: 'rgba(139, 92, 246, 0.1)',
+                      color: '#7c3aed',
+                      fontWeight: 600,
+                      border: '1px solid rgba(139, 92, 246, 0.2)',
+                    }}
+                  />
                 </Box>
-                <Box sx={{ position: 'relative', zIndex: 2 }}>
-                  {managementSkills.map((skill, index) => (
+              </Box>
+              <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
+                {managementSkills.map((skill, index) => (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
                     <Box 
-                      key={index} 
                       component={motion.div}
                       whileHover={{ x: 4 }}
                       sx={{ 
-                        mb: 2,
                         p: 2,
                         borderRadius: 2,
                         background: 'rgba(139, 92, 246, 0.05)',
                         border: '1px solid rgba(139, 92, 246, 0.1)',
                         transition: 'all 0.3s ease-in-out',
+                        height: '100%',
                         '&:hover': {
                           background: 'rgba(139, 92, 246, 0.1)',
                           borderColor: 'rgba(139, 92, 246, 0.2)',
@@ -277,7 +285,7 @@ const Skills = () => {
                       }}
                     >
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
-                        <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary' }}>
+                        <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary' }}>
                           {skill.name}
                         </Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
@@ -301,79 +309,96 @@ const Skills = () => {
                         }}
                       />
                     </Box>
-                  ))}
-                </Box>
-              </Paper>
+                  </Grid>
+                ))}
+              </Grid>
+            </Paper>
+          </Grid>
 
-              {/* Languages */}
-              <Paper
-                component={motion.div}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -2,
-                  boxShadow: '0 20px 40px rgba(34, 197, 94, 0.15)'
-                }}
-                elevation={3}
-                sx={{
-                  p: 3,
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 244, 0.9) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  borderRadius: 3,
-                  border: '1px solid rgba(34, 197, 94, 0.2)',
-                  flex: 1,
-                  position: 'relative',
-                  overflow: 'hidden',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: 4,
-                    background: 'linear-gradient(90deg, #22c55e 0%, #16a34a 100%)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, position: 'relative', zIndex: 2 }}>
-                  <Avatar
-                    sx={{
-                      bgcolor: '#22c55e',
-                      width: 56,
-                      height: 56,
-                      mr: 2,
-                      boxShadow: '0 4px 12px rgba(34, 197, 94, 0.3)',
-                    }}
-                  >
-                    <LanguageIcon sx={{ fontSize: 28 }} />
-                  </Avatar>
-                  <Typography variant="h6" sx={{ color: '#16a34a', fontWeight: 600 }}>
-                    Languages
+          {/* Languages */}
+          <Grid item xs={12}>
+            <Paper
+              component={motion.div}
+              whileHover={{ 
+                scale: 1.02,
+                y: -2,
+                boxShadow: '0 20px 40px rgba(34, 197, 94, 0.15)'
+              }}
+              elevation={3}
+              sx={{
+                p: 4,
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 244, 0.9) 100%)',
+                backdropFilter: 'blur(20px)',
+                borderRadius: 3,
+                border: '1px solid rgba(34, 197, 94, 0.2)',
+                position: 'relative',
+                overflow: 'hidden',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 4,
+                  background: 'linear-gradient(90deg, #22c55e 0%, #16a34a 100%)',
+                },
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
+                <Avatar
+                  sx={{
+                    bgcolor: '#22c55e',
+                    width: 64,
+                    height: 64,
+                    mr: 3,
+                    boxShadow: '0 8px 25px rgba(34, 197, 94, 0.3)',
+                  }}
+                >
+                  <LanguageIcon sx={{ fontSize: 32 }} />
+                </Avatar>
+                <Box>
+                  <Typography variant="h4" sx={{ color: '#16a34a', fontWeight: 700, mb: 1 }}>
+                    Languages & Communication
                   </Typography>
+                  <Chip 
+                    label="Multilingual Professional"
+                    icon={<TrendingUpIcon />}
+                    sx={{
+                      bgcolor: 'rgba(34, 197, 94, 0.1)',
+                      color: '#16a34a',
+                      fontWeight: 600,
+                      border: '1px solid rgba(34, 197, 94, 0.2)',
+                    }}
+                  />
                 </Box>
-                <Box sx={{ position: 'relative', zIndex: 2 }}>
-                  {languages.map((lang, index) => (
+              </Box>
+              <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
+                {languages.map((lang, index) => (
+                  <Grid item xs={12} sm={6} md={3} key={index}>
                     <Box 
-                      key={index} 
                       component={motion.div}
                       whileHover={{ scale: 1.02 }}
                       sx={{ 
-                        mb: 2,
                         p: 2,
                         borderRadius: 2,
                         background: 'rgba(34, 197, 94, 0.05)',
                         border: '1px solid rgba(34, 197, 94, 0.1)',
                         transition: 'all 0.3s ease-in-out',
+                        height: '100%',
                         '&:hover': {
                           background: 'rgba(34, 197, 94, 0.1)',
                           borderColor: 'rgba(34, 197, 94, 0.2)',
                         }
                       }}
                     >
-                      <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary', mb: 1 }}>
+                      <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary', mb: 0.5 }}>
                         {lang.name}
                       </Typography>
-                      <Typography variant="body2" sx={{ color: '#16a34a', mb: 1, fontWeight: 500 }}>
+                      <Typography variant="body2" sx={{ color: '#16a34a', mb: 0.5, fontWeight: 500 }}>
                         {lang.level}
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: 'text.secondary', mb: 1, display: 'block', fontStyle: 'italic' }}>
+                        {lang.description}
                       </Typography>
                       <LinearProgress
                         variant="determinate"
@@ -389,14 +414,14 @@ const Skills = () => {
                         }}
                       />
                     </Box>
-                  ))}
-                </Box>
-              </Paper>
-            </Stack>
+                  </Grid>
+                ))}
+              </Grid>
+            </Paper>
           </Grid>
 
           {/* Certifications */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12}>
             <Paper
               component={motion.div}
               whileHover={{ 
@@ -412,8 +437,6 @@ const Skills = () => {
                 borderRadius: 3,
                 border: '1px solid rgba(245, 158, 11, 0.2)',
                 height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
                 position: 'relative',
                 overflow: 'hidden',
                 '&::before': {
@@ -456,65 +479,68 @@ const Skills = () => {
                 </Box>
               </Box>
               <Box sx={{ position: 'relative', zIndex: 2, flex: 1 }}>
-                {certifications.map((cert, index) => (
-                  <Box
-                    key={index}
-                    component={motion.div}
-                    whileHover={{ scale: 1.02, x: 4 }}
-                    sx={{
-                      p: 3,
-                      mb: 3,
-                      borderRadius: 3,
-                      background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.04) 100%)',
-                      border: '1px solid rgba(245, 158, 11, 0.2)',
-                      transition: 'all 0.3s ease-in-out',
-                      position: 'relative',
-                      overflow: 'hidden',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        bottom: 0,
-                        width: 4,
-                        background: 'linear-gradient(180deg, #f59e0b 0%, #d97706 100%)',
-                      },
-                      '&:hover': {
-                        background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.08) 100%)',
-                        borderColor: 'rgba(245, 158, 11, 0.3)',
-                        boxShadow: '0 8px 25px rgba(245, 158, 11, 0.15)',
-                      }
-                    }}
-                  >
-                    <Box sx={{ position: 'relative', zIndex: 2, pl: 2 }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                        <EmojiEventsIcon sx={{ color: '#f59e0b', mr: 1, fontSize: 20 }} />
-                        <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
-                          {cert.name}
-                        </Typography>
-                      </Box>
-                      <Typography variant="body2" sx={{ color: '#d97706', mb: 2, fontWeight: 600 }}>
-                        {cert.issuer} • {cert.year}
-                      </Typography>
-                      <Chip
-                        label={cert.type}
-                        size="small"
+                <Grid container spacing={3}>
+                  {certifications.map((cert, index) => (
+                    <Grid item xs={12} md={6} key={index}>
+                      <Box
+                        component={motion.div}
+                        whileHover={{ scale: 1.02, x: 4 }}
                         sx={{
-                          bgcolor: '#f59e0b',
-                          color: 'white',
-                          fontWeight: 600,
-                          fontSize: '0.75rem'
+                          p: 3,
+                          borderRadius: 3,
+                          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.04) 100%)',
+                          border: '1px solid rgba(245, 158, 11, 0.2)',
+                          transition: 'all 0.3s ease-in-out',
+                          position: 'relative',
+                          overflow: 'hidden',
+                          height: '100%',
+                          '&::before': {
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            bottom: 0,
+                            width: 4,
+                            background: 'linear-gradient(180deg, #f59e0b 0%, #d97706 100%)',
+                          },
+                          '&:hover': {
+                            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.08) 100%)',
+                            borderColor: 'rgba(245, 158, 11, 0.3)',
+                            boxShadow: '0 8px 25px rgba(245, 158, 11, 0.15)',
+                          }
                         }}
-                      />
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
+                      >
+                        <Box sx={{ position: 'relative', zIndex: 2, pl: 2 }}>
+                          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                            <EmojiEventsIcon sx={{ color: '#f59e0b', mr: 1, fontSize: 20 }} />
+                            <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
+                              {cert.name}
+                            </Typography>
+                          </Box>
+                          <Typography variant="body2" sx={{ color: '#d97706', mb: 2, fontWeight: 600 }}>
+                            {cert.issuer} • {cert.year}
+                          </Typography>
+                          <Chip
+                            label={cert.type}
+                            size="small"
+                            sx={{
+                              bgcolor: '#f59e0b',
+                              color: 'white',
+                              fontWeight: 600,
+                              fontSize: '0.75rem'
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    </Grid>
+                    ))}
+                  </Grid>
+                </Box>
             </Paper>
           </Grid>
 
           {/* Platform Experience */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12}>
             <Paper
               component={motion.div}
               whileHover={{ 
@@ -530,8 +556,6 @@ const Skills = () => {
                 borderRadius: 3,
                 border: '1px solid rgba(14, 165, 233, 0.2)',
                 height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
                 position: 'relative',
                 overflow: 'hidden',
                 '&::before': {
@@ -576,7 +600,7 @@ const Skills = () => {
               <Box sx={{ flex: 1, position: 'relative', zIndex: 2 }}>
                 <Grid container spacing={2}>
                   {platforms.map((platform, index) => (
-                    <Grid item xs={12} key={index}>
+                    <Grid item xs={12} sm={6} md={4} key={index}>
                       <Box
                         component={motion.div}
                         whileHover={{ scale: 1.02, x: 4 }}
