@@ -3,7 +3,6 @@ import { Container, Typography, Paper, Box, Chip, Avatar, Stack } from '@mui/mat
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { motion } from 'framer-motion';
 import BusinessIcon from '@mui/icons-material/Business';
-import CloudIcon from '@mui/icons-material/Cloud';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import CodeIcon from '@mui/icons-material/Code';
@@ -13,8 +12,7 @@ import StarIcon from '@mui/icons-material/Star';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import SecurityIcon from '@mui/icons-material/Security';
-import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
-import ManagementIcon from '@mui/icons-material/SupervisorAccount';
+
 
 const Experience = () => {
   const experiences = [
