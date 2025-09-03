@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, Box, Chip, Grid, Button, Avatar, Paper } from '@mui/material';
+import { Container, Typography, CardContent, Box, Chip, Grid, Button, Avatar, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import BusinessIcon from '@mui/icons-material/Business';
 import CodeIcon from '@mui/icons-material/Code';
@@ -7,7 +7,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import StarIcon from '@mui/icons-material/Star';
 import LaunchIcon from '@mui/icons-material/Launch';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import GroupIcon from '@mui/icons-material/Group';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SecurityIcon from '@mui/icons-material/Security';
