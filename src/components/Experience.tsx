@@ -20,6 +20,7 @@ const Experience = () => {
       year: '2023-Present',
       title: 'CTO',
       company: 'Feifan Tech, Hangzhou',
+      companyLink: 'https://feifan-tech-website.pages.dev/',
       teamSize: '10',
       companyType: 'Startup',
       logoColor: '#ff6b35',
@@ -367,15 +368,38 @@ const Experience = () => {
                           {exp.title}
                         </Typography>
                         <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 2 }}>
-                          <Typography 
-                            color="text.secondary" 
-                            sx={{ 
-                              fontWeight: 500,
-                              fontSize: '1.1rem'
-                            }}
-                          >
-                            {exp.company}
-                          </Typography>
+                          {exp.companyLink ? (
+                            <Typography 
+                              component="a"
+                              href={exp.companyLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              color="text.secondary" 
+                              sx={{ 
+                                fontWeight: 500,
+                                fontSize: '1.1rem',
+                                textDecoration: 'none',
+                                borderBottom: '1px solid transparent',
+                                transition: 'all 0.3s ease-in-out',
+                                '&:hover': {
+                                  color: 'primary.main',
+                                  borderBottomColor: 'primary.main',
+                                }
+                              }}
+                            >
+                              {exp.company}
+                            </Typography>
+                          ) : (
+                            <Typography 
+                              color="text.secondary" 
+                              sx={{ 
+                                fontWeight: 500,
+                                fontSize: '1.1rem'
+                              }}
+                            >
+                              {exp.company}
+                            </Typography>
+                          )}
                           <Chip 
                             label={exp.companyType}
                             size="small"

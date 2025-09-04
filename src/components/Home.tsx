@@ -10,7 +10,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 
 const Home = () => {
   const achievements = [
-    { icon: BusinessIcon, text: 'CTO at Feifan Tech', color: 'primary' },
+    { icon: BusinessIcon, text: 'CTO at Feifan Tech', color: 'primary', link: 'https://feifan-tech-website.pages.dev/' },
     { icon: TrendingUpIcon, text: '20+ Years Experience', color: 'secondary' },
     { icon: GroupIcon, text: 'Led 110+ People Teams', color: 'success' },
   ];
@@ -78,6 +78,11 @@ const Home = () => {
                     label={achievement.text}
                     color={achievement.color as any}
                     variant="filled"
+                    component={achievement.link ? "a" : "div"}
+                    href={achievement.link}
+                    target={achievement.link ? "_blank" : undefined}
+                    rel={achievement.link ? "noopener noreferrer" : undefined}
+                    clickable={!!achievement.link}
                     sx={{
                       py: 3,
                       px: 2,
@@ -87,9 +92,16 @@ const Home = () => {
                       color: 'white',
                       backdropFilter: 'blur(10px)',
                       border: '1px solid rgba(255, 255, 255, 0.3)',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s ease-in-out',
                       '& .MuiChip-icon': {
                         color: 'white',
                       },
+                      '&:hover': achievement.link ? {
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                      } : {},
                     }}
                   />
                 </motion.div>
@@ -136,7 +148,26 @@ const Home = () => {
                   fontWeight: 500,
                 }}
               >
-                CTO at Feifan Tech
+                CTO at <Typography
+                  component="a"
+                  href="https://feifan-tech-website.pages.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="h3"
+                  sx={{
+                    color: 'rgba(255, 255, 255, 0.95)',
+                    textDecoration: 'none',
+                    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+                    fontWeight: 500,
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      borderBottomColor: 'rgba(255, 255, 255, 0.8)',
+                      color: 'white',
+                    }
+                  }}
+                >
+                  Feifan Tech
+                </Typography>
               </Typography>
             </motion.div>
 

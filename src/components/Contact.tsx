@@ -25,7 +25,7 @@ const Contact = () => {
       icon: BusinessIcon,
       title: 'Current Position',
       content: 'CTO at Feifan Tech',
-      link: null,
+      link: 'https://feifan-tech-website.pages.dev/',
       description: 'Leading technology strategy and development team'
     }
   ];

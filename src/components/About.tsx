@@ -122,11 +122,24 @@ const About = () => {
                 <Chip 
                   label="Feifan Tech"
                   icon={<BusinessCenterIcon />}
+                  component="a"
+                  href="https://feifan-tech-website.pages.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  clickable
                   sx={{
                     bgcolor: 'primary.light',
                     color: 'primary.contrastText',
                     fontWeight: 600,
-                    fontSize: '0.75rem'
+                    fontSize: '0.75rem',
+                    textDecoration: 'none',
+                    '&:hover': {
+                      bgcolor: 'primary.main',
+                      transform: 'scale(1.05)',
+                    },
+                    '&:focus': {
+                      bgcolor: 'primary.main',
+                    }
                   }}
                 />
               </Box>
@@ -202,7 +215,7 @@ const About = () => {
                     color: 'text.primary'
                   }}
                 >
-                  Currently serving as <strong>CTO at Feifan Tech</strong>, leading a development team of 10 people to deliver 
+                  Currently serving as <strong>CTO at <a href="https://feifan-tech-website.pages.dev/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'none', borderBottom: '1px solid #2563eb' }}>Feifan Tech</a></strong>, leading a development team of 10 people to deliver 
                   innovative software products to clients. I specialize in providing technical support for 
                   e-commerce startups and consulting services on software architecture and project management.
                 </Typography>
