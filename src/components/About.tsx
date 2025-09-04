@@ -43,8 +43,98 @@ const About = () => {
         </Typography>
 
         <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
+          {/* Personal Photo */}
+          <Grid item xs={12} lg={3}>
+            <Paper
+              component={motion.div}
+              whileHover={{ 
+                scale: 1.02,
+                y: -3,
+                boxShadow: '0 25px 50px -12px rgba(37, 99, 235, 0.15)'
+              }}
+              elevation={3}
+              sx={{
+                p: 4,
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
+                backdropFilter: 'blur(20px)',
+                borderRadius: 3,
+                border: '1px solid rgba(37, 99, 235, 0.1)',
+                transition: 'all 0.3s ease-in-out',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 4,
+                  background: 'linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%)',
+                },
+              }}
+            >
+              <Box sx={{ position: 'relative', zIndex: 2, width: '100%' }}>
+                <Box
+                  component="img"
+                  src="/image.png"
+                  alt="Xie Jinian (谢记年) - CTO at Feifan Tech"
+                  sx={{
+                    width: '100%',
+                    maxWidth: 200,
+                    height: 'auto',
+                    borderRadius: 3,
+                    boxShadow: '0 8px 25px rgba(37, 99, 235, 0.2)',
+                    mb: 3,
+                    border: '3px solid rgba(255, 255, 255, 0.8)',
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      transform: 'scale(1.02)',
+                      boxShadow: '0 12px 35px rgba(37, 99, 235, 0.3)',
+                    }
+                  }}
+                />
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    color: 'primary.main', 
+                    fontWeight: 700,
+                    mb: 1
+                  }}
+                >
+                  Xie Jinian (谢记年)
+                </Typography>
+                <Typography 
+                  variant="body2" 
+                  sx={{ 
+                    color: 'text.secondary',
+                    fontWeight: 500,
+                    mb: 2
+                  }}
+                >
+                  CTO & Software Architect
+                </Typography>
+                <Chip 
+                  label="Feifan Tech"
+                  icon={<BusinessCenterIcon />}
+                  sx={{
+                    bgcolor: 'primary.light',
+                    color: 'primary.contrastText',
+                    fontWeight: 600,
+                    fontSize: '0.75rem'
+                  }}
+                />
+              </Box>
+            </Paper>
+          </Grid>
+
           {/* Professional Background */}
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} lg={6}>
             <Paper
               component={motion.div}
               whileHover={{ 
@@ -147,9 +237,9 @@ const About = () => {
             </Paper>
           </Grid>
 
-          {/* Education */}
-          <Grid item xs={12} md={4}>
-            <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 4 }}>
+          {/* Education & Certifications */}
+          <Grid item xs={12} lg={3}>
+            <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Paper
                 component={motion.div}
                 whileHover={{ 
