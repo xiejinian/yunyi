@@ -8,7 +8,7 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const menuItems = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
+  const menuItems = ['About', 'Experience', 'MyStory', 'Projects', 'Skills', 'Contact'];
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
