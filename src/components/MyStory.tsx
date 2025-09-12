@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Paper, Box, Chip, Stack, Divider, Button } from '@mui/material';
+import { Container, Typography, Paper, Box, Chip, Divider, Button } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +12,6 @@ import CodeIcon from '@mui/icons-material/Code';
 import BusinessIcon from '@mui/icons-material/Business';
 import FlightIcon from '@mui/icons-material/Flight';
 import PsychologyIcon from '@mui/icons-material/Psychology';
-import StarIcon from '@mui/icons-material/Star';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const MyStory = () => {
