@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Typography, Paper, Box, Chip, Stack, Button, Divider } from '@mui/material';
+import { Container, Typography, Paper, Box, Chip, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
