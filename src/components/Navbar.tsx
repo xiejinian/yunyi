@@ -66,7 +66,7 @@ const Navbar = () => {
                     ml: 1,
                     px: 3,
                     py: 1,
-                    borderRadius: 2,
+                    borderRadius: 1,
                     fontWeight: 600,
                     fontSize: '0.9rem',
                     textTransform: 'none',
@@ -111,7 +111,7 @@ const Navbar = () => {
               onClick={handleDrawerToggle}
               sx={{
                 mb: 1,
-                borderRadius: 2,
+                borderRadius: 1,
                 transition: 'all 0.2s ease-in-out',
                 '&:hover': {
                   backgroundColor: 'rgba(37, 99, 235, 0.1)',

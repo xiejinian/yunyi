@@ -96,7 +96,7 @@ const theme = createTheme({
     },
   },
   shape: {
-    borderRadius: 16,
+    borderRadius: 4,
   },
   shadows: [
     'none',
@@ -167,13 +167,13 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 20,
-          boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+          borderRadius: 8,
+          boxShadow: '0 2px 4px -1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
           border: '1px solid rgba(226, 232, 240, 0.8)',
           transition: 'all 0.3s ease-in-out',
           '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+            transform: 'translateY(-2px)',
+            boxShadow: '0 8px 12px -3px rgb(0 0 0 / 0.1), 0 4px 6px -3px rgb(0 0 0 / 0.1)',
           },
         },
       },
@@ -181,8 +181,8 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
-          boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+          borderRadius: 8,
+          boxShadow: '0 2px 4px -1px rgb(0 0 0 / 0.1)',
           border: '1px solid rgba(226, 232, 240, 0.6)',
           backgroundImage: 'none',
         },

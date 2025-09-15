@@ -195,7 +195,7 @@ const Experience = () => {
                     sx={{
                       p: 4,
                       backgroundColor: 'white',
-                      borderRadius: 3,
+                      borderRadius: 2,
                       position: 'relative',
                       overflow: 'hidden',
                       border: `2px solid ${exp.logoColor}20`,
@@ -222,7 +222,7 @@ const Experience = () => {
                           sx={{ 
                             width: 72,
                             height: 56,
-                            borderRadius: '8px',
+                            borderRadius: '4px',
                             background: 'linear-gradient(135deg, #1677ff 0%, #0958d9 100%)',
                             display: 'flex',
                             alignItems: 'center',
@@ -250,7 +250,7 @@ const Experience = () => {
                           sx={{ 
                             width: 72,
                             height: 56,
-                            borderRadius: '8px',
+                            borderRadius: '4px',
                             background: 'linear-gradient(135deg, #ff6a00 0%, #ff4d00 100%)',
                             display: 'flex',
                             alignItems: 'center',
@@ -278,7 +278,7 @@ const Experience = () => {
                           sx={{ 
                             width: 72,
                             height: 56,
-                            borderRadius: '8px',
+                            borderRadius: '4px',
                             background: 'linear-gradient(135deg, #e91e63 0%, #c2185b 100%)',
                             display: 'flex',
                             alignItems: 'center',
@@ -306,7 +306,7 @@ const Experience = () => {
                           sx={{ 
                             width: 72,
                             height: 56,
-                            borderRadius: '8px',
+                            borderRadius: '4px',
                             background: 'linear-gradient(135deg, #ff0000 0%, #cc0000 100%)',
                             display: 'flex',
                             alignItems: 'center',

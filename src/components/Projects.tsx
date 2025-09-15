@@ -172,7 +172,7 @@ const Projects = () => {
                     p: 0,
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
                     backdropFilter: 'blur(20px)',
-                    borderRadius: 4,
+                    borderRadius: 2,
                     border: `2px solid ${project.logoColor}20`,
                     overflow: 'hidden',
                     position: 'relative',
@@ -257,7 +257,7 @@ const Projects = () => {
                         <Box 
                           sx={{ 
                             p: 3,
-                            borderRadius: 3,
+                            borderRadius: 1,
                             background: `linear-gradient(135deg, ${project.logoColor}08 0%, ${project.logoColor}04 100%)`,
                             border: `1px solid ${project.logoColor}15`,
                             mb: 3
@@ -277,7 +277,7 @@ const Projects = () => {
                         <Box 
                           sx={{ 
                             p: 3,
-                            borderRadius: 3,
+                            borderRadius: 1,
                             background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%)',
                             border: '1px solid rgba(37, 99, 235, 0.15)',
                           }}
@@ -313,7 +313,7 @@ const Projects = () => {
                         <Box 
                           sx={{ 
                             p: 3,
-                            borderRadius: 3,
+                            borderRadius: 1,
                             background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%)',
                             border: '1px solid rgba(34, 197, 94, 0.15)',
                             mb: 3
@@ -356,7 +356,7 @@ const Projects = () => {
                         <Box 
                           sx={{ 
                             p: 3,
-                            borderRadius: 3,
+                            borderRadius: 1,
                             background: `linear-gradient(135deg, ${project.logoColor}08 0%, ${project.logoColor}04 100%)`,
                             border: `1px solid ${project.logoColor}15`,
                           }}

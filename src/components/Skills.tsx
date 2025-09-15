@@ -106,7 +106,7 @@ const Skills = () => {
                 p: 4,
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: 3,
+                borderRadius: 2,
                 border: '1px solid rgba(37, 99, 235, 0.1)',
                 position: 'relative',
                 overflow: 'hidden',
@@ -156,7 +156,7 @@ const Skills = () => {
                       whileHover={{ scale: 1.02 }}
                       sx={{ 
                         p: 2,
-                        borderRadius: 2,
+                        borderRadius: 1,
                         background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(14, 165, 233, 0.02) 100%)',
                         border: '1px solid rgba(37, 99, 235, 0.1)',
                         transition: 'all 0.3s ease-in-out',
@@ -222,7 +222,7 @@ const Skills = () => {
                 p: 4,
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: 3,
+                borderRadius: 2,
                 border: '1px solid rgba(139, 92, 246, 0.1)',
                 position: 'relative',
                 overflow: 'hidden',
@@ -273,7 +273,7 @@ const Skills = () => {
                       whileHover={{ x: 4 }}
                       sx={{ 
                         p: 2,
-                        borderRadius: 2,
+                        borderRadius: 1,
                         background: 'rgba(139, 92, 246, 0.05)',
                         border: '1px solid rgba(139, 92, 246, 0.1)',
                         transition: 'all 0.3s ease-in-out',
@@ -329,7 +329,7 @@ const Skills = () => {
                 p: 4,
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 244, 0.9) 100%)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: 3,
+                borderRadius: 2,
                 border: '1px solid rgba(34, 197, 94, 0.2)',
                 position: 'relative',
                 overflow: 'hidden',
@@ -380,7 +380,7 @@ const Skills = () => {
                       whileHover={{ scale: 1.02 }}
                       sx={{ 
                         p: 2,
-                        borderRadius: 2,
+                        borderRadius: 1,
                         background: 'rgba(34, 197, 94, 0.05)',
                         border: '1px solid rgba(34, 197, 94, 0.1)',
                         transition: 'all 0.3s ease-in-out',
@@ -434,7 +434,7 @@ const Skills = () => {
                 p: 4,
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 252, 232, 0.9) 100%)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: 3,
+                borderRadius: 2,
                 border: '1px solid rgba(245, 158, 11, 0.2)',
                 height: '100%',
                 position: 'relative',
@@ -487,7 +487,7 @@ const Skills = () => {
                         whileHover={{ scale: 1.02, x: 4 }}
                         sx={{
                           p: 3,
-                          borderRadius: 3,
+                          borderRadius: 2,
                           background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.04) 100%)',
                           border: '1px solid rgba(245, 158, 11, 0.2)',
                           transition: 'all 0.3s ease-in-out',
@@ -553,7 +553,7 @@ const Skills = () => {
                 p: 4,
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.9) 100%)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: 3,
+                borderRadius: 2,
                 border: '1px solid rgba(14, 165, 233, 0.2)',
                 height: '100%',
                 position: 'relative',
@@ -606,7 +606,7 @@ const Skills = () => {
                         whileHover={{ scale: 1.02, x: 4 }}
                         sx={{
                           p: 2,
-                          borderRadius: 2,
+                          borderRadius: 1,
                           background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(2, 132, 199, 0.04) 100%)',
                           border: '1px solid rgba(14, 165, 233, 0.2)',
                           transition: 'all 0.3s ease-in-out',

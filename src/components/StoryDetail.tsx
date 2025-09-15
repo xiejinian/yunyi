@@ -360,7 +360,7 @@ const StoryDetail = () => {
           sx={{
             p: 6,
             backgroundColor: 'white',
-            borderRadius: 4,
+            borderRadius: 2,
             mb: 4,
             border: `2px solid ${story.color}20`,
           }}
@@ -385,7 +385,7 @@ const StoryDetail = () => {
           sx={{
             p: 4,
             backgroundColor: 'white',
-            borderRadius: 3,
+            borderRadius: 2,
             mb: 4,
             border: `1px solid ${story.color}15`,
           }}
@@ -445,7 +445,7 @@ const StoryDetail = () => {
           sx={{
             p: 4,
             backgroundColor: 'white',
-            borderRadius: 3,
+            borderRadius: 2,
             mb: 4,
             border: `1px solid ${story.color}15`,
           }}
@@ -505,7 +505,7 @@ const StoryDetail = () => {
           sx={{
             p: 4,
             backgroundColor: 'white',
-            borderRadius: 3,
+            borderRadius: 2,
             mb: 6,
             border: `1px solid ${story.color}15`,
           }}

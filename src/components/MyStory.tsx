@@ -240,7 +240,7 @@ const MyStory = () => {
                     sx={{
                       p: 4,
                       backgroundColor: 'white',
-                      borderRadius: 3,
+                      borderRadius: 2,
                       position: 'relative',
                       overflow: 'hidden',
                       border: `2px solid ${categoryColor}20`,
@@ -388,7 +388,7 @@ const MyStory = () => {
         </Timeline>
 
         {/* Footer Message */}
-        <Box sx={{ textAlign: 'center', mt: 8, p: 4, backgroundColor: 'rgba(255,255,255,0.8)', borderRadius: 3 }}>
+        <Box sx={{ textAlign: 'center', mt: 8, p: 4, backgroundColor: 'rgba(255,255,255,0.8)', borderRadius: 1 }}>
           <Typography
             variant="h6"
             sx={{
