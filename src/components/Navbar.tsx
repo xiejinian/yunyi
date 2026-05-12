@@ -8,7 +8,14 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const menuItems = ['About', 'Experience', 'MyStory', 'Projects', 'Skills', 'Contact'];
+  const menuItems = [
+    { label: 'About', path: '/about' },
+    { label: 'Experience', path: '/experience' },
+    { label: 'MyStory', path: '/story' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Contact', path: '/contact' },
+  ];
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -58,9 +65,9 @@ const Navbar = () => {
             <div>
               {menuItems.map((item) => (
                 <Button
-                  key={item}
+                  key={item.label}
                   component={Link}
-                  to={`/${item.toLowerCase()}`}
+                  to={item.path}
                   color="primary"
                   sx={{ 
                     ml: 1,
@@ -77,7 +84,7 @@ const Navbar = () => {
                     },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Button>
               ))}
             </div>
@@ -105,9 +112,9 @@ const Navbar = () => {
         <List sx={{ px: 2 }}>
           {menuItems.map((item) => (
             <ListItem 
-              key={item} 
+              key={item.label} 
               component={Link} 
-              to={`/${item.toLowerCase()}`}
+              to={item.path}
               onClick={handleDrawerToggle}
               sx={{
                 mb: 1,
@@ -120,7 +127,7 @@ const Navbar = () => {
               }}
             >
               <ListItemText 
-                primary={item} 
+                primary={item.label} 
                 sx={{
                   '& .MuiListItemText-primary': {
                     fontWeight: 600,

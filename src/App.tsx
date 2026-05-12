@@ -25,6 +25,8 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/mystory" element={<MyStory />} />
           <Route path="/mystory/:id" element={<StoryDetail />} />
+          <Route path="/story" element={<MyStory />} />
+          <Route path="/story/:id" element={<StoryDetail />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
