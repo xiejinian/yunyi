@@ -3,24 +3,24 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2563eb', // Modern Blue
-      light: '#60a5fa', // Light Blue
-      dark: '#1e40af', // Dark Blue
+      main: '#C36E3A', // Modern Blue
+      light: '#D78D5A', // Light Blue
+      dark: '#A95528', // Dark Blue
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#0ea5e9', // Sky Blue
-      light: '#7dd3fc', // Light Sky
-      dark: '#0284c7', // Dark Sky
+      main: '#8C7A6B', // Sky Blue
+      light: '#B4A79C', // Light Sky
+      dark: '#6E5F53', // Dark Sky
       contrastText: '#ffffff',
     },
     background: {
-      default: '#f8fafc', // Light Gray Blue
-      paper: '#ffffff',
+      default: '#F9F7F2', // Light Gray Blue
+      paper: '#FFFCF7',
     },
     text: {
-      primary: '#1e293b', // Dark Slate
-      secondary: '#64748b', // Medium Slate
+      primary: '#2F2923', // Dark Slate
+      secondary: '#6F655B', // Medium Slate
     },
     success: {
       main: '#10b981', // Emerald
@@ -51,7 +51,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Inter", "SF Pro Display", "Segoe UI", "Roboto", sans-serif',
+    fontFamily: '"Inter", "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif',
     h1: {
       fontWeight: 800,
       fontSize: '3.5rem',
@@ -129,7 +129,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+          background: '#F9F7F2',
           minHeight: '100vh',
         },
       },
@@ -150,16 +150,16 @@ const theme = createTheme({
           },
         },
         contained: {
-          background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
+          background: 'linear-gradient(135deg, #C36E3A 0%, #A95528 100%)',
           '&:hover': {
-            background: 'linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%)',
+            background: 'linear-gradient(135deg, #B86434 0%, #8F4721 100%)',
           },
         },
         outlined: {
           borderWidth: 2,
           '&:hover': {
             borderWidth: 2,
-            backgroundColor: 'rgba(37, 99, 235, 0.04)',
+            backgroundColor: 'rgba(195, 110, 58, 0.08)',
           },
         },
       },
@@ -169,7 +169,7 @@ const theme = createTheme({
         root: {
           borderRadius: 8,
           boxShadow: '0 2px 4px -1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-          border: '1px solid rgba(226, 232, 240, 0.8)',
+          border: '1px solid rgba(195, 110, 58, 0.15)',
           transition: 'all 0.3s ease-in-out',
           '&:hover': {
             transform: 'translateY(-2px)',
@@ -183,7 +183,7 @@ const theme = createTheme({
         root: {
           borderRadius: 8,
           boxShadow: '0 2px 4px -1px rgb(0 0 0 / 0.1)',
-          border: '1px solid rgba(226, 232, 240, 0.6)',
+          border: '1px solid rgba(195, 110, 58, 0.12)',
           backgroundImage: 'none',
         },
         elevation1: {
@@ -202,7 +202,7 @@ const theme = createTheme({
         root: {
           backgroundColor: 'rgba(255, 255, 255, 0.9)',
           backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(226, 232, 240, 0.6)',
+          borderBottom: '1px solid rgba(195, 110, 58, 0.14)',
           boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1)',
         },
       },
@@ -216,7 +216,7 @@ const theme = createTheme({
         outlined: {
           borderWidth: 2,
           '&:hover': {
-            backgroundColor: 'rgba(37, 99, 235, 0.04)',
+            backgroundColor: 'rgba(195, 110, 58, 0.08)',
           },
         },
       },
