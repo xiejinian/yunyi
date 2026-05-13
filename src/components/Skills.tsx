@@ -73,7 +73,7 @@ const Skills = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: '#fafaf7',
       }}
     >
       <Container>
@@ -104,7 +104,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
+                background: '#ffffff',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(37, 99, 235, 0.1)',
@@ -117,7 +117,7 @@ const Skills = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%)',
+                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                 },
               }}
             >
@@ -157,11 +157,11 @@ const Skills = () => {
                       sx={{ 
                         p: 2,
                         borderRadius: 1,
-                        background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(14, 165, 233, 0.02) 100%)',
+                        background: '#fafaf7',
                         border: '1px solid rgba(37, 99, 235, 0.1)',
                         transition: 'all 0.3s ease-in-out',
                         '&:hover': {
-                          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%)',
+                          background: '#faf6f2',
                           borderColor: 'rgba(37, 99, 235, 0.2)',
                         }
                       }}
@@ -187,7 +187,7 @@ const Skills = () => {
                           mb: 1,
                           '& .MuiLinearProgress-bar': {
                             borderRadius: 5,
-                            background: 'linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%)',
+                            background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                           },
                         }}
                       />
@@ -220,7 +220,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
+                background: '#ffffff',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(139, 92, 246, 0.1)',
@@ -327,7 +327,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 244, 0.9) 100%)',
+                background: '#ffffff',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(34, 197, 94, 0.2)',
@@ -432,7 +432,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 252, 232, 0.9) 100%)',
+                background: '#ffffff',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(245, 158, 11, 0.2)',
@@ -551,7 +551,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.9) 100%)',
+                background: '#ffffff',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(14, 165, 233, 0.2)',
@@ -565,14 +565,14 @@ const Skills = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #0ea5e9 0%, #0284c7 100%)',
+                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                 },
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
                 <Avatar
                   sx={{
-                    bgcolor: '#0ea5e9',
+                    bgcolor: '#c07844',
                     width: 64,
                     height: 64,
                     mr: 3,
@@ -620,7 +620,7 @@ const Skills = () => {
                             left: 0,
                             bottom: 0,
                             width: 3,
-                            background: 'linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%)',
+                            background: 'linear-gradient(180deg, #c07844 0%, #d4955e 100%)',
                           },
                           '&:hover': {
                             background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(2, 132, 199, 0.08) 100%)',
@@ -630,7 +630,7 @@ const Skills = () => {
                         }}
                       >
                         <Box sx={{ display: 'flex', alignItems: 'center', pl: 2 }}>
-                          <StarIcon sx={{ color: '#0ea5e9', mr: 1.5, fontSize: 18 }} />
+                          <StarIcon sx={{ color: '#c07844', mr: 1.5, fontSize: 18 }} />
                           <Typography 
                             variant="body1" 
                             sx={{ 
