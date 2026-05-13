@@ -22,7 +22,7 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: '#fafaf7',
         overflow: 'hidden',
         '&::before': {
           content: '""',
@@ -31,28 +31,12 @@ const Home = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(30, 64, 175, 0.8) 100%)',
+          background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(192, 120, 68, 0.08) 0%, transparent 70%)',
           zIndex: 1,
-        },
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          top: '-50%',
-          right: '-50%',
-          width: '200%',
-          height: '200%',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
-          animation: 'float 20s ease-in-out infinite',
-          zIndex: 2,
-        },
-        '@keyframes float': {
-          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-          '33%': { transform: 'translate(30px, -30px) rotate(120deg)' },
-          '66%': { transform: 'translate(-20px, 20px) rotate(240deg)' },
         },
       }}
     >
-      <Container sx={{ position: 'relative', zIndex: 3 }}>
+      <Container sx={{ position: 'relative', zIndex: 2 }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,8 +60,7 @@ const Home = () => {
                   <Chip
                     icon={<IconComponent />}
                     label={achievement.text}
-                    color={achievement.color as any}
-                    variant="filled"
+                    variant="outlined"
                     component={achievement.link ? "a" : "div"}
                     href={achievement.link}
                     target={achievement.link ? "_blank" : undefined}
@@ -88,19 +71,20 @@ const Home = () => {
                       px: 2,
                       fontSize: '0.9rem',
                       fontWeight: 600,
-                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                      color: 'white',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255, 255, 255, 0.3)',
+                      backgroundColor: '#ffffff',
+                      color: '#4a4440',
+                      border: '1.5px solid #edeae4',
                       textDecoration: 'none',
-                      transition: 'all 0.3s ease-in-out',
+                      transition: 'all 0.2s ease-in-out',
                       '& .MuiChip-icon': {
-                        color: 'white',
+                        color: '#c07844',
                       },
                       '&:hover': achievement.link ? {
-                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        backgroundColor: '#faf6f2',
+                        borderColor: '#c07844',
+                        color: '#c07844',
                         transform: 'translateY(-2px)',
-                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                        boxShadow: '0 4px 12px rgba(192, 120, 68, 0.12)',
                       } : {},
                     }}
                   />
@@ -110,7 +94,7 @@ const Home = () => {
           </Stack>
 
           {/* Main Content */}
-          <Box sx={{ textAlign: 'center', color: 'white' }}>
+          <Box sx={{ textAlign: 'center' }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -122,15 +106,14 @@ const Home = () => {
                 gutterBottom
                 sx={{
                   fontWeight: 800,
-                  background: 'linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
+                  color: '#1a1918',
                   mb: 2,
-                  textShadow: '0 2px 4px rgba(0,0,0,0.1)',
                 }}
               >
-                Xie Jinian (谢记年)
+                Xie Jinian{' '}
+                <Box component="span" sx={{ color: '#c07844' }}>
+                  (谢记年)
+                </Box>
               </Typography>
             </motion.div>
 
@@ -143,26 +126,26 @@ const Home = () => {
                 variant="h3"
                 gutterBottom
                 sx={{
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  color: '#4a4440',
                   mb: 3,
                   fontWeight: 500,
                 }}
               >
-                CTO at <Typography
+                CTO at{' '}
+                <Typography
                   component="a"
                   href="https://feifan-tech-website.pages.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="h3"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.95)',
+                    color: '#c07844',
                     textDecoration: 'none',
-                    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-                    fontWeight: 500,
-                    transition: 'all 0.3s ease-in-out',
+                    borderBottom: '2px solid rgba(192, 120, 68, 0.3)',
+                    fontWeight: 600,
+                    transition: 'all 0.2s ease-in-out',
                     '&:hover': {
-                      borderBottomColor: 'rgba(255, 255, 255, 0.8)',
-                      color: 'white',
+                      borderBottomColor: '#c07844',
                     }
                   }}
                 >
@@ -180,12 +163,13 @@ const Home = () => {
                 variant="h6"
                 paragraph
                 sx={{
-                  color: 'rgba(255, 255, 255, 0.85)',
-                  maxWidth: '900px',
+                  color: '#6b6560',
+                  maxWidth: '820px',
                   mx: 'auto',
                   mb: 5,
                   lineHeight: 1.8,
-                  fontSize: '1.25rem',
+                  fontSize: '1.2rem',
+                  fontWeight: 400,
                 }}
               >
                 Former Staff Engineer at Huawei, Alibaba/Ant Group. Co-founder of Alibaba's E-commerce Middle Platform.
@@ -212,19 +196,10 @@ const Home = () => {
                   to="/projects"
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    py: 2,
+                    py: 1.75,
                     px: 4,
-                    fontSize: '1.1rem',
-                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                    color: 'white',
-                    backdropFilter: 'blur(10px)',
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    fontSize: '1rem',
                     textDecoration: 'none',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-                    },
                   }}
                 >
                   View My Work
@@ -236,20 +211,10 @@ const Home = () => {
                   to="/contact"
                   startIcon={<EmailIcon />}
                   sx={{
-                    py: 2,
+                    py: 1.75,
                     px: 4,
-                    fontSize: '1.1rem',
-                    color: 'white',
-                    borderColor: 'rgba(255, 255, 255, 0.6)',
-                    borderWidth: '2px',
-                    backdropFilter: 'blur(10px)',
+                    fontSize: '1rem',
                     textDecoration: 'none',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                      borderColor: 'rgba(255, 255, 255, 0.8)',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-                    },
                   }}
                 >
                   Contact Me
@@ -259,40 +224,6 @@ const Home = () => {
           </Box>
         </motion.div>
       </Container>
-
-      {/* Decorative Elements */}
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: '10%',
-          left: '5%',
-          width: '150px',
-          height: '150px',
-          borderRadius: '50%',
-          background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(20px)',
-          zIndex: 2,
-          animation: 'pulse 4s ease-in-out infinite',
-          '@keyframes pulse': {
-            '0%, 100%': { transform: 'scale(1)', opacity: 0.7 },
-            '50%': { transform: 'scale(1.1)', opacity: 0.4 },
-          },
-        }}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '15%',
-          right: '8%',
-          width: '100px',
-          height: '100px',
-          borderRadius: '50%',
-          background: 'rgba(255, 255, 255, 0.08)',
-          backdropFilter: 'blur(15px)',
-          zIndex: 2,
-          animation: 'float 6s ease-in-out infinite reverse',
-        }}
-      />
     </Box>
   );
 };

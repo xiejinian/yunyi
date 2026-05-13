@@ -137,7 +137,7 @@ const Projects = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: '#fafaf7',
       }}
     >
       <Container>
@@ -170,7 +170,7 @@ const Projects = () => {
                   transition={{ duration: 0.3 }}
                   sx={{
                     p: 0,
-                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
+                    background: '#ffffff',
                     backdropFilter: 'blur(20px)',
                     borderRadius: 2,
                     border: `2px solid ${project.logoColor}20`,
@@ -278,7 +278,7 @@ const Projects = () => {
                           sx={{ 
                             p: 3,
                             borderRadius: 1,
-                            background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%)',
+                            background: '#fafaf7',
                             border: '1px solid rgba(37, 99, 235, 0.15)',
                           }}
                         >

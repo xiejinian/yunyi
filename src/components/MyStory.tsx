@@ -12,12 +12,29 @@ import CodeIcon from '@mui/icons-material/Code';
 import BusinessIcon from '@mui/icons-material/Business';
 import FlightIcon from '@mui/icons-material/Flight';
 import PsychologyIcon from '@mui/icons-material/Psychology';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const MyStory = () => {
   const navigate = useNavigate();
 
   const storyMilestones = [
+    {
+      id: 'biography-twenty-years',
+      year: '2001–2023',
+      title: '代码人生 · Code Life — A Programmer\'s 20-Year Journey',
+      category: '传记 · Full Biography',
+      icon: MenuBookIcon,
+      color: '#c07844',
+      type: 'biography',
+      story: '从VB到大语言模型，从深圳到杭州再到武汉，二十年的程序员流浪记。这不是成功学演讲稿，而是一个工程师关于代码、人生与技术变迁的诚实流水账。\n\nFrom Visual Basic to large language models, from Shenzhen to Hangzhou to Wuhan — a programmer\'s honest account of 20 years of code, growth, and transformation across Huawei, Alibaba, and beyond.',
+      lessons: [
+        '技术改变世界，是通过无数个具体的"改变一件小事"积累起来的',
+        'Technology changes the world through countless small, concrete improvements',
+        '技术是业务的放大器——它能让好的业务更好，但无法把错误的方向变成正确的',
+        'Technical leadership is a completely different capability from technical expertise'
+      ]
+    },
     {
       id: '2024-entrepreneurship-reflection',
       year: '2024',
@@ -142,6 +159,7 @@ const MyStory = () => {
 
   const getCategoryColor = (type: string) => {
     switch (type) {
+      case 'biography': return '#c07844';
       case 'reflection': return '#8b5cf6';
       case 'career': return '#ff6b35';
       case 'achievement': return '#1677ff';
@@ -163,7 +181,7 @@ const MyStory = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: 'linear-gradient(135deg, #fef7ff 0%, #f3e8ff 100%)',
+        background: '#fafaf7',
       }}
     >
       <Container>
@@ -176,10 +194,6 @@ const MyStory = () => {
               mb: 3,
               color: 'primary.main',
               fontWeight: 700,
-              background: 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
             }}
           >
             My Story
@@ -204,6 +218,82 @@ const MyStory = () => {
             borderRadius: 1
           }} />
         </Box>
+
+        {/* Featured Biography Banner */}
+        <Paper
+          component={motion.div}
+          whileHover={{ scale: 1.005, y: -3, boxShadow: '0 16px 40px -8px rgba(192, 120, 68, 0.15)' }}
+          elevation={3}
+          sx={{
+            p: 5,
+            mb: 6,
+            background: '#faf6f2',
+            borderRadius: 3,
+            border: '1px solid rgba(192, 120, 68, 0.2)',
+            position: 'relative',
+            overflow: 'hidden',
+            cursor: 'pointer',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 4,
+              background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+            },
+          }}
+          onClick={() => navigate('/mystory/biography-twenty-years')}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
+            <Box
+              sx={{
+                width: 72,
+                height: 72,
+                borderRadius: '50%',
+                bgcolor: 'rgba(192, 120, 68, 0.12)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                border: '2px solid rgba(192, 120, 68, 0.2)',
+              }}
+            >
+              <MenuBookIcon sx={{ fontSize: 36, color: '#c07844' }} />
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, flexWrap: 'wrap' }}>
+                <Chip
+                  label="2001–2023"
+                  size="small"
+                  sx={{ bgcolor: 'rgba(192, 120, 68, 0.1)', color: '#c07844', fontWeight: 700, border: '1px solid rgba(192, 120, 68, 0.2)' }}
+                />
+                <Chip
+                  label="传记 · Full Biography"
+                  size="small"
+                  sx={{ bgcolor: 'rgba(192, 120, 68, 0.08)', color: '#a0622e', fontWeight: 600 }}
+                />
+              </Box>
+              <Typography variant="h5" sx={{ fontWeight: 700, color: '#1a1918', mb: 1 }}>
+                代码人生 · Code Life — A Programmer's 20-Year Journey
+              </Typography>
+              <Typography variant="body1" sx={{ color: '#6b6560', lineHeight: 1.7, maxWidth: 700 }}>
+                从VB到大语言模型，跨越五家公司、两进阿里。一个程序员关于代码、人生与技术变迁的诚实流水账。
+                <Box component="span" sx={{ display: 'block', mt: 0.5, fontStyle: 'italic' }}>
+                  From Visual Basic to LLMs, across five companies including Huawei and Alibaba. An engineer's honest account of 20 years of code, growth, and technological transformation.
+                </Box>
+              </Typography>
+            </Box>
+            <Button
+              variant="contained"
+              endIcon={<ArrowForwardIcon />}
+              onClick={(e) => { e.stopPropagation(); navigate('/mystory/biography-twenty-years'); }}
+              sx={{ flexShrink: 0 }}
+            >
+              Read Full Story
+            </Button>
+          </Box>
+        </Paper>
 
         <Timeline position="alternate">
           {storyMilestones.map((milestone, index) => {
@@ -388,7 +478,7 @@ const MyStory = () => {
         </Timeline>
 
         {/* Footer Message */}
-        <Box sx={{ textAlign: 'center', mt: 8, p: 4, backgroundColor: 'rgba(255,255,255,0.8)', borderRadius: 1 }}>
+        <Box sx={{ textAlign: 'center', mt: 8, p: 4, backgroundColor: '#ffffff', borderRadius: 2, border: '1px solid #edeae4' }}>
           <Typography
             variant="h6"
             sx={{

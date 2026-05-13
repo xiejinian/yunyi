@@ -34,7 +34,7 @@ const About = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: '#fafaf7',
       }}
     >
       <Container>
@@ -50,16 +50,15 @@ const About = () => {
               whileHover={{ 
                 scale: 1.02,
                 y: -3,
-                boxShadow: '0 25px 50px -12px rgba(37, 99, 235, 0.15)'
+                boxShadow: '0 16px 40px -8px rgba(192, 120, 68, 0.12)'
               }}
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
-                backdropFilter: 'blur(20px)',
+                background: '#ffffff',
                 borderRadius: 3,
-                border: '1px solid rgba(37, 99, 235, 0.1)',
-                transition: 'all 0.3s ease-in-out',
+                border: '1px solid #edeae4',
+                transition: 'all 0.2s ease-in-out',
                 height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
@@ -75,7 +74,7 @@ const About = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%)',
+                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                 },
               }}
             >
@@ -89,13 +88,13 @@ const About = () => {
                     maxWidth: 200,
                     height: 'auto',
                     borderRadius: 3,
-                    boxShadow: '0 8px 25px rgba(37, 99, 235, 0.2)',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
                     mb: 3,
-                    border: '3px solid rgba(255, 255, 255, 0.8)',
-                    transition: 'all 0.3s ease-in-out',
+                    border: '3px solid #f5f3ef',
+                    transition: 'all 0.2s ease-in-out',
                     '&:hover': {
                       transform: 'scale(1.02)',
-                      boxShadow: '0 12px 35px rgba(37, 99, 235, 0.3)',
+                      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
                     }
                   }}
                 />
@@ -153,16 +152,15 @@ const About = () => {
               whileHover={{ 
                 scale: 1.01,
                 y: -3,
-                boxShadow: '0 25px 50px -12px rgba(37, 99, 235, 0.15)'
+                boxShadow: '0 16px 40px -8px rgba(192, 120, 68, 0.12)'
               }}
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
-                backdropFilter: 'blur(20px)',
+                background: '#ffffff',
                 borderRadius: 3,
-                border: '1px solid rgba(37, 99, 235, 0.1)',
-                transition: 'all 0.3s ease-in-out',
+                border: '1px solid #edeae4',
+                transition: 'all 0.2s ease-in-out',
                 height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
@@ -173,7 +171,7 @@ const About = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%)',
+                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                 },
               }}
             >
@@ -184,7 +182,7 @@ const About = () => {
                     width: 64,
                     height: 64,
                     mr: 3,
-                    boxShadow: '0 8px 25px rgba(37, 99, 235, 0.3)',
+                    boxShadow: '0 4px 16px rgba(192, 120, 68, 0.25)',
                   }}
                 >
                   <PersonIcon sx={{ fontSize: 32 }} />
@@ -197,9 +195,10 @@ const About = () => {
                     label="CTO & Software Architect"
                     icon={<BusinessCenterIcon />}
                     sx={{
-                      bgcolor: 'primary.light',
-                      color: 'primary.contrastText',
+                      bgcolor: 'rgba(192, 120, 68, 0.1)',
+                      color: '#c07844',
                       fontWeight: 600,
+                      border: '1px solid rgba(192, 120, 68, 0.2)',
                     }}
                   />
                 </Box>
@@ -258,16 +257,15 @@ const About = () => {
                 whileHover={{ 
                   scale: 1.02,
                   y: -2,
-                  boxShadow: '0 20px 40px rgba(37, 99, 235, 0.15)'
+                  boxShadow: '0 12px 32px -4px rgba(192, 120, 68, 0.12)'
                 }}
                 elevation={3}
                 sx={{
                   p: 4,
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
-                  backdropFilter: 'blur(20px)',
+                  background: '#ffffff',
                   borderRadius: 3,
-                  border: '1px solid rgba(34, 197, 94, 0.2)',
-                  transition: 'all 0.3s ease-in-out',
+                  border: '1px solid #edeae4',
+                  transition: 'all 0.2s ease-in-out',
                   flex: 1,
                   position: 'relative',
                   overflow: 'hidden',
@@ -278,23 +276,23 @@ const About = () => {
                     left: 0,
                     right: 0,
                     height: 4,
-                    background: 'linear-gradient(90deg, #22c55e 0%, #16a34a 100%)',
+                    background: 'linear-gradient(90deg, #3d7a55 0%, #6aaa82 100%)',
                   },
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, position: 'relative', zIndex: 2 }}>
                   <Avatar
                     sx={{
-                      bgcolor: '#22c55e',
+                      bgcolor: '#3d7a55',
                       width: 56,
                       height: 56,
                       mr: 2,
-                      boxShadow: '0 4px 12px rgba(34, 197, 94, 0.3)',
+                      boxShadow: '0 4px 12px rgba(61, 122, 85, 0.2)',
                     }}
                   >
                     <SchoolIcon sx={{ fontSize: 28 }} />
                   </Avatar>
-                  <Typography variant="h5" sx={{ color: '#16a34a', fontWeight: 600 }}>
+                  <Typography variant="h5" sx={{ color: '#3d7a55', fontWeight: 600 }}>
                     Education
                   </Typography>
                 </Box>
@@ -303,8 +301,8 @@ const About = () => {
                     label="2001 Graduate"
                     size="small"
                     sx={{
-                      bgcolor: 'rgba(34, 197, 94, 0.1)',
-                      color: '#16a34a',
+                      bgcolor: 'rgba(61, 122, 85, 0.08)',
+                      color: '#3d7a55',
                       mb: 2,
                       fontWeight: 600,
                     }}
@@ -327,16 +325,15 @@ const About = () => {
                 whileHover={{ 
                   scale: 1.02,
                   y: -2,
-                  boxShadow: '0 20px 40px rgba(245, 158, 11, 0.15)'
+                  boxShadow: '0 12px 32px -4px rgba(192, 120, 68, 0.12)'
                 }}
                 elevation={3}
                 sx={{
                   p: 4,
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 252, 232, 0.9) 100%)',
-                  backdropFilter: 'blur(20px)',
+                  background: '#ffffff',
                   borderRadius: 3,
-                  border: '1px solid rgba(245, 158, 11, 0.2)',
-                  transition: 'all 0.3s ease-in-out',
+                  border: '1px solid #edeae4',
+                  transition: 'all 0.2s ease-in-out',
                   flex: 1,
                   position: 'relative',
                   overflow: 'hidden',
@@ -347,23 +344,23 @@ const About = () => {
                     left: 0,
                     right: 0,
                     height: 4,
-                    background: 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)',
+                    background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                   },
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, position: 'relative', zIndex: 2 }}>
                   <Avatar
                     sx={{
-                      bgcolor: '#f59e0b',
+                      bgcolor: '#c07844',
                       width: 56,
                       height: 56,
                       mr: 2,
-                      boxShadow: '0 4px 12px rgba(245, 158, 11, 0.3)',
+                      boxShadow: '0 4px 12px rgba(192, 120, 68, 0.2)',
                     }}
                   >
                     <EmojiEventsIcon sx={{ fontSize: 28 }} />
                   </Avatar>
-                  <Typography variant="h5" sx={{ color: '#d97706', fontWeight: 600 }}>
+                  <Typography variant="h5" sx={{ color: '#c07844', fontWeight: 600 }}>
                     Certifications
                   </Typography>
                 </Box>
@@ -375,17 +372,17 @@ const About = () => {
                         mb: index < certifications.length - 1 ? 3 : 0,
                         p: 2,
                         borderRadius: 2,
-                        background: 'rgba(245, 158, 11, 0.05)',
-                        border: '1px solid rgba(245, 158, 11, 0.1)',
+                        background: '#faf6f2',
+                        border: '1px solid rgba(192, 120, 68, 0.1)',
                       }}
                     >
                       <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                        <StarIcon sx={{ color: '#f59e0b', mr: 1, fontSize: 18 }} />
+                        <StarIcon sx={{ color: '#c07844', mr: 1, fontSize: 18 }} />
                         <Typography variant="body1" sx={{ fontWeight: 700, lineHeight: 1.5, color: 'text.primary' }}>
                           {cert.name}
                         </Typography>
                       </Box>
-                      <Typography variant="body2" sx={{ color: '#d97706', fontWeight: 600 }}>
+                      <Typography variant="body2" sx={{ color: '#c07844', fontWeight: 600 }}>
                         {cert.year} • {cert.org}
                       </Typography>
                     </Box>
@@ -402,15 +399,14 @@ const About = () => {
               whileHover={{ 
                 scale: 1.005,
                 y: -2,
-                boxShadow: '0 25px 50px -12px rgba(139, 92, 246, 0.15)'
+                boxShadow: '0 16px 40px -8px rgba(192, 120, 68, 0.12)'
               }}
               elevation={3}
               sx={{
                 p: 4,
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%)',
-                backdropFilter: 'blur(20px)',
+                background: '#ffffff',
                 borderRadius: 3,
-                border: '1px solid rgba(139, 92, 246, 0.1)',
+                border: '1px solid #edeae4',
                 position: 'relative',
                 overflow: 'hidden',
                 '&::before': {
@@ -420,34 +416,34 @@ const About = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%)',
+                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                 },
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
                 <Avatar
                   sx={{
-                    bgcolor: '#8b5cf6',
+                    bgcolor: '#c07844',
                     width: 64,
                     height: 64,
                     mr: 3,
-                    boxShadow: '0 8px 25px rgba(139, 92, 246, 0.3)',
+                    boxShadow: '0 4px 16px rgba(192, 120, 68, 0.25)',
                   }}
                 >
                   <WorkIcon sx={{ fontSize: 32 }} />
                 </Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#7c3aed', fontWeight: 700, mb: 1 }}>
+                  <Typography variant="h4" sx={{ color: '#c07844', fontWeight: 700, mb: 1 }}>
                     Key Achievements
                   </Typography>
                   <Chip 
                     label="20+ Years Experience"
                     icon={<TrendingUpIcon />}
                     sx={{
-                      bgcolor: 'rgba(139, 92, 246, 0.1)',
-                      color: '#7c3aed',
+                      bgcolor: 'rgba(192, 120, 68, 0.1)',
+                      color: '#c07844',
                       fontWeight: 600,
-                      border: '1px solid rgba(139, 92, 246, 0.2)',
+                      border: '1px solid rgba(192, 120, 68, 0.2)',
                     }}
                   />
                 </Box>
@@ -461,8 +457,8 @@ const About = () => {
                       sx={{
                         p: 3,
                         borderRadius: 3,
-                        background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
-                        border: '1px solid rgba(37, 99, 235, 0.2)',
+                        background: '#faf6f2',
+                        border: '1px solid rgba(192, 120, 68, 0.15)',
                         backdropFilter: 'blur(10px)',
                         height: '100%',
                         display: 'flex',
@@ -482,9 +478,9 @@ const About = () => {
                         },
                         '&:hover': {
                           transform: 'translateY(-2px)',
-                          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(14, 165, 233, 0.15) 100%)',
-                          borderColor: 'rgba(37, 99, 235, 0.3)',
-                          boxShadow: '0 10px 25px -5px rgba(37, 99, 235, 0.25)',
+                          background: '#faf0e8',
+                          borderColor: 'rgba(192, 120, 68, 0.25)',
+                          boxShadow: '0 8px 24px -4px rgba(192, 120, 68, 0.12)',
                         },
                         '& > *': {
                           position: 'relative',
@@ -514,61 +510,42 @@ const About = () => {
             <Paper
               component={motion.div}
               whileHover={{ 
-                scale: 1.01,
+                scale: 1.005,
                 y: -3,
-                boxShadow: '0 25px 50px -12px rgba(14, 165, 233, 0.2)'
+                boxShadow: '0 12px 32px -8px rgba(192, 120, 68, 0.15)'
               }}
               elevation={3}
               sx={{
                 p: 6,
-                background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.9) 0%, rgba(37, 99, 235, 0.8) 100%)',
-                color: 'white',
+                background: '#faf6f2',
                 borderRadius: 3,
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(192, 120, 68, 0.2)',
                 '&::before': {
                   content: '""',
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   right: 0,
-                  bottom: 0,
-                  background: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)',
-                  zIndex: 1,
-                },
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-50%',
-                  width: '200%',
-                  height: '200%',
-                  background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 50%)',
-                  animation: 'float 20s ease-in-out infinite',
-                  zIndex: 1,
-                },
-                '@keyframes float': {
-                  '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-                  '33%': { transform: 'translate(20px, -20px) rotate(120deg)' },
-                  '66%': { transform: 'translate(-15px, 15px) rotate(240deg)' },
+                  height: 4,
+                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
                 },
               }}
             >
-              <Box sx={{ position: 'relative', zIndex: 2 }}>
+              <Box>
                 <Avatar
                   sx={{
-                    bgcolor: 'rgba(255, 255, 255, 0.15)',
+                    bgcolor: 'rgba(192, 120, 68, 0.1)',
                     width: 80,
                     height: 80,
                     mx: 'auto',
                     mb: 3,
-                    backdropFilter: 'blur(10px)',
-                    border: '2px solid rgba(255, 255, 255, 0.2)',
+                    border: '2px solid rgba(192, 120, 68, 0.2)',
                   }}
                 >
-                  <CodeIcon sx={{ fontSize: 40, color: 'white' }} />
+                  <CodeIcon sx={{ fontSize: 40, color: '#c07844' }} />
                 </Avatar>
                 <Typography 
                   variant="h4" 
@@ -577,7 +554,7 @@ const About = () => {
                     fontStyle: 'italic',
                     fontWeight: 600,
                     lineHeight: 1.4,
-                    textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                    color: '#2d2926',
                   }}
                 >
                   "Leading teams to achieve excellent business and technical goals through 
@@ -586,7 +563,7 @@ const About = () => {
                 <Typography 
                   variant="h6" 
                   sx={{ 
-                    color: 'rgba(255, 255, 255, 0.9)',
+                    color: '#6b6560',
                     maxWidth: '800px',
                     mx: 'auto',
                     lineHeight: 1.6,
