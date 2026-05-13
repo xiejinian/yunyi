@@ -15,6 +15,21 @@ import SchoolIcon from '@mui/icons-material/School';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import TranslateIcon from '@mui/icons-material/Translate';
 
+interface StoryMilestone {
+  id: string;
+  year: string;
+  title: string;
+  category: string;
+  icon: React.ElementType;
+  color: string;
+  type: string;
+  story: string;
+  lessons: string[];
+  challenges: string[];
+  impact: string;
+  isBiography?: boolean;
+}
+
 const StoryDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -688,7 +703,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
     }
   ];
 
-  const story = storyMilestones.find(s => s.id === id);
+  const story = storyMilestones.find(s => s.id === id) as StoryMilestone | undefined;
 
   if (!story) {
     return (
@@ -702,7 +717,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
   const IconComponent = story.icon;
 
   // Biography special rendering
-  if ((story as any).isBiography) {
+  if (story.isBiography) {
     return (
       <Box
         component={motion.div}
@@ -814,7 +829,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                     )}
                     <Typography
                       variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#2d2926', fontSize: '1.05rem', whiteSpace: 'pre-line', fontFamily: '"Noto Serif SC", "PingFang SC", "Hiragino Sans GB", serif' }}
+                      sx={{ lineHeight: 1.9, color: '#2d2926', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
                     >
                       {chapter.zh}
                     </Typography>

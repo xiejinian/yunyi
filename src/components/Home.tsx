@@ -111,7 +111,7 @@ const Home = () => {
                 }}
               >
                 Xie Jinian{' '}
-                <Box component="span" sx={{ color: '#c07844' }}>
+                <Box component="span" sx={{ color: 'primary.main' }}>
                   (谢记年)
                 </Box>
               </Typography>

@@ -287,7 +287,6 @@ const MyStory = () => {
             <Button
               variant="contained"
               endIcon={<ArrowForwardIcon />}
-              onClick={(e) => { e.stopPropagation(); navigate('/mystory/biography-twenty-years'); }}
               sx={{ flexShrink: 0 }}
             >
               Read Full Story

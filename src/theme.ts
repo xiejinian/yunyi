@@ -52,7 +52,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Inter", "SF Pro Display", "Segoe UI", "Roboto", sans-serif',
+    fontFamily: '"Inter", "SF Pro Display", "Segoe UI", "Roboto", "Noto Serif SC", "PingFang SC", "Hiragino Sans GB", sans-serif',
     h1: {
       fontWeight: 800,
       fontSize: '3.5rem',
