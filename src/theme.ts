@@ -1,79 +1,87 @@
 import { createTheme } from '@mui/material/styles';
 
-// Claude-inspired warm light theme
+// 沧桑·智识 — Industrial dark theme with aged copper & tech precision
 const theme = createTheme({
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#c07844', // Warm terracotta-orange (Claude brand)
-      light: '#d4955e', // Light terracotta
-      dark: '#a0622e', // Dark terracotta
-      contrastText: '#ffffff',
+      main: '#c9a84c',       // Aged bronze / matte gold
+      light: '#dbbf6e',
+      dark: '#a07c2e',
+      contrastText: '#0e1412',
     },
     secondary: {
-      main: '#7c6b5a', // Warm brown
-      light: '#a08c78', // Light warm brown
-      dark: '#5a4d3e', // Dark warm brown
-      contrastText: '#ffffff',
+      main: '#b85c38',       // Rust orange — weathered iron
+      light: '#d4795a',
+      dark: '#8c3e22',
+      contrastText: '#e8e0d0',
     },
     background: {
-      default: '#fafaf7', // Warm off-white (Claude bg)
-      paper: '#ffffff',
+      default: '#0e1412',    // Deep moss-black
+      paper: '#141c18',      // Slightly lifted — layered depth
     },
     text: {
-      primary: '#1a1918', // Near-black warm
-      secondary: '#6b6560', // Warm medium gray
+      primary: '#e8e0d0',    // Aged parchment white
+      secondary: '#8a8070',  // Faded sepia
     },
     success: {
-      main: '#3d7a55', // Muted green
-      light: '#6aaa82',
-      dark: '#2a5a3e',
+      main: '#4a8c60',
+      light: '#72b88a',
+      dark: '#2e5c3e',
     },
     warning: {
-      main: '#c07844', // Terracotta (same as primary)
-      light: '#d4955e',
-      dark: '#a0622e',
+      main: '#c9a84c',
+      light: '#dbbf6e',
+      dark: '#a07c2e',
     },
     error: {
-      main: '#c0392b',
-      light: '#e57373',
-      dark: '#a93226',
+      main: '#b85c38',
+      light: '#d4795a',
+      dark: '#8c3e22',
     },
+    divider: '#2a3830',
     grey: {
-      50: '#fafaf7',
-      100: '#f5f3ef',
-      200: '#edeae4',
-      300: '#dbd7cf',
-      400: '#b8b2a8',
-      500: '#8f8880',
-      600: '#6b6560',
-      700: '#4a4440',
-      800: '#2d2926',
-      900: '#1a1918',
+      50: '#e8e0d0',
+      100: '#cfc6b4',
+      200: '#a89e8c',
+      300: '#8a8070',
+      400: '#5e5648',
+      500: '#3e3830',
+      600: '#2a3830',
+      700: '#1e2a24',
+      800: '#141c18',
+      900: '#0e1412',
     },
   },
   typography: {
-    fontFamily: '"Inter", "SF Pro Display", "Segoe UI", "Roboto", "Noto Serif SC", "PingFang SC", "Hiragino Sans GB", sans-serif',
+    fontFamily: '"Inter", "SF Pro Display", "Segoe UI", "Noto Serif SC", "PingFang SC", "Hiragino Sans GB", sans-serif',
     h1: {
-      fontWeight: 800,
+      fontFamily: '"JetBrains Mono", "Courier Prime", "Courier New", "Noto Serif SC", monospace',
+      fontWeight: 700,
       fontSize: '3.5rem',
       lineHeight: 1.1,
-      letterSpacing: '-0.02em',
+      letterSpacing: '0.01em',
+      color: '#e8e0d0',
     },
     h2: {
-      fontWeight: 700,
+      fontFamily: '"JetBrains Mono", "Courier Prime", "Courier New", "Noto Serif SC", monospace',
+      fontWeight: 600,
       fontSize: '2.5rem',
       lineHeight: 1.2,
-      letterSpacing: '-0.01em',
+      letterSpacing: '0.01em',
+      color: '#e8e0d0',
     },
     h3: {
       fontWeight: 600,
       fontSize: '2rem',
       lineHeight: 1.3,
+      color: '#e8e0d0',
     },
     h4: {
       fontWeight: 600,
       fontSize: '1.5rem',
       lineHeight: 1.4,
+      color: '#e8e0d0',
     },
     h5: {
       fontWeight: 500,
@@ -87,50 +95,56 @@ const theme = createTheme({
     },
     body1: {
       fontSize: '1rem',
-      lineHeight: 1.7,
-      color: '#4a4440',
+      lineHeight: 1.75,
+      color: '#cfc6b4',
     },
     body2: {
       fontSize: '0.875rem',
-      lineHeight: 1.6,
-      color: '#6b6560',
+      lineHeight: 1.65,
+      color: '#8a8070',
+    },
+    caption: {
+      fontFamily: '"JetBrains Mono", "Courier Prime", monospace',
+      fontSize: '0.75rem',
+      letterSpacing: '0.05em',
+      color: '#8a8070',
     },
   },
   shape: {
-    borderRadius: 4,
+    borderRadius: 2,  // Sharp, industrial — minimal rounding
   },
   shadows: [
     'none',
-    '0 1px 2px 0 rgb(0 0 0 / 0.04)',
-    '0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.06)',
-    '0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05)',
-    '0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.05)',
-    '0 20px 25px -5px rgb(0 0 0 / 0.07), 0 8px 10px -6px rgb(0 0 0 / 0.05)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
-    '0 25px 50px -12px rgb(0 0 0 / 0.12)',
+    '0 1px 2px 0 rgb(0 0 0 / 0.3)',
+    '0 1px 4px 0 rgb(0 0 0 / 0.4)',
+    '0 4px 8px -1px rgb(0 0 0 / 0.5)',
+    '0 8px 16px -2px rgb(0 0 0 / 0.5)',
+    '0 16px 32px -4px rgb(0 0 0 / 0.5)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
+    '0 24px 48px -8px rgb(0 0 0 / 0.6)',
   ],
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: '#fafaf7',
+          background: '#0e1412',
           minHeight: '100vh',
         },
       },
@@ -138,34 +152,37 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 2,
           textTransform: 'none',
           fontWeight: 600,
           fontSize: '0.875rem',
           padding: '10px 24px',
           boxShadow: 'none',
+          letterSpacing: '0.04em',
           transition: 'all 0.2s ease-in-out',
           '&:hover': {
             transform: 'translateY(-1px)',
-            boxShadow: '0 4px 12px -2px rgb(0 0 0 / 0.12)',
+            boxShadow: '0 4px 16px rgba(201, 168, 76, 0.15)',
           },
         },
         contained: {
-          background: '#c07844',
-          color: '#ffffff',
+          background: '#c9a84c',
+          color: '#0e1412',
+          fontWeight: 700,
           '&:hover': {
-            background: '#a0622e',
+            background: '#dbbf6e',
+            boxShadow: '0 4px 16px rgba(201, 168, 76, 0.25)',
           },
         },
         outlined: {
-          borderWidth: '1.5px',
-          borderColor: '#dbd7cf',
-          color: '#4a4440',
+          borderWidth: '1px',
+          borderColor: '#2a3830',
+          color: '#c9a84c',
           '&:hover': {
-            borderWidth: '1.5px',
-            backgroundColor: '#f5f3ef',
-            borderColor: '#c07844',
-            color: '#c07844',
+            borderWidth: '1px',
+            backgroundColor: 'rgba(201, 168, 76, 0.06)',
+            borderColor: '#c9a84c',
+            color: '#dbbf6e',
           },
         },
       },
@@ -173,15 +190,16 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.07)',
-          border: '1px solid #edeae4',
-          transition: 'all 0.2s ease-in-out',
+          borderRadius: 2,
+          boxShadow: '0 1px 4px 0 rgb(0 0 0 / 0.4)',
+          border: '1px solid #2a3830',
+          background: '#141c18',
+          transition: 'all 0.25s ease-in-out',
           backgroundImage: 'none',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: '0 8px 24px -4px rgb(0 0 0 / 0.1)',
-            borderColor: '#dbd7cf',
+            boxShadow: '0 8px 24px -4px rgb(0 0 0 / 0.5)',
+            borderColor: 'rgba(201, 168, 76, 0.35)',
           },
         },
       },
@@ -189,43 +207,49 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.07)',
-          border: '1px solid #edeae4',
+          borderRadius: 2,
+          boxShadow: '0 1px 4px 0 rgb(0 0 0 / 0.4)',
+          border: '1px solid #2a3830',
+          background: '#141c18',
           backgroundImage: 'none',
         },
         elevation1: {
-          boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.07)',
+          boxShadow: '0 1px 4px 0 rgb(0 0 0 / 0.4)',
         },
         elevation2: {
-          boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.07)',
+          boxShadow: '0 4px 8px -1px rgb(0 0 0 / 0.5)',
         },
         elevation3: {
-          boxShadow: '0 8px 16px -4px rgb(0 0 0 / 0.08)',
+          boxShadow: '0 8px 16px -2px rgb(0 0 0 / 0.5)',
         },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'rgba(250, 250, 247, 0.92)',
+          backgroundColor: 'rgba(14, 20, 18, 0.88)',
           backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid #edeae4',
-          boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.05)',
+          borderBottom: '1px solid #2a3830',
+          boxShadow: 'none',
+          backgroundImage: 'none',
         },
       },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          borderRadius: 6,
-          fontWeight: 500,
-          fontSize: '0.8rem',
+          borderRadius: 2,
+          fontWeight: 600,
+          fontSize: '0.78rem',
+          letterSpacing: '0.04em',
         },
         outlined: {
-          borderWidth: '1.5px',
+          borderWidth: '1px',
+          borderColor: '#2a3830',
+          color: '#cfc6b4',
           '&:hover': {
-            backgroundColor: '#f5f3ef',
+            backgroundColor: 'rgba(201, 168, 76, 0.08)',
+            borderColor: 'rgba(201, 168, 76, 0.4)',
           },
         },
       },
@@ -233,19 +257,35 @@ const theme = createTheme({
     MuiLinearProgress: {
       styleOverrides: {
         root: {
-          borderRadius: 4,
-          backgroundColor: '#edeae4',
+          borderRadius: 1,
+          backgroundColor: '#1e2a24',
+          height: 3,
         },
         bar: {
-          borderRadius: 4,
-          background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+          borderRadius: 1,
+          background: 'linear-gradient(90deg, #a07c2e 0%, #c9a84c 60%, #dbbf6e 100%)',
         },
       },
     },
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: '#edeae4',
+          borderColor: '#2a3830',
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          background: '#0e1412',
+          borderLeft: '1px solid #2a3830',
+        },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          borderRadius: 2,
         },
       },
     },
