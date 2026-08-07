@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Button, Stack, Chip } from '@mui/material';
+import { Box, Typography, Container, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -9,10 +9,10 @@ import GroupIcon from '@mui/icons-material/Group';
 import BusinessIcon from '@mui/icons-material/Business';
 
 const Home = () => {
-  const achievements = [
-    { icon: BusinessIcon, text: 'CTO at Feifan Tech', color: 'primary', link: 'https://feifan-tech-website.pages.dev/' },
-    { icon: TrendingUpIcon, text: '20+ Years Experience', color: 'secondary' },
-    { icon: GroupIcon, text: 'Led 110+ People Teams', color: 'success' },
+  const badges = [
+    { icon: BusinessIcon, label: 'CTO', sub: 'Feifan Tech', link: 'https://feifan-tech-website.pages.dev/' },
+    { icon: TrendingUpIcon, label: '20+ YRS', sub: 'Experience' },
+    { icon: GroupIcon, label: '110+', sub: 'People Led' },
   ];
 
   return (
@@ -22,16 +22,25 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
-        background: '#fafaf7',
+        background: '#0e1412',
         overflow: 'hidden',
+        // Subtle grid lines — engineering-drawing feel
         '&::before': {
           content: '""',
           position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(192, 120, 68, 0.08) 0%, transparent 70%)',
+          inset: 0,
+          backgroundImage:
+            'linear-gradient(rgba(42,56,48,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(42,56,48,0.35) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+          zIndex: 0,
+        },
+        // Radial vignette to soften edges
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          background:
+            'radial-gradient(ellipse 75% 70% at 50% 50%, transparent 40%, rgba(14,20,18,0.85) 100%)',
           zIndex: 1,
         },
       }}
@@ -42,93 +51,155 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Achievement Chips */}
-          <Stack 
-            direction="row" 
-            spacing={2} 
-            sx={{ mb: 4, justifyContent: 'center', flexWrap: 'wrap', gap: 2 }}
+          {/* System-log status line */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
-            {achievements.map((achievement, index) => {
-              const IconComponent = achievement.icon;
+            <Typography
+              sx={{
+                fontFamily: '"JetBrains Mono", "Courier Prime", monospace',
+                fontSize: '0.72rem',
+                letterSpacing: '0.08em',
+                color: '#4a8c60',
+                textAlign: 'center',
+                mb: 4,
+                '&::before': { content: '"[  OK  ] "', color: '#4a8c60' },
+              }}
+            >
+              20+ years of enterprise engineering experience loaded
+            </Typography>
+          </motion.div>
+
+          {/* Badge row — styled as industrial nameplates */}
+          <Stack
+            direction="row"
+            sx={{ mb: 5, justifyContent: 'center', flexWrap: 'wrap', gap: 1.5 }}
+          >
+            {badges.map((badge, index) => {
+              const Icon = badge.icon;
+              const inner = (
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1.25,
+                    px: 2.5,
+                    py: 1.25,
+                    border: '1px solid #2a3830',
+                    borderRadius: '2px',
+                    background: 'rgba(20,28,24,0.8)',
+                    cursor: badge.link ? 'pointer' : 'default',
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': badge.link
+                      ? {
+                          borderColor: 'rgba(201,168,76,0.45)',
+                          background: 'rgba(201,168,76,0.06)',
+                        }
+                      : {},
+                  }}
+                >
+                  <Icon sx={{ fontSize: '1rem', color: '#c9a84c', opacity: 0.85 }} />
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontFamily: '"JetBrains Mono", monospace',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.08em',
+                        color: '#c9a84c',
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      {badge.label}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: '0.7rem',
+                        letterSpacing: '0.04em',
+                        color: '#8a8070',
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      {badge.sub}
+                    </Typography>
+                  </Box>
+                </Box>
+              );
+
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.45 + index * 0.1 }}
                 >
-                  <Chip
-                    icon={<IconComponent />}
-                    label={achievement.text}
-                    variant="outlined"
-                    component={achievement.link ? "a" : "div"}
-                    href={achievement.link}
-                    target={achievement.link ? "_blank" : undefined}
-                    rel={achievement.link ? "noopener noreferrer" : undefined}
-                    clickable={!!achievement.link}
-                    sx={{
-                      py: 3,
-                      px: 2,
-                      fontSize: '0.9rem',
-                      fontWeight: 600,
-                      backgroundColor: '#ffffff',
-                      color: '#4a4440',
-                      border: '1.5px solid #edeae4',
-                      textDecoration: 'none',
-                      transition: 'all 0.2s ease-in-out',
-                      '& .MuiChip-icon': {
-                        color: '#c07844',
-                      },
-                      '&:hover': achievement.link ? {
-                        backgroundColor: '#faf6f2',
-                        borderColor: '#c07844',
-                        color: '#c07844',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 4px 12px rgba(192, 120, 68, 0.12)',
-                      } : {},
-                    }}
-                  />
+                  {badge.link ? (
+                    <Box
+                      component="a"
+                      href={badge.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{ textDecoration: 'none', display: 'block' }}
+                    >
+                      {inner}
+                    </Box>
+                  ) : (
+                    inner
+                  )}
                 </motion.div>
               );
             })}
           </Stack>
 
-          {/* Main Content */}
+          {/* Main name */}
           <Box sx={{ textAlign: 'center' }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Typography
                 variant="h1"
                 component="h1"
-                gutterBottom
                 sx={{
-                  fontWeight: 800,
-                  color: '#1a1918',
-                  mb: 2,
+                  mb: 1,
+                  fontFamily: '"JetBrains Mono", "Courier Prime", "Noto Serif SC", monospace',
+                  fontWeight: 700,
+                  color: '#e8e0d0',
+                  letterSpacing: '0.04em',
                 }}
               >
-                Xie Jinian{' '}
-                <Box component="span" sx={{ color: 'primary.main' }}>
-                  (谢记年)
-                </Box>
+                Xie Jinian
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: '"Noto Serif SC", serif',
+                  fontSize: '1.5rem',
+                  fontWeight: 600,
+                  color: 'rgba(201,168,76,0.75)',
+                  letterSpacing: '0.2em',
+                  mb: 3,
+                }}
+              >
+                谢记年
               </Typography>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
             >
               <Typography
                 variant="h3"
-                gutterBottom
                 sx={{
-                  color: '#4a4440',
+                  color: '#8a8070',
                   mb: 3,
-                  fontWeight: 500,
+                  fontWeight: 400,
+                  fontSize: '1.35rem',
+                  letterSpacing: '0.02em',
                 }}
               >
                 CTO at{' '}
@@ -137,16 +208,14 @@ const Home = () => {
                   href="https://feifan-tech-website.pages.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="h3"
                   sx={{
-                    color: '#c07844',
-                    textDecoration: 'none',
-                    borderBottom: '2px solid rgba(192, 120, 68, 0.3)',
+                    fontSize: 'inherit',
                     fontWeight: 600,
-                    transition: 'all 0.2s ease-in-out',
-                    '&:hover': {
-                      borderBottomColor: '#c07844',
-                    }
+                    color: '#c9a84c',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid rgba(201,168,76,0.3)',
+                    transition: 'border-color 0.2s',
+                    '&:hover': { borderBottomColor: '#c9a84c' },
                   }}
                 >
                   Feifan Tech
@@ -157,18 +226,16 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
             >
               <Typography
-                variant="h6"
-                paragraph
                 sx={{
-                  color: '#6b6560',
-                  maxWidth: '820px',
+                  color: '#8a8070',
+                  maxWidth: '780px',
                   mx: 'auto',
-                  mb: 5,
-                  lineHeight: 1.8,
-                  fontSize: '1.2rem',
+                  mb: 6,
+                  lineHeight: 1.85,
+                  fontSize: '1rem',
                   fontWeight: 400,
                 }}
               >
@@ -178,16 +245,16 @@ const Home = () => {
               </Typography>
             </motion.div>
 
-            {/* Action Buttons */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
             >
-              <Stack 
-                direction={{ xs: 'column', sm: 'row' }} 
-                spacing={3} 
-                sx={{ justifyContent: 'center', mt: 6 }}
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={2.5}
+                sx={{ justifyContent: 'center' }}
               >
                 <Button
                   variant="contained"
@@ -196,10 +263,19 @@ const Home = () => {
                   to="/projects"
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    py: 1.75,
+                    py: 1.5,
                     px: 4,
-                    fontSize: '1rem',
+                    fontSize: '0.9rem',
+                    letterSpacing: '0.06em',
+                    fontWeight: 700,
                     textDecoration: 'none',
+                    borderRadius: '2px',
+                    background: '#c9a84c',
+                    color: '#0e1412',
+                    '&:hover': {
+                      background: '#dbbf6e',
+                      boxShadow: '0 4px 20px rgba(201,168,76,0.2)',
+                    },
                   }}
                 >
                   View My Work
@@ -211,10 +287,18 @@ const Home = () => {
                   to="/contact"
                   startIcon={<EmailIcon />}
                   sx={{
-                    py: 1.75,
+                    py: 1.5,
                     px: 4,
-                    fontSize: '1rem',
+                    fontSize: '0.9rem',
+                    letterSpacing: '0.06em',
                     textDecoration: 'none',
+                    borderRadius: '2px',
+                    borderColor: '#2a3830',
+                    color: '#c9a84c',
+                    '&:hover': {
+                      borderColor: '#c9a84c',
+                      backgroundColor: 'rgba(201,168,76,0.06)',
+                    },
                   }}
                 >
                   Contact Me
