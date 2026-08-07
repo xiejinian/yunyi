@@ -328,7 +328,7 @@ const MyStory = () => {
                     elevation={3}
                     sx={{
                       p: 4,
-                      backgroundColor: 'white',
+                      backgroundColor: '#141c18',
                       borderRadius: 2,
                       position: 'relative',
                       overflow: 'hidden',
