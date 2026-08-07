@@ -73,7 +73,7 @@ const Skills = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: '#fafaf7',
+        background: '#0e1412',
       }}
     >
       <Container>
@@ -104,7 +104,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: '#ffffff',
+                background: '#141c18',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(37, 99, 235, 0.1)',
@@ -117,7 +117,7 @@ const Skills = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+                  background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
                 },
               }}
             >
@@ -157,11 +157,11 @@ const Skills = () => {
                       sx={{ 
                         p: 2,
                         borderRadius: 1,
-                        background: '#fafaf7',
+                        background: '#0e1412',
                         border: '1px solid rgba(37, 99, 235, 0.1)',
                         transition: 'all 0.3s ease-in-out',
                         '&:hover': {
-                          background: '#faf6f2',
+                          background: '#182420',
                           borderColor: 'rgba(37, 99, 235, 0.2)',
                         }
                       }}
@@ -187,7 +187,7 @@ const Skills = () => {
                           mb: 1,
                           '& .MuiLinearProgress-bar': {
                             borderRadius: 5,
-                            background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+                            background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
                           },
                         }}
                       />
@@ -220,7 +220,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: '#ffffff',
+                background: '#141c18',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(139, 92, 246, 0.1)',
@@ -327,7 +327,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: '#ffffff',
+                background: '#141c18',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(34, 197, 94, 0.2)',
@@ -432,7 +432,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: '#ffffff',
+                background: '#141c18',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(245, 158, 11, 0.2)',
@@ -551,7 +551,7 @@ const Skills = () => {
               elevation={3}
               sx={{
                 p: 4,
-                background: '#ffffff',
+                background: '#141c18',
                 backdropFilter: 'blur(20px)',
                 borderRadius: 2,
                 border: '1px solid rgba(14, 165, 233, 0.2)',
@@ -565,14 +565,14 @@ const Skills = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+                  background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
                 },
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
                 <Avatar
                   sx={{
-                    bgcolor: '#c07844',
+                    bgcolor: '#b85c38',
                     width: 64,
                     height: 64,
                     mr: 3,
@@ -620,7 +620,7 @@ const Skills = () => {
                             left: 0,
                             bottom: 0,
                             width: 3,
-                            background: 'linear-gradient(180deg, #c07844 0%, #d4955e 100%)',
+                            background: 'linear-gradient(180deg, #b85c38 0%, #d4795a 100%)',
                           },
                           '&:hover': {
                             background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(2, 132, 199, 0.08) 100%)',
@@ -630,7 +630,7 @@ const Skills = () => {
                         }}
                       >
                         <Box sx={{ display: 'flex', alignItems: 'center', pl: 2 }}>
-                          <StarIcon sx={{ color: '#c07844', mr: 1.5, fontSize: 18 }} />
+                          <StarIcon sx={{ color: '#b85c38', mr: 1.5, fontSize: 18 }} />
                           <Typography 
                             variant="body1" 
                             sx={{ 
@@ -668,7 +668,7 @@ const Skills = () => {
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(201, 168, 76, 0.12)',
                 '&::before': {
                   content: '""',
                   position: 'absolute',
@@ -676,7 +676,7 @@ const Skills = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                  background: 'radial-gradient(circle at 30% 20%, rgba(201,168,76,0.08) 0%, transparent 50%)',
                   zIndex: 1,
                 },
                 '&::after': {
@@ -686,7 +686,7 @@ const Skills = () => {
                   right: '-50%',
                   width: '200%',
                   height: '200%',
-                  background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 50%)',
+                  background: 'radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 50%)',
                   animation: 'float 20s ease-in-out infinite',
                   zIndex: 1,
                 },
@@ -701,12 +701,12 @@ const Skills = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 4 }}>
                   <Avatar
                     sx={{
-                      bgcolor: 'rgba(255, 255, 255, 0.15)',
+                      bgcolor: 'rgba(201, 168, 76, 0.08)',
                       width: 80,
                       height: 80,
                       mr: 3,
                       backdropFilter: 'blur(10px)',
-                      border: '2px solid rgba(255, 255, 255, 0.2)',
+                      border: '2px solid rgba(201, 168, 76, 0.12)',
                     }}
                   >
                     <GroupsIcon sx={{ fontSize: 40, color: 'white' }} />
@@ -718,10 +718,10 @@ const Skills = () => {
                     <Chip 
                       label="Team Management Expert"
                       sx={{
-                        bgcolor: 'rgba(255, 255, 255, 0.2)',
+                        bgcolor: 'rgba(201, 168, 76, 0.12)',
                         color: 'white',
                         fontWeight: 600,
-                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        border: '1px solid rgba(201, 168, 76, 0.16)',
                       }}
                     />
                   </Box>
