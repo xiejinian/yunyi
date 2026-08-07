@@ -839,7 +839,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                 {(langTab === 1 || langTab === 2) && (
                   <Box>
                     {langTab === 2 && (
-                      <Chip label="English" size="small" sx={{ mb: 2, bgcolor: 'rgba(184, 92, 56, 0.08)', color: '#8c3e22', fontWeight: 600 }} />
+                      <Chip label="English" size="small" sx={{ mb: 2, bgcolor: 'rgba(184, 92, 56, 0.08)', color: '#d4795a', fontWeight: 600 }} />
                     )}
                     <Typography
                       variant="body1"
