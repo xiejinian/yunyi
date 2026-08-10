@@ -57,7 +57,7 @@ const Contact = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: '#fafaf7',
+        background: '#0e1412',
       }}
     >
       <Container>
@@ -108,8 +108,8 @@ const Contact = () => {
           sx={{
             p: 4,
             mb: 6,
-            background: '#ffffff',
-            border: '1px solid #edeae4',
+            background: '#141c18',
+            border: '1px solid #2a3830',
             borderRadius: 3,
           }}
         >
@@ -125,14 +125,14 @@ const Contact = () => {
                   sx={{
                     p: 3,
                     borderRadius: 2,
-                    background: '#fafaf7',
-                    border: '1px solid #edeae4',
+                    background: '#141c18',
+                    border: '1px solid #2a3830',
                     height: '100%',
                     transition: 'all 0.2s ease-in-out',
                     '&:hover': {
-                      background: '#faf6f2',
-                      borderColor: 'rgba(192, 120, 68, 0.25)',
-                      boxShadow: '0 8px 24px -4px rgba(192, 120, 68, 0.12)',
+                      background: '#1e2a24',
+                      borderColor: 'rgba(184, 92, 56, 0.35)',
+                      boxShadow: '0 8px 24px -4px rgba(184, 92, 56, 0.15)',
                     },
                   }}
                 >
@@ -153,12 +153,12 @@ const Contact = () => {
                         sx={{ 
                           px: 2,
                           py: 0.5,
-                          background: 'rgba(192, 120, 68, 0.08)',
-                          color: '#c07844',
+                          background: 'rgba(184, 92, 56, 0.12)',
+                          color: '#d4795a',
                           borderRadius: 2,
                           fontSize: '0.75rem',
                           fontWeight: 500,
-                          border: '1px solid rgba(192, 120, 68, 0.15)',
+                          border: '1px solid rgba(184, 92, 56, 0.25)',
                         }}
                       >
                         {area}
@@ -176,10 +176,10 @@ const Contact = () => {
           elevation={3}
           sx={{
             p: 6,
-            background: '#faf6f2',
+            background: '#182420',
             borderRadius: 3,
             textAlign: 'center',
-            border: '1px solid rgba(192, 120, 68, 0.2)',
+            border: '1px solid rgba(184, 92, 56, 0.3)',
             position: 'relative',
             overflow: 'hidden',
             '&::before': {
@@ -187,14 +187,14 @@ const Contact = () => {
               position: 'absolute',
               top: 0, left: 0, right: 0,
               height: 4,
-              background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+              background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
             },
           }}
         >
-          <Typography variant="h4" gutterBottom sx={{ color: '#1a1918' }}>
+          <Typography variant="h4" gutterBottom sx={{ color: '#e8e0d0' }}>
             Let's Work Together
           </Typography>
-          <Typography variant="h6" paragraph sx={{ mb: 4, color: '#6b6560' }}>
+          <Typography variant="h6" paragraph sx={{ mb: 4, color: '#8a8070' }}>
             Ready to discuss your next project or explore collaboration opportunities?
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>

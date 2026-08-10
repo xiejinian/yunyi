@@ -454,7 +454,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
       title: '代码人生 · Code Life — A Programmer\'s 20-Year Journey',
       category: '传记 · Full Biography',
       icon: MenuBookIcon,
-      color: '#c07844',
+      color: '#b85c38',
       type: 'biography',
       isBiography: true,
       story: '',
@@ -724,7 +724,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        sx={{ minHeight: '100vh', py: 12, background: '#fafaf7' }}
+        sx={{ minHeight: '100vh', py: 12, background: '#0e1412' }}
       >
         <Container maxWidth="md">
           {/* Back Button */}
@@ -732,7 +732,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             <Button
               startIcon={<ArrowBackIcon />}
               onClick={() => navigate('/mystory')}
-              sx={{ color: 'primary.main', '&:hover': { backgroundColor: 'rgba(192, 120, 68, 0.08)' } }}
+              sx={{ color: 'primary.main', '&:hover': { backgroundColor: 'rgba(184, 92, 56, 0.08)' } }}
             >
               Back to My Story
             </Button>
@@ -744,9 +744,9 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             sx={{
               p: 5,
               mb: 4,
-              background: '#faf6f2',
+              background: '#182420',
               borderRadius: 3,
-              border: '1px solid rgba(192, 120, 68, 0.2)',
+              border: '1px solid rgba(184, 92, 56, 0.2)',
               position: 'relative',
               overflow: 'hidden',
               textAlign: 'center',
@@ -755,21 +755,21 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                 position: 'absolute',
                 top: 0, left: 0, right: 0,
                 height: 4,
-                background: 'linear-gradient(90deg, #c07844 0%, #d4955e 100%)',
+                background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
               },
             }}
           >
-            <Box sx={{ width: 80, height: 80, borderRadius: '50%', bgcolor: 'rgba(192, 120, 68, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 3, border: '2px solid rgba(192, 120, 68, 0.2)' }}>
-              <MenuBookIcon sx={{ fontSize: 40, color: '#c07844' }} />
+            <Box sx={{ width: 80, height: 80, borderRadius: '50%', bgcolor: 'rgba(184, 92, 56, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 3, border: '2px solid rgba(184, 92, 56, 0.2)' }}>
+              <MenuBookIcon sx={{ fontSize: 40, color: '#b85c38' }} />
             </Box>
-            <Chip label="2001–2023 · Full Biography" sx={{ bgcolor: 'rgba(192, 120, 68, 0.1)', color: '#c07844', fontWeight: 700, mb: 2, border: '1px solid rgba(192, 120, 68, 0.2)' }} />
-            <Typography variant="h3" sx={{ fontWeight: 700, color: '#1a1918', mb: 1, lineHeight: 1.3 }}>
+            <Chip label="2001–2023 · Full Biography" sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#b85c38', fontWeight: 700, mb: 2, border: '1px solid rgba(184, 92, 56, 0.2)' }} />
+            <Typography variant="h3" sx={{ fontWeight: 700, color: '#e8e0d0', mb: 1, lineHeight: 1.3 }}>
               代码人生
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 500, color: '#4a4440', mb: 2 }}>
+            <Typography variant="h5" sx={{ fontWeight: 500, color: '#8a8070', mb: 2 }}>
               Code Life — A Programmer's 20-Year Journey
             </Typography>
-            <Typography variant="body1" sx={{ color: '#6b6560', maxWidth: 560, mx: 'auto', lineHeight: 1.7 }}>
+            <Typography variant="body1" sx={{ color: '#8a8070', maxWidth: 560, mx: 'auto', lineHeight: 1.7 }}>
               一个程序员关于代码、人生与技术变迁的诚实流水账
               <Box component="span" sx={{ display: 'block', fontStyle: 'italic', mt: 0.5 }}>
                 An engineer's honest account spanning Huawei, Alibaba, and beyond
@@ -778,15 +778,15 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           </Paper>
 
           {/* Language Tabs */}
-          <Paper elevation={1} sx={{ mb: 4, borderRadius: 2, border: '1px solid #edeae4', overflow: 'hidden' }}>
+          <Paper elevation={1} sx={{ mb: 4, borderRadius: 2, border: '1px solid #2a3830', overflow: 'hidden' }}>
             <Tabs
               value={langTab}
               onChange={(_e, v) => setLangTab(v)}
               sx={{
-                borderBottom: '1px solid #edeae4',
+                borderBottom: '1px solid #2a3830',
                 '& .MuiTab-root': { fontWeight: 600, fontSize: '0.95rem', textTransform: 'none', py: 2 },
-                '& .MuiTabs-indicator': { backgroundColor: '#c07844', height: 3 },
-                '& .Mui-selected': { color: '#c07844 !important' },
+                '& .MuiTabs-indicator': { backgroundColor: '#b85c38', height: 3 },
+                '& .Mui-selected': { color: '#b85c38 !important' },
               }}
             >
               <Tab icon={<TranslateIcon sx={{ fontSize: 18 }} />} iconPosition="start" label="中文 Chinese" />
@@ -807,16 +807,16 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
               sx={{
                 mb: 4,
                 borderRadius: 3,
-                border: '1px solid #edeae4',
+                border: '1px solid #2a3830',
                 overflow: 'hidden',
               }}
             >
               {/* Chapter header */}
-              <Box sx={{ px: 4, py: 2.5, background: '#faf6f2', borderBottom: '1px solid #edeae4', display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Box sx={{ width: 32, height: 32, borderRadius: '50%', bgcolor: 'rgba(192, 120, 68, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Typography sx={{ fontSize: '0.8rem', fontWeight: 700, color: '#c07844' }}>{idx + 1}</Typography>
+              <Box sx={{ px: 4, py: 2.5, background: '#182420', borderBottom: '1px solid #2a3830', display: 'flex', alignItems: 'center', gap: 2 }}>
+                <Box sx={{ width: 32, height: 32, borderRadius: '50%', bgcolor: 'rgba(184, 92, 56, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Typography sx={{ fontSize: '0.8rem', fontWeight: 700, color: '#b85c38' }}>{idx + 1}</Typography>
                 </Box>
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#1a1918', fontSize: '1rem' }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#e8e0d0', fontSize: '1rem' }}>
                   {chapter.title}
                 </Typography>
               </Box>
@@ -825,25 +825,25 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                 {(langTab === 0 || langTab === 2) && (
                   <Box sx={{ mb: langTab === 2 ? 3 : 0 }}>
                     {langTab === 2 && (
-                      <Chip label="中文" size="small" sx={{ mb: 2, bgcolor: 'rgba(192, 120, 68, 0.1)', color: '#c07844', fontWeight: 600 }} />
+                      <Chip label="中文" size="small" sx={{ mb: 2, bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#b85c38', fontWeight: 600 }} />
                     )}
                     <Typography
                       variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#2d2926', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
+                      sx={{ lineHeight: 1.9, color: '#e8e0d0', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
                     >
                       {chapter.zh}
                     </Typography>
                   </Box>
                 )}
-                {langTab === 2 && <Divider sx={{ my: 3, borderColor: '#edeae4' }} />}
+                {langTab === 2 && <Divider sx={{ my: 3, borderColor: '#2a3830' }} />}
                 {(langTab === 1 || langTab === 2) && (
                   <Box>
                     {langTab === 2 && (
-                      <Chip label="English" size="small" sx={{ mb: 2, bgcolor: 'rgba(192, 120, 68, 0.08)', color: '#a0622e', fontWeight: 600 }} />
+                      <Chip label="English" size="small" sx={{ mb: 2, bgcolor: 'rgba(184, 92, 56, 0.08)', color: '#d4795a', fontWeight: 600 }} />
                     )}
                     <Typography
                       variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#2d2926', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
+                      sx={{ lineHeight: 1.9, color: '#e8e0d0', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
                     >
                       {chapter.en}
                     </Typography>
@@ -878,7 +878,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: '#fafaf7',
+        background: '#0e1412',
       }}
     >
       <Container maxWidth="md">
@@ -890,7 +890,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             sx={{
               color: 'primary.main',
               '&:hover': {
-                backgroundColor: 'rgba(192, 120, 68, 0.08)',
+                backgroundColor: 'rgba(184, 92, 56, 0.08)',
               }
             }}
           >
@@ -905,7 +905,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             component="h1"
             sx={{
               mb: 2,
-              color: '#c07844',
+              color: '#b85c38',
               fontWeight: 700,
             }}
           >
@@ -953,7 +953,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           elevation={3}
           sx={{
             p: 6,
-            backgroundColor: 'white',
+            backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 4,
             border: `2px solid ${story.color}20`,
@@ -978,7 +978,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           elevation={2}
           sx={{
             p: 4,
-            backgroundColor: 'white',
+            backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 4,
             border: `1px solid ${story.color}15`,
@@ -1038,7 +1038,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           elevation={2}
           sx={{
             p: 4,
-            backgroundColor: 'white',
+            backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 4,
             border: `1px solid ${story.color}15`,
@@ -1098,7 +1098,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           elevation={2}
           sx={{
             p: 4,
-            backgroundColor: 'white',
+            backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 6,
             border: `1px solid ${story.color}15`,

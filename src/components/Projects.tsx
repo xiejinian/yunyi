@@ -137,7 +137,7 @@ const Projects = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: '#fafaf7',
+        background: '#0e1412',
       }}
     >
       <Container>
@@ -170,7 +170,7 @@ const Projects = () => {
                   transition={{ duration: 0.3 }}
                   sx={{
                     p: 0,
-                    background: '#ffffff',
+                    background: '#141c18',
                     backdropFilter: 'blur(20px)',
                     borderRadius: 2,
                     border: `2px solid ${project.logoColor}20`,
@@ -278,8 +278,8 @@ const Projects = () => {
                           sx={{ 
                             p: 3,
                             borderRadius: 1,
-                            background: '#fafaf7',
-                            border: '1px solid rgba(37, 99, 235, 0.15)',
+                            background: '#182420',
+                            border: '1px solid rgba(201, 168, 76, 0.15)',
                           }}
                         >
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>

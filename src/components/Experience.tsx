@@ -154,7 +154,7 @@ const Experience = () => {
       sx={{
         minHeight: '100vh',
         py: 12,
-        background: '#fafaf7',
+        background: '#0e1412',
       }}
     >
       <Container>
@@ -194,7 +194,7 @@ const Experience = () => {
                     elevation={3}
                     sx={{
                       p: 4,
-                      backgroundColor: 'white',
+                      backgroundColor: '#141c18',
                       borderRadius: 2,
                       position: 'relative',
                       overflow: 'hidden',
