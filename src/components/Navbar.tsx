@@ -1,18 +1,69 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, useTheme, useMediaQuery, Box } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useTheme,
+  useMediaQuery,
+  Box,
+  Stack,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import TranslateIcon from '@mui/icons-material/Translate';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const { language, toggleLanguage } = useLanguage();
+  const isZh = language === 'zh';
 
-  const menuItems = ['About', 'Experience', 'MyStory', 'Projects', 'Skills', 'Contact'];
+  const menuItems = [
+    { label: isZh ? '关于我' : 'About', path: '/about' },
+    { label: isZh ? '经历' : 'Experience', path: '/experience' },
+    { label: isZh ? '我的故事' : 'My Story', path: '/mystory' },
+    { label: isZh ? '项目' : 'Projects', path: '/projects' },
+    { label: isZh ? '技能' : 'Skills', path: '/skills' },
+    { label: isZh ? '联系' : 'Contact', path: '/contact' },
+  ];
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const languageButton = (
+    <Button
+      onClick={toggleLanguage}
+      startIcon={<TranslateIcon sx={{ fontSize: 18 }} />}
+      sx={{
+        ml: 1,
+        px: 1.5,
+        py: 0.75,
+        minWidth: 'auto',
+        borderRadius: '2px',
+        border: '1px solid #2a3830',
+        color: '#c9a84c',
+        fontWeight: 700,
+        fontSize: '0.78rem',
+        letterSpacing: '0.08em',
+        textTransform: 'none',
+        '&:hover': {
+          borderColor: '#c9a84c',
+          backgroundColor: 'rgba(201, 168, 76, 0.06)',
+        },
+      }}
+    >
+      {isZh ? 'EN' : '中'}
+    </Button>
+  );
 
   return (
     <>
@@ -26,7 +77,6 @@ const Navbar = () => {
           backgroundImage: 'none',
         }}
       >
-        {/* Decorative precision line — 0.5px copper accent at very top */}
         <Box
           sx={{
             position: 'absolute',
@@ -34,11 +84,11 @@ const Navbar = () => {
             left: 0,
             right: 0,
             height: '1px',
-            background: 'linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.5) 30%, rgba(201,168,76,0.7) 50%, rgba(201,168,76,0.5) 70%, transparent 100%)',
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.5) 30%, rgba(201,168,76,0.7) 50%, rgba(201,168,76,0.5) 70%, transparent 100%)',
           }}
         />
         <Toolbar sx={{ py: 0.75 }}>
-          {/* Logo / Brand */}
           <Typography
             variant="h6"
             component={Link}
@@ -62,25 +112,28 @@ const Navbar = () => {
               },
             }}
           >
-            xiejinian
+            {isZh ? 'xiejinian / 谢记年' : 'xiejinian'}
           </Typography>
 
           {isMobile ? (
-            <IconButton
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ color: '#c9a84c' }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <Stack direction="row" spacing={1} alignItems="center">
+              {languageButton}
+              <IconButton
+                aria-label={isZh ? '打开导航' : 'open drawer'}
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ color: '#c9a84c' }}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Stack>
           ) : (
-            <Box sx={{ display: 'flex', gap: 0.5 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               {menuItems.map((item) => (
                 <Button
-                  key={item}
+                  key={item.path}
                   component={Link}
-                  to={`/${item.toLowerCase()}`}
+                  to={item.path}
                   sx={{
                     ml: 0.5,
                     px: 2,
@@ -90,7 +143,7 @@ const Navbar = () => {
                     fontSize: '0.82rem',
                     textTransform: 'none',
                     letterSpacing: '0.05em',
-                    color: '#8a8070',
+                    color: '#9a9080',
                     position: 'relative',
                     transition: 'all 0.2s ease-in-out',
                     '&::after': {
@@ -113,9 +166,10 @@ const Navbar = () => {
                     },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Button>
               ))}
+              {languageButton}
             </Box>
           )}
         </Toolbar>
@@ -137,7 +191,6 @@ const Navbar = () => {
           },
         }}
       >
-        {/* Drawer header line */}
         <Box
           sx={{
             px: 3,
@@ -153,17 +206,19 @@ const Navbar = () => {
               letterSpacing: '0.12em',
               color: '#4a5a50',
               textTransform: 'uppercase',
+              mb: 1.5,
             }}
           >
-            Navigation
+            {isZh ? '导航' : 'Navigation'}
           </Typography>
+          <Box>{languageButton}</Box>
         </Box>
         <List sx={{ px: 1.5 }}>
           {menuItems.map((item) => (
             <ListItem
-              key={item}
+              key={item.path}
               component={Link}
-              to={`/${item.toLowerCase()}`}
+              to={item.path}
               onClick={handleDrawerToggle}
               sx={{
                 mb: 0.5,
@@ -177,7 +232,7 @@ const Navbar = () => {
               }}
             >
               <ListItemText
-                primary={item}
+                primary={item.label}
                 sx={{
                   '& .MuiListItemText-primary': {
                     fontWeight: 500,
