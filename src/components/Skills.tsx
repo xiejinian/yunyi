@@ -173,8 +173,8 @@ const Skills = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
                 <Avatar sx={{ bgcolor: '#4a8c60', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(74, 140, 96, 0.3)' }}><ManageAccountsIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#2e5c3e', fontWeight: 700, mb: 1 }}>{isZh ? '管理能力' : 'Management Skills'}</Typography>
-                  <Chip label={isZh ? '领导力专长' : 'Leadership Expert'} icon={<EmojiEventsIcon />} sx={{ bgcolor: 'rgba(74, 140, 96, 0.1)', color: '#2e5c3e', fontWeight: 600, border: '1px solid rgba(74, 140, 96, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#72b88a', fontWeight: 700, mb: 1 }}>{isZh ? '管理能力' : 'Management Skills'}</Typography>
+                  <Chip label={isZh ? '领导力专长' : 'Leadership Expert'} icon={<EmojiEventsIcon />} sx={{ bgcolor: 'rgba(74, 140, 96, 0.1)', color: '#72b88a', fontWeight: 600, border: '1px solid rgba(74, 140, 96, 0.2)' }} />
                 </Box>
               </Box>
               <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
@@ -222,8 +222,8 @@ const Skills = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
                 <Avatar sx={{ bgcolor: '#8c3e22', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(140, 62, 34, 0.3)' }}><VerifiedIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#6e2f19', fontWeight: 700, mb: 1 }}>{isZh ? '专业认证' : 'Certifications'}</Typography>
-                  <Chip label={isZh ? '专业认证背景' : 'Professional Certified'} icon={<WorkspacePremiumIcon />} sx={{ bgcolor: 'rgba(140, 62, 34, 0.1)', color: '#6e2f19', fontWeight: 600, border: '1px solid rgba(140, 62, 34, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#d4795a', fontWeight: 700, mb: 1 }}>{isZh ? '专业认证' : 'Certifications'}</Typography>
+                  <Chip label={isZh ? '专业认证背景' : 'Professional Certified'} icon={<WorkspacePremiumIcon />} sx={{ bgcolor: 'rgba(140, 62, 34, 0.1)', color: '#d4795a', fontWeight: 600, border: '1px solid rgba(140, 62, 34, 0.2)' }} />
                 </Box>
               </Box>
               <Box sx={{ position: 'relative', zIndex: 2, flex: 1 }}>
@@ -233,7 +233,7 @@ const Skills = () => {
                       <Box component={motion.div} whileHover={{ scale: 1.02, x: 4 }} sx={{ p: 3, borderRadius: 2, background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.08) 0%, rgba(110, 47, 25, 0.04) 100%)', border: '1px solid rgba(140, 62, 34, 0.2)', transition: 'all 0.3s ease-in-out', position: 'relative', overflow: 'hidden', height: '100%', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, bottom: 0, width: 4, background: 'linear-gradient(180deg, #8c3e22 0%, #6e2f19 100%)' }, '&:hover': { background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.12) 0%, rgba(110, 47, 25, 0.08) 100%)', borderColor: 'rgba(140, 62, 34, 0.3)', boxShadow: '0 8px 25px rgba(140, 62, 34, 0.15)' } }}>
                         <Box sx={{ position: 'relative', zIndex: 2, pl: 2 }}>
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}><EmojiEventsIcon sx={{ color: '#8c3e22', mr: 1, fontSize: 20 }} /><Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>{cert.name}</Typography></Box>
-                          <Typography variant="body2" sx={{ color: '#6e2f19', mb: 2, fontWeight: 600 }}>{cert.issuer} • {cert.year}</Typography>
+                          <Typography variant="body2" sx={{ color: '#d4795a', mb: 2, fontWeight: 600 }}>{cert.issuer} • {cert.year}</Typography>
                           <Chip label={cert.type} size="small" sx={{ bgcolor: '#8c3e22', color: 'white', fontWeight: 600, fontSize: '0.75rem' }} />
                         </Box>
                       </Box>

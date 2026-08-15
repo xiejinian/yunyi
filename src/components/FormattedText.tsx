@@ -82,7 +82,7 @@ const parseBlocks = (text: string): Block[] => {
 
 /** Splits a line on **bold** markers and renders the bold segments as <strong>. */
 const renderInline = (line: string, keyPrefix: string): React.ReactNode[] => {
-  const parts = line.split(/(\*\*[^*]+\*\*)/g).filter((p) => p !== '');
+  const parts = line.split(/(\*\*[\s\S]+?\*\*)/g).filter((p) => p !== '');
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
       return (
