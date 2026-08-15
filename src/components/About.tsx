@@ -33,7 +33,8 @@ const About = () => {
       transition={{ duration: 0.5 }}
       sx={{
         minHeight: '100vh',
-        py: 12,
+        pt: { xs: 10, sm: 11, md: 12 },
+        pb: { xs: 6, sm: 8, md: 12 },
         background: '#0e1412',
       }}
     >
@@ -44,7 +45,7 @@ const About = () => {
 
         <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
           {/* Personal Photo */}
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} md={3} lg={3}>
             <Paper
               component={motion.div}
               whileHover={{ 
@@ -146,7 +147,7 @@ const About = () => {
           </Grid>
 
           {/* Professional Background */}
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={12} md={6} lg={6}>
             <Paper
               component={motion.div}
               whileHover={{ 
@@ -250,7 +251,7 @@ const About = () => {
           </Grid>
 
           {/* Education & Certifications */}
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} md={3} lg={3}>
             <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Paper
                 component={motion.div}
@@ -516,7 +517,7 @@ const About = () => {
               }}
               elevation={3}
               sx={{
-                p: 6,
+                p: { xs: 3, sm: 4, md: 6 },
                 background: '#182420',
                 borderRadius: 3,
                 textAlign: 'center',

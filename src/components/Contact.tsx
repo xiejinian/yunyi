@@ -56,7 +56,8 @@ const Contact = () => {
       transition={{ duration: 0.5 }}
       sx={{
         minHeight: '100vh',
-        py: 12,
+        pt: { xs: 10, sm: 11, md: 12 },
+        pb: { xs: 6, sm: 8, md: 12 },
         background: '#0e1412',
       }}
     >
@@ -175,7 +176,7 @@ const Contact = () => {
         <Paper
           elevation={3}
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: '#182420',
             borderRadius: 3,
             textAlign: 'center',

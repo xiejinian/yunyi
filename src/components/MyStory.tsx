@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Paper, Box, Chip, Divider, Button } from '@mui/material';
+import { Container, Typography, Paper, Box, Chip, Divider, Button, useMediaQuery, useTheme } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +17,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const MyStory = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const storyMilestones = [
     {
@@ -180,7 +182,8 @@ const MyStory = () => {
       transition={{ duration: 0.5 }}
       sx={{
         minHeight: '100vh',
-        py: 12,
+        pt: { xs: 10, sm: 11, md: 12 },
+        pb: { xs: 6, sm: 8, md: 12 },
         background: '#0e1412',
       }}
     >
@@ -225,7 +228,7 @@ const MyStory = () => {
           whileHover={{ scale: 1.005, y: -3, boxShadow: '0 16px 40px -8px rgba(184, 92, 56, 0.2)' }}
           elevation={3}
           sx={{
-            p: 5,
+            p: { xs: 3, sm: 4, md: 5 },
             mb: 6,
             background: '#182420',
             borderRadius: 3,
@@ -294,7 +297,7 @@ const MyStory = () => {
           </Box>
         </Paper>
 
-        <Timeline position="alternate">
+        <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ px: { xs: 0, sm: 1 } }}>
           {storyMilestones.map((milestone, index) => {
             const IconComponent = milestone.icon;
             const categoryColor = getCategoryColor(milestone.type);
@@ -327,7 +330,7 @@ const MyStory = () => {
                     }}
                     elevation={3}
                     sx={{
-                      p: 4,
+                      p: { xs: 3, sm: 4 },
                       backgroundColor: '#141c18',
                       borderRadius: 2,
                       position: 'relative',
@@ -349,7 +352,7 @@ const MyStory = () => {
                     }}
                   >
                     {/* Header */}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 3 }}>
                       <Typography
                         variant="h5"
                         component="h3"
