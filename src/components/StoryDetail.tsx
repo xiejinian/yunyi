@@ -14,6 +14,7 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SchoolIcon from '@mui/icons-material/School';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import TranslateIcon from '@mui/icons-material/Translate';
+import FormattedText from './FormattedText';
 
 interface StoryMilestone {
   id: string;
@@ -773,10 +774,10 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             <Typography variant="h3" sx={{ fontWeight: 700, color: '#e8e0d0', mb: 1, lineHeight: 1.3 }}>
               代码人生
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 500, color: '#8a8070', mb: 2 }}>
+            <Typography variant="h5" sx={{ fontWeight: 500, color: '#9a9080', mb: 2 }}>
               Code Life — A Programmer's 20-Year Journey
             </Typography>
-            <Typography variant="body1" sx={{ color: '#8a8070', maxWidth: 560, mx: 'auto', lineHeight: 1.7 }}>
+            <Typography variant="body1" sx={{ color: '#9a9080', maxWidth: 560, mx: 'auto', lineHeight: 1.7 }}>
               一个程序员关于代码、人生与技术变迁的诚实流水账
               <Box component="span" sx={{ display: 'block', fontStyle: 'italic', mt: 0.5 }}>
                 An engineer's honest account spanning Huawei, Alibaba, and beyond
@@ -838,10 +839,11 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                       <Chip label="中文" size="small" sx={{ mb: 2, bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#b85c38', fontWeight: 600 }} />
                     )}
                     <Typography
+                      component="div"
                       variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#e8e0d0', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
+                      sx={{ lineHeight: 1.9, color: '#e8e0d0', fontSize: '1.05rem' }}
                     >
-                      {chapter.zh}
+                      <FormattedText text={chapter.zh} accentColor="#b85c38" />
                     </Typography>
                   </Box>
                 )}
@@ -852,10 +854,11 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                       <Chip label="English" size="small" sx={{ mb: 2, bgcolor: 'rgba(184, 92, 56, 0.08)', color: '#d4795a', fontWeight: 600 }} />
                     )}
                     <Typography
+                      component="div"
                       variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#e8e0d0', fontSize: '1.05rem', whiteSpace: 'pre-line' }}
+                      sx={{ lineHeight: 1.9, color: '#e8e0d0', fontSize: '1.05rem' }}
                     >
-                      {chapter.en}
+                      <FormattedText text={chapter.en} accentColor="#b85c38" />
                     </Typography>
                   </Box>
                 )}
@@ -971,16 +974,16 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           }}
         >
           <Typography
+            component="div"
             variant="body1"
             sx={{
               lineHeight: 1.8,
               color: 'text.primary',
               fontSize: '1.1rem',
-              whiteSpace: 'pre-line',
               mb: 4
             }}
           >
-            {story.story}
+            <FormattedText text={story.story} accentColor={story.color} />
           </Typography>
         </Paper>
 
@@ -1130,13 +1133,14 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             Long-term Impact
           </Typography>
           <Typography
+            component="div"
             sx={{
               lineHeight: 1.7,
               color: 'text.primary',
               fontSize: '1rem'
             }}
           >
-            {story.impact}
+            <FormattedText text={story.impact} accentColor={story.color} />
           </Typography>
         </Paper>
       </Container>

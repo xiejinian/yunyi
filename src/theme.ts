@@ -22,7 +22,7 @@ let theme = createTheme({
     },
     text: {
       primary: '#e8e0d0',    // Aged parchment white
-      secondary: '#8a8070',  // Faded sepia
+      secondary: '#9a9080',  // Faded sepia — lightened for AA contrast on dark surfaces
     },
     success: {
       main: '#4a8c60',
@@ -44,7 +44,7 @@ let theme = createTheme({
       50: '#e8e0d0',
       100: '#cfc6b4',
       200: '#a89e8c',
-      300: '#8a8070',
+      300: '#9a9080',
       400: '#5e5648',
       500: '#3e3830',
       600: '#2a3830',
@@ -101,13 +101,13 @@ let theme = createTheme({
     body2: {
       fontSize: '0.875rem',
       lineHeight: 1.65,
-      color: '#8a8070',
+      color: '#9a9080',
     },
     caption: {
       fontFamily: '"JetBrains Mono", "Courier Prime", monospace',
       fontSize: '0.75rem',
       letterSpacing: '0.05em',
-      color: '#8a8070',
+      color: '#9a9080',
     },
   },
   shape: {
