@@ -1,7 +1,7 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 // 沧桑·智识 — Industrial dark theme with aged copper & tech precision
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
@@ -289,7 +289,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: '20px',
+          paddingRight: '20px',
+          '@media (min-width:600px)': {
+            paddingLeft: '32px',
+            paddingRight: '32px',
+          },
+        },
+      },
+    },
   },
 });
+
+// Automatically scale down heading font sizes on smaller viewports so that
+// large headings never overflow or crowd out content on mobile devices.
+theme = responsiveFontSizes(theme, { breakpoints: ['sm', 'md', 'lg'], factor: 2.5 });
 
 export default theme;

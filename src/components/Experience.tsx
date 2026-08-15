@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Paper, Box, Chip, Avatar, Stack } from '@mui/material';
+import { Container, Typography, Paper, Box, Chip, Avatar, Stack, useMediaQuery, useTheme } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { motion } from 'framer-motion';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -15,6 +15,8 @@ import SecurityIcon from '@mui/icons-material/Security';
 
 
 const Experience = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const experiences = [
     {
       year: '2023-Present',
@@ -153,7 +155,8 @@ const Experience = () => {
       transition={{ duration: 0.5 }}
       sx={{
         minHeight: '100vh',
-        py: 12,
+        pt: { xs: 10, sm: 11, md: 12 },
+        pb: { xs: 6, sm: 8, md: 12 },
         background: '#0e1412',
       }}
     >
@@ -162,7 +165,7 @@ const Experience = () => {
           Professional Experience
         </Typography>
 
-        <Timeline position="alternate">
+        <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ px: { xs: 0, sm: 1 } }}>
           {experiences.map((exp, index) => {
             const IconComponent = exp.icon;
             return (
@@ -193,7 +196,7 @@ const Experience = () => {
                     }}
                     elevation={3}
                     sx={{
-                      p: 4,
+                      p: { xs: 3, sm: 4 },
                       backgroundColor: '#141c18',
                       borderRadius: 2,
                       position: 'relative',
@@ -215,7 +218,7 @@ const Experience = () => {
                     }}
                   >
                     {/* Company Logo/Avatar */}
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 3, mb: 3 }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: { xs: 2, sm: 3 }, mb: 3 }}>
                       {/* Company Logo */}
                       {exp.company.includes('Ant Group') ? (
                         <Box 
@@ -367,7 +370,7 @@ const Experience = () => {
                         >
                           {exp.title}
                         </Typography>
-                        <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 2 }}>
+                        <Stack direction="row" flexWrap="wrap" useFlexGap alignItems="center" spacing={2} sx={{ mb: 2, rowGap: 1 }}>
                           {exp.companyLink ? (
                             <Typography 
                               component="a"

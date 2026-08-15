@@ -707,10 +707,12 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
 
   if (!story) {
     return (
-      <Container>
-        <Typography variant="h4">Story not found</Typography>
-        <Button onClick={() => navigate('/mystory')}>Back to My Story</Button>
-      </Container>
+      <Box sx={{ minHeight: '100vh', pt: { xs: 12, sm: 13, md: 14 }, pb: 6, background: '#0e1412', textAlign: 'center' }}>
+        <Container>
+          <Typography variant="h4">Story not found</Typography>
+          <Button onClick={() => navigate('/mystory')}>Back to My Story</Button>
+        </Container>
+      </Box>
     );
   }
 
@@ -724,7 +726,12 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        sx={{ minHeight: '100vh', py: 12, background: '#0e1412' }}
+        sx={{
+          minHeight: '100vh',
+          pt: { xs: 10, sm: 11, md: 12 },
+          pb: { xs: 6, sm: 8, md: 12 },
+          background: '#0e1412',
+        }}
       >
         <Container maxWidth="md">
           {/* Back Button */}
@@ -742,7 +749,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           <Paper
             elevation={3}
             sx={{
-              p: 5,
+              p: { xs: 3, sm: 4, md: 5 },
               mb: 4,
               background: '#182420',
               borderRadius: 3,
@@ -782,9 +789,12 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
             <Tabs
               value={langTab}
               onChange={(_e, v) => setLangTab(v)}
+              variant="scrollable"
+              scrollButtons="auto"
+              allowScrollButtonsMobile
               sx={{
                 borderBottom: '1px solid #2a3830',
-                '& .MuiTab-root': { fontWeight: 600, fontSize: '0.95rem', textTransform: 'none', py: 2 },
+                '& .MuiTab-root': { fontWeight: 600, fontSize: { xs: '0.85rem', sm: '0.95rem' }, textTransform: 'none', py: 2, minWidth: 0 },
                 '& .MuiTabs-indicator': { backgroundColor: '#b85c38', height: 3 },
                 '& .Mui-selected': { color: '#b85c38 !important' },
               }}
@@ -812,7 +822,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
               }}
             >
               {/* Chapter header */}
-              <Box sx={{ px: 4, py: 2.5, background: '#182420', borderBottom: '1px solid #2a3830', display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Box sx={{ px: { xs: 2.5, sm: 4 }, py: 2.5, background: '#182420', borderBottom: '1px solid #2a3830', display: 'flex', alignItems: 'center', gap: 2 }}>
                 <Box sx={{ width: 32, height: 32, borderRadius: '50%', bgcolor: 'rgba(184, 92, 56, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Typography sx={{ fontSize: '0.8rem', fontWeight: 700, color: '#b85c38' }}>{idx + 1}</Typography>
                 </Box>
@@ -821,7 +831,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
                 </Typography>
               </Box>
               {/* Chapter content */}
-              <Box sx={{ p: 4 }}>
+              <Box sx={{ p: { xs: 2.5, sm: 4 } }}>
                 {(langTab === 0 || langTab === 2) && (
                   <Box sx={{ mb: langTab === 2 ? 3 : 0 }}>
                     {langTab === 2 && (
@@ -877,7 +887,8 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
       transition={{ duration: 0.5 }}
       sx={{
         minHeight: '100vh',
-        py: 12,
+        pt: { xs: 10, sm: 11, md: 12 },
+        pb: { xs: 6, sm: 8, md: 12 },
         background: '#0e1412',
       }}
     >
@@ -952,7 +963,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           whileHover={{ y: -5, boxShadow: `0 20px 40px -5px ${story.color}25` }}
           elevation={3}
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 4,
@@ -977,7 +988,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
         <Paper
           elevation={2}
           sx={{
-            p: 4,
+            p: { xs: 3, sm: 4 },
             backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 4,
@@ -1037,7 +1048,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
         <Paper
           elevation={2}
           sx={{
-            p: 4,
+            p: { xs: 3, sm: 4 },
             backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 4,
@@ -1097,7 +1108,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
         <Paper
           elevation={2}
           sx={{
-            p: 4,
+            p: { xs: 3, sm: 4 },
             backgroundColor: '#141c18',
             borderRadius: 2,
             mb: 6,

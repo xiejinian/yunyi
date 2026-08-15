@@ -136,7 +136,8 @@ const Projects = () => {
       transition={{ duration: 0.5 }}
       sx={{
         minHeight: '100vh',
-        py: 12,
+        pt: { xs: 10, sm: 11, md: 12 },
+        pb: { xs: 6, sm: 8, md: 12 },
         background: '#0e1412',
       }}
     >
@@ -187,21 +188,21 @@ const Projects = () => {
                     },
                   }}
                 >
-                  <CardContent sx={{ p: 5, position: 'relative', zIndex: 2 }}>
+                  <CardContent sx={{ p: { xs: 3, sm: 4, md: 5 }, position: 'relative', zIndex: 2 }}>
                     {/* Project Header */}
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 3, mb: 4 }}>
+                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'flex-start', sm: 'flex-start' }, gap: { xs: 2, sm: 3 }, mb: 4 }}>
                       <Avatar
                         sx={{
                           bgcolor: project.logoColor,
-                          width: 80,
-                          height: 80,
+                          width: { xs: 64, sm: 80 },
+                          height: { xs: 64, sm: 80 },
                           boxShadow: `0 8px 25px ${project.logoColor}40`,
                         }}
                       >
-                        <IconComponent sx={{ fontSize: 40, color: 'white' }} />
+                        <IconComponent sx={{ fontSize: { xs: 32, sm: 40 }, color: 'white' }} />
                       </Avatar>
-                      <Box sx={{ flex: 1 }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
+                      <Box sx={{ flex: 1, minWidth: 0 }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: 1, mb: 2 }}>
                           <Typography 
                             variant="h4" 
                             sx={{ 
@@ -223,7 +224,7 @@ const Projects = () => {
                             }}
                           />
                         </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 2 }}>
                           <Typography variant="h6" sx={{ color: 'text.primary', fontWeight: 600 }}>
                             {project.company}
                           </Typography>
@@ -242,7 +243,7 @@ const Projects = () => {
                           sx={{ 
                             lineHeight: 1.7,
                             color: 'text.primary',
-                            fontSize: '1.1rem'
+                            fontSize: { xs: '1rem', sm: '1.1rem' }
                           }}
                         >
                           {project.description}
