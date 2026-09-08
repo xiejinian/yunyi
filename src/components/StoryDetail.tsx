@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Typography, Paper, Box, Chip, Button, Tab, Tabs, Divider } from '@mui/material';
-import { motion } from 'framer-motion';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import { Box, Typography } from '@mui/material';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import BusinessIcon from '@mui/icons-material/Business';
 import CodeIcon from '@mui/icons-material/Code';
@@ -13,8 +10,18 @@ import GroupIcon from '@mui/icons-material/Group';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SchoolIcon from '@mui/icons-material/School';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import TranslateIcon from '@mui/icons-material/Translate';
 import FormattedText from './FormattedText';
+import {
+  PageShell,
+  PageTitle,
+  SectionTitle,
+  NumberedList,
+  TextLink,
+  ACCENT,
+  INK,
+  MUTED,
+  displaySerif,
+} from './editorial';
 
 interface StoryMilestone {
   id: string;
@@ -708,443 +715,151 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
 
   if (!story) {
     return (
-      <Box sx={{ minHeight: '100vh', pt: { xs: 12, sm: 13, md: 14 }, pb: 6, background: '#F6F1E7', textAlign: 'center' }}>
-        <Container>
-          <Typography variant="h4">Story not found</Typography>
-          <Button onClick={() => navigate('/mystory')}>Back to My Story</Button>
-        </Container>
-      </Box>
+      <PageShell>
+        <PageTitle>Story not found</PageTitle>
+        <Box sx={{ textAlign: 'center' }}>
+          <TextLink onClick={() => navigate('/mystory')}>Back to My Story</TextLink>
+        </Box>
+      </PageShell>
     );
   }
 
-  const IconComponent = story.icon;
+  const langLabels = ['中文', 'English', '双语 Bilingual'];
 
-  // Biography special rendering
   if (story.isBiography) {
     return (
-      <Box
-        component={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        sx={{
-          minHeight: '100vh',
-          pt: { xs: 10, sm: 11, md: 12 },
-          pb: { xs: 6, sm: 8, md: 12 },
-          background: '#F6F1E7',
-        }}
-      >
-        <Container maxWidth="md">
-          {/* Back Button */}
-          <Box sx={{ mb: 4 }}>
-            <Button
-              startIcon={<ArrowBackIcon />}
-              onClick={() => navigate('/mystory')}
-              sx={{ color: 'primary.main', '&:hover': { backgroundColor: 'rgba(196, 90, 56, 0.08)' } }}
-            >
-              Back to My Story
-            </Button>
+      <PageShell maxWidth={720}>
+        <Box sx={{ mb: 4 }}>
+          <TextLink onClick={() => navigate('/mystory')}>← Back to My Story</TextLink>
+        </Box>
+        <Typography sx={{ color: ACCENT, textAlign: 'center', letterSpacing: '0.04em', mb: 1.5 }}>
+          2001–2023 · Full Biography
+        </Typography>
+        <Typography
+          component="h1"
+          sx={{
+            fontFamily: displaySerif,
+            fontWeight: 500,
+            fontSize: { xs: '2rem', md: '2.5rem' },
+            color: INK,
+            textAlign: 'center',
+            mb: 0.75,
+          }}
+        >
+          代码人生
+        </Typography>
+        <Typography sx={{ color: MUTED, textAlign: 'center', mb: 2, fontSize: '1.1rem' }}>
+          Code Life — A Programmer's 20-Year Journey
+        </Typography>
+        <Typography sx={{ color: MUTED, textAlign: 'center', maxWidth: 520, mx: 'auto', mb: 5, lineHeight: 1.8 }}>
+          一个程序员关于代码、人生与技术变迁的诚实流水账
+          <Box component="span" sx={{ display: 'block', fontStyle: 'italic', mt: 0.5 }}>
+            An engineer's honest account spanning Huawei, Alibaba, and beyond
           </Box>
+        </Typography>
 
-          {/* Biography Header */}
-          <Paper
-            elevation={3}
-            sx={{
-              p: { xs: 3, sm: 4, md: 5 },
-              mb: 4,
-              background: '#F3EDE2',
-              borderRadius: 3,
-              border: '1px solid rgba(196, 90, 56, 0.2)',
-              position: 'relative',
-              overflow: 'hidden',
-              textAlign: 'center',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 0, left: 0, right: 0,
-                height: 4,
-                background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)',
-              },
-            }}
-          >
-            <Box sx={{ width: 80, height: 80, borderRadius: '50%', bgcolor: 'rgba(196, 90, 56, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 3, border: '2px solid rgba(196, 90, 56, 0.2)' }}>
-              <MenuBookIcon sx={{ fontSize: 40, color: '#C45A38' }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2.5, mb: 7 }}>
+          {langLabels.map((label, index) => (
+            <Box
+              key={label}
+              component="button"
+              onClick={() => setLangTab(index)}
+              sx={{
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+                font: 'inherit',
+                color: langTab === index ? ACCENT : MUTED,
+                '&:hover': { color: ACCENT },
+              }}
+            >
+              {label}
             </Box>
-            <Chip label="2001–2023 · Full Biography" sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 700, mb: 2, border: '1px solid rgba(196, 90, 56, 0.2)' }} />
-            <Typography variant="h3" sx={{ fontWeight: 700, color: '#2F2C28', mb: 1, lineHeight: 1.3 }}>
-              代码人生
-            </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 500, color: '#6F675E', mb: 2 }}>
-              Code Life — A Programmer's 20-Year Journey
-            </Typography>
-            <Typography variant="body1" sx={{ color: '#6F675E', maxWidth: 560, mx: 'auto', lineHeight: 1.7 }}>
-              一个程序员关于代码、人生与技术变迁的诚实流水账
-              <Box component="span" sx={{ display: 'block', fontStyle: 'italic', mt: 0.5 }}>
-                An engineer's honest account spanning Huawei, Alibaba, and beyond
-              </Box>
-            </Typography>
-          </Paper>
-
-          {/* Language Tabs */}
-          <Paper elevation={1} sx={{ mb: 4, borderRadius: 2, border: '1px solid #E6DCCB', overflow: 'hidden' }}>
-            <Tabs
-              value={langTab}
-              onChange={(_e, v) => setLangTab(v)}
-              variant="scrollable"
-              scrollButtons="auto"
-              allowScrollButtonsMobile
-              sx={{
-                borderBottom: '1px solid #E6DCCB',
-                '& .MuiTab-root': { fontWeight: 600, fontSize: { xs: '0.85rem', sm: '0.95rem' }, textTransform: 'none', py: 2, minWidth: 0 },
-                '& .MuiTabs-indicator': { backgroundColor: '#C45A38', height: 3 },
-                '& .Mui-selected': { color: '#C45A38 !important' },
-              }}
-            >
-              <Tab icon={<TranslateIcon sx={{ fontSize: 18 }} />} iconPosition="start" label="中文 Chinese" />
-              <Tab icon={<TranslateIcon sx={{ fontSize: 18 }} />} iconPosition="start" label="English" />
-              <Tab label="双语 Bilingual" />
-            </Tabs>
-          </Paper>
-
-          {/* Biography Chapters */}
-          {biographyChapters.map((chapter, idx) => (
-            <Paper
-              key={idx}
-              elevation={2}
-              component={motion.div}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              sx={{
-                mb: 4,
-                borderRadius: 3,
-                border: '1px solid #E6DCCB',
-                overflow: 'hidden',
-              }}
-            >
-              {/* Chapter header */}
-              <Box sx={{ px: { xs: 2.5, sm: 4 }, py: 2.5, background: '#F3EDE2', borderBottom: '1px solid #E6DCCB', display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Box sx={{ width: 32, height: 32, borderRadius: '50%', bgcolor: 'rgba(196, 90, 56, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Typography sx={{ fontSize: '0.8rem', fontWeight: 700, color: '#C45A38' }}>{idx + 1}</Typography>
-                </Box>
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#2F2C28', fontSize: '1rem' }}>
-                  {chapter.title}
-                </Typography>
-              </Box>
-              {/* Chapter content */}
-              <Box sx={{ p: { xs: 2.5, sm: 4 } }}>
-                {(langTab === 0 || langTab === 2) && (
-                  <Box sx={{ mb: langTab === 2 ? 3 : 0 }}>
-                    {langTab === 2 && (
-                      <Chip label="中文" size="small" sx={{ mb: 2, bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 600 }} />
-                    )}
-                    <Typography
-                      component="div"
-                      variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#2F2C28', fontSize: '1.05rem' }}
-                    >
-                      <FormattedText text={chapter.zh} accentColor="#C45A38" />
-                    </Typography>
-                  </Box>
-                )}
-                {langTab === 2 && <Divider sx={{ my: 3, borderColor: '#E6DCCB' }} />}
-                {(langTab === 1 || langTab === 2) && (
-                  <Box>
-                    {langTab === 2 && (
-                      <Chip label="English" size="small" sx={{ mb: 2, bgcolor: 'rgba(196, 90, 56, 0.08)', color: '#C45A38', fontWeight: 600 }} />
-                    )}
-                    <Typography
-                      component="div"
-                      variant="body1"
-                      sx={{ lineHeight: 1.9, color: '#2F2C28', fontSize: '1.05rem' }}
-                    >
-                      <FormattedText text={chapter.en} accentColor="#C45A38" />
-                    </Typography>
-                  </Box>
-                )}
-              </Box>
-            </Paper>
           ))}
+        </Box>
 
-          {/* Back button at bottom */}
-          <Box sx={{ textAlign: 'center', mt: 6 }}>
-            <Button
-              variant="outlined"
-              startIcon={<ArrowBackIcon />}
-              onClick={() => navigate('/mystory')}
-              sx={{ px: 4 }}
-            >
-              Back to My Story
-            </Button>
+        {biographyChapters.map((chapter, idx) => (
+          <Box key={chapter.title} sx={{ mb: 7 }}>
+            <Typography sx={{ color: ACCENT, mb: 1.5, letterSpacing: '0.04em' }}>
+              <Box component="sup" sx={{ fontFamily: displaySerif, fontSize: '0.75rem', mr: 0.75 }}>
+                {idx + 1}
+              </Box>
+              {chapter.title}
+            </Typography>
+            {(langTab === 0 || langTab === 2) && (
+              <Box sx={{ mb: langTab === 2 ? 3 : 0 }}>
+                {langTab === 2 && (
+                  <Typography sx={{ color: ACCENT, mb: 1.5, fontSize: '0.9rem' }}>中文</Typography>
+                )}
+                <Box sx={{ lineHeight: 1.95, color: INK, fontSize: '1.05rem' }}>
+                  <FormattedText text={chapter.zh} accentColor={ACCENT} />
+                </Box>
+              </Box>
+            )}
+            {(langTab === 1 || langTab === 2) && (
+              <Box>
+                {langTab === 2 && (
+                  <Typography sx={{ color: ACCENT, mb: 1.5, fontSize: '0.9rem' }}>English</Typography>
+                )}
+                <Box sx={{ lineHeight: 1.95, color: INK, fontSize: '1.05rem' }}>
+                  <FormattedText text={chapter.en} accentColor={ACCENT} />
+                </Box>
+              </Box>
+            )}
           </Box>
-        </Container>
-      </Box>
+        ))}
+
+        <Box sx={{ textAlign: 'center', mt: 4 }}>
+          <TextLink onClick={() => navigate('/mystory')}>← Back to My Story</TextLink>
+        </Box>
+      </PageShell>
     );
   }
 
   return (
-    <Box
-      component={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      sx={{
-        minHeight: '100vh',
-        pt: { xs: 10, sm: 11, md: 12 },
-        pb: { xs: 6, sm: 8, md: 12 },
-        background: '#F6F1E7',
-      }}
-    >
-      <Container maxWidth="md">
-        {/* Back Button */}
-        <Box sx={{ mb: 4 }}>
-          <Button
-            startIcon={<ArrowBackIcon />}
-            onClick={() => navigate('/mystory')}
-            sx={{
-              color: 'primary.main',
-              '&:hover': {
-                backgroundColor: 'rgba(196, 90, 56, 0.08)',
-              }
-            }}
-          >
-            Back to My Story
-          </Button>
-        </Box>
+    <PageShell maxWidth={720}>
+      <Box sx={{ mb: 4 }}>
+        <TextLink onClick={() => navigate('/mystory')}>← Back to My Story</TextLink>
+      </Box>
+      <Typography sx={{ color: ACCENT, textAlign: 'center', letterSpacing: '0.04em', mb: 1.5 }}>
+        {story.year}
+      </Typography>
+      <Typography
+        component="h1"
+        sx={{
+          fontFamily: displaySerif,
+          fontWeight: 500,
+          fontSize: { xs: '1.6rem', md: '2rem' },
+          color: INK,
+          textAlign: 'center',
+          mb: 1,
+          lineHeight: 1.35,
+        }}
+      >
+        {story.title}
+      </Typography>
+      <Typography sx={{ color: MUTED, textAlign: 'center', mb: 5 }}>{story.category}</Typography>
 
-        {/* Story Header */}
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <Typography
-            variant="h2"
-            component="h1"
-            sx={{
-              mb: 2,
-              color: '#C45A38',
-              fontWeight: 700,
-            }}
-          >
-            {story.year}
-          </Typography>
-          <Typography variant="h4" sx={{ mb: 2, color: 'primary.main', fontWeight: 600 }}>
-            {story.title}
-          </Typography>
-          <Chip
-            label={story.category}
-            size="medium"
-            sx={{
-              bgcolor: `${story.color}15`,
-              color: story.color,
-              fontWeight: 600,
-              fontSize: '1rem',
-              px: 2,
-              py: 1
-            }}
-          />
-        </Box>
+      <Box sx={{ mb: 5, lineHeight: 1.95, fontSize: '1.05rem', color: INK }}>
+        <FormattedText text={story.story} accentColor={ACCENT} />
+      </Box>
 
-        {/* Story Icon */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6 }}>
-          <Box
-            sx={{
-              width: 80,
-              height: 80,
-              borderRadius: '50%',
-              backgroundColor: story.color,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: `0 0 30px ${story.color}40`,
-            }}
-          >
-            <IconComponent sx={{ color: 'white', fontSize: 40 }} />
-          </Box>
-        </Box>
+      <SectionTitle>Key Lessons Learned</SectionTitle>
+      <Box sx={{ mb: 5 }}>
+        <NumberedList items={story.lessons} />
+      </Box>
 
-        {/* Main Story Content */}
-        <Paper
-          component={motion.div}
-          whileHover={{ y: -5, boxShadow: `0 20px 40px -5px ${story.color}25` }}
-          elevation={3}
-          sx={{
-            p: { xs: 3, sm: 4, md: 6 },
-            backgroundColor: '#FBF8F2',
-            borderRadius: 2,
-            mb: 4,
-            border: `2px solid ${story.color}20`,
-          }}
-        >
-          <Typography
-            component="div"
-            variant="body1"
-            sx={{
-              lineHeight: 1.8,
-              color: 'text.primary',
-              fontSize: '1.1rem',
-              mb: 4
-            }}
-          >
-            <FormattedText text={story.story} accentColor={story.color} />
-          </Typography>
-        </Paper>
+      <SectionTitle>Challenges Faced</SectionTitle>
+      <Box sx={{ mb: 5 }}>
+        <NumberedList items={story.challenges} />
+      </Box>
 
-        {/* Lessons Learned */}
-        <Paper
-          elevation={2}
-          sx={{
-            p: { xs: 3, sm: 4 },
-            backgroundColor: '#FBF8F2',
-            borderRadius: 2,
-            mb: 4,
-            border: `1px solid ${story.color}15`,
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{
-              mb: 3,
-              fontWeight: 600,
-              color: story.color,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <AutoStoriesIcon sx={{ fontSize: 24 }} />
-            Key Lessons Learned
-          </Typography>
-          <Box
-            component="ul"
-            sx={{
-              pl: 0,
-              ml: 2,
-              m: 0,
-              listStylePosition: 'outside',
-              '& li': {
-                mb: 2,
-                lineHeight: 1.6,
-                textAlign: 'left',
-                display: 'list-item',
-                listStyleType: 'disc',
-                '&::marker': {
-                  color: story.color,
-                  fontSize: '0.8em'
-                }
-              }
-            }}
-          >
-            {story.lessons.map((lesson, i) => (
-              <Typography
-                component="li"
-                key={i}
-                sx={{
-                  color: 'text.primary',
-                  fontSize: '1rem'
-                }}
-              >
-                {lesson}
-              </Typography>
-            ))}
-          </Box>
-        </Paper>
-
-        {/* Challenges */}
-        <Paper
-          elevation={2}
-          sx={{
-            p: { xs: 3, sm: 4 },
-            backgroundColor: '#FBF8F2',
-            borderRadius: 2,
-            mb: 4,
-            border: `1px solid ${story.color}15`,
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{
-              mb: 3,
-              fontWeight: 600,
-              color: story.color,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <LightbulbIcon sx={{ fontSize: 24 }} />
-            Challenges Faced
-          </Typography>
-          <Box
-            component="ul"
-            sx={{
-              pl: 0,
-              ml: 2,
-              m: 0,
-              listStylePosition: 'outside',
-              '& li': {
-                mb: 2,
-                lineHeight: 1.6,
-                textAlign: 'left',
-                display: 'list-item',
-                listStyleType: 'disc',
-                '&::marker': {
-                  color: story.color,
-                  fontSize: '0.8em'
-                }
-              }
-            }}
-          >
-            {story.challenges.map((challenge, i) => (
-              <Typography
-                component="li"
-                key={i}
-                sx={{
-                  color: 'text.primary',
-                  fontSize: '1rem'
-                }}
-              >
-                {challenge}
-              </Typography>
-            ))}
-          </Box>
-        </Paper>
-
-        {/* Impact */}
-        <Paper
-          elevation={2}
-          sx={{
-            p: { xs: 3, sm: 4 },
-            backgroundColor: '#FBF8F2',
-            borderRadius: 2,
-            mb: 6,
-            border: `1px solid ${story.color}15`,
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{
-              mb: 3,
-              fontWeight: 600,
-              color: story.color,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <TrendingUpIcon sx={{ fontSize: 24 }} />
-            Long-term Impact
-          </Typography>
-          <Typography
-            component="div"
-            sx={{
-              lineHeight: 1.7,
-              color: 'text.primary',
-              fontSize: '1rem'
-            }}
-          >
-            <FormattedText text={story.impact} accentColor={story.color} />
-          </Typography>
-        </Paper>
-      </Container>
-    </Box>
+      <SectionTitle>Long-term Impact</SectionTitle>
+      <Box sx={{ mb: 6, lineHeight: 1.9, color: INK }}>
+        <FormattedText text={story.impact} accentColor={ACCENT} />
+      </Box>
+    </PageShell>
   );
 };
 
