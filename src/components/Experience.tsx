@@ -297,9 +297,9 @@ const Experience = () => {
       ];
 
   return (
-    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#0e1412' }}>
+    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#F6F1E7' }}>
       <Container>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 6, color: 'primary.main' }}>{isZh ? '职业经历' : 'Professional Experience'}</Typography>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 7, color: '#C45A38', fontWeight: 500, textAlign: 'center', letterSpacing: '0.04em' }}>{isZh ? '职业经历' : 'Professional Experience'}</Typography>
 
         <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ px: { xs: 0, sm: 1 } }}>
           {experiences.map((exp, index) => {
@@ -317,7 +317,7 @@ const Experience = () => {
                     component={motion.div}
                     whileHover={{ scale: 1.02, y: -5, boxShadow: `0 15px 35px -5px ${exp.logoColor}25` }}
                     elevation={3}
-                    sx={{ p: { xs: 3, sm: 4 }, backgroundColor: '#141c18', borderRadius: 2, position: 'relative', overflow: 'hidden', border: `2px solid ${exp.logoColor}20`, transition: 'all 0.3s ease-in-out', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${exp.logoColor} 0%, ${exp.logoColor}80 100%)` }, '&:hover': { borderColor: `${exp.logoColor}40` } }}
+                    sx={{ p: { xs: 3, sm: 4 }, backgroundColor: '#FBF8F2', borderRadius: 2, position: 'relative', overflow: 'hidden', border: `2px solid ${exp.logoColor}20`, transition: 'all 0.3s ease-in-out', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${exp.logoColor} 0%, ${exp.logoColor}80 100%)` }, '&:hover': { borderColor: `${exp.logoColor}40` } }}
                   >
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: { xs: 2, sm: 3 }, mb: 3 }}>
                       {exp.company.includes('Ant Group') ? (

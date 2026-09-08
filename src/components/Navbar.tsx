@@ -15,16 +15,16 @@ import {
   Stack,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import TranslateIcon from '@mui/icons-material/Translate';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const { language, toggleLanguage } = useLanguage();
   const isZh = language === 'zh';
+  const location = useLocation();
 
   const menuItems = [
     { label: isZh ? '关于我' : 'About', path: '/about' },
@@ -32,7 +32,7 @@ const Navbar = () => {
     { label: isZh ? '我的故事' : 'My Story', path: '/mystory' },
     { label: isZh ? '项目' : 'Projects', path: '/projects' },
     { label: isZh ? '技能' : 'Skills', path: '/skills' },
-    { label: isZh ? '联系' : 'Contact', path: '/contact' },
+    { label: isZh ? '联系我' : 'Contact', path: '/contact' },
   ];
 
   const handleDrawerToggle = () => {
@@ -42,22 +42,19 @@ const Navbar = () => {
   const languageButton = (
     <Button
       onClick={toggleLanguage}
-      startIcon={<TranslateIcon sx={{ fontSize: 18 }} />}
       sx={{
-        ml: 1,
-        px: 1.5,
-        py: 0.75,
+        ml: 1.5,
+        px: 0.5,
         minWidth: 'auto',
-        borderRadius: '2px',
-        border: '1px solid #2a3830',
-        color: '#c9a84c',
-        fontWeight: 700,
-        fontSize: '0.78rem',
-        letterSpacing: '0.08em',
+        color: '#6F675E',
+        fontWeight: 400,
+        fontSize: '0.92rem',
+        letterSpacing: '0.04em',
         textTransform: 'none',
+        fontFamily: '"Source Serif 4", "Noto Serif SC", Georgia, serif',
         '&:hover': {
-          borderColor: '#c9a84c',
-          backgroundColor: 'rgba(201, 168, 76, 0.06)',
+          backgroundColor: 'transparent',
+          color: '#C45A38',
         },
       }}
     >
@@ -69,26 +66,25 @@ const Navbar = () => {
     <>
       <AppBar
         position="fixed"
+        elevation={0}
         sx={{
-          backgroundColor: 'rgba(14, 20, 18, 0.90)',
-          backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid #2a3830',
+          backgroundColor: 'rgba(246, 241, 231, 0.92)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: 'none',
           boxShadow: 'none',
           backgroundImage: 'none',
         }}
       >
-        <Box
+        <Toolbar
           sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: '1px',
-            background:
-              'linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.5) 30%, rgba(201,168,76,0.7) 50%, rgba(201,168,76,0.5) 70%, transparent 100%)',
+            py: 1.25,
+            px: { xs: 2, md: 5 },
+            minHeight: { xs: 64, md: 72 },
+            maxWidth: 1280,
+            width: '100%',
+            mx: 'auto',
           }}
-        />
-        <Toolbar sx={{ py: 0.75 }}>
+        >
           <Typography
             variant="h6"
             component={Link}
@@ -96,79 +92,60 @@ const Navbar = () => {
             sx={{
               flexGrow: 1,
               textDecoration: 'none',
-              fontFamily: '"JetBrains Mono", "Courier Prime", monospace',
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              letterSpacing: '0.06em',
-              color: '#c9a84c',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 0.75,
-              '&::before': {
-                content: '">"',
-                opacity: 0.5,
-                fontSize: '0.9rem',
-                fontWeight: 400,
-              },
+              fontFamily: '"Playfair Display", "Noto Serif SC", Georgia, serif',
+              fontWeight: 500,
+              fontSize: { xs: '1.15rem', md: '1.28rem' },
+              letterSpacing: '0.02em',
+              color: '#2F2C28',
+              '&:hover': { color: '#C45A38' },
             }}
           >
-            {isZh ? 'xiejinian / 谢记年' : 'xiejinian'}
+            Xie Jinian
           </Typography>
 
           {isMobile ? (
-            <Stack direction="row" spacing={1} alignItems="center">
+            <Stack direction="row" spacing={0.5} alignItems="center">
               {languageButton}
               <IconButton
                 aria-label={isZh ? '打开导航' : 'open drawer'}
-                edge="start"
+                edge="end"
                 onClick={handleDrawerToggle}
-                sx={{ color: '#c9a84c' }}
+                sx={{ color: '#2F2C28' }}
               >
                 <MenuIcon />
               </IconButton>
             </Stack>
           ) : (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              {menuItems.map((item) => (
-                <Button
-                  key={item.path}
-                  component={Link}
-                  to={item.path}
-                  sx={{
-                    ml: 0.5,
-                    px: 2,
-                    py: 0.875,
-                    borderRadius: '2px',
-                    fontWeight: 500,
-                    fontSize: '0.82rem',
-                    textTransform: 'none',
-                    letterSpacing: '0.05em',
-                    color: '#9a9080',
-                    position: 'relative',
-                    transition: 'all 0.2s ease-in-out',
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      bottom: 4,
-                      left: '50%',
-                      transform: 'translateX(-50%) scaleX(0)',
-                      width: '80%',
-                      height: '1px',
-                      background: '#c9a84c',
-                      transition: 'transform 0.2s ease-in-out',
-                    },
-                    '&:hover': {
-                      color: '#c9a84c',
-                      backgroundColor: 'rgba(201, 168, 76, 0.05)',
-                      '&::after': {
-                        transform: 'translateX(-50%) scaleX(1)',
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
+              {menuItems.map((item) => {
+                const active = location.pathname === item.path;
+                return (
+                  <Button
+                    key={item.path}
+                    component={Link}
+                    to={item.path}
+                    sx={{
+                      px: 1.5,
+                      py: 0.5,
+                      minWidth: 0,
+                      borderRadius: 0,
+                      fontWeight: 400,
+                      fontSize: '0.95rem',
+                      textTransform: 'none',
+                      letterSpacing: '0.02em',
+                      color: active ? '#C45A38' : '#4A4540',
+                      fontFamily: '"Source Serif 4", "Noto Serif SC", Georgia, serif',
+                      backgroundColor: 'transparent',
+                      '&:hover': {
+                        color: '#C45A38',
+                        backgroundColor: 'transparent',
                       },
-                    },
-                  }}
-                >
-                  {item.label}
-                </Button>
-              ))}
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                );
+              })}
               {languageButton}
             </Box>
           )}
@@ -184,32 +161,22 @@ const Navbar = () => {
         sx={{
           '& .MuiDrawer-paper': {
             width: 260,
-            background: '#0e1412',
-            backdropFilter: 'blur(20px)',
-            borderLeft: '1px solid #2a3830',
+            background: '#F6F1E7',
+            borderLeft: '1px solid #E6DCCB',
             pt: 2,
           },
         }}
       >
-        <Box
-          sx={{
-            px: 3,
-            pb: 2,
-            borderBottom: '1px solid #2a3830',
-            mb: 1,
-          }}
-        >
+        <Box sx={{ px: 3, pb: 2, mb: 1 }}>
           <Typography
             sx={{
-              fontFamily: '"JetBrains Mono", monospace',
-              fontSize: '0.7rem',
-              letterSpacing: '0.12em',
-              color: '#4a5a50',
-              textTransform: 'uppercase',
+              fontFamily: '"Playfair Display", "Noto Serif SC", Georgia, serif',
+              fontSize: '1.05rem',
+              color: '#2F2C28',
               mb: 1.5,
             }}
           >
-            {isZh ? '导航' : 'Navigation'}
+            Xie Jinian
           </Typography>
           <Box>{languageButton}</Box>
         </Box>
@@ -221,13 +188,12 @@ const Navbar = () => {
               to={item.path}
               onClick={handleDrawerToggle}
               sx={{
-                mb: 0.5,
-                borderRadius: '2px',
-                borderLeft: '2px solid transparent',
-                transition: 'all 0.2s ease-in-out',
+                mb: 0.25,
+                borderRadius: 0,
+                color: location.pathname === item.path ? '#C45A38' : '#4A4540',
                 '&:hover': {
-                  backgroundColor: 'rgba(201, 168, 76, 0.06)',
-                  borderLeftColor: '#c9a84c',
+                  backgroundColor: 'transparent',
+                  color: '#C45A38',
                 },
               }}
             >
@@ -235,10 +201,10 @@ const Navbar = () => {
                 primary={item.label}
                 sx={{
                   '& .MuiListItemText-primary': {
-                    fontWeight: 500,
-                    fontSize: '0.9rem',
-                    letterSpacing: '0.04em',
-                    color: '#cfc6b4',
+                    fontWeight: 400,
+                    fontSize: '1rem',
+                    fontFamily: '"Source Serif 4", "Noto Serif SC", Georgia, serif',
+                    color: 'inherit',
                   },
                 }}
               />

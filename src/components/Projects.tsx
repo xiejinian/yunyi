@@ -34,15 +34,15 @@ const Projects = () => {
       ];
 
   return (
-    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#0e1412' }}>
+    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#F6F1E7' }}>
       <Container>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 6, color: 'primary.main', fontWeight: 700, textAlign: 'center' }}>{isZh ? '代表项目' : 'Notable Projects'}</Typography>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 7, color: '#C45A38', fontWeight: 500, textAlign: 'center', letterSpacing: '0.04em' }}>{isZh ? '代表项目' : 'Notable Projects'}</Typography>
         <Grid container spacing={4}>
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
               <Grid item xs={12} key={index}>
-                <Paper component={motion.div} whileHover={{ scale: 1.01, y: -5, boxShadow: `0 25px 50px -12px ${project.logoColor}25` }} transition={{ duration: 0.3 }} sx={{ p: 0, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: `2px solid ${project.logoColor}20`, overflow: 'hidden', position: 'relative', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 6, background: `linear-gradient(90deg, ${project.logoColor} 0%, ${project.logoColor}80 100%)` } }}>
+                <Paper component={motion.div} whileHover={{ scale: 1.01, y: -5, boxShadow: `0 25px 50px -12px ${project.logoColor}25` }} transition={{ duration: 0.3 }} sx={{ p: 0, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: `2px solid ${project.logoColor}20`, overflow: 'hidden', position: 'relative', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 6, background: `linear-gradient(90deg, ${project.logoColor} 0%, ${project.logoColor}80 100%)` } }}>
                   <CardContent sx={{ p: { xs: 3, sm: 4, md: 5 }, position: 'relative', zIndex: 2 }}>
                     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'flex-start', sm: 'flex-start' }, gap: { xs: 2, sm: 3 }, mb: 4 }}>
                       <Avatar sx={{ bgcolor: project.logoColor, width: { xs: 64, sm: 80 }, height: { xs: 64, sm: 80 }, boxShadow: `0 8px 25px ${project.logoColor}40` }}><IconComponent sx={{ fontSize: { xs: 32, sm: 40 }, color: 'white' }} /></Avatar>
@@ -64,7 +64,7 @@ const Projects = () => {
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}><PersonIcon sx={{ color: project.logoColor, mr: 1, fontSize: 24 }} /><Typography variant="h6" sx={{ fontWeight: 600, color: project.logoColor }}>{isZh ? '角色与职责' : 'Role & Responsibility'}</Typography></Box>
                           <Typography variant="body1" sx={{ lineHeight: 1.6, color: 'text.primary' }}>{project.role}</Typography>
                         </Box>
-                        <Box sx={{ p: 3, borderRadius: 1, background: '#182420', border: '1px solid rgba(201, 168, 76, 0.15)' }}>
+                        <Box sx={{ p: 3, borderRadius: 1, background: '#F3EDE2', border: '1px solid rgba(196, 90, 56, 0.15)' }}>
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}><CodeIcon sx={{ color: 'primary.main', mr: 1, fontSize: 24 }} /><Typography variant="h6" sx={{ fontWeight: 600, color: 'primary.main' }}>{isZh ? '技术栈' : 'Technologies'}</Typography></Box>
                           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                             {project.technologies.map((tech, techIndex) => (

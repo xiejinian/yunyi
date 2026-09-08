@@ -109,17 +109,17 @@ const Skills = () => {
     : ['Taobao E-commerce Platform', 'Mogu Street Fashion Platform', 'DingTalk International', 'Ant Group Low-code Platform', 'Huawei OSS Products', 'Alibaba Middle Platform'];
 
   return (
-    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#0e1412' }}>
+    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#F6F1E7' }}>
       <Container>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 6, color: 'primary.main', fontWeight: 700, textAlign: 'center' }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 7, color: '#C45A38', fontWeight: 500, textAlign: 'center', letterSpacing: '0.04em' }}>
           {isZh ? '技能与专长' : 'Skills & Expertise'}
         </Typography>
 
         <Grid container spacing={4}>
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(184, 92, 56, 0.15)' }} elevation={3} sx={{ p: 4, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(184, 92, 56, 0.1)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}>
+            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(196, 90, 56, 0.15)' }} elevation={3} sx={{ p: 4, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(196, 90, 56, 0.1)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: 'primary.main', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(184, 92, 56, 0.3)' }}><CodeIcon sx={{ fontSize: 32 }} /></Avatar>
+                <Avatar sx={{ bgcolor: 'primary.main', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(196, 90, 56, 0.3)' }}><CodeIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
                   <Typography variant="h4" sx={{ color: 'primary.main', fontWeight: 700, mb: 1 }}>{isZh ? '核心技术能力' : 'Technical Skills'}</Typography>
                   <Chip label={isZh ? '20+ 年经验' : '20+ Years Experience'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'primary.light', color: 'primary.contrastText', fontWeight: 600 }} />
@@ -128,12 +128,12 @@ const Skills = () => {
               <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
                 {technicalSkills.map((skill, index) => (
                   <Grid item xs={12} sm={6} key={index}>
-                    <Box component={motion.div} whileHover={{ scale: 1.02 }} sx={{ p: 2, borderRadius: 1, background: '#0e1412', border: '1px solid rgba(184, 92, 56, 0.1)', transition: 'all 0.3s ease-in-out', '&:hover': { background: '#182420', borderColor: 'rgba(184, 92, 56, 0.2)' } }}>
+                    <Box component={motion.div} whileHover={{ scale: 1.02 }} sx={{ p: 2, borderRadius: 1, background: '#F6F1E7', border: '1px solid rgba(196, 90, 56, 0.1)', transition: 'all 0.3s ease-in-out', '&:hover': { background: '#F3EDE2', borderColor: 'rgba(196, 90, 56, 0.2)' } }}>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
                         <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary' }}>{skill.name}</Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><StarIcon sx={{ color: 'primary.main', fontSize: 16 }} /><Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 600 }}>{skill.level}%</Typography></Box>
                       </Box>
-                      <LinearProgress variant="determinate" value={skill.level} sx={{ height: 10, borderRadius: 5, backgroundColor: 'rgba(184, 92, 56, 0.1)', mb: 1, '& .MuiLinearProgress-bar': { borderRadius: 5, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }} />
+                      <LinearProgress variant="determinate" value={skill.level} sx={{ height: 10, borderRadius: 5, backgroundColor: 'rgba(196, 90, 56, 0.1)', mb: 1, '& .MuiLinearProgress-bar': { borderRadius: 5, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }} />
                       <Chip label={skill.category} size="small" sx={{ bgcolor: 'primary.light', color: 'primary.contrastText', fontWeight: 500, fontSize: '0.75rem' }} />
                     </Box>
                   </Grid>
@@ -143,24 +143,24 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(184, 92, 56, 0.15)' }} elevation={3} sx={{ p: 4, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(184, 92, 56, 0.18)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}>
+            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(196, 90, 56, 0.15)' }} elevation={3} sx={{ p: 4, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(196, 90, 56, 0.18)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: '#b85c38', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(184, 92, 56, 0.3)' }}><SmartToyIcon sx={{ fontSize: 32 }} /></Avatar>
+                <Avatar sx={{ bgcolor: '#C45A38', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(196, 90, 56, 0.3)' }}><SmartToyIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#d4795a', fontWeight: 700, mb: 1 }}>{isZh ? 'AI 能力与应用方向' : 'AI Skills & Application Focus'}</Typography>
-                  <Chip label={isZh ? '当前重点方向' : 'Current Focus'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#d4795a', fontWeight: 600, border: '1px solid rgba(212, 121, 90, 0.25)' }} />
+                  <Typography variant="h4" sx={{ color: '#C45A38', fontWeight: 700, mb: 1 }}>{isZh ? 'AI 能力与应用方向' : 'AI Skills & Application Focus'}</Typography>
+                  <Chip label={isZh ? '当前重点方向' : 'Current Focus'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 600, border: '1px solid rgba(212, 121, 90, 0.25)' }} />
                 </Box>
               </Box>
               <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
                 {aiSkills.map((skill, index) => (
                   <Grid item xs={12} sm={6} key={index}>
-                    <Box component={motion.div} whileHover={{ scale: 1.02 }} sx={{ p: 2, borderRadius: 1, background: 'rgba(184, 92, 56, 0.05)', border: '1px solid rgba(212, 121, 90, 0.15)', transition: 'all 0.3s ease-in-out', '&:hover': { background: 'rgba(184, 92, 56, 0.1)', borderColor: 'rgba(212, 121, 90, 0.25)' } }}>
+                    <Box component={motion.div} whileHover={{ scale: 1.02 }} sx={{ p: 2, borderRadius: 1, background: 'rgba(196, 90, 56, 0.05)', border: '1px solid rgba(212, 121, 90, 0.15)', transition: 'all 0.3s ease-in-out', '&:hover': { background: 'rgba(196, 90, 56, 0.1)', borderColor: 'rgba(212, 121, 90, 0.25)' } }}>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
                         <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary' }}>{skill.name}</Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><StarIcon sx={{ color: '#d4795a', fontSize: 16 }} /><Typography variant="body2" sx={{ color: '#d4795a', fontWeight: 600 }}>{skill.level}%</Typography></Box>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><StarIcon sx={{ color: '#C45A38', fontSize: 16 }} /><Typography variant="body2" sx={{ color: '#C45A38', fontWeight: 600 }}>{skill.level}%</Typography></Box>
                       </Box>
-                      <LinearProgress variant="determinate" value={skill.level} sx={{ height: 10, borderRadius: 5, backgroundColor: 'rgba(184, 92, 56, 0.1)', mb: 1, '& .MuiLinearProgress-bar': { borderRadius: 5, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }} />
-                      <Chip label={skill.category} size="small" sx={{ bgcolor: 'rgba(184, 92, 56, 0.12)', color: '#d4795a', fontWeight: 600, border: '1px solid rgba(212, 121, 90, 0.25)' }} />
+                      <LinearProgress variant="determinate" value={skill.level} sx={{ height: 10, borderRadius: 5, backgroundColor: 'rgba(196, 90, 56, 0.1)', mb: 1, '& .MuiLinearProgress-bar': { borderRadius: 5, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }} />
+                      <Chip label={skill.category} size="small" sx={{ bgcolor: 'rgba(196, 90, 56, 0.12)', color: '#C45A38', fontWeight: 600, border: '1px solid rgba(212, 121, 90, 0.25)' }} />
                     </Box>
                   </Grid>
                 ))}
@@ -169,12 +169,12 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 40px rgba(74, 140, 96, 0.15)' }} elevation={3} sx={{ p: 4, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(74, 140, 96, 0.1)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #4a8c60 0%, #2e5c3e 100%)' } }}>
+            <Paper component={motion.div} whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 40px rgba(74, 140, 96, 0.15)' }} elevation={3} sx={{ p: 4, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(74, 140, 96, 0.1)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #5B7A62 0%, #3E5644 100%)' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: '#4a8c60', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(74, 140, 96, 0.3)' }}><ManageAccountsIcon sx={{ fontSize: 32 }} /></Avatar>
+                <Avatar sx={{ bgcolor: '#5B7A62', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(74, 140, 96, 0.3)' }}><ManageAccountsIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#72b88a', fontWeight: 700, mb: 1 }}>{isZh ? '管理能力' : 'Management Skills'}</Typography>
-                  <Chip label={isZh ? '领导力专长' : 'Leadership Expert'} icon={<EmojiEventsIcon />} sx={{ bgcolor: 'rgba(74, 140, 96, 0.1)', color: '#72b88a', fontWeight: 600, border: '1px solid rgba(74, 140, 96, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#5B7A62', fontWeight: 700, mb: 1 }}>{isZh ? '管理能力' : 'Management Skills'}</Typography>
+                  <Chip label={isZh ? '领导力专长' : 'Leadership Expert'} icon={<EmojiEventsIcon />} sx={{ bgcolor: 'rgba(74, 140, 96, 0.1)', color: '#5B7A62', fontWeight: 600, border: '1px solid rgba(74, 140, 96, 0.2)' }} />
                 </Box>
               </Box>
               <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
@@ -183,9 +183,9 @@ const Skills = () => {
                     <Box component={motion.div} whileHover={{ x: 4 }} sx={{ p: 2, borderRadius: 1, background: 'rgba(74, 140, 96, 0.05)', border: '1px solid rgba(74, 140, 96, 0.1)', transition: 'all 0.3s ease-in-out', height: '100%', '&:hover': { background: 'rgba(74, 140, 96, 0.1)', borderColor: 'rgba(74, 140, 96, 0.2)' } }}>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
                         <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary' }}>{skill.name}</Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><EmojiEventsIcon sx={{ color: '#4a8c60', fontSize: 16 }} /><Typography variant="body2" sx={{ color: '#4a8c60', fontWeight: 600 }}>{skill.level}%</Typography></Box>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><EmojiEventsIcon sx={{ color: '#5B7A62', fontSize: 16 }} /><Typography variant="body2" sx={{ color: '#5B7A62', fontWeight: 600 }}>{skill.level}%</Typography></Box>
                       </Box>
-                      <LinearProgress variant="determinate" value={skill.level} sx={{ height: 8, borderRadius: 4, backgroundColor: 'rgba(74, 140, 96, 0.1)', '& .MuiLinearProgress-bar': { borderRadius: 4, background: 'linear-gradient(90deg, #4a8c60 0%, #2e5c3e 100%)' } }} />
+                      <LinearProgress variant="determinate" value={skill.level} sx={{ height: 8, borderRadius: 4, backgroundColor: 'rgba(74, 140, 96, 0.1)', '& .MuiLinearProgress-bar': { borderRadius: 4, background: 'linear-gradient(90deg, #5B7A62 0%, #3E5644 100%)' } }} />
                     </Box>
                   </Grid>
                 ))}
@@ -194,12 +194,12 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 40px rgba(160, 124, 46, 0.15)' }} elevation={3} sx={{ p: 4, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(160, 124, 46, 0.2)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #a07c2e 0%, #8c6a2e 100%)' } }}>
+            <Paper component={motion.div} whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 40px rgba(160, 124, 46, 0.15)' }} elevation={3} sx={{ p: 4, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(160, 124, 46, 0.2)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #A3472C 0%, #A3472C 100%)' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: '#a07c2e', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(160, 124, 46, 0.3)' }}><LanguageIcon sx={{ fontSize: 32 }} /></Avatar>
+                <Avatar sx={{ bgcolor: '#A3472C', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(160, 124, 46, 0.3)' }}><LanguageIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#8c6a2e', fontWeight: 700, mb: 1 }}>{isZh ? '语言与沟通' : 'Languages & Communication'}</Typography>
-                  <Chip label={isZh ? '多语言职业沟通' : 'Multilingual Professional'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'rgba(160, 124, 46, 0.1)', color: '#8c6a2e', fontWeight: 600, border: '1px solid rgba(160, 124, 46, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#A3472C', fontWeight: 700, mb: 1 }}>{isZh ? '语言与沟通' : 'Languages & Communication'}</Typography>
+                  <Chip label={isZh ? '多语言职业沟通' : 'Multilingual Professional'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'rgba(160, 124, 46, 0.1)', color: '#A3472C', fontWeight: 600, border: '1px solid rgba(160, 124, 46, 0.2)' }} />
                 </Box>
               </Box>
               <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
@@ -207,9 +207,9 @@ const Skills = () => {
                   <Grid item xs={12} sm={6} md={3} key={index}>
                     <Box component={motion.div} whileHover={{ scale: 1.02 }} sx={{ p: 2, borderRadius: 1, background: 'rgba(160, 124, 46, 0.05)', border: '1px solid rgba(160, 124, 46, 0.1)', transition: 'all 0.3s ease-in-out', height: '100%', '&:hover': { background: 'rgba(160, 124, 46, 0.1)', borderColor: 'rgba(160, 124, 46, 0.2)' } }}>
                       <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary', mb: 0.5 }}>{lang.name}</Typography>
-                      <Typography variant="body2" sx={{ color: '#8c6a2e', mb: 0.5, fontWeight: 500 }}>{lang.level}</Typography>
+                      <Typography variant="body2" sx={{ color: '#A3472C', mb: 0.5, fontWeight: 500 }}>{lang.level}</Typography>
                       <Typography variant="caption" sx={{ color: 'text.secondary', mb: 1, display: 'block', fontStyle: 'italic' }}>{lang.description}</Typography>
-                      <LinearProgress variant="determinate" value={lang.proficiency} sx={{ height: 8, borderRadius: 4, backgroundColor: 'rgba(160, 124, 46, 0.1)', '& .MuiLinearProgress-bar': { borderRadius: 4, background: 'linear-gradient(90deg, #a07c2e 0%, #8c6a2e 100%)' } }} />
+                      <LinearProgress variant="determinate" value={lang.proficiency} sx={{ height: 8, borderRadius: 4, backgroundColor: 'rgba(160, 124, 46, 0.1)', '& .MuiLinearProgress-bar': { borderRadius: 4, background: 'linear-gradient(90deg, #A3472C 0%, #A3472C 100%)' } }} />
                     </Box>
                   </Grid>
                 ))}
@@ -218,23 +218,23 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(140, 62, 34, 0.15)' }} elevation={3} sx={{ p: 4, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(140, 62, 34, 0.2)', height: '100%', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #8c3e22 0%, #6e2f19 100%)' } }}>
+            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(140, 62, 34, 0.15)' }} elevation={3} sx={{ p: 4, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(140, 62, 34, 0.2)', height: '100%', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #A3472C 0%, #6e2f19 100%)' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: '#8c3e22', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(140, 62, 34, 0.3)' }}><VerifiedIcon sx={{ fontSize: 32 }} /></Avatar>
+                <Avatar sx={{ bgcolor: '#A3472C', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(140, 62, 34, 0.3)' }}><VerifiedIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#d4795a', fontWeight: 700, mb: 1 }}>{isZh ? '专业认证' : 'Certifications'}</Typography>
-                  <Chip label={isZh ? '专业认证背景' : 'Professional Certified'} icon={<WorkspacePremiumIcon />} sx={{ bgcolor: 'rgba(140, 62, 34, 0.1)', color: '#d4795a', fontWeight: 600, border: '1px solid rgba(140, 62, 34, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#C45A38', fontWeight: 700, mb: 1 }}>{isZh ? '专业认证' : 'Certifications'}</Typography>
+                  <Chip label={isZh ? '专业认证背景' : 'Professional Certified'} icon={<WorkspacePremiumIcon />} sx={{ bgcolor: 'rgba(140, 62, 34, 0.1)', color: '#C45A38', fontWeight: 600, border: '1px solid rgba(140, 62, 34, 0.2)' }} />
                 </Box>
               </Box>
               <Box sx={{ position: 'relative', zIndex: 2, flex: 1 }}>
                 <Grid container spacing={3}>
                   {certifications.map((cert, index) => (
                     <Grid item xs={12} md={6} key={index}>
-                      <Box component={motion.div} whileHover={{ scale: 1.02, x: 4 }} sx={{ p: 3, borderRadius: 2, background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.08) 0%, rgba(110, 47, 25, 0.04) 100%)', border: '1px solid rgba(140, 62, 34, 0.2)', transition: 'all 0.3s ease-in-out', position: 'relative', overflow: 'hidden', height: '100%', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, bottom: 0, width: 4, background: 'linear-gradient(180deg, #8c3e22 0%, #6e2f19 100%)' }, '&:hover': { background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.12) 0%, rgba(110, 47, 25, 0.08) 100%)', borderColor: 'rgba(140, 62, 34, 0.3)', boxShadow: '0 8px 25px rgba(140, 62, 34, 0.15)' } }}>
+                      <Box component={motion.div} whileHover={{ scale: 1.02, x: 4 }} sx={{ p: 3, borderRadius: 2, background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.08) 0%, rgba(110, 47, 25, 0.04) 100%)', border: '1px solid rgba(140, 62, 34, 0.2)', transition: 'all 0.3s ease-in-out', position: 'relative', overflow: 'hidden', height: '100%', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, bottom: 0, width: 4, background: 'linear-gradient(180deg, #A3472C 0%, #6e2f19 100%)' }, '&:hover': { background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.12) 0%, rgba(110, 47, 25, 0.08) 100%)', borderColor: 'rgba(140, 62, 34, 0.3)', boxShadow: '0 8px 25px rgba(140, 62, 34, 0.15)' } }}>
                         <Box sx={{ position: 'relative', zIndex: 2, pl: 2 }}>
-                          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}><EmojiEventsIcon sx={{ color: '#8c3e22', mr: 1, fontSize: 20 }} /><Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>{cert.name}</Typography></Box>
-                          <Typography variant="body2" sx={{ color: '#d4795a', mb: 2, fontWeight: 600 }}>{cert.issuer} • {cert.year}</Typography>
-                          <Chip label={cert.type} size="small" sx={{ bgcolor: '#8c3e22', color: 'white', fontWeight: 600, fontSize: '0.75rem' }} />
+                          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}><EmojiEventsIcon sx={{ color: '#A3472C', mr: 1, fontSize: 20 }} /><Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>{cert.name}</Typography></Box>
+                          <Typography variant="body2" sx={{ color: '#C45A38', mb: 2, fontWeight: 600 }}>{cert.issuer} • {cert.year}</Typography>
+                          <Chip label={cert.type} size="small" sx={{ bgcolor: '#A3472C', color: 'white', fontWeight: 600, fontSize: '0.75rem' }} />
                         </Box>
                       </Box>
                     </Grid>
@@ -245,20 +245,20 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(184, 92, 56, 0.15)' }} elevation={3} sx={{ p: 4, background: '#141c18', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(184, 92, 56, 0.2)', height: '100%', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}>
+            <Paper component={motion.div} whileHover={{ scale: 1.01, y: -3, boxShadow: '0 25px 50px -12px rgba(196, 90, 56, 0.15)' }} elevation={3} sx={{ p: 4, background: '#FBF8F2', backdropFilter: 'blur(20px)', borderRadius: 2, border: '1px solid rgba(196, 90, 56, 0.2)', height: '100%', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: '#b85c38', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(184, 92, 56, 0.3)' }}><BusinessCenterIcon sx={{ fontSize: 32 }} /></Avatar>
+                <Avatar sx={{ bgcolor: '#C45A38', width: 64, height: 64, mr: 3, boxShadow: '0 8px 25px rgba(196, 90, 56, 0.3)' }}><BusinessCenterIcon sx={{ fontSize: 32 }} /></Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#d4795a', fontWeight: 700, mb: 1 }}>{isZh ? '平台经验' : 'Platform Experience'}</Typography>
-                  <Chip label={isZh ? '核心平台经历' : 'Major Platforms'} icon={<StarIcon />} sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#d4795a', fontWeight: 600, border: '1px solid rgba(184, 92, 56, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#C45A38', fontWeight: 700, mb: 1 }}>{isZh ? '平台经验' : 'Platform Experience'}</Typography>
+                  <Chip label={isZh ? '核心平台经历' : 'Major Platforms'} icon={<StarIcon />} sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 600, border: '1px solid rgba(196, 90, 56, 0.2)' }} />
                 </Box>
               </Box>
               <Box sx={{ flex: 1, position: 'relative', zIndex: 2 }}>
                 <Grid container spacing={2}>
                   {platforms.map((platform, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
-                      <Box component={motion.div} whileHover={{ scale: 1.02, x: 4 }} sx={{ p: 2, borderRadius: 1, background: 'linear-gradient(135deg, rgba(184, 92, 56, 0.08) 0%, rgba(212, 121, 90, 0.04) 100%)', border: '1px solid rgba(184, 92, 56, 0.2)', transition: 'all 0.3s ease-in-out', cursor: 'pointer', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, bottom: 0, width: 3, background: 'linear-gradient(180deg, #b85c38 0%, #d4795a 100%)' }, '&:hover': { background: 'linear-gradient(135deg, rgba(184, 92, 56, 0.12) 0%, rgba(212, 121, 90, 0.08) 100%)', borderColor: 'rgba(184, 92, 56, 0.3)', boxShadow: '0 4px 12px rgba(184, 92, 56, 0.15)' } }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center', pl: 2 }}><StarIcon sx={{ color: '#b85c38', mr: 1.5, fontSize: 18 }} /><Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary', flex: 1 }}>{platform}</Typography></Box>
+                      <Box component={motion.div} whileHover={{ scale: 1.02, x: 4 }} sx={{ p: 2, borderRadius: 1, background: 'linear-gradient(135deg, rgba(196, 90, 56, 0.08) 0%, rgba(212, 121, 90, 0.04) 100%)', border: '1px solid rgba(196, 90, 56, 0.2)', transition: 'all 0.3s ease-in-out', cursor: 'pointer', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, bottom: 0, width: 3, background: 'linear-gradient(180deg, #C45A38 0%, #C45A38 100%)' }, '&:hover': { background: 'linear-gradient(135deg, rgba(196, 90, 56, 0.12) 0%, rgba(212, 121, 90, 0.08) 100%)', borderColor: 'rgba(196, 90, 56, 0.3)', boxShadow: '0 4px 12px rgba(196, 90, 56, 0.15)' } }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', pl: 2 }}><StarIcon sx={{ color: '#C45A38', mr: 1.5, fontSize: 18 }} /><Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary', flex: 1 }}>{platform}</Typography></Box>
                       </Box>
                     </Grid>
                   ))}
@@ -268,17 +268,17 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <Paper component={motion.div} whileHover={{ scale: 1.005, y: -2, boxShadow: '0 25px 50px -12px rgba(140, 62, 34, 0.2)' }} elevation={3} sx={{ p: { xs: 3, sm: 4, md: 6 }, background: 'linear-gradient(135deg, rgba(140, 62, 34, 0.9) 0%, rgba(184, 92, 56, 0.8) 100%)', color: 'white', borderRadius: 3, textAlign: 'center', position: 'relative', overflow: 'hidden', border: '1px solid rgba(201, 168, 76, 0.12)', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at 30% 20%, rgba(201,168,76,0.08) 0%, transparent 50%)', zIndex: 1 }, '&::after': { content: '""', position: 'absolute', top: '-50%', right: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 50%)', animation: 'float 20s ease-in-out infinite', zIndex: 1 }, '@keyframes float': { '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' }, '33%': { transform: 'translate(20px, -20px) rotate(120deg)' }, '66%': { transform: 'translate(-15px, 15px) rotate(240deg)' } } }}>
+            <Paper component={motion.div} elevation={0} sx={{ p: { xs: 3, sm: 4, md: 6 }, background: '#FBF8F2', color: '#2F2C28', borderRadius: 2, textAlign: 'center', position: 'relative', overflow: 'hidden', border: '1px solid #E6DCCB' }}>
               <Box sx={{ position: 'relative', zIndex: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 4 }}>
-                  <Avatar sx={{ bgcolor: 'rgba(201, 168, 76, 0.08)', width: 80, height: 80, mr: 3, backdropFilter: 'blur(10px)', border: '2px solid rgba(201, 168, 76, 0.12)' }}><GroupsIcon sx={{ fontSize: 40, color: 'white' }} /></Avatar>
+                  <Avatar sx={{ bgcolor: 'rgba(196, 90, 56, 0.08)', width: 80, height: 80, mr: 3, border: '1px solid #E6DCCB' }}><GroupsIcon sx={{ fontSize: 40, color: '#C45A38' }} /></Avatar>
                   <Box sx={{ textAlign: 'left' }}>
-                    <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>{isZh ? '团队领导经验' : 'Leadership Experience'}</Typography>
-                    <Chip label={isZh ? '团队管理专家' : 'Team Management Expert'} sx={{ bgcolor: 'rgba(201, 168, 76, 0.12)', color: 'white', fontWeight: 600, border: '1px solid rgba(201, 168, 76, 0.16)' }} />
+                    <Typography variant="h4" sx={{ fontWeight: 500, mb: 1, color: '#C45A38' }}>{isZh ? '团队领导经验' : 'Leadership Experience'}</Typography>
+                    <Chip label={isZh ? '团队管理专家' : 'Team Management Expert'} sx={{ bgcolor: 'transparent', color: '#C45A38', fontWeight: 500, border: '1px solid #E6DCCB' }} />
                   </Box>
                 </Box>
-                <Typography variant="h4" sx={{ mb: 3, fontWeight: 700, textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>{isZh ? '带领过 7 到 110 人规模的团队' : 'Led teams ranging from 7 to 110 people'}</Typography>
-                <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.9)', maxWidth: '900px', mx: 'auto', lineHeight: 1.6, fontWeight: 400 }}>
+                <Typography variant="h4" sx={{ mb: 3, fontWeight: 500, color: '#2F2C28' }}>{isZh ? '带领过 7 到 110 人规模的团队' : 'Led teams ranging from 7 to 110 people'}</Typography>
+                <Typography variant="h6" sx={{ color: '#6F675E', maxWidth: '900px', mx: 'auto', lineHeight: 1.6, fontWeight: 400 }}>
                   {isZh
                     ? '具备从创业团队到大型企业组织的跨场景团队管理经验，长期负责敏捷项目管理、技术架构治理与跨团队协同交付。'
                     : 'Experienced in managing diverse teams across startup and large-enterprise environments, with a strong record in agile delivery, technical architecture leadership, and cross-functional execution.'}

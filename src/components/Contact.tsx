@@ -39,9 +39,9 @@ const Contact = () => {
     : ['Technical Advisor', 'Consulting / Advisory', 'Engineering Manager', 'Technical Manager', 'CTO / Tech Leadership'];
 
   return (
-    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#0e1412' }}>
+    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#F6F1E7' }}>
       <Container>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 6, color: 'primary.main' }}>{isZh ? '联系我' : 'Get In Touch'}</Typography>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 7, color: '#C45A38', fontWeight: 500, textAlign: 'center', letterSpacing: '0.04em' }}>{isZh ? '联系我' : 'Get In Touch'}</Typography>
 
         <Grid container spacing={4} sx={{ mb: 6 }}>
           {contactInfo.map((info, index) => {
@@ -61,18 +61,18 @@ const Contact = () => {
           })}
         </Grid>
 
-        <Paper elevation={3} sx={{ p: 4, mb: 6, background: '#141c18', border: '1px solid #2a3830', borderRadius: 3 }}>
+        <Paper elevation={3} sx={{ p: 4, mb: 6, background: '#FBF8F2', border: '1px solid #E6DCCB', borderRadius: 3 }}>
           <Typography variant="h4" gutterBottom sx={{ mb: 4, color: 'primary.main', textAlign: 'center' }}>{isZh ? '专业服务方向' : 'Professional Services'}</Typography>
           <Grid container spacing={4}>
             {services.map((service, index) => (
               <Grid item xs={12} md={4} key={index}>
-                <Box component={motion.div} whileHover={{ y: -4 }} sx={{ p: 3, borderRadius: 2, background: '#141c18', border: '1px solid #2a3830', height: '100%', transition: 'all 0.2s ease-in-out', '&:hover': { background: '#1e2a24', borderColor: 'rgba(184, 92, 56, 0.35)', boxShadow: '0 8px 24px -4px rgba(184, 92, 56, 0.15)' } }}>
+                <Box component={motion.div} whileHover={{ y: -4 }} sx={{ p: 3, borderRadius: 2, background: '#FBF8F2', border: '1px solid #E6DCCB', height: '100%', transition: 'all 0.2s ease-in-out', '&:hover': { background: '#1e2a24', borderColor: 'rgba(196, 90, 56, 0.35)', boxShadow: '0 8px 24px -4px rgba(196, 90, 56, 0.15)' } }}>
                   <Typography variant="h6" gutterBottom color="primary.main" sx={{ fontWeight: 600 }}>{service.title}</Typography>
                   <Typography variant="body1" paragraph sx={{ lineHeight: 1.7 }}>{service.description}</Typography>
                   <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 2, fontWeight: 500 }}>{isZh ? '重点方向：' : 'Key Areas:'}</Typography>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                     {service.areas.map((area, i) => (
-                      <Typography key={i} variant="body2" sx={{ px: 2, py: 0.5, background: 'rgba(184, 92, 56, 0.12)', color: '#d4795a', borderRadius: 2, fontSize: '0.75rem', fontWeight: 500, border: '1px solid rgba(184, 92, 56, 0.25)' }}>{area}</Typography>
+                      <Typography key={i} variant="body2" sx={{ px: 2, py: 0.5, background: 'rgba(196, 90, 56, 0.12)', color: '#C45A38', borderRadius: 2, fontSize: '0.75rem', fontWeight: 500, border: '1px solid rgba(196, 90, 56, 0.25)' }}>{area}</Typography>
                     ))}
                   </Box>
                 </Box>
@@ -81,8 +81,8 @@ const Contact = () => {
           </Grid>
         </Paper>
 
-        <Paper elevation={3} sx={{ p: 4, mb: 6, background: '#141c18', border: '1px solid #2a3830', borderRadius: 3 }}>
-          <Typography variant="h5" gutterBottom sx={{ mb: 3, color: '#c9a84c', textAlign: 'center', fontWeight: 700 }}>{isZh ? '当前开放机会' : 'Currently Open To'}</Typography>
+        <Paper elevation={3} sx={{ p: 4, mb: 6, background: '#FBF8F2', border: '1px solid #E6DCCB', borderRadius: 3 }}>
+          <Typography variant="h5" gutterBottom sx={{ mb: 3, color: '#C45A38', textAlign: 'center', fontWeight: 700 }}>{isZh ? '当前开放机会' : 'Currently Open To'}</Typography>
           <Typography variant="body1" sx={{ textAlign: 'center', color: 'text.secondary', mb: 3, lineHeight: 1.7 }}>
             {isZh
               ? '欢迎联系技术顾问、咨询合作，以及工程 / 技术管理岗位机会，也可交流 AI 产品、平台升级与组织建设相关议题。'
@@ -90,14 +90,14 @@ const Contact = () => {
           </Typography>
           <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap" sx={{ justifyContent: 'center' }}>
             {openTo.map((item) => (
-              <Chip key={item} label={item} sx={{ bgcolor: 'rgba(201,168,76,0.08)', color: '#c9a84c', border: '1px solid rgba(201,168,76,0.2)', fontWeight: 600 }} />
+              <Chip key={item} label={item} sx={{ bgcolor: 'rgba(196,90,56,0.08)', color: '#C45A38', border: '1px solid rgba(196,90,56,0.2)', fontWeight: 600 }} />
             ))}
           </Stack>
         </Paper>
 
-        <Paper elevation={3} sx={{ p: { xs: 3, sm: 4, md: 6 }, background: '#182420', borderRadius: 3, textAlign: 'center', border: '1px solid rgba(184, 92, 56, 0.3)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}>
-          <Typography variant="h4" gutterBottom sx={{ color: '#e8e0d0' }}>{isZh ? '一起合作' : "Let's Work Together"}</Typography>
-          <Typography variant="h6" paragraph sx={{ mb: 4, color: '#9a9080' }}>{isZh ? '欢迎讨论你的下一个项目、AI 转型计划，或技术团队建设需求。' : 'Ready to discuss your next project, AI initiative, or collaboration opportunity?'}</Typography>
+        <Paper elevation={3} sx={{ p: { xs: 3, sm: 4, md: 6 }, background: '#F3EDE2', borderRadius: 3, textAlign: 'center', border: '1px solid rgba(196, 90, 56, 0.3)', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}>
+          <Typography variant="h4" gutterBottom sx={{ color: '#2F2C28' }}>{isZh ? '一起合作' : "Let's Work Together"}</Typography>
+          <Typography variant="h6" paragraph sx={{ mb: 4, color: '#6F675E' }}>{isZh ? '欢迎讨论你的下一个项目、AI 转型计划，或技术团队建设需求。' : 'Ready to discuss your next project, AI initiative, or collaboration opportunity?'}</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
             <Button variant="contained" size="large" href="mailto:yymhxie@gmail.com" sx={{ fontWeight: 600, py: 1.75, px: 4 }} startIcon={<EmailIcon />}>{isZh ? '发送邮件' : 'Send Email'}</Button>
           </Box>
