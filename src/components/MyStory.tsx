@@ -49,7 +49,7 @@ const MyStory = () => {
 
   const getCategoryColor = (type: string) => {
     switch (type) {
-      case 'biography': return '#b85c38';
+      case 'biography': return '#C45A38';
       case 'reflection': return '#8b5cf6';
       case 'career': return '#ff6b35';
       case 'achievement': return '#1677ff';
@@ -63,24 +63,24 @@ const MyStory = () => {
   };
 
   return (
-    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#0e1412' }}>
+    <Box component={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} sx={{ minHeight: '100vh', pt: { xs: 10, sm: 11, md: 12 }, pb: { xs: 6, sm: 8, md: 12 }, background: '#F6F1E7' }}>
       <Container>
         <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 3, color: 'primary.main', fontWeight: 700 }}>{isZh ? '我的故事' : 'My Story'}</Typography>
+          <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 3, color: '#C45A38', fontWeight: 500, letterSpacing: '0.04em' }}>{isZh ? '我的故事' : 'My Story'}</Typography>
           <Typography variant="h6" sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto', lineHeight: 1.6, mb: 4 }}>{isZh ? '二十多年技术旅程中的关键节点、思考与经验记录' : 'Chronicles, inflection points, and lessons from more than 20 years in technology'}</Typography>
           <Divider sx={{ width: 100, mx: 'auto', borderColor: 'primary.main', borderWidth: 2 }} />
         </Box>
 
-        <Paper component={motion.div} whileHover={{ scale: 1.005, y: -3, boxShadow: '0 16px 40px -8px rgba(184, 92, 56, 0.2)' }} elevation={3} sx={{ p: { xs: 3, sm: 4, md: 5 }, mb: 6, background: '#182420', borderRadius: 3, border: '1px solid rgba(184, 92, 56, 0.3)', position: 'relative', overflow: 'hidden', cursor: 'pointer', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }} onClick={() => navigate('/mystory/biography-twenty-years')}>
+        <Paper component={motion.div} whileHover={{ scale: 1.005, y: -3, boxShadow: '0 16px 40px -8px rgba(196, 90, 56, 0.2)' }} elevation={3} sx={{ p: { xs: 3, sm: 4, md: 5 }, mb: 6, background: '#F3EDE2', borderRadius: 3, border: '1px solid rgba(196, 90, 56, 0.3)', position: 'relative', overflow: 'hidden', cursor: 'pointer', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }} onClick={() => navigate('/mystory/biography-twenty-years')}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
-            <Box sx={{ width: 72, height: 72, borderRadius: '50%', bgcolor: 'rgba(184, 92, 56, 0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '2px solid rgba(184, 92, 56, 0.3)' }}><MenuBookIcon sx={{ fontSize: 36, color: '#d4795a' }} /></Box>
+            <Box sx={{ width: 72, height: 72, borderRadius: '50%', bgcolor: 'rgba(196, 90, 56, 0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '2px solid rgba(196, 90, 56, 0.3)' }}><MenuBookIcon sx={{ fontSize: 36, color: '#C45A38' }} /></Box>
             <Box sx={{ flex: 1 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1, flexWrap: 'wrap' }}>
-                <Chip label="2001–2023" size="small" sx={{ bgcolor: 'rgba(184, 92, 56, 0.15)', color: '#d4795a', fontWeight: 700, border: '1px solid rgba(184, 92, 56, 0.3)' }} />
-                <Chip label={isZh ? '完整传记' : 'Full Biography'} size="small" sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#d4795a', fontWeight: 600 }} />
+                <Chip label="2001–2023" size="small" sx={{ bgcolor: 'rgba(196, 90, 56, 0.15)', color: '#C45A38', fontWeight: 700, border: '1px solid rgba(196, 90, 56, 0.3)' }} />
+                <Chip label={isZh ? '完整传记' : 'Full Biography'} size="small" sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 600 }} />
               </Box>
-              <Typography variant="h5" sx={{ fontWeight: 700, color: '#e8e0d0', mb: 1 }}>{isZh ? '代码人生：一个程序员的二十年' : "Code Life — A Programmer's 20-Year Journey"}</Typography>
-              <Typography variant="body1" sx={{ color: '#9a9080', lineHeight: 1.7, maxWidth: 700 }}>{isZh ? '从 VB 到大语言模型，跨越多家公司、两进阿里。一个工程师关于代码、平台、组织与人生选择的真实记录。' : 'From Visual Basic to LLMs, across multiple companies including Huawei and Alibaba. An engineer\'s honest account of code, growth, and technological transformation.'}</Typography>
+              <Typography variant="h5" sx={{ fontWeight: 700, color: '#2F2C28', mb: 1 }}>{isZh ? '代码人生：一个程序员的二十年' : "Code Life — A Programmer's 20-Year Journey"}</Typography>
+              <Typography variant="body1" sx={{ color: '#6F675E', lineHeight: 1.7, maxWidth: 700 }}>{isZh ? '从 VB 到大语言模型，跨越多家公司、两进阿里。一个工程师关于代码、平台、组织与人生选择的真实记录。' : 'From Visual Basic to LLMs, across multiple companies including Huawei and Alibaba. An engineer\'s honest account of code, growth, and technological transformation.'}</Typography>
             </Box>
             <Button variant="contained" endIcon={<ArrowForwardIcon />} sx={{ flexShrink: 0 }}>{isZh ? '阅读全文' : 'Read Full Story'}</Button>
           </Box>
@@ -100,7 +100,7 @@ const MyStory = () => {
                   <TimelineConnector sx={{ bgcolor: categoryColor, opacity: 0.3 }} />
                 </TimelineSeparator>
                 <TimelineContent>
-                  <Paper component={motion.div} whileHover={{ scale: 1.02, y: -5, boxShadow: `0 15px 35px -5px ${categoryColor}25` }} elevation={3} sx={{ p: { xs: 3, sm: 4 }, backgroundColor: '#141c18', borderRadius: 2, position: 'relative', overflow: 'hidden', border: `2px solid ${categoryColor}20`, transition: 'all 0.3s ease-in-out', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${categoryColor} 0%, ${categoryColor}80 100%)` }, '&:hover': { borderColor: `${categoryColor}40` } }}>
+                  <Paper component={motion.div} whileHover={{ scale: 1.02, y: -5, boxShadow: `0 15px 35px -5px ${categoryColor}25` }} elevation={3} sx={{ p: { xs: 3, sm: 4 }, backgroundColor: '#FBF8F2', borderRadius: 2, position: 'relative', overflow: 'hidden', border: `2px solid ${categoryColor}20`, transition: 'all 0.3s ease-in-out', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${categoryColor} 0%, ${categoryColor}80 100%)` }, '&:hover': { borderColor: `${categoryColor}40` } }}>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2, mb: 3 }}>
                       <Typography variant="h5" component="h3" sx={{ color: categoryColor, fontWeight: 700, flex: 1 }}>{milestone.year}</Typography>
                       <Chip label={milestone.category} size="small" sx={{ bgcolor: `${categoryColor}15`, color: categoryColor, fontWeight: 600, border: `1px solid ${categoryColor}30` }} />
@@ -123,7 +123,7 @@ const MyStory = () => {
           })}
         </Timeline>
 
-        <Box sx={{ textAlign: 'center', mt: 8, p: 4, backgroundColor: '#141c18', borderRadius: 2, border: '1px solid #2a3830' }}>
+        <Box sx={{ textAlign: 'center', mt: 8, p: 4, backgroundColor: '#FBF8F2', borderRadius: 2, border: '1px solid #E6DCCB' }}>
           <Typography variant="h6" sx={{ color: 'primary.main', mb: 2, fontWeight: 600 }}>{isZh ? '写给未来的自己，也写给同行者' : 'To My Future Self & Fellow Travelers'}</Typography>
           <Typography sx={{ color: 'text.secondary', lineHeight: 1.6, maxWidth: 600, mx: 'auto' }}>{isZh ? '这些记录不仅是个人经历的整理，也希望能为走在相似道路上的朋友提供一些参照与启发。技术旅程很长，但每一段认真走过的路都算数。' : 'These stories are not just personal records. I hope they also offer perspective and encouragement to others walking similar paths. The technology journey is long, and every thoughtfully lived stage matters.'}</Typography>
         </Box>

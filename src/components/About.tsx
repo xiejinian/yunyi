@@ -57,11 +57,11 @@ const About = () => {
         minHeight: '100vh',
         pt: { xs: 10, sm: 11, md: 12 },
         pb: { xs: 6, sm: 8, md: 12 },
-        background: '#0e1412',
+        background: '#F6F1E7',
       }}
     >
       <Container>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 6, color: 'primary.main' }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 7, color: '#C45A38', fontWeight: 500, textAlign: 'center', letterSpacing: '0.04em' }}>
           {isZh ? '关于我' : 'About Me'}
         </Typography>
 
@@ -69,13 +69,13 @@ const About = () => {
           <Grid item xs={12} md={3} lg={3}>
             <Paper
               component={motion.div}
-              whileHover={{ scale: 1.02, y: -3, boxShadow: '0 16px 40px -8px rgba(184, 92, 56, 0.12)' }}
+              whileHover={{ scale: 1.02, y: -3, boxShadow: '0 16px 40px -8px rgba(196, 90, 56, 0.12)' }}
               elevation={3}
               sx={{
                 p: 4,
-                background: '#141c18',
+                background: '#FBF8F2',
                 borderRadius: 3,
-                border: '1px solid #2a3830',
+                border: '1px solid #E6DCCB',
                 transition: 'all 0.2s ease-in-out',
                 height: '100%',
                 position: 'relative',
@@ -92,7 +92,7 @@ const About = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
+                  background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)',
                 },
               }}
             >
@@ -105,12 +105,10 @@ const About = () => {
                     width: '100%',
                     maxWidth: 200,
                     height: 'auto',
-                    borderRadius: 3,
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+                    borderRadius: 0,
+                    boxShadow: 'none',
                     mb: 3,
-                    border: '3px solid #2a3830',
-                    transition: 'all 0.2s ease-in-out',
-                    '&:hover': { transform: 'scale(1.02)', boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)' },
+                    border: 'none',
                   }}
                 />
                 <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 700, mb: 1 }}>
@@ -144,13 +142,13 @@ const About = () => {
           <Grid item xs={12} md={6} lg={6}>
             <Paper
               component={motion.div}
-              whileHover={{ scale: 1.01, y: -3, boxShadow: '0 16px 40px -8px rgba(184, 92, 56, 0.12)' }}
+              whileHover={{ scale: 1.01, y: -3, boxShadow: '0 16px 40px -8px rgba(196, 90, 56, 0.12)' }}
               elevation={3}
               sx={{
                 p: 4,
-                background: '#141c18',
+                background: '#FBF8F2',
                 borderRadius: 3,
-                border: '1px solid #2a3830',
+                border: '1px solid #E6DCCB',
                 transition: 'all 0.2s ease-in-out',
                 height: '100%',
                 position: 'relative',
@@ -162,12 +160,12 @@ const About = () => {
                   left: 0,
                   right: 0,
                   height: 4,
-                  background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)',
+                  background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)',
                 },
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: 'primary.main', width: 64, height: 64, mr: 3, boxShadow: '0 4px 16px rgba(184, 92, 56, 0.25)' }}>
+                <Avatar sx={{ bgcolor: 'primary.main', width: 64, height: 64, mr: 3, boxShadow: '0 4px 16px rgba(196, 90, 56, 0.25)' }}>
                   <PersonIcon sx={{ fontSize: 32 }} />
                 </Avatar>
                 <Box>
@@ -177,7 +175,7 @@ const About = () => {
                   <Chip
                     label={isZh ? 'CTO · AI 产品与软件架构' : 'CTO · AI Product & Software Architecture'}
                     icon={<BusinessCenterIcon />}
-                    sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#b85c38', fontWeight: 600, border: '1px solid rgba(184, 92, 56, 0.2)' }}
+                    sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 600, border: '1px solid rgba(196, 90, 56, 0.2)' }}
                   />
                 </Box>
               </Box>
@@ -185,12 +183,12 @@ const About = () => {
                 <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, mb: 3, fontSize: '1.1rem', color: 'text.primary' }}>
                   {isZh ? (
                     <>
-                      目前担任 <strong><a href="https://feifan-tech-website.pages.dev/" target="_blank" rel="noopener noreferrer" style={{ color: '#c9a84c', textDecoration: 'none', borderBottom: '1px solid #c9a84c' }}>非凡科技 CTO</a></strong>，
+                      目前担任 <strong><a href="https://feifan-tech-website.pages.dev/" target="_blank" rel="noopener noreferrer" style={{ color: '#C45A38', textDecoration: 'none', borderBottom: '1px solid #C45A38' }}>非凡科技 CTO</a></strong>，
                       带领 10 人研发团队交付企业软件与 AI 驱动产品。我当前的核心关注点是将大语言模型、RAG、Agent Tool-use 与既有业务系统结合，帮助客户真正把 AI 用到流程、知识与产品中。
                     </>
                   ) : (
                     <>
-                      Currently serving as <strong>CTO at <a href="https://feifan-tech-website.pages.dev/" target="_blank" rel="noopener noreferrer" style={{ color: '#c9a84c', textDecoration: 'none', borderBottom: '1px solid #c9a84c' }}>Feifan Tech</a></strong>,
+                      Currently serving as <strong>CTO at <a href="https://feifan-tech-website.pages.dev/" target="_blank" rel="noopener noreferrer" style={{ color: '#C45A38', textDecoration: 'none', borderBottom: '1px solid #C45A38' }}>Feifan Tech</a></strong>,
                       leading a 10-person development team delivering enterprise software and AI-enabled products. My present focus is applying LLMs, RAG, and agent tool-use patterns to real business systems, workflows, and internal knowledge operations.
                     </>
                   )}
@@ -206,12 +204,12 @@ const About = () => {
                     : "As a co-founder of Alibaba's E-commerce Middle Platform, I helped establish foundational platform capabilities for one of the world's largest digital commerce ecosystems. Today, I apply that same platform mindset to AI products, copilots, and enterprise AI transformation."}
                 </Typography>
                 <Box sx={{ mt: 3 }}>
-                  <Typography variant="subtitle2" sx={{ color: '#b85c38', fontWeight: 700, mb: 1.5 }}>
+                  <Typography variant="subtitle2" sx={{ color: '#C45A38', fontWeight: 700, mb: 1.5 }}>
                     {isZh ? '当前关注的角色方向' : 'Roles I am open to'}
                   </Typography>
                   <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
                     {roleTags.map((tag) => (
-                      <Chip key={tag} label={tag} sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#d4795a', border: '1px solid rgba(184, 92, 56, 0.2)', fontWeight: 600 }} />
+                      <Chip key={tag} label={tag} sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', border: '1px solid rgba(196, 90, 56, 0.2)', fontWeight: 600 }} />
                     ))}
                   </Stack>
                 </Box>
@@ -223,18 +221,18 @@ const About = () => {
             <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Paper
                 component={motion.div}
-                whileHover={{ scale: 1.02, y: -2, boxShadow: '0 12px 32px -4px rgba(184, 92, 56, 0.12)' }}
+                whileHover={{ scale: 1.02, y: -2, boxShadow: '0 12px 32px -4px rgba(196, 90, 56, 0.12)' }}
                 elevation={3}
-                sx={{ p: 4, background: '#141c18', borderRadius: 3, border: '1px solid #2a3830', transition: 'all 0.2s ease-in-out', flex: 1, position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #4a8c60 0%, #72b88a 100%)' } }}
+                sx={{ p: 4, background: '#FBF8F2', borderRadius: 3, border: '1px solid #E6DCCB', transition: 'all 0.2s ease-in-out', flex: 1, position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #5B7A62 0%, #5B7A62 100%)' } }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, position: 'relative', zIndex: 2 }}>
-                  <Avatar sx={{ bgcolor: '#4a8c60', width: 56, height: 56, mr: 2, boxShadow: '0 4px 12px rgba(74, 140, 96, 0.2)' }}>
+                  <Avatar sx={{ bgcolor: '#5B7A62', width: 56, height: 56, mr: 2, boxShadow: '0 4px 12px rgba(74, 140, 96, 0.2)' }}>
                     <SchoolIcon sx={{ fontSize: 28 }} />
                   </Avatar>
-                  <Typography variant="h5" sx={{ color: '#4a8c60', fontWeight: 600 }}>{isZh ? '教育背景' : 'Education'}</Typography>
+                  <Typography variant="h5" sx={{ color: '#5B7A62', fontWeight: 600 }}>{isZh ? '教育背景' : 'Education'}</Typography>
                 </Box>
                 <Box sx={{ position: 'relative', zIndex: 2 }}>
-                  <Chip label={isZh ? '2001 届毕业' : '2001 Graduate'} size="small" sx={{ bgcolor: 'rgba(74, 140, 96, 0.08)', color: '#4a8c60', mb: 2, fontWeight: 600 }} />
+                  <Chip label={isZh ? '2001 届毕业' : '2001 Graduate'} size="small" sx={{ bgcolor: 'rgba(74, 140, 96, 0.08)', color: '#5B7A62', mb: 2, fontWeight: 600 }} />
                   <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: 'text.primary' }}>{isZh ? '工学学士' : 'Bachelor of Technology'}</Typography>
                   <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.6, fontWeight: 500 }}>{isZh ? '计算机科学与技术' : 'Computer Science and Technology'}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.5 }}>{isZh ? '中国华侨大学' : 'National Huaqiao University, China'}</Typography>
@@ -243,24 +241,24 @@ const About = () => {
 
               <Paper
                 component={motion.div}
-                whileHover={{ scale: 1.02, y: -2, boxShadow: '0 12px 32px -4px rgba(184, 92, 56, 0.12)' }}
+                whileHover={{ scale: 1.02, y: -2, boxShadow: '0 12px 32px -4px rgba(196, 90, 56, 0.12)' }}
                 elevation={3}
-                sx={{ p: 4, background: '#141c18', borderRadius: 3, border: '1px solid #2a3830', transition: 'all 0.2s ease-in-out', flex: 1, position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}
+                sx={{ p: 4, background: '#FBF8F2', borderRadius: 3, border: '1px solid #E6DCCB', transition: 'all 0.2s ease-in-out', flex: 1, position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, position: 'relative', zIndex: 2 }}>
-                  <Avatar sx={{ bgcolor: '#b85c38', width: 56, height: 56, mr: 2, boxShadow: '0 4px 12px rgba(184, 92, 56, 0.2)' }}>
+                  <Avatar sx={{ bgcolor: '#C45A38', width: 56, height: 56, mr: 2, boxShadow: '0 4px 12px rgba(196, 90, 56, 0.2)' }}>
                     <EmojiEventsIcon sx={{ fontSize: 28 }} />
                   </Avatar>
-                  <Typography variant="h5" sx={{ color: '#b85c38', fontWeight: 600 }}>{isZh ? '认证' : 'Certifications'}</Typography>
+                  <Typography variant="h5" sx={{ color: '#C45A38', fontWeight: 600 }}>{isZh ? '认证' : 'Certifications'}</Typography>
                 </Box>
                 <Box sx={{ position: 'relative', zIndex: 2 }}>
                   {certifications.map((cert, index) => (
-                    <Box key={index} sx={{ mb: index < certifications.length - 1 ? 3 : 0, p: 2, borderRadius: 2, background: '#182420', border: '1px solid rgba(184, 92, 56, 0.1)' }}>
+                    <Box key={index} sx={{ mb: index < certifications.length - 1 ? 3 : 0, p: 2, borderRadius: 2, background: '#F3EDE2', border: '1px solid rgba(196, 90, 56, 0.1)' }}>
                       <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                        <StarIcon sx={{ color: '#b85c38', mr: 1, fontSize: 18 }} />
+                        <StarIcon sx={{ color: '#C45A38', mr: 1, fontSize: 18 }} />
                         <Typography variant="body1" sx={{ fontWeight: 700, lineHeight: 1.5, color: 'text.primary' }}>{cert.name}</Typography>
                       </Box>
-                      <Typography variant="body2" sx={{ color: '#b85c38', fontWeight: 600 }}>{cert.year} • {cert.org}</Typography>
+                      <Typography variant="body2" sx={{ color: '#C45A38', fontWeight: 600 }}>{cert.year} • {cert.org}</Typography>
                     </Box>
                   ))}
                 </Box>
@@ -271,17 +269,17 @@ const About = () => {
           <Grid item xs={12}>
             <Paper
               component={motion.div}
-              whileHover={{ scale: 1.005, y: -2, boxShadow: '0 16px 40px -8px rgba(184, 92, 56, 0.12)' }}
+              whileHover={{ scale: 1.005, y: -2, boxShadow: '0 16px 40px -8px rgba(196, 90, 56, 0.12)' }}
               elevation={3}
-              sx={{ p: 4, background: '#141c18', borderRadius: 3, border: '1px solid #2a3830', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}
+              sx={{ p: 4, background: '#FBF8F2', borderRadius: 3, border: '1px solid #E6DCCB', position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, position: 'relative', zIndex: 2 }}>
-                <Avatar sx={{ bgcolor: '#b85c38', width: 64, height: 64, mr: 3, boxShadow: '0 4px 16px rgba(184, 92, 56, 0.25)' }}>
+                <Avatar sx={{ bgcolor: '#C45A38', width: 64, height: 64, mr: 3, boxShadow: '0 4px 16px rgba(196, 90, 56, 0.25)' }}>
                   <WorkIcon sx={{ fontSize: 32 }} />
                 </Avatar>
                 <Box>
-                  <Typography variant="h4" sx={{ color: '#b85c38', fontWeight: 700, mb: 1 }}>{isZh ? '关键亮点' : 'Key Achievements'}</Typography>
-                  <Chip label={isZh ? '20+ 年经验' : '20+ Years Experience'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', color: '#b85c38', fontWeight: 600, border: '1px solid rgba(184, 92, 56, 0.2)' }} />
+                  <Typography variant="h4" sx={{ color: '#C45A38', fontWeight: 700, mb: 1 }}>{isZh ? '关键亮点' : 'Key Achievements'}</Typography>
+                  <Chip label={isZh ? '20+ 年经验' : '20+ Years Experience'} icon={<TrendingUpIcon />} sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', color: '#C45A38', fontWeight: 600, border: '1px solid rgba(196, 90, 56, 0.2)' }} />
                 </Box>
               </Box>
               <Grid container spacing={3} sx={{ position: 'relative', zIndex: 2 }}>
@@ -293,8 +291,8 @@ const About = () => {
                       sx={{
                         p: 3,
                         borderRadius: 3,
-                        background: '#182420',
-                        border: '1px solid rgba(184, 92, 56, 0.15)',
+                        background: '#F3EDE2',
+                        border: '1px solid rgba(196, 90, 56, 0.15)',
                         backdropFilter: 'blur(10px)',
                         height: '100%',
                         display: 'flex',
@@ -302,8 +300,8 @@ const About = () => {
                         transition: 'all 0.3s ease-in-out',
                         position: 'relative',
                         overflow: 'hidden',
-                        '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, rgba(201, 168, 76, 0.04) 100%)', zIndex: 1 },
-                        '&:hover': { transform: 'translateY(-2px)', background: 'rgba(201, 168, 76, 0.08)', borderColor: 'rgba(184, 92, 56, 0.25)', boxShadow: '0 8px 24px -4px rgba(184, 92, 56, 0.12)' },
+                        '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(135deg, rgba(196, 90, 56, 0.08) 0%, rgba(196, 90, 56, 0.04) 100%)', zIndex: 1 },
+                        '&:hover': { transform: 'translateY(-2px)', background: 'rgba(196, 90, 56, 0.08)', borderColor: 'rgba(196, 90, 56, 0.25)', boxShadow: '0 8px 24px -4px rgba(196, 90, 56, 0.12)' },
                         '& > *': { position: 'relative', zIndex: 2 },
                       }}
                     >
@@ -320,20 +318,20 @@ const About = () => {
           <Grid item xs={12}>
             <Paper
               component={motion.div}
-              whileHover={{ scale: 1.005, y: -3, boxShadow: '0 12px 32px -8px rgba(184, 92, 56, 0.15)' }}
+              whileHover={{ scale: 1.005, y: -3, boxShadow: '0 12px 32px -8px rgba(196, 90, 56, 0.15)' }}
               elevation={3}
-              sx={{ p: { xs: 3, sm: 4, md: 6 }, background: '#182420', borderRadius: 3, textAlign: 'center', position: 'relative', overflow: 'hidden', border: '1px solid rgba(184, 92, 56, 0.2)', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #b85c38 0%, #d4795a 100%)' } }}
+              sx={{ p: { xs: 3, sm: 4, md: 6 }, background: '#F3EDE2', borderRadius: 3, textAlign: 'center', position: 'relative', overflow: 'hidden', border: '1px solid rgba(196, 90, 56, 0.2)', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #C45A38 0%, #C45A38 100%)' } }}
             >
               <Box>
-                <Avatar sx={{ bgcolor: 'rgba(184, 92, 56, 0.1)', width: 80, height: 80, mx: 'auto', mb: 3, border: '2px solid rgba(184, 92, 56, 0.2)' }}>
-                  <CodeIcon sx={{ fontSize: 40, color: '#b85c38' }} />
+                <Avatar sx={{ bgcolor: 'rgba(196, 90, 56, 0.1)', width: 80, height: 80, mx: 'auto', mb: 3, border: '2px solid rgba(196, 90, 56, 0.2)' }}>
+                  <CodeIcon sx={{ fontSize: 40, color: '#C45A38' }} />
                 </Avatar>
-                <Typography variant="h4" sx={{ mb: 3, fontStyle: 'italic', fontWeight: 600, lineHeight: 1.4, color: '#e8e0d0' }}>
+                <Typography variant="h4" sx={{ mb: 3, fontStyle: 'italic', fontWeight: 600, lineHeight: 1.4, color: '#2F2C28' }}>
                   {isZh
                     ? '“以企业级架构、敏捷协作与 AI 工程化能力，带领团队达成业务与技术目标。”'
                     : '"Leading teams to deliver business and technical results through enterprise architecture, agile execution, and practical AI engineering."'}
                 </Typography>
-                <Typography variant="h6" sx={{ color: '#9a9080', maxWidth: '800px', mx: 'auto', lineHeight: 1.6, fontWeight: 400 }}>
+                <Typography variant="h6" sx={{ color: '#6F675E', maxWidth: '800px', mx: 'auto', lineHeight: 1.6, fontWeight: 400 }}>
                   {isZh
                     ? '我热衷于打造稳健、可扩展、真正被业务使用的系统，也乐于帮助团队与企业把平台能力、组织能力和 AI 能力结合起来，形成长期竞争力。'
                     : 'My passion is building robust, scalable systems that are genuinely useful to the business—and helping teams combine platform capability, organizational discipline, and AI to create durable competitive advantage.'}

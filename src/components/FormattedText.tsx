@@ -104,7 +104,7 @@ const renderLines = (lines: string[], keyPrefix: string): React.ReactNode[] => {
   return nodes;
 };
 
-const FormattedText: React.FC<FormattedTextProps> = ({ text, accentColor = '#b85c38' }) => {
+const FormattedText: React.FC<FormattedTextProps> = ({ text, accentColor = '#C45A38' }) => {
   const blocks = parseBlocks(text);
 
   return (
@@ -124,12 +124,12 @@ const FormattedText: React.FC<FormattedTextProps> = ({ text, accentColor = '#b85
                 p: 2,
                 borderRadius: 1.5,
                 overflowX: 'auto',
-                fontFamily: '"JetBrains Mono", "Courier Prime", "Courier New", monospace',
-                fontSize: '0.85rem',
-                lineHeight: 1.6,
-                color: '#a8b0a4',
-                backgroundColor: 'rgba(0, 0, 0, 0.25)',
-                border: '1px solid #2a3830',
+                fontFamily: '"Source Serif 4", "Noto Serif SC", Georgia, serif',
+                fontSize: '0.9rem',
+                lineHeight: 1.7,
+                color: '#2F2C28',
+                backgroundColor: '#F3EDE2',
+                border: '1px solid #E6DCCB',
               }}
             >
               {block.code}
