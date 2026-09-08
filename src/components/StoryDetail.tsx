@@ -376,8 +376,9 @@ A strange feeling: something you'd carefully built over years suddenly faces a p
 从一家超大型平台公司的资深专家，变成一个创业者、一个技术合伙人、一个顾问——这不只是工作内容的变化，更是思维方式的根本转变。在阿里，你有无数资源，你的每一个技术决策都有充分的数据支撑和团队背书；在创业环境里，你有的是一张白纸、一个想法、和永远不够用的时间。
 
 我同时参与了几个不同方向的项目：
-- **飞凡科技**：负责智能客服、AI工程方向的系统建设
-- **红熊AI和光荣智能**：探索不同的AI产品形态  
+- **光荣智能**：担任CTO，用AI和软件工程帮助制造、政府、贸易等企业完成数字化转型
+- **飞凡科技**：以外部顾问身份兼任CTO，协助企业软件、智能客服与AI工程
+- **红熊AI**：以外部顾问身份兼任研发总经理，负责AI产品研发方向
 - **大头科技**：做AI硬件的技术架构
 
 每一个都在用完全不同的方式回答同一个问题：**AI到底能为真实的业务场景创造什么价值？**
@@ -394,8 +395,9 @@ Those words sound light, but behind them is a forty-something technologist redef
 Transitioning from a senior expert at a massive platform company to entrepreneur, technical co-founder, and consultant — this isn't just a change in work content, it's a fundamental shift in mindset. At Alibaba, you have unlimited resources; every technical decision is backed by data and team consensus. In a startup environment, you have a blank page, an idea, and time that's never enough.
 
 I simultaneously participated in several projects:
-- **Feifan Tech**: Intelligent customer service and AI engineering systems
-- **Hongxiong AI and Guangrong Intelligence**: Exploring different AI product forms
+- **Glorion Intelligence**: CTO, helping manufacturing, government, and trade clients transform with AI and software engineering
+- **Feifan Tech**: external advisor and CTO, supporting enterprise software, customer service, and AI engineering
+- **Redbear AI**: external advisor and Head of R&D, directing AI product development
 - **Daitou Tech**: AI hardware technical architecture
 
 Each answering the same question in completely different ways: **What value can AI actually create for real business scenarios?**
@@ -507,7 +509,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
       icon: BusinessIcon,
       color: '#ff6b35',
       type: 'career',
-      story: `Serving as CTO of a startup has given me a deep understanding of the importance of leadership. From technical decisions to team management, from product planning to business development, every aspect is filled with challenges and opportunities.
+      story: `Serving as CTO of Glorion Intelligence, with concurrent advisor roles at Feifan Tech and Redbear AI, has given me a deep understanding of the importance of leadership. From technical decisions to team management, from product planning to business development, every aspect is filled with challenges and opportunities.
 
       In this role, I learned that technical leadership goes far beyond writing code or making technical decisions. It involves understanding business needs, managing team dynamics, fostering innovation culture, and aligning technical strategy with business objectives.
 

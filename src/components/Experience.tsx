@@ -24,17 +24,40 @@ const Experience = () => {
         {
           year: '2023–至今',
           title: 'CTO',
-          company: 'Feifan Tech, Hangzhou',
-          companyLink: 'https://feifan-tech-website.pages.dev/',
-          meta: '创业公司 · 10 人团队 · 领导力、架构设计、AI / LLM 产品、咨询',
+          company: '光荣智能 (Glorion Intelligence)',
+          companyLink: 'https://hz-glory.vercel.app/',
+          meta: '主职 · AI 与数字化转型 · FDE · 制造、政务、贸易',
           description:
-            '带领研发团队为客户交付企业软件与 AI 驱动产品，推进 LLM、RAG、智能助手与 Agent Tool-use 在真实业务中的落地，同时持续提供软件架构、项目管理与技术战略咨询。',
+            '作为光荣智能 CTO，负责公司的技术战略与交付。公司以 FDE（前线部署工程师）模式，用 AI 和软件工程帮助制造、政府和贸易等客户完成数字化转型，把大模型与行业流程接到真实业务里。',
           achievements: [
-            '带领 10 人团队交付企业级软件解决方案与 AI 能力升级项目',
-            '主导客户产品与内部流程中的 AI / LLM 集成方案设计',
-            '建设面向知识库、流程自动化与协同场景的 AI Copilot / 助手能力',
+            '制定技术方向，把 AI 能力落到制造、政务与贸易场景',
+            '带领交付团队以 FDE 方式驻场，把方案做成可运行的系统',
+            '连接客户业务与工程实现，缩短从需求到上线的路径',
+          ],
+        },
+        {
+          year: '2023–至今',
+          title: '外部顾问 · CTO',
+          company: '飞凡科技 (Feifan Tech)',
+          companyLink: 'https://feifan-tech-website.pages.dev/',
+          meta: '外部顾问 · 企业软件、客户服务、AI 工程',
+          description:
+            '以外部顾问身份兼任飞凡科技 CTO，协助企业软件、客户服务与 AI 工程方向的技术决策，推进 LLM、RAG、智能助手与 Agent Tool-use 在真实业务中的落地。',
+          achievements: [
+            '为企业管理系统与数字化项目提供技术把关',
+            '协助客户服务与 AI 相关产品的架构与落地',
             '结合 Prompt Engineering、RAG 与工具调用模式提升交付效率',
-            '持续支持电商创业公司与成长型企业完成技术架构升级',
+          ],
+        },
+        {
+          year: '2023–至今',
+          title: '外部顾问 · 研发总经理',
+          company: '红熊AI (Redbear AI)',
+          meta: '外部顾问 · AI 产品研发与交付',
+          description: '以外部顾问身份兼任红熊AI 研发总经理，负责 AI 产品研发方向与交付节奏，协助团队把模型能力做成可交付的产品。',
+          achievements: [
+            '规划 AI 产品研发路径，对接业务目标',
+            '协助团队把模型能力做成可交付的产品',
           ],
         },
         {
@@ -127,17 +150,41 @@ const Experience = () => {
         {
           year: '2023–Present',
           title: 'CTO',
-          company: 'Feifan Tech, Hangzhou',
-          companyLink: 'https://feifan-tech-website.pages.dev/',
-          meta: 'Startup · Team of 10 · Leadership, architecture, AI / LLM products, consulting',
+          company: 'Glorion Intelligence',
+          companyLink: 'https://hz-glory.vercel.app/',
+          meta: 'Primary role · AI & digital transformation · FDE · manufacturing, government, trade',
           description:
-            'Leading the development team to deliver enterprise software and AI-enabled products. Driving practical adoption of LLMs, RAG, copilots, and agent tool-use patterns while continuing architecture, project management, and technology strategy consulting.',
+            'As CTO of Glorion Intelligence, I own the technical strategy and delivery. The company helps enterprises with digital transformation through AI and software engineering, serving manufacturing, government, and trade clients in an FDE (Forward Deployed Engineer) model that puts large models into real workflows.',
           achievements: [
-            'Led a 10-person team delivering enterprise software solutions and AI capability upgrades',
-            'Directed AI / LLM integration initiatives for client products and internal workflows',
-            'Built AI copilots and assistants for knowledge, automation, and collaboration scenarios',
+            'Set the technical direction for AI in manufacturing, government, and trade',
+            'Lead delivery teams that embed with customers and ship working systems',
+            'Connect business needs to engineering so ideas reach production faster',
+          ],
+        },
+        {
+          year: '2023–Present',
+          title: 'External Advisor · CTO',
+          company: 'Feifan Tech',
+          companyLink: 'https://feifan-tech-website.pages.dev/',
+          meta: 'External advisor · enterprise software, customer service, AI engineering',
+          description:
+            'I also serve as external advisor and CTO at Feifan Tech, supporting technical decisions in enterprise software, customer service, and AI engineering, including practical adoption of LLMs, RAG, copilots, and agent tool-use.',
+          achievements: [
+            'Advise on enterprise management systems and digital projects',
+            'Help shape architecture and delivery for customer-service and AI products',
             'Applied prompt engineering, RAG, and tool-use patterns to improve delivery effectiveness',
-            'Continued to support e-commerce startups and growth-stage companies on technical transformation',
+          ],
+        },
+        {
+          year: '2023–Present',
+          title: 'External Advisor · Head of R&D',
+          company: 'Redbear AI',
+          meta: 'External advisor · AI product R&D and delivery',
+          description:
+            'I also serve as external advisor and Head of R&D at Redbear AI, guiding AI product research, development direction, and delivery pace.',
+          achievements: [
+            'Set the R&D path for AI products against business goals',
+            'Help the team turn model capabilities into shippable products',
           ],
         },
         {
@@ -238,13 +285,13 @@ const Experience = () => {
       <PageTitle>{isZh ? '职业经历' : 'Professional experience'}</PageTitle>
       <PageLead>
         {isZh
-          ? '从华为、阿里、蚂蚁到创业，一条围绕平台、组织与 AI 落地的路径。'
-          : 'From Huawei, Alibaba, and Ant Group to a startup — a path through platforms, organizations, and practical AI.'}
+          ? '从华为、阿里、蚂蚁到光荣智能，一条围绕平台、组织与 AI 落地的路径；同时以外部顾问兼任飞凡科技 CTO 与红熊AI 研发总经理。'
+          : 'From Huawei, Alibaba, and Ant Group to Glorion Intelligence — a path through platforms, organizations, and practical AI, with concurrent advisor roles at Feifan Tech and Redbear AI.'}
       </PageLead>
 
       <Box sx={{ display: 'grid', gap: 7.5 }}>
         {experiences.map((exp) => (
-          <Box key={`${exp.year}-${exp.title}`}>
+          <Box key={`${exp.year}-${exp.company}`}>
             <Typography sx={{ color: ACCENT, letterSpacing: '0.04em', mb: 0.75 }}>{exp.year}</Typography>
             <Typography
               component="h2"
