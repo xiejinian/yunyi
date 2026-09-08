@@ -10,13 +10,15 @@ const Home = () => {
 
   const whoAmI = isZh
     ? [
-        '非凡科技 CTO，关注 AI 产品与平台工程',
+        '光荣智能 CTO，关注 AI 与数字化转型',
+        '以外部顾问兼任飞凡科技 CTO、红熊AI 研发总经理',
         '前华为、阿里巴巴 / 蚂蚁集团资深技术专家',
         '阿里巴巴电商中台联合创始人之一',
         '20+ 年企业级工程、架构与团队管理经验',
       ]
     : [
-        'CTO at Feifan Tech, focused on AI products and platform engineering',
+        'CTO at Glorion Intelligence, focused on AI and digital transformation',
+        'External advisor: CTO at Feifan Tech, Head of R&D at Redbear AI',
         'Former staff engineer at Huawei and Alibaba / Ant Group',
         "Co-founder of Alibaba's E-commerce Middle Platform",
         '20+ years in enterprise engineering, architecture, and team leadership',

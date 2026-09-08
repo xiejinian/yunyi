@@ -80,7 +80,7 @@ const About = () => {
           <Typography sx={{ mt: 1.25, fontSize: '0.78rem', color: FAINT, lineHeight: 1.6 }}>
             Xie Jinian / 谢记年
             <Box component="span" sx={{ display: 'block' }}>
-              {isZh ? '非凡科技 CTO · AI 与软件架构' : 'CTO at Feifan Tech · AI & software architecture'}
+              {isZh ? '光荣智能 CTO · AI 与数字化转型' : 'CTO at Glorion Intelligence · AI & digital transformation'}
             </Box>
           </Typography>
         </Box>
@@ -104,14 +104,18 @@ const About = () => {
             {isZh ? (
               <>
                 目前担任{' '}
-                <TextLink href="https://feifan-tech-website.pages.dev/">非凡科技 CTO</TextLink>
-                ，带领 10 人研发团队交付企业软件与 AI 驱动产品。我当前的核心关注点是将大语言模型、RAG、Agent Tool-use 与既有业务系统结合，帮助客户真正把 AI 用到流程、知识与产品中。
+                <TextLink href="https://hz-glory.vercel.app/">光荣智能 CTO</TextLink>
+                ，同时以外部顾问身份兼任{' '}
+                <TextLink href="https://feifan-tech-website.pages.dev/">飞凡科技</TextLink>
+                {' '}CTO，以及红熊AI 研发总经理。我当前的核心关注点是将大语言模型、RAG、Agent Tool-use 与既有业务系统结合，帮助客户真正把 AI 用到流程、知识与产品中。
               </>
             ) : (
               <>
                 Currently serving as CTO at{' '}
+                <TextLink href="https://hz-glory.vercel.app/">Glorion Intelligence</TextLink>
+                , and as an external advisor — CTO at{' '}
                 <TextLink href="https://feifan-tech-website.pages.dev/">Feifan Tech</TextLink>
-                , leading a 10-person development team delivering enterprise software and AI-enabled products. My present focus is applying LLMs, RAG, and agent tool-use patterns to real business systems, workflows, and internal knowledge operations.
+                {' '}and Head of R&D at Redbear AI. My present focus is applying LLMs, RAG, and agent tool-use patterns to real business systems, workflows, and internal knowledge operations.
               </>
             )}
           </BodyText>

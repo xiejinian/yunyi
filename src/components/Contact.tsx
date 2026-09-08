@@ -34,9 +34,9 @@ const Contact = () => {
         },
         {
           title: '当前职位',
-          content: 'Feifan Tech CTO',
-          href: 'https://feifan-tech-website.pages.dev/',
-          description: '负责技术战略、研发团队与 AI 产品方向',
+          content: '光荣智能 CTO',
+          href: 'https://hz-glory.vercel.app/',
+          description: '主职负责技术战略、研发交付与 AI 产品方向；同时以外部顾问兼任飞凡科技 CTO、红熊AI 研发总经理',
         },
       ]
     : [
@@ -54,9 +54,10 @@ const Contact = () => {
         },
         {
           title: 'Current Position',
-          content: 'CTO at Feifan Tech',
-          href: 'https://feifan-tech-website.pages.dev/',
-          description: 'Leading technology strategy, engineering delivery, and AI product direction',
+          content: 'CTO at Glorion Intelligence',
+          href: 'https://hz-glory.vercel.app/',
+          description:
+            'Primary role in technology strategy, engineering delivery, and AI. Also external advisor as CTO at Feifan Tech and Head of R&D at Redbear AI',
         },
       ];
 
