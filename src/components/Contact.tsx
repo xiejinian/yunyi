@@ -7,7 +7,6 @@ import {
   PageLead,
   SectionTitle,
   BodyText,
-  DotList,
   TextLink,
   ACCENT,
   INK,
@@ -18,111 +17,61 @@ const Contact = () => {
   const { language } = useLanguage();
   const isZh = language === 'zh';
 
-  const contactInfo = isZh
-    ? [
-        {
-          title: '邮箱',
-          content: 'yymhxie@gmail.com',
-          href: 'mailto:yymhxie@gmail.com',
-          description: '欢迎联系业务合作、顾问咨询或技术交流',
-        },
-        {
-          title: '所在地',
-          content: '中国浙江杭州',
-          href: 'https://maps.google.com/?q=Hangzhou,Zhejiang,China',
-          description: '常驻中国创新与互联网产业活跃区域',
-        },
-        {
-          title: '当前职位',
-          content: '光荣智能 CTO',
-          href: 'https://hz-glory.vercel.app/',
-          description: '主职负责技术战略、研发交付与 AI 产品方向；同时以外部顾问兼任飞凡科技 CTO、红熊AI 研发总经理',
-        },
-      ]
-    : [
-        {
-          title: 'Email',
-          content: 'yymhxie@gmail.com',
-          href: 'mailto:yymhxie@gmail.com',
-          description: 'Feel free to reach out for advisory, consulting, or collaboration opportunities',
-        },
-        {
-          title: 'Location',
-          content: 'Hangzhou, Zhejiang, China',
-          href: 'https://maps.google.com/?q=Hangzhou,Zhejiang,China',
-          description: "Based in one of China's most active technology and innovation hubs",
-        },
-        {
-          title: 'Current Position',
-          content: 'CTO at Glorion Intelligence',
-          href: 'https://hz-glory.vercel.app/',
-          description:
-            'Primary role in technology strategy, engineering delivery, and AI. Also external advisor as CTO at Feifan Tech and Head of R&D at Redbear AI',
-        },
-      ];
+  const email = 'yymhxie@gmail.com';
 
   const services = isZh
     ? [
         {
-          title: '技术与 AI 咨询',
-          description: '面向企业软件、LLM 应用、AI 工程化与平台升级提供咨询支持',
-          areas: ['系统架构', 'LLM 落地', 'AI 产品策略'],
+          title: 'AI 交付评估',
+          description: '判断一个 AI 场景是否值得做，如何接到现有流程，以及怎样上线、评估和运维。',
+          subject: 'AI 交付评估',
         },
         {
-          title: '工程管理与组织支持',
-          description: '帮助团队建立敏捷交付、研发管理与跨部门协同机制',
-          areas: ['敏捷方法', '团队领导', '流程优化'],
+          title: '平台与架构评审',
+          description: '梳理复杂系统、平台边界、集成与演进风险，明确哪些该共享、哪些该留在业务侧。',
+          subject: '平台与架构评审',
         },
         {
-          title: '电商与平台化方案',
-          description: '围绕电商平台、中台能力与可扩展架构提供专项建议',
-          areas: ['电商平台', '中台架构', '扩展性方案'],
+          title: '工程组织顾问',
+          description: '解决研发结构、交付节奏、质量和跨团队协作，让技术方案变成可执行的组织能力。',
+          subject: '工程组织顾问',
         },
       ]
     : [
         {
-          title: 'Technical & AI Consulting',
-          description: 'Advisory support for enterprise software, LLM applications, AI engineering, and platform modernization',
-          areas: ['System Architecture', 'LLM Delivery', 'AI Product Strategy'],
+          title: 'AI Delivery Assessment',
+          description: 'Decide whether an AI scenario is worth doing, how it enters existing workflows, and how to ship, evaluate, and operate it.',
+          subject: 'AI Delivery Assessment',
         },
         {
-          title: 'Engineering Management Support',
-          description: 'Help teams improve agile execution, engineering management, and cross-functional delivery',
-          areas: ['Agile Methodology', 'Team Leadership', 'Process Optimization'],
+          title: 'Platform & Architecture Review',
+          description: 'Map a complex system, platform boundaries, integration, and evolution risk—what should be shared, what should stay in the business.',
+          subject: 'Platform & Architecture Review',
         },
         {
-          title: 'E-commerce & Platform Solutions',
-          description: 'Specialized guidance for e-commerce systems, middle-platform thinking, and scalable architecture',
-          areas: ['E-commerce Platform', 'Middle Platform', 'Scalability Solutions'],
+          title: 'Engineering Leadership Advisory',
+          description: 'Work on structure, delivery cadence, quality, and cross-team collaboration so a technical plan becomes an organizational capability.',
+          subject: 'Engineering Leadership Advisory',
         },
       ];
 
-  const openTo = isZh
-    ? ['技术顾问', '咨询 / Advisory', '工程经理', '技术经理', 'CTO / 技术负责人']
-    : ['Technical Advisor', 'Consulting / Advisory', 'Engineering Manager', 'Technical Manager', 'CTO / Tech Leadership'];
+  const mailto = (subject: string) =>
+    `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
   return (
     <PageShell>
-      <PageTitle>{isZh ? '联系我' : 'Get in touch'}</PageTitle>
+      <PageTitle>{isZh ? '联系我' : 'Contact'}</PageTitle>
       <PageLead>
-        {isZh
-          ? '欢迎讨论下一个项目、AI 转型计划，或技术团队建设需求。'
-          : 'Ready to discuss your next project, AI initiative, or collaboration opportunity.'}
+        {isZh ? '先谈一个真实的交付问题。' : 'Let’s discuss a real delivery problem.'}
       </PageLead>
 
-      <Box sx={{ display: 'grid', gap: 4.5, mb: 7 }}>
-        {contactInfo.map((info) => (
-          <Box key={info.title}>
-            <SectionTitle>{info.title}</SectionTitle>
-            <Typography sx={{ color: ACCENT, fontSize: '1.08rem', mb: 0.5 }}>
-              <TextLink href={info.href}>{info.content}</TextLink>
-            </Typography>
-            <Typography sx={{ color: MUTED, lineHeight: 1.7 }}>{info.description}</Typography>
-          </Box>
-        ))}
-      </Box>
+      <BodyText>
+        {isZh
+          ? '我最适合与这样的负责人合作：你们正从 AI 试验走向生产工作流，正在现代化一套关键平台，或需要让工程组织真正跑起来。'
+          : 'I work best with leaders who are moving from AI experimentation to production workflows, modernizing a critical platform, or scaling an engineering organization that has to actually deliver.'}
+      </BodyText>
 
-      <SectionTitle>{isZh ? '专业服务方向' : 'Professional services'}</SectionTitle>
+      <SectionTitle>{isZh ? '可以从这里开始' : 'Start here'}</SectionTitle>
       <Box sx={{ display: 'grid', gap: 4, mb: 7 }}>
         {services.map((service, index) => (
           <Box key={service.title}>
@@ -133,30 +82,51 @@ const Contact = () => {
               {service.title}
             </Typography>
             <BodyText sx={{ mb: 1 }}>{service.description}</BodyText>
-            <Typography sx={{ color: MUTED, fontSize: '0.95rem' }}>{service.areas.join('  ·  ')}</Typography>
+            <Typography sx={{ fontSize: '1rem' }}>
+              <TextLink href={mailto(service.subject)}>{isZh ? '用这个主题写信 →' : 'Email with this subject →'}</TextLink>
+            </Typography>
           </Box>
         ))}
       </Box>
 
-      <SectionTitle>{isZh ? '当前开放机会' : 'Currently open to'}</SectionTitle>
-      <BodyText sx={{ mb: 2 }}>
-        {isZh
-          ? '欢迎联系技术顾问、咨询合作，以及工程 / 技术管理岗位机会，也可交流 AI 产品、平台升级与组织建设相关议题。'
-          : 'Open to Technical Advisor, consulting / advisory, and engineering or technical management roles, as well as conversations around AI products, platform evolution, and organizational execution.'}
-      </BodyText>
-      <DotList items={openTo} />
-
-      <Box sx={{ mt: 8, textAlign: 'center' }}>
-        <SectionTitle sx={{ textAlign: 'center' }}>{isZh ? '一起合作' : "Let's work together"}</SectionTitle>
-        <Typography sx={{ mb: 2 }}>
-          <TextLink href="mailto:yymhxie@gmail.com">{isZh ? '发送邮件 →' : 'Send an email →'}</TextLink>
+      <SectionTitle>{isZh ? '直接联系' : 'Reach me'}</SectionTitle>
+      <Box sx={{ mb: 2 }}>
+        <Typography sx={{ color: ACCENT, fontSize: '1.08rem', mb: 0.5 }}>
+          <TextLink href={`mailto:${email}`}>{email}</TextLink>
         </Typography>
-        <Typography sx={{ color: MUTED, fontSize: '0.92rem', lineHeight: 1.8 }}>
+        <Typography sx={{ color: MUTED, lineHeight: 1.7 }}>
           {isZh
-            ? '回复时间：通常 24 小时内 · 时区 GMT+8'
-            : 'Response time: usually within 24 hours · Time zone GMT+8'}
+            ? '请用几句话说明场景、约束和你希望 30 分钟沟通后带走什么。通常 24 小时内回复 · 时区 GMT+8'
+            : 'A few sentences on the scenario, the constraints, and what you want from a 30-minute conversation is enough. I usually reply within 24 hours · GMT+8'}
         </Typography>
       </Box>
+      <BodyText sx={{ mb: 6 }}>
+        {isZh ? (
+          <>
+            常驻杭州。当前主职是{' '}
+            <TextLink href="https://hz-glory.vercel.app/">光荣智能</TextLink>
+            {' '}CTO，并以外部顾问身份兼任飞凡科技 CTO 与红熊AI 研发总经理。
+          </>
+        ) : (
+          <>
+            Based in Hangzhou. Primary role: CTO at{' '}
+            <TextLink href="https://hz-glory.vercel.app/">Glorion Intelligence</TextLink>
+            , with concurrent advisor roles at Feifan Tech and Redbear AI.
+          </>
+        )}
+      </BodyText>
+
+      <SectionTitle>{isZh ? '次级入口：全职技术领导机会' : 'Secondary path: full-time leadership'}</SectionTitle>
+      <BodyText sx={{ mb: 1.5 }}>
+        {isZh
+          ? '网站的第一目标是企业 AI 与技术顾问合作。如果你在寻找 CTO / VP Engineering / Staff+ 技术负责人，也可以来信，请在主题里写明“领导力机会”。'
+          : 'The primary aim of this site is enterprise AI and technology advisory work. If you are hiring a CTO, VP Engineering, or Staff+ technology leader, write anyway—put “leadership role” in the subject.'}
+      </BodyText>
+      <Typography sx={{ mb: 2 }}>
+        <TextLink href={mailto(isZh ? '领导力机会' : 'Leadership role')}>
+          {isZh ? '讨论领导力机会 →' : 'Discuss a leadership role →'}
+        </TextLink>
+      </Typography>
     </PageShell>
   );
 };

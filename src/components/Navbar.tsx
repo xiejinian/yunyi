@@ -27,13 +27,16 @@ const Navbar = () => {
   const location = useLocation();
 
   const menuItems = [
-    { label: isZh ? '关于我' : 'About', path: '/about' },
+    { label: isZh ? '关于' : 'About', path: '/about' },
     { label: isZh ? '经历' : 'Experience', path: '/experience' },
-    { label: isZh ? '我的故事' : 'My Story', path: '/mystory' },
-    { label: isZh ? '项目' : 'Projects', path: '/projects' },
-    { label: isZh ? '技能' : 'Skills', path: '/skills' },
-    { label: isZh ? '联系我' : 'Contact', path: '/contact' },
+    { label: isZh ? '案例' : 'Work', path: '/projects' },
+    { label: isZh ? '方法' : 'Method', path: '/skills' },
+    { label: isZh ? '原则' : 'Principles', path: '/mystory' },
+    { label: isZh ? '联系' : 'Contact', path: '/contact' },
   ];
+
+  const isActive = (path: string) =>
+    location.pathname === path || location.pathname.startsWith(`${path}/`);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -118,7 +121,7 @@ const Navbar = () => {
           ) : (
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
               {menuItems.map((item) => {
-                const active = location.pathname === item.path;
+                const active = isActive(item.path);
                 return (
                   <Button
                     key={item.path}
@@ -190,7 +193,7 @@ const Navbar = () => {
               sx={{
                 mb: 0.25,
                 borderRadius: 0,
-                color: location.pathname === item.path ? '#C45A38' : '#4A4540',
+                color: isActive(item.path) ? '#C45A38' : '#4A4540',
                 '&:hover': {
                   backgroundColor: 'transparent',
                   color: '#C45A38',
