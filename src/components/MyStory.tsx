@@ -9,7 +9,6 @@ import {
   BodyText,
   ACCENT,
   INK,
-  MUTED,
   displaySerif,
 } from './editorial';
 
