@@ -42,7 +42,7 @@ const About = () => {
     : [
         'Start with the business workflow and a measurable outcome—not with a model or framework.',
         'Then design system boundaries, data, permissions, and human review so AI can enter the existing stack.',
-        'Finally install evaluation, feedback, operations, and team habits so a pilot can become production capacity.',
+        'Finally establish evaluation, feedback, operations, and team mechanisms so a pilot can become production capacity.',
       ];
 
   return (
@@ -73,7 +73,7 @@ const About = () => {
           <Typography sx={{ mt: 1.25, fontSize: '0.78rem', color: FAINT, lineHeight: 1.6 }}>
             Xie Jinian / 谢记年
             <Box component="span" sx={{ display: 'block' }}>
-              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Alibaba: Yunyi · Mogu Street: Muhan'}
+              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Known at Alibaba as Yunyi · known at Mogujie as Muhan'}
             </Box>
             <Box component="span" sx={{ display: 'block' }}>
               {isZh ? '企业 AI 与平台技术负责人' : 'Enterprise AI & Platform CTO'}
@@ -95,7 +95,7 @@ const About = () => {
           </Typography>
           <Typography sx={{ color: MUTED, letterSpacing: '0.22em', mb: 0.75 }}>谢记年</Typography>
           <Typography sx={{ color: FAINT, fontSize: '0.92rem', mb: 4, lineHeight: 1.7 }}>
-            {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Alibaba flower name: Yunyi · Mogu Street flower name: Muhan'}
+            {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Known at Alibaba as Yunyi · known at Mogujie as Muhan'}
           </Typography>
 
           <BodyText>
@@ -105,7 +105,7 @@ const About = () => {
                 <TextLink href="https://hz-glory.vercel.app/">光荣智能</TextLink>
                 {' '}CTO，并以外部顾问身份兼任{' '}
                 <TextLink href="https://feifan-tech-website.pages.dev/">飞凡科技</TextLink>
-                {' '}CTO 与红熊AI 研发总经理。我不是把模型当作产品本身来卖，而是把 AI、平台架构和工程组织连成闭环。
+                {' '}CTO 与红熊 AI 研发总经理。我把人工智能、平台架构和工程组织连成一体，使技术方案能够进入生产并持续运行。
               </>
             ) : (
               <>
@@ -113,7 +113,7 @@ const About = () => {
                 <TextLink href="https://hz-glory.vercel.app/">Glorion Intelligence</TextLink>
                 , and as an external advisor — CTO at{' '}
                 <TextLink href="https://feifan-tech-website.pages.dev/">Feifan Tech</TextLink>
-                {' '}and Head of R&D at Redbear AI. I do not sell a model as the product. I connect AI, platform architecture, and engineering organization into one loop.
+                {' '}and Head of R&D at Redbear AI. I connect AI, platform architecture, and engineering organization so that technical plans can enter production and keep running.
               </>
             )}
           </BodyText>
@@ -135,7 +135,7 @@ const About = () => {
         <BodyText>
           {isZh
             ? '合作通常从一件真实的交付问题开始，而不是从技术清单开始。'
-            : 'Engagements usually start from a real delivery problem, not from a technology shopping list.'}
+            : 'Engagements usually begin with a specific delivery problem, not a catalog of tools.'}
         </BodyText>
         <NumberedList items={howIWork} />
       </Box>
@@ -161,7 +161,7 @@ const About = () => {
       <Box sx={{ mt: { xs: 7, md: 9 }, display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: { xs: 5, sm: 8 } }}>
         <Box>
           <SectionTitle>{isZh ? '教育' : 'Education'}</SectionTitle>
-          <BodyText sx={{ mb: 0.5 }}>{isZh ? '工学学士 · 计算机科学与技术' : 'Bachelor of Technology · Computer Science'}</BodyText>
+          <BodyText sx={{ mb: 0.5 }}>{isZh ? '工学学士 · 计算机科学与技术' : 'Bachelor of Engineering · Computer Science and Technology'}</BodyText>
           <Typography sx={{ color: MUTED, lineHeight: 1.7 }}>
             {isZh ? '中国华侨大学 · 2001' : 'Huaqiao University, China · 2001'}
           </Typography>

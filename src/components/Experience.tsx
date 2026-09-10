@@ -32,13 +32,13 @@ const Experience = () => {
 
   const featured = isZh
     ? {
-        kicker: '核心品牌资产',
+        kicker: '代表性经历',
         title: '阿里巴巴业务中台联合创始人之一',
         detail: '把交易、商品、订单等能力从烟囱式开发，转化为可复用的平台能力；系统服务数亿用户，并支撑包括大促在内的复杂交易场景。',
       }
     : {
-        kicker: 'Brand asset',
-        title: 'Co-founder of Alibaba’s Business Middle Platform',
+        kicker: 'Signature work',
+        title: 'Co-founded Alibaba’s Business Middle Platform',
         detail:
           'Turned trading, product, and order capabilities from siloed delivery into reusable platform services. Systems serving hundreds of millions of users, including peak commerce events.',
       };
@@ -51,14 +51,14 @@ const Experience = () => {
           company: '光荣智能 (Glorion Intelligence)',
           companyLink: 'https://hz-glory.vercel.app/',
           context: '制造、政务与贸易客户需要把大模型用进真实业务，而不是停留在试用。',
-          scope: '主职负责技术战略与交付；同时以外部顾问兼任飞凡科技 CTO、红熊AI 研发总经理。',
-          result: '以 FDE 方式驻场，把 LLM、RAG 与 Agent 接到现有流程、权限和系统里。',
+          scope: '主职负责技术战略与交付；同时以外部顾问兼任飞凡科技 CTO、红熊 AI 研发总经理。',
+          result: '以前线交付工程师（FDE）方式驻场，把大语言模型、检索增强生成与智能体接到现有流程、权限和系统里。',
           capability: '企业 AI 从试点走到生产，并把平台能力与组织交付连在一起。',
         },
         {
           year: '2021–2023',
-          title: '资深工程师 / Team Lead',
-          company: 'Ant Group, Hangzhou',
+          title: '资深工程师 / 团队负责人',
+          company: '蚂蚁集团，杭州',
           context: '业务团队需要更快地构建应用，平台必须把复杂能力变成可复用服务。',
           scope: '负责云凤蝶低代码平台基础服务，管理 7 人跨职能团队。',
           result: '用平台化与自动化支撑业务扩张，降低应用交付门槛。',
@@ -66,17 +66,17 @@ const Experience = () => {
         },
         {
           year: '2018–2021',
-          title: '资深工程师 / Team Lead',
-          company: 'Alibaba Cloud DingTalk Division, Hangzhou',
+          title: '资深工程师 / 团队负责人',
+          company: '阿里云钉钉事业部，杭州',
           context: '企业协同产品要走向海外，本地化、身份与运营中台必须同时成立。',
           scope: '带领约 20 人研发国际化产品，并主导运营中台；钉钉技术委员会成员。',
-          result: '海外 DAU 从 0 增长到数百万；交付疫情时期企业复工所需的 IDaaS。',
+          result: '海外日活跃用户从 0 增长到数百万；交付疫情时期企业复工所需的身份平台（IDaaS）。',
           capability: '在增长约束下同时做产品、本地化与组织协同。',
         },
         {
           year: '2007–2015',
-          title: '高级工程师 ~ 资深工程师',
-          company: 'Alibaba Group Taobao (NYSE: BABA), Hangzhou',
+          title: '高级工程师至资深工程师',
+          company: '阿里巴巴集团淘宝，杭州',
           emphasize: true,
           context: '多个业务高速增长，交易与商品能力若继续烟囱式开发，将无法支撑规模。',
           scope: '负责淘宝交易平台与业务支撑平台研发管理，带领 30+ 人团队；阿里交易技术委员会成员。',
@@ -86,10 +86,10 @@ const Experience = () => {
         {
           year: '2003–2007',
           title: '项目经理 / 架构师 / 工程师',
-          company: 'Huawei Tech, Shenzhen',
-          context: '通信 OSS 交付仍以瀑布为主，复杂系统需要更可预测的工程方法。',
+          company: '华为技术，深圳',
+          context: '通信运营支撑系统交付仍以瀑布为主，复杂系统需要更可预测的工程方法。',
           scope: '参与电信运营支撑系统研发，推动团队敏捷实践，管理约 15 人。',
-          result: '完成 OSS 产品交付，并在华为期间获得 PMP 认证。',
+          result: '完成运营支撑系统产品交付，并在华为期间获得 PMP 认证。',
           capability: '在传统工程环境里引入可落地的敏捷与架构约束。',
         },
       ]
@@ -102,7 +102,7 @@ const Experience = () => {
           context: 'Manufacturing, government, and trade clients need large models inside real work—not another trial.',
           scope:
             'Own technical strategy and delivery as primary CTO; concurrently advise as CTO at Feifan Tech and Head of R&D at Redbear AI.',
-          result: 'Embed with customers in an FDE model so LLMs, RAG, and agents enter existing workflows, permissions, and systems.',
+          result: 'Embed with customers as a forward-deployed engineer (FDE) so large language models, retrieval-augmented generation, and agents enter existing workflows, permissions, and systems.',
           capability: 'Move enterprise AI from pilot to production, and connect platform capability with organizational delivery.',
         },
         {
@@ -120,13 +120,13 @@ const Experience = () => {
           company: 'Alibaba Cloud DingTalk Division, Hangzhou',
           context: 'An enterprise collaboration product had to work overseas; localization, identity, and operations had to land together.',
           scope: 'Led ~20 engineers on international R&D and the operations middle platform; DingTalk Technical Committee member.',
-          result: 'Grew overseas DAU from 0 to millions and shipped the IDaaS platform for enterprise recovery during COVID-19.',
+          result: 'Grew overseas daily active users from 0 to millions and shipped the identity platform (IDaaS) for enterprise recovery during COVID-19.',
           capability: 'Hold product, localization, and organizational coordination under growth constraints.',
         },
         {
           year: '2007–2015',
-          title: 'Senior Engineer ~ Staff Engineer',
-          company: 'Alibaba Group Taobao (NYSE: BABA), Hangzhou',
+          title: 'Senior Engineer to Staff Engineer',
+          company: 'Alibaba Group, Taobao, Hangzhou',
           emphasize: true,
           context: 'Multiple businesses were growing too fast for siloed trading and product systems to keep up.',
           scope:
@@ -137,10 +137,10 @@ const Experience = () => {
         {
           year: '2003–2007',
           title: 'Project Manager / Architect / Engineer',
-          company: 'Huawei Tech, Shenzhen',
-          context: 'Telecom OSS delivery was still waterfall-heavy; complex systems needed a more predictable engineering method.',
+          company: 'Huawei Technologies, Shenzhen',
+          context: 'Telecom operations-support delivery was still waterfall-heavy; complex systems needed a more predictable engineering method.',
           scope: 'Contributed to OSS product R&D, introduced agile practices, and led a team of about 15.',
-          result: 'Delivered OSS products and earned PMP certification during the Huawei years.',
+          result: 'Delivered operations-support products and earned PMP certification during the Huawei years.',
           capability: 'Bring workable agile and architectural constraints into a traditional engineering environment.',
         },
       ];
@@ -149,7 +149,7 @@ const Experience = () => {
     ? [
         {
           year: '2015–2018',
-          title: '蘑菇街技术总监',
+          title: '技术总监，蘑菇街',
           detail: '带领 110 人工程团队，负责时尚电商中台与质量保障，主持技术委员会。',
         },
         {
@@ -161,13 +161,13 @@ const Experience = () => {
     : [
         {
           year: '2015–2018',
-          title: 'Staff Director, Mogu Street',
+          title: 'Technical Director, Mogujie',
           detail: 'Led 110 engineers on the fashion e-commerce middle platform and quality, and chaired the Technical Committee.',
         },
         {
           year: '2001–2003',
           title: 'Shenzhen, early career',
-          detail: 'Enterprise software, online education, and community platforms; B.Tech in Computer Science; National Senior Programmer.',
+          detail: 'Enterprise software, online education, and community platforms; B.Eng. in Computer Science and Technology; National Senior Programmer.',
         },
       ];
 

@@ -62,13 +62,13 @@ const Contact = () => {
     <PageShell>
       <PageTitle>{isZh ? '联系我' : 'Contact'}</PageTitle>
       <PageLead>
-        {isZh ? '先谈一个真实的交付问题。' : 'Let’s discuss a real delivery problem.'}
+        {isZh ? '先谈一个具体的交付问题。' : 'Start with a specific delivery problem.'}
       </PageLead>
 
       <BodyText>
         {isZh
           ? '我最适合与这样的负责人合作：你们正从 AI 试验走向生产工作流，正在现代化一套关键平台，或需要让工程组织真正跑起来。'
-          : 'I work best with leaders who are moving from AI experimentation to production workflows, modernizing a critical platform, or scaling an engineering organization that has to actually deliver.'}
+          : 'I work best with leaders who are moving from AI experimentation to production workflows, modernizing a critical platform, or scaling an engineering organization that must deliver.'}
       </BodyText>
 
       <SectionTitle>{isZh ? '可以从这里开始' : 'Start here'}</SectionTitle>
@@ -83,7 +83,7 @@ const Contact = () => {
             </Typography>
             <BodyText sx={{ mb: 1 }}>{service.description}</BodyText>
             <Typography sx={{ fontSize: '1rem' }}>
-              <TextLink href={mailto(service.subject)}>{isZh ? '用这个主题写信 →' : 'Email with this subject →'}</TextLink>
+              <TextLink href={mailto(service.subject)}>{isZh ? '用此主题发送邮件 →' : 'Email with this subject →'}</TextLink>
             </Typography>
           </Box>
         ))}
@@ -105,7 +105,7 @@ const Contact = () => {
           <>
             常驻杭州。当前主职是{' '}
             <TextLink href="https://hz-glory.vercel.app/">光荣智能</TextLink>
-            {' '}CTO，并以外部顾问身份兼任飞凡科技 CTO 与红熊AI 研发总经理。
+            {' '}CTO，并以外部顾问身份兼任飞凡科技 CTO 与红熊 AI 研发总经理。
           </>
         ) : (
           <>
@@ -116,11 +116,11 @@ const Contact = () => {
         )}
       </BodyText>
 
-      <SectionTitle>{isZh ? '次级入口：全职技术领导机会' : 'Secondary path: full-time leadership'}</SectionTitle>
+      <SectionTitle>{isZh ? '全职技术领导机会' : 'Full-time leadership roles'}</SectionTitle>
       <BodyText sx={{ mb: 1.5 }}>
         {isZh
-          ? '网站的第一目标是企业 AI 与技术顾问合作。如果你在寻找 CTO / VP Engineering / Staff+ 技术负责人，也可以来信，请在主题里写明“领导力机会”。'
-          : 'The primary aim of this site is enterprise AI and technology advisory work. If you are hiring a CTO, VP Engineering, or Staff+ technology leader, write anyway—put “leadership role” in the subject.'}
+          ? '如需讨论全职 CTO、工程副总裁或资深技术负责人机会，请来信，并在主题中注明「领导力机会」。'
+          : 'If you are hiring a CTO, VP of Engineering, or a senior technology leader, you are welcome to write. Please put “Leadership role” in the subject.'}
       </BodyText>
       <Typography sx={{ mb: 2 }}>
         <TextLink href={mailto(isZh ? '领导力机会' : 'Leadership role')}>

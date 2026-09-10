@@ -103,14 +103,14 @@ const Navbar = () => {
               '&:hover': { color: '#C45A38' },
             }}
           >
-            Xie Jinian
+            {isZh ? '谢记年' : 'Xie Jinian'}
           </Typography>
 
           {isMobile ? (
             <Stack direction="row" spacing={0.5} alignItems="center">
               {languageButton}
               <IconButton
-                aria-label={isZh ? '打开导航' : 'open drawer'}
+                aria-label={isZh ? '打开导航' : 'Open navigation menu'}
                 edge="end"
                 onClick={handleDrawerToggle}
                 sx={{ color: '#2F2C28' }}
@@ -179,7 +179,7 @@ const Navbar = () => {
               mb: 1.5,
             }}
           >
-            Xie Jinian
+            {isZh ? '谢记年' : 'Xie Jinian'}
           </Typography>
           <Box>{languageButton}</Box>
         </Box>
