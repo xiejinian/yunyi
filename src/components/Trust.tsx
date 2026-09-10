@@ -29,7 +29,7 @@ export const getTestimonials = (isZh: boolean) =>
         {
           quote:
             '后期淘宝已经不是从零搭系统，而是在规模里治理复杂度和团队。记年能把架构演进和质量体系按住，带大团队也不散。这种人到任何电商组织里都稀缺。',
-          name: '伯雷',
+          name: '伯雷（陈国成）',
           title: '快手电商负责人 · 淘宝电商后期主管',
         },
       ]
@@ -49,7 +49,7 @@ export const getTestimonials = (isZh: boolean) =>
         {
           quote:
             'Later Taobao was no longer about building from zero. It was governing complexity and teams at scale. Jinian could hold architecture evolution and quality, and a large team still delivered. That combination is scarce in any commerce organization.',
-          name: 'Bolei',
+          name: 'Bolei (Chen Guocheng)',
           title: 'Head of E-commerce, Kuaishou · later Taobao engineering lead',
         },
       ];
