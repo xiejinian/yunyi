@@ -1,145 +1,140 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { PageShell, PageTitle, PageLead, SectionTitle, NumberedList, BodyText, displaySerif, INK, MUTED } from './editorial';
+import { PageShell, PageTitle, PageLead, SectionTitle, BodyText, NumberedList, ACCENT, INK, MUTED } from './editorial';
 
 const Skills = () => {
   const { language } = useLanguage();
   const isZh = language === 'zh';
 
-  const technicalSkills = isZh
+  const modules = isZh
     ? [
-        'Java 平台',
-        '企业架构设计',
-        '大规模平台研发',
-        '微服务架构',
-        '电商平台',
-        '低代码 / 无代码平台',
-        '云计算',
-        '系统集成',
+        {
+          title: '从 AI 策略到生产',
+          items: [
+            '识别值得做的业务场景，而不是先绑定某一个模型',
+            'RAG、Agent、工具调用与人工审核如何进入现有系统',
+            '评测、成本、可靠性与权限治理，让试点能停在生产里',
+          ],
+        },
+        {
+          title: '平台与架构',
+          items: [
+            '复杂系统拆分、服务边界和长期演进',
+            '平台化：哪些能力共享，哪些留在业务侧',
+            '集成、高可用，以及高峰与组织变化下的稳定性',
+          ],
+        },
+        {
+          title: '交付与组织',
+          items: [
+            '团队结构、技术委员会和跨职能协作',
+            '敏捷交付、研发效能与质量体系',
+            '把架构图变成团队能持续执行的工作方式',
+          ],
+        },
+        {
+          title: '产品与业务对齐',
+          items: [
+            '把需求澄清成可量化的结果和边界',
+            '路线图、ROI 与从试点到推广的节奏',
+            '与客户共创，用 FDE 方式缩短从想法到上线的路径',
+          ],
+        },
       ]
     : [
-        'Java Platform',
-        'Enterprise Architecture Design',
-        'Large-scale Platform Development',
-        'Microservices Architecture',
-        'E-commerce Platforms',
-        'Low-code / No-code Platforms',
-        'Cloud Computing',
-        'System Integration',
+        {
+          title: 'AI strategy to production',
+          items: [
+            'Choose business scenarios that deserve AI, instead of locking onto a model first',
+            'Get RAG, agents, tool-use, and human review into the systems you already run',
+            'Evaluation, cost, reliability, and permission governance so a pilot can stay in production',
+          ],
+        },
+        {
+          title: 'Platform & architecture',
+          items: [
+            'Split complex systems, set service boundaries, and govern long evolution',
+            'Platformize: what should be shared, what should stay in the business',
+            'Integration, high availability, and stability under peaks and organizational change',
+          ],
+        },
+        {
+          title: 'Delivery & organization',
+          items: [
+            'Team structure, technical committees, and cross-functional work',
+            'Agile delivery, engineering effectiveness, and quality systems',
+            'Turn an architecture diagram into a way of working a team can keep executing',
+          ],
+        },
+        {
+          title: 'Product & business alignment',
+          items: [
+            'Turn requests into measurable outcomes and explicit boundaries',
+            'Roadmaps, ROI, and the pace from pilot to wider adoption',
+            'Co-create with the customer; use an FDE posture to shorten idea-to-production',
+          ],
+        },
       ];
 
-  const aiSkills = isZh
+  const method = isZh
     ? [
-        'LLM 应用开发',
-        'Prompt Engineering / 提示词工程',
-        'RAG（检索增强生成）',
-        'AI Agent Frameworks',
-        'MCP / Tool-use 集成',
-        '模型评测与落地优化',
-        'Vector Databases / 向量检索',
-        'AI 产品策略',
+        '业务流程和可量化目标',
+        '系统边界、数据与权限',
+        '评估、反馈、运维与团队机制',
       ]
     : [
-        'LLM Application Development',
-        'Prompt Engineering',
-        'RAG (Retrieval-Augmented Generation)',
-        'AI Agent Frameworks',
-        'MCP / Tool-use Integration',
-        'Model Evaluation & Delivery Optimization',
-        'Vector Databases',
-        'AI Product Strategy',
+        'Business workflow and a measurable outcome',
+        'System boundaries, data, and permissions',
+        'Evaluation, feedback, operations, and team habits',
       ];
-
-  const managementSkills = isZh
-    ? ['敏捷项目管理', '团队领导力', '技术架构', '产品研发', '质量保障', '战略规划']
-    : ['Agile Project Management', 'Team Leadership', 'Technical Architecture', 'Product Development', 'Quality Assurance', 'Strategic Planning'];
-
-  const certifications = isZh
-    ? [
-        'Project Management Professional (PMP) · 华为 · 2005',
-        '国家高级程序员认证 · 中国国家认证 · 2001',
-      ]
-    : [
-        'Project Management Professional (PMP) · Huawei · 2005',
-        'National Senior Programmer Certification · China · 2001',
-      ];
-
-  const languages = isZh
-    ? [
-        '中文 · 母语 · 普通话 / 中文沟通',
-        '英文 · CET-6（读写良好）· 商务沟通、技术写作',
-        '技术语言 · Java / JavaScript / SQL',
-        '业务沟通 · 跨文化团队协作',
-      ]
-    : [
-        'Chinese · Native · Mandarin',
-        'English · CET-6 (reading and writing) · Business and technical writing',
-        'Technical languages · Java, JavaScript, SQL',
-        'Business communication · Cross-cultural teams',
-      ];
-
-  const platforms = isZh
-    ? ['淘宝电商平台', '蘑菇街时尚电商平台', '钉钉国际版', '蚂蚁集团低代码平台', '华为 OSS 产品', '阿里巴巴业务中台']
-    : ['Taobao E-commerce Platform', 'Mogu Street Fashion Platform', 'DingTalk International', 'Ant Group Low-code Platform', 'Huawei OSS Products', 'Alibaba Middle Platform'];
 
   return (
     <PageShell>
-      <PageTitle>{isZh ? '技能与专长' : 'Skills & expertise'}</PageTitle>
+      <PageTitle>{isZh ? '能力与方法' : 'Capabilities'}</PageTitle>
       <PageLead>
         {isZh
-          ? '二十年企业级工程积累，当前重点在 AI 应用与技术管理。'
-          : 'Twenty years of enterprise engineering, with a present focus on AI applications and technical leadership.'}
+          ? '客户要买的不是某一门语言或某一个框架，而是把 AI、平台和工程组织连成闭环、降低交付风险的能力。'
+          : 'Clients are not buying a language or a framework. They are buying the ability to close the loop across AI, platform, and engineering organization—and to lower delivery risk.'}
       </PageLead>
 
-      <SectionTitle>{isZh ? '核心技术能力' : 'Technical skills'}</SectionTitle>
+      <Box sx={{ display: 'grid', gap: 6, mb: 7 }}>
+        {modules.map((mod, index) => (
+          <Box key={mod.title}>
+            <Typography sx={{ color: INK, fontSize: '1.12rem', mb: 1.5, display: 'flex', gap: 1 }}>
+              <Box component="sup" sx={{ color: ACCENT, fontSize: '0.7rem', minWidth: 14, textAlign: 'right' }}>
+                {index + 1}
+              </Box>
+              {mod.title}
+            </Typography>
+            <NumberedList items={mod.items} />
+          </Box>
+        ))}
+      </Box>
+
+      <SectionTitle>{isZh ? '交付方法' : 'How delivery works'}</SectionTitle>
+      <BodyText>
+        {isZh
+          ? '先看流程和结果，再看系统和权限，最后才是模型与工具。顺序反了，就容易停在演示。'
+          : 'Workflow and outcome first, then systems and permissions, and only then the model and tools. Reverse that order and work tends to stop at the demo.'}
+      </BodyText>
       <Box sx={{ mb: 6 }}>
-        <NumberedList items={technicalSkills} />
+        <NumberedList items={method} />
       </Box>
 
-      <SectionTitle>{isZh ? 'AI 能力与应用方向' : 'AI skills & application focus'}</SectionTitle>
-      <Box sx={{ mb: 6 }}>
-        <NumberedList items={aiSkills} />
-      </Box>
+      <SectionTitle>{isZh ? '技术基础' : 'Technical foundation'}</SectionTitle>
+      <Typography sx={{ color: MUTED, lineHeight: 1.8, mb: 7 }}>
+        {isZh
+          ? 'Java · JavaScript · SQL · 企业级服务与集成。语言是工具；关键是系统能否在复杂组织里长期运行。'
+          : 'Java · JavaScript · SQL · enterprise services and integration. Languages are tools. The question is whether the system can keep running inside a complex organization.'}
+      </Typography>
 
-      <SectionTitle>{isZh ? '管理能力' : 'Management skills'}</SectionTitle>
-      <Box sx={{ mb: 6 }}>
-        <NumberedList items={managementSkills} />
-      </Box>
-
-      <SectionTitle>{isZh ? '语言与沟通' : 'Languages & communication'}</SectionTitle>
-      <Box sx={{ mb: 6 }}>
-        <NumberedList items={languages} />
-      </Box>
-
-      <SectionTitle>{isZh ? '专业认证' : 'Certifications'}</SectionTitle>
-      <Box sx={{ mb: 6 }}>
-        <NumberedList items={certifications} />
-      </Box>
-
-      <SectionTitle>{isZh ? '平台经验' : 'Platform experience'}</SectionTitle>
-      <Box sx={{ mb: 7 }}>
-        <NumberedList items={platforms} />
-      </Box>
-
-      <Box sx={{ textAlign: 'center', maxWidth: 640, mx: 'auto' }}>
-        <Typography
-          sx={{
-            fontFamily: displaySerif,
-            fontSize: { xs: '1.2rem', md: '1.35rem' },
-            color: INK,
-            mb: 2,
-            lineHeight: 1.6,
-          }}
-        >
-          {isZh ? '带领过 7 到 110 人规模的团队' : 'Led teams ranging from 7 to 110 people'}
-        </Typography>
-        <BodyText sx={{ color: MUTED, mb: 0, textAlign: 'center' }}>
-          {isZh
-            ? '具备从创业团队到大型企业组织的跨场景团队管理经验，长期负责敏捷项目管理、技术架构治理与跨团队协同交付。'
-            : 'Experienced in managing diverse teams across startup and large-enterprise environments, with a strong record in agile delivery, technical architecture leadership, and cross-functional execution.'}
-        </BodyText>
-      </Box>
+      <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
+        <Box component={RouterLink} to="/projects" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
+          {isZh ? '看这些能力如何出现在案例里 →' : 'See how this shows up in the work →'}
+        </Box>
+      </Typography>
     </PageShell>
   );
 };

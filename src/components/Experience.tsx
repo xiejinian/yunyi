@@ -7,7 +7,6 @@ import {
   PageLead,
   SectionTitle,
   BodyText,
-  NumberedList,
   TextLink,
   ACCENT,
   INK,
@@ -15,135 +14,83 @@ import {
   displaySerif,
 } from './editorial';
 
+type Role = {
+  year: string;
+  title: string;
+  company: string;
+  companyLink?: string;
+  context: string;
+  scope: string;
+  result: string;
+  capability: string;
+  emphasize?: boolean;
+};
+
 const Experience = () => {
   const { language } = useLanguage();
   const isZh = language === 'zh';
 
-  const experiences = isZh
+  const featured = isZh
+    ? {
+        kicker: '核心品牌资产',
+        title: '阿里巴巴业务中台联合创始人之一',
+        detail: '把交易、商品、订单等能力从烟囱式开发，转化为可复用的平台能力；系统服务数亿用户，并支撑包括大促在内的复杂交易场景。',
+      }
+    : {
+        kicker: 'Brand asset',
+        title: 'Co-founder of Alibaba’s Business Middle Platform',
+        detail:
+          'Turned trading, product, and order capabilities from siloed delivery into reusable platform services. Systems serving hundreds of millions of users, including peak commerce events.',
+      };
+
+  const roles: Role[] = isZh
     ? [
         {
           year: '2023–至今',
           title: 'CTO',
           company: '光荣智能 (Glorion Intelligence)',
           companyLink: 'https://hz-glory.vercel.app/',
-          meta: '主职 · AI 与数字化转型 · FDE · 制造、政务、贸易',
-          description:
-            '作为光荣智能 CTO，负责公司的技术战略与交付。公司以 FDE（前线部署工程师）模式，用 AI 和软件工程帮助制造、政府和贸易等客户完成数字化转型，把大模型与行业流程接到真实业务里。',
-          achievements: [
-            '制定技术方向，把 AI 能力落到制造、政务与贸易场景',
-            '带领交付团队以 FDE 方式驻场，把方案做成可运行的系统',
-            '连接客户业务与工程实现，缩短从需求到上线的路径',
-          ],
-        },
-        {
-          year: '2023–至今',
-          title: '外部顾问 · CTO',
-          company: '飞凡科技 (Feifan Tech)',
-          companyLink: 'https://feifan-tech-website.pages.dev/',
-          meta: '外部顾问 · 企业软件、客户服务、AI 工程',
-          description:
-            '以外部顾问身份兼任飞凡科技 CTO，协助企业软件、客户服务与 AI 工程方向的技术决策，推进 LLM、RAG、智能助手与 Agent Tool-use 在真实业务中的落地。',
-          achievements: [
-            '为企业管理系统与数字化项目提供技术把关',
-            '协助客户服务与 AI 相关产品的架构与落地',
-            '结合 Prompt Engineering、RAG 与工具调用模式提升交付效率',
-          ],
-        },
-        {
-          year: '2023–至今',
-          title: '外部顾问 · 研发总经理',
-          company: '红熊AI (Redbear AI)',
-          meta: '外部顾问 · AI 产品研发与交付',
-          description: '以外部顾问身份兼任红熊AI 研发总经理，负责 AI 产品研发方向与交付节奏，协助团队把模型能力做成可交付的产品。',
-          achievements: [
-            '规划 AI 产品研发路径，对接业务目标',
-            '协助团队把模型能力做成可交付的产品',
-          ],
+          context: '制造、政务与贸易客户需要把大模型用进真实业务，而不是停留在试用。',
+          scope: '主职负责技术战略与交付；同时以外部顾问兼任飞凡科技 CTO、红熊AI 研发总经理。',
+          result: '以 FDE 方式驻场，把 LLM、RAG 与 Agent 接到现有流程、权限和系统里。',
+          capability: '企业 AI 从试点走到生产，并把平台能力与组织交付连在一起。',
         },
         {
           year: '2021–2023',
           title: '资深工程师 / Team Lead',
           company: 'Ant Group, Hangzhou',
-          meta: '金融科技集团 · 7 人团队 · 低代码平台、团队管理、产品研发',
-          description: '负责低代码平台基础服务团队与产品研发，帮助业务人员更高效地构建应用，并通过平台化与自动化能力支撑蚂蚁集团业务扩张。',
-          achievements: [
-            '主导云凤蝶低代码平台基础服务研发',
-            '通过平台自动化提升业务扩张效率',
-            '管理 7 人跨职能工程团队',
-            '交付企业级低代码解决方案',
-          ],
+          context: '业务团队需要更快地构建应用，平台必须把复杂能力变成可复用服务。',
+          scope: '负责云凤蝶低代码平台基础服务，管理 7 人跨职能团队。',
+          result: '用平台化与自动化支撑业务扩张，降低应用交付门槛。',
+          capability: '把专家知识编码进平台，让组织交付效率可复制。',
         },
         {
           year: '2018–2021',
           title: '资深工程师 / Team Lead',
           company: 'Alibaba Cloud DingTalk Division, Hangzhou',
-          meta: '云与企业服务 · 20 人团队 · 国际化、平台研发、技术委员会',
-          description: '带领钉钉国际化产品研发，推动海外 DAU 从 0 增长到数百万，并主导钉钉运营中台建设。',
-          achievements: [
-            '推动钉钉国际版 DAU 从 0 增长到数百万',
-            '主导钉钉运营中台建设',
-            '研发疫情时期企业复工所需的 IDaaS 平台',
-            '担任钉钉技术委员会成员',
-            '提前达成 FY20 业务目标',
-          ],
-        },
-        {
-          year: '2015–2018',
-          title: '技术总监',
-          company: 'Mogu Street (NYSE: MOGU), Hangzhou',
-          meta: '时尚电商 · 110 人团队 · 电商平台、大团队管理、质量保障',
-          description: '负责蘑菇街电商中台与质量保障团队日常运作，带领多产品线研发并主持技术委员会工作。',
-          achievements: [
-            '负责中国头部时尚电商平台中台运营',
-            '管理 110 人工程团队',
-            '主持技术委员会推动架构演进',
-            '保障平台在千万级用户场景下的稳定与扩展性',
-            '建立系统化质量保障流程',
-          ],
+          context: '企业协同产品要走向海外，本地化、身份与运营中台必须同时成立。',
+          scope: '带领约 20 人研发国际化产品，并主导运营中台；钉钉技术委员会成员。',
+          result: '海外 DAU 从 0 增长到数百万；交付疫情时期企业复工所需的 IDaaS。',
+          capability: '在增长约束下同时做产品、本地化与组织协同。',
         },
         {
           year: '2007–2015',
           title: '高级工程师 ~ 资深工程师',
           company: 'Alibaba Group Taobao (NYSE: BABA), Hangzhou',
-          meta: '电商巨头 · 30 人团队 · 平台架构、技术委员会、创新',
-          description: '负责淘宝交易平台与业务支撑平台研发管理，是阿里巴巴业务中台的联合创始人之一。',
-          achievements: [
-            '阿里巴巴业务中台联合创始人之一',
-            '主导淘宝核心交易与业务平台研发',
-            '担任阿里交易技术委员会成员',
-            '在高速增长阶段管理 30+ 人工程团队',
-            '架构服务数亿用户的核心系统',
-            '建立平台化电商能力的基础模式',
-          ],
+          emphasize: true,
+          context: '多个业务高速增长，交易与商品能力若继续烟囱式开发，将无法支撑规模。',
+          scope: '负责淘宝交易平台与业务支撑平台研发管理，带领 30+ 人团队；阿里交易技术委员会成员。',
+          result: '联合创建阿里巴巴业务中台，架构服务数亿用户的核心交易系统。',
+          capability: '判断哪些能力应平台化，并让架构演进与组织协作保持一致。',
         },
         {
           year: '2003–2007',
           title: '项目经理 / 架构师 / 工程师',
-          company: 'Huawei Tech & Others, Shenzhen',
-          meta: '通信与软件 · 15 人团队 · 通信系统、敏捷管理、系统架构',
-          description: '参与通信 OSS 系统研发，推动华为敏捷项目管理实践，并参与在线教育和社区平台建设。',
-          achievements: [
-            '推动华为团队敏捷转型',
-            '参与通信 OSS 产品研发',
-            '完成团队敏捷实践落地',
-            '研发在线教育软件平台',
-            '参与大型互联网社区系统建设',
-            '在华为期间获得 PMP 认证',
-          ],
-        },
-        {
-          year: '2001–2003',
-          title: '工程师 / 项目经理',
-          company: 'Early Career - Multiple Companies',
-          meta: '软件开发 · 基础积累 · 软件工程、教育科技',
-          description: '在深圳开启软件工程职业生涯，参与在线教育软件与社区平台研发，打下企业软件开发基础。',
-          achievements: [
-            '获得计算机科学与技术学士学位',
-            '获得国家高级程序员认证',
-            '建立 Java 平台开发基础能力',
-            '参与在线教育与社区软件项目',
-            '形成企业级软件开发基础方法论',
-          ],
+          company: 'Huawei Tech, Shenzhen',
+          context: '通信 OSS 交付仍以瀑布为主，复杂系统需要更可预测的工程方法。',
+          scope: '参与电信运营支撑系统研发，推动团队敏捷实践，管理约 15 人。',
+          result: '完成 OSS 产品交付，并在华为期间获得 PMP 认证。',
+          capability: '在传统工程环境里引入可落地的敏捷与架构约束。',
         },
       ]
     : [
@@ -152,168 +99,143 @@ const Experience = () => {
           title: 'CTO',
           company: 'Glorion Intelligence',
           companyLink: 'https://hz-glory.vercel.app/',
-          meta: 'Primary role · AI & digital transformation · FDE · manufacturing, government, trade',
-          description:
-            'As CTO of Glorion Intelligence, I own the technical strategy and delivery. The company helps enterprises with digital transformation through AI and software engineering, serving manufacturing, government, and trade clients in an FDE (Forward Deployed Engineer) model that puts large models into real workflows.',
-          achievements: [
-            'Set the technical direction for AI in manufacturing, government, and trade',
-            'Lead delivery teams that embed with customers and ship working systems',
-            'Connect business needs to engineering so ideas reach production faster',
-          ],
-        },
-        {
-          year: '2023–Present',
-          title: 'External Advisor · CTO',
-          company: 'Feifan Tech',
-          companyLink: 'https://feifan-tech-website.pages.dev/',
-          meta: 'External advisor · enterprise software, customer service, AI engineering',
-          description:
-            'I also serve as external advisor and CTO at Feifan Tech, supporting technical decisions in enterprise software, customer service, and AI engineering, including practical adoption of LLMs, RAG, copilots, and agent tool-use.',
-          achievements: [
-            'Advise on enterprise management systems and digital projects',
-            'Help shape architecture and delivery for customer-service and AI products',
-            'Applied prompt engineering, RAG, and tool-use patterns to improve delivery effectiveness',
-          ],
-        },
-        {
-          year: '2023–Present',
-          title: 'External Advisor · Head of R&D',
-          company: 'Redbear AI',
-          meta: 'External advisor · AI product R&D and delivery',
-          description:
-            'I also serve as external advisor and Head of R&D at Redbear AI, guiding AI product research, development direction, and delivery pace.',
-          achievements: [
-            'Set the R&D path for AI products against business goals',
-            'Help the team turn model capabilities into shippable products',
-          ],
+          context: 'Manufacturing, government, and trade clients need large models inside real work—not another trial.',
+          scope:
+            'Own technical strategy and delivery as primary CTO; concurrently advise as CTO at Feifan Tech and Head of R&D at Redbear AI.',
+          result: 'Embed with customers in an FDE model so LLMs, RAG, and agents enter existing workflows, permissions, and systems.',
+          capability: 'Move enterprise AI from pilot to production, and connect platform capability with organizational delivery.',
         },
         {
           year: '2021–2023',
           title: 'Staff Engineer / Team Lead',
           company: 'Ant Group, Hangzhou',
-          meta: 'FinTech · Team of 7 · Low-code platform, team leadership, product development',
-          description:
-            'Managed the base service team for the low-code platform and led product development, enabling business staff to build applications faster through platformized automation and enterprise integration.',
-          achievements: [
-            'Led development of Yunfengdie low-code platform base services',
-            'Enabled rapid business expansion through platform automation',
-            'Managed a cross-functional team of 7 engineers',
-            'Delivered enterprise-grade low-code solutions',
-          ],
+          context: 'Business teams needed to build applications faster; the platform had to turn complexity into reusable services.',
+          scope: 'Led Yunfengdie low-code platform base services and a cross-functional team of 7.',
+          result: 'Lowered the cost of application delivery and supported business expansion through platform automation.',
+          capability: 'Encode expert knowledge into a platform so delivery speed becomes repeatable.',
         },
         {
           year: '2018–2021',
           title: 'Staff Engineer / Team Lead',
           company: 'Alibaba Cloud DingTalk Division, Hangzhou',
-          meta: 'Cloud & enterprise · Team of 20 · International expansion, platform development, technical committee',
-          description:
-            'Led R&D for DingTalk international products, growing overseas DAU from 0 to millions while directing development of the DingTalk Operations Middle Platform.',
-          achievements: [
-            'Grew DingTalk international DAU from 0 to millions',
-            'Led development of the DingTalk Operations Middle Platform',
-            'Developed the IDaaS platform for enterprise recovery during COVID-19',
-            'Served as a DingTalk Technical Committee member',
-            'Achieved FY20 business goals ahead of schedule',
-          ],
-        },
-        {
-          year: '2015–2018',
-          title: 'Staff Director',
-          company: 'Mogu Street (NYSE: MOGU), Hangzhou',
-          meta: 'Fashion e-commerce · Team of 110 · E-commerce platform, large-team management, quality assurance',
-          description:
-            "Managed daily operations of Mogu's E-commerce Middle Platform and quality assurance team. Led R&D for e-commerce products and chaired the Technical Committee.",
-          achievements: [
-            "Managed E-commerce Middle Platform operations for China's top fashion platform",
-            'Led a team of 110 engineers across multiple product lines',
-            'Chaired the Technical Committee overseeing architecture improvements',
-            'Ensured platform scalability for millions of users',
-            'Implemented comprehensive quality assurance processes',
-          ],
+          context: 'An enterprise collaboration product had to work overseas; localization, identity, and operations had to land together.',
+          scope: 'Led ~20 engineers on international R&D and the operations middle platform; DingTalk Technical Committee member.',
+          result: 'Grew overseas DAU from 0 to millions and shipped the IDaaS platform for enterprise recovery during COVID-19.',
+          capability: 'Hold product, localization, and organizational coordination under growth constraints.',
         },
         {
           year: '2007–2015',
           title: 'Senior Engineer ~ Staff Engineer',
           company: 'Alibaba Group Taobao (NYSE: BABA), Hangzhou',
-          meta: 'E-commerce · Team of 30 · Platform architecture, technical committee, innovation',
-          description:
-            "Managed teams for R&D of Taobao's trading platform and business support platform. Co-founder of Alibaba's Business Middle Platform.",
-          achievements: [
-            "Co-founder of Alibaba's revolutionary Business Middle Platform",
-            'Led development of core Taobao trading and business platforms',
-            'Member of Alibaba Trading Technical Committee',
-            'Managed teams of 30+ engineers during rapid growth',
-            'Architected systems serving hundreds of millions of users',
-            'Established foundational e-commerce platform patterns',
-          ],
+          emphasize: true,
+          context: 'Multiple businesses were growing too fast for siloed trading and product systems to keep up.',
+          scope:
+            'Managed R&D for Taobao’s trading and business-support platforms, 30+ engineers; Alibaba Trading Technical Committee member.',
+          result: 'Co-founded Alibaba’s Business Middle Platform and architected core trading systems serving hundreds of millions of users.',
+          capability: 'Decide what should become platform capability, and keep architecture evolution aligned with how teams work.',
         },
         {
           year: '2003–2007',
           title: 'Project Manager / Architect / Engineer',
-          company: 'Huawei Tech & Others, Shenzhen',
-          meta: 'Telecom & tech · Team of 15 · Telecommunications, agile management, system architecture',
-          description:
-            'Participated in R&D of telecommunications operation support systems. Pioneered agile project management at Huawei and also worked on online education and community platforms.',
-          achievements: [
-            'Pioneered agile project management transformation at Huawei',
-            'Led development of telecommunications OSS products',
-            'Completed team agile transformation initiatives',
-            'Developed online education software platforms',
-            'Built online community systems for major internet companies',
-            'Obtained PMP certification during Huawei tenure',
-          ],
-        },
-        {
-          year: '2001–2003',
-          title: 'Engineer / Project Manager',
-          company: 'Early Career - Multiple Companies',
-          meta: 'Software development · Foundation building · Software engineering, education tech',
-          description:
-            'Started a software engineering career in Shenzhen, working on online education software and community platforms while building a strong foundation in enterprise development.',
-          achievements: [
-            'Graduated with a Bachelor in Computer Science & Technology',
-            'Obtained National Senior Programmer Certification',
-            'Built a strong foundation in Java platform development',
-            'Contributed to online education and community software projects',
-            'Developed core enterprise software engineering fundamentals',
-          ],
+          company: 'Huawei Tech, Shenzhen',
+          context: 'Telecom OSS delivery was still waterfall-heavy; complex systems needed a more predictable engineering method.',
+          scope: 'Contributed to OSS product R&D, introduced agile practices, and led a team of about 15.',
+          result: 'Delivered OSS products and earned PMP certification during the Huawei years.',
+          capability: 'Bring workable agile and architectural constraints into a traditional engineering environment.',
         },
       ];
 
+  const earlier = isZh
+    ? [
+        {
+          year: '2015–2018',
+          title: '蘑菇街技术总监',
+          detail: '带领 110 人工程团队，负责时尚电商中台与质量保障，主持技术委员会。',
+        },
+        {
+          year: '2001–2003',
+          title: '深圳起步',
+          detail: '企业软件、在线教育与社区平台；计算机科学学士、国家高级程序员。',
+        },
+      ]
+    : [
+        {
+          year: '2015–2018',
+          title: 'Staff Director, Mogu Street',
+          detail: 'Led 110 engineers on the fashion e-commerce middle platform and quality, and chaired the Technical Committee.',
+        },
+        {
+          year: '2001–2003',
+          title: 'Shenzhen, early career',
+          detail: 'Enterprise software, online education, and community platforms; B.Tech in Computer Science; National Senior Programmer.',
+        },
+      ];
+
+  const field = (label: string, value: string) => (
+    <Box sx={{ mb: 1.75 }}>
+      <Typography sx={{ color: ACCENT, fontSize: '0.82rem', letterSpacing: '0.04em', mb: 0.4 }}>{label}</Typography>
+      <Typography sx={{ color: INK, fontSize: '1.02rem', lineHeight: 1.75 }}>{value}</Typography>
+    </Box>
+  );
+
   return (
     <PageShell>
-      <PageTitle>{isZh ? '职业经历' : 'Professional experience'}</PageTitle>
+      <PageTitle>{isZh ? '职业经历' : 'Experience'}</PageTitle>
       <PageLead>
         {isZh
-          ? '从华为、阿里、蚂蚁到光荣智能，一条围绕平台、组织与 AI 落地的路径；同时以外部顾问兼任飞凡科技 CTO 与红熊AI 研发总经理。'
-          : 'From Huawei, Alibaba, and Ant Group to Glorion Intelligence — a path through platforms, organizations, and practical AI, with concurrent advisor roles at Feifan Tech and Redbear AI.'}
+          ? '一条从基础工程、平台架构、规模化管理到企业 AI 交付的路径。重点看规模、职责和结果。'
+          : 'A path from foundational engineering and platform architecture through scaled organizations to enterprise AI delivery. Scan for scope, responsibility, and results.'}
       </PageLead>
 
-      <Box sx={{ display: 'grid', gap: 7.5 }}>
-        {experiences.map((exp) => (
-          <Box key={`${exp.year}-${exp.company}`}>
+      <Box sx={{ mb: 7, pb: 4, borderBottom: '1px solid #E6DCCB' }}>
+        <Typography sx={{ color: ACCENT, letterSpacing: '0.06em', mb: 1, fontSize: '0.88rem' }}>{featured.kicker}</Typography>
+        <Typography sx={{ fontFamily: displaySerif, fontSize: { xs: '1.25rem', md: '1.4rem' }, color: INK, mb: 1.25, lineHeight: 1.4 }}>
+          {featured.title}
+        </Typography>
+        <BodyText sx={{ mb: 0 }}>{featured.detail}</BodyText>
+      </Box>
+
+      <Box sx={{ display: 'grid', gap: 7 }}>
+        {roles.map((exp) => (
+          <Box
+            key={`${exp.year}-${exp.company}`}
+            sx={exp.emphasize ? { pl: { xs: 0, md: 2 }, borderLeft: { md: `2px solid ${ACCENT}` } } : undefined}
+          >
             <Typography sx={{ color: ACCENT, letterSpacing: '0.04em', mb: 0.75 }}>{exp.year}</Typography>
             <Typography
               component="h2"
               sx={{
                 fontFamily: displaySerif,
-                fontSize: { xs: '1.28rem', md: '1.45rem' },
+                fontSize: { xs: '1.22rem', md: '1.38rem' },
                 color: INK,
-                mb: 0.75,
+                mb: 0.5,
                 lineHeight: 1.35,
               }}
             >
               {exp.title}
             </Typography>
-            <Typography sx={{ color: MUTED, mb: 0.5, fontSize: '1.02rem' }}>
+            <Typography sx={{ color: MUTED, mb: 2.25, fontSize: '1.02rem' }}>
               {exp.companyLink ? <TextLink href={exp.companyLink}>{exp.company}</TextLink> : exp.company}
             </Typography>
-            <Typography sx={{ color: MUTED, mb: 2.25, fontSize: '0.92rem', lineHeight: 1.6 }}>{exp.meta}</Typography>
-            <BodyText>{exp.description}</BodyText>
-            <SectionTitle>{isZh ? '关键成果' : 'Key results'}</SectionTitle>
-            <NumberedList items={exp.achievements} />
+            {field(isZh ? '场景' : 'Context', exp.context)}
+            {field(isZh ? '范围' : 'Scope', exp.scope)}
+            {field(isZh ? '结果' : 'Result', exp.result)}
+            {field(isZh ? '代表性能力' : 'Capability', exp.capability)}
           </Box>
         ))}
+      </Box>
+
+      <Box sx={{ mt: 8 }}>
+        <SectionTitle>{isZh ? '更早的领导经历' : 'Earlier leadership experience'}</SectionTitle>
+        <Box sx={{ display: 'grid', gap: 3.5, mt: 1 }}>
+          {earlier.map((item) => (
+            <Box key={item.year}>
+              <Typography sx={{ color: ACCENT, mb: 0.4 }}>{item.year}</Typography>
+              <Typography sx={{ fontFamily: displaySerif, color: INK, fontSize: '1.12rem', mb: 0.5 }}>{item.title}</Typography>
+              <Typography sx={{ color: MUTED, lineHeight: 1.7 }}>{item.detail}</Typography>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </PageShell>
   );

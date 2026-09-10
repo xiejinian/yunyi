@@ -55,7 +55,7 @@ export const PageLead: React.FC<{ children: React.ReactNode }> = ({ children }) 
     sx={{
       color: MUTED,
       textAlign: 'center',
-      maxWidth: 520,
+      maxWidth: 640,
       mx: 'auto',
       mb: 6,
       lineHeight: 1.75,
@@ -106,8 +106,8 @@ export const TextLink: React.FC<{
     component={href ? 'a' : 'button'}
     href={href}
     onClick={onClick}
-    target={href ? '_blank' : undefined}
-    rel={href ? 'noopener noreferrer' : undefined}
+    target={href?.startsWith('http') ? '_blank' : undefined}
+    rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
     type={href ? undefined : 'button'}
     sx={{
       color: ACCENT,
