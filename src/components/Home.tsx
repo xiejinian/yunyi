@@ -121,8 +121,11 @@ const Home = () => {
             >
               {isZh ? '把 AI 雄心，落成可靠的业务系统。' : 'Turn AI ambition into dependable business systems.'}
             </Typography>
-            <Typography sx={{ color: MUTED, fontSize: '1.02rem', mb: 2.5, letterSpacing: '0.04em' }}>
+            <Typography sx={{ color: MUTED, fontSize: '1.02rem', mb: 0.6, letterSpacing: '0.04em' }}>
               Xie Jinian · 谢记年
+            </Typography>
+            <Typography sx={{ color: FAINT, fontSize: '0.88rem', mb: 2.5, lineHeight: 1.6 }}>
+              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Alibaba flower name: Yunyi · Mogu Street flower name: Muhan'}
             </Typography>
             <Typography sx={{ color: INK, fontSize: { xs: '1.02rem', md: '1.08rem' }, lineHeight: 1.8, mb: 2 }}>
               {isZh

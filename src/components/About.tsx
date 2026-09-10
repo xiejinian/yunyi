@@ -73,6 +73,9 @@ const About = () => {
           <Typography sx={{ mt: 1.25, fontSize: '0.78rem', color: FAINT, lineHeight: 1.6 }}>
             Xie Jinian / 谢记年
             <Box component="span" sx={{ display: 'block' }}>
+              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Alibaba: Yunyi · Mogu Street: Muhan'}
+            </Box>
+            <Box component="span" sx={{ display: 'block' }}>
               {isZh ? '企业 AI 与平台技术负责人' : 'Enterprise AI & Platform CTO'}
             </Box>
           </Typography>
@@ -90,7 +93,10 @@ const About = () => {
           >
             Xie <Box component="span" sx={{ color: ACCENT }}>Jinian</Box>
           </Typography>
-          <Typography sx={{ color: MUTED, letterSpacing: '0.22em', mb: 4 }}>谢记年</Typography>
+          <Typography sx={{ color: MUTED, letterSpacing: '0.22em', mb: 0.75 }}>谢记年</Typography>
+          <Typography sx={{ color: FAINT, fontSize: '0.92rem', mb: 4, lineHeight: 1.7 }}>
+            {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Alibaba flower name: Yunyi · Mogu Street flower name: Muhan'}
+          </Typography>
 
           <BodyText>
             {isZh ? (
