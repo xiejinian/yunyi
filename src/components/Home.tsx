@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { ACCENT, ACCENT_DARK, INK, MUTED, FAINT, displaySerif } from './editorial';
+import { TrustLogos, TrustQuotes } from './Trust';
 
 const Home = () => {
   const { language } = useLanguage();
@@ -42,6 +43,7 @@ const Home = () => {
   } as const;
 
   return (
+    <Box>
     <Box
       sx={{
         minHeight: '100vh',
@@ -175,6 +177,21 @@ const Home = () => {
               </Typography>
             </Stack>
           </motion.div>
+        </Box>
+      </Box>
+    </Box>
+
+      <Box
+        sx={{
+          px: { xs: 2.5, sm: 4, md: 6 },
+          pb: { xs: 8, md: 12 },
+        }}
+      >
+        <Box sx={{ maxWidth: 760, mx: 'auto', width: '100%' }}>
+          <Box sx={{ pt: { xs: 2, md: 4 }, borderTop: '1px solid #E6DCCB', mb: 7 }}>
+            <TrustLogos isZh={isZh} />
+          </Box>
+          <TrustQuotes isZh={isZh} />
         </Box>
       </Box>
     </Box>

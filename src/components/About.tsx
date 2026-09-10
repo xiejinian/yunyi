@@ -15,6 +15,7 @@ import {
   FAINT,
   displaySerif,
 } from './editorial';
+import { TrustLogos } from './Trust';
 
 const About = () => {
   const { language } = useLanguage();
@@ -145,6 +146,10 @@ const About = () => {
             ? '这也是大厂平台经历仍然有用的原因：我见过系统如何在高并发、复杂组织和长期演进中稳定运行，也见过架构图无法变成交付的情况。'
             : 'That is why large-scale platform experience still matters: I have seen systems hold under high concurrency, complex organizations, and long evolution—and I have seen architecture diagrams that never became delivery.'}
         </BodyText>
+      </Box>
+
+      <Box sx={{ mt: { xs: 7, md: 9 } }}>
+        <TrustLogos isZh={isZh} />
       </Box>
 
       <Box sx={{ mt: { xs: 7, md: 9 }, display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: { xs: 5, sm: 8 } }}>

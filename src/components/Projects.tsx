@@ -13,6 +13,7 @@ import {
   INK,
   displaySerif,
 } from './editorial';
+import { LayerDiagram, alibabaCommerceLayers, dingTalkLayers } from './Trust';
 
 type CaseStudy = {
   name: string;
@@ -22,6 +23,7 @@ type CaseStudy = {
   changed: string;
   proof: string;
   today: string;
+  diagram?: 'alibaba' | 'dingtalk';
   links?: { name: string; url: string }[];
 };
 
@@ -57,6 +59,7 @@ const Projects = () => {
           changed: '建立共享能力与系统边界，降低重复建设，为大规模业务创新和高峰期稳定性提供基础。',
           proof: '服务超大规模电商业务，并支撑包括大促在内的复杂交易场景；系统面向数亿用户。',
           today: '我能够识别哪些能力应平台化、哪些应保留在业务侧，以及如何让架构演进与组织协作保持一致。',
+          diagram: 'alibaba',
           links: [
             { name: '淘宝主站', url: 'https://www.taobao.com' },
           ],
@@ -69,6 +72,7 @@ const Projects = () => {
           changed: '把本地化、IDaaS 与运营中台做成可生长的平台能力，而不是一次性出海项目。',
           proof: '海外 DAU 从 0 增长到数百万；疫情期间支持企业远程办公与复工。',
           today: '客户若要把一套核心系统带到新市场或新组织边界，我关注的是文化、权限和运营能否一起交付。',
+          diagram: 'dingtalk',
           links: [{ name: '钉钉国际版', url: 'https://www.dingtalk.com/wow/dingtalk/act/en-download' }],
         },
         {
@@ -121,6 +125,7 @@ const Projects = () => {
           changed: 'Established shared capabilities and system boundaries, reduced duplicate construction, and created a base for large-scale innovation and peak stability.',
           proof: 'Supported very large-scale commerce, including complex peak-trading scenarios, on systems serving hundreds of millions of users.',
           today: 'I can tell which capabilities should become a platform, which should stay in the business, and how architecture evolution has to match the way teams collaborate.',
+          diagram: 'alibaba',
           links: [{ name: 'Taobao', url: 'https://www.taobao.com' }],
         },
         {
@@ -131,6 +136,7 @@ const Projects = () => {
           changed: 'Turned localization, IDaaS, and operations into a platform that could keep growing—not a one-off launch abroad.',
           proof: 'Overseas DAU grew from 0 to millions. During COVID-19 the work supported remote work and enterprise recovery.',
           today: 'When a client needs a core system to cross a market or organizational boundary, I look at whether culture, permissions, and operations can ship together.',
+          diagram: 'dingtalk',
           links: [{ name: 'DingTalk International', url: 'https://www.dingtalk.com/wow/dingtalk/act/en-download' }],
         },
         {
@@ -189,6 +195,32 @@ const Projects = () => {
             {field(isZh ? '挑战' : 'Challenge', item.challenge)}
             {field(isZh ? '我的角色' : 'My role', item.role)}
             {field(isZh ? '什么变了' : 'What changed', item.changed)}
+            {item.diagram === 'alibaba' && (
+              <Box sx={{ mb: 2.5 }}>
+                <SectionTitle sx={{ mb: 1.25 }}>{isZh ? '架构示意' : 'Architecture'}</SectionTitle>
+                <LayerDiagram
+                  layers={alibabaCommerceLayers(isZh)}
+                  caption={
+                    isZh
+                      ? '阿里巴巴电商平台能力分层示意，按公开平台能力整理，不是内部机密架构图。'
+                      : 'Illustrative Alibaba commerce platform layers from public capabilities, not an internal confidential diagram.'
+                  }
+                />
+              </Box>
+            )}
+            {item.diagram === 'dingtalk' && (
+              <Box sx={{ mb: 2.5 }}>
+                <SectionTitle sx={{ mb: 1.25 }}>{isZh ? '架构示意' : 'Architecture'}</SectionTitle>
+                <LayerDiagram
+                  layers={dingTalkLayers(isZh)}
+                  caption={
+                    isZh
+                      ? '钉钉业务能力分层示意，按公开产品与国际化交付整理，不是内部机密架构图。'
+                      : 'Illustrative DingTalk capability layers from public products and international delivery, not an internal confidential diagram.'
+                  }
+                />
+              </Box>
+            )}
             {field(isZh ? '规模 / 证据' : 'Scale / proof', item.proof)}
             {field(isZh ? '对今天客户的意义' : 'What this means for clients today', item.today)}
             {item.links && item.links.length > 0 && (
