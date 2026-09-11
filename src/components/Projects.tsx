@@ -172,7 +172,7 @@ const Projects = () => {
       <PageTitle>{isZh ? '精选案例' : 'Selected work'}</PageTitle>
       <PageLead>
         {isZh
-          ? '每个案例回答同一组问题：挑战是什么、我做什么、什么变了、对今天的客户意味着什么。当前 AI 案例已脱敏。'
+          ? '每个案例说清四件事：挑战、我做什么、什么变了、对现在的客户意味着什么。当前 AI 案例已脱敏。'
           : 'Each case answers the same questions: the challenge, my role, what changed, and what it means for clients now. Current AI work is anonymized.'}
       </PageLead>
 
@@ -239,7 +239,7 @@ const Projects = () => {
       <Box sx={{ mt: 8 }}>
         <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
           <Box component={RouterLink} to="/contact" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
-            {isZh ? '带着具体的交付问题来谈 →' : 'Bring a specific delivery problem →'}
+            {isZh ? '带一个具体问题来谈 →' : 'Bring a specific problem →'}
           </Box>
         </Typography>
       </Box>

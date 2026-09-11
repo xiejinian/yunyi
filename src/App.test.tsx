@@ -5,6 +5,6 @@ import App from './App';
 test('renders the home value proposition', () => {
   render(<App />);
   expect(
-    screen.getByRole('heading', { name: /Turn AI ambition into dependable business systems/i })
+    screen.getByRole('heading', { name: /Bring AI into real work/i })
   ).toBeInTheDocument();
 });
