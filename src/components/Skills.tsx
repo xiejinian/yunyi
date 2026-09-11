@@ -87,7 +87,7 @@ const Skills = () => {
     : [
         'Business workflow and a measurable outcome',
         'System boundaries, data, and permissions',
-        'Evaluation, feedback, operations, and team habits',
+        'Evaluation, feedback, operations, and team mechanisms',
       ];
 
   return (
@@ -95,8 +95,8 @@ const Skills = () => {
       <PageTitle>{isZh ? '能力与方法' : 'Capabilities'}</PageTitle>
       <PageLead>
         {isZh
-          ? '客户要买的不是某一门语言或某一个框架，而是把 AI、平台和工程组织连成闭环、降低交付风险的能力。'
-          : 'Clients are not buying a language or a framework. They are buying the ability to close the loop across AI, platform, and engineering organization—and to lower delivery risk.'}
+          ? '客户需要的不是某一门语言或某一个框架，而是把人工智能、平台和工程组织连成闭环、降低交付风险的能力。'
+          : 'What matters is not a language or a framework. It is the ability to close the loop across AI, platform, and engineering organization—and to lower delivery risk.'}
       </PageLead>
 
       <Box sx={{ display: 'grid', gap: 6, mb: 7 }}>

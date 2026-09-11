@@ -35,16 +35,16 @@ const Projects = () => {
     ? [
         {
           name: '制造业知识与维修助手',
-          meta: '2023–至今 · 匿名案例 · 光荣智能 FDE',
-          challenge: '一线维修与售后知识散落在文档、老师傅和工单系统里。新人上手慢，重复问题反复发生，试用聊天机器人进不了现有流程。',
-          role: '以 FDE 方式驻场，与业务和一线一起定义场景、数据边界、引用方式和人工确认节点。',
+          meta: '2023–至今 · 匿名案例 · 光荣智能 · 前线交付',
+          challenge: '一线维修与售后知识散落在文档、资深技师和工单系统里。新人上手慢，重复问题反复发生，试用聊天机器人进不了现有流程。',
+          role: '以前线交付工程师方式驻场，与业务和一线一起定义场景、数据边界、引用方式和人工确认节点。',
           changed: '把知识库、工单与大模型连成可检索、可引用、可审核的助手，嵌进维修/售后协作，而不是另开一个聊天窗口。',
           proof: '进入真实工单与知识流程；强调权限、引用和可运维，而不是一次性演示。',
           today: '今天我能帮客户判断哪些现场问题值得做 AI，如何接到现有系统，以及怎样让一线真正用起来。',
         },
         {
           name: '政企内部知识检索与审核',
-          meta: '2023–至今 · 匿名案例 · 光荣智能 FDE',
+          meta: '2023–至今 · 匿名案例 · 光荣智能 · 前线交付',
           challenge: '政策、制度和内部文件量大、检索难、权限敏感。直接把文档丢进模型既不安全，也无法通过审核。',
           role: '先设计权限、引用和人工反馈闭环，再做问答与检索，而不是先追求回答的“聪明”。',
           changed: '内部知识检索进入现有办公路径，敏感内容可追溯、可拦截、可复核。',
@@ -52,7 +52,7 @@ const Projects = () => {
           today: '对政务和大型组织，我默认先问：谁能看、答案从哪来、错了如何收回。这决定 AI 能不能进生产。',
         },
         {
-          name: '阿里巴巴电商中台',
+          name: '阿里巴巴业务中台',
           meta: '2007–2015 · 阿里巴巴淘宝 · 平台架构',
           challenge: '多个业务快速增长，交易、商品、订单等能力若继续烟囱式开发，将无法支撑规模和创新速度。',
           role: '联合创始人与核心架构负责人，带领淘宝业务团队设计并实现关键平台基础设施。',
@@ -70,7 +70,7 @@ const Projects = () => {
           challenge: '企业协同产品要进入海外市场：语言、身份、运营和交付节奏都必须同时成立。',
           role: '资深工程师 / Team Lead，带领约 20 人负责国际版研发与运营中台。',
           changed: '把本地化、IDaaS 与运营中台做成可生长的平台能力，而不是一次性出海项目。',
-          proof: '海外 DAU 从 0 增长到数百万；疫情期间支持企业远程办公与复工。',
+          proof: '海外日活跃用户从 0 增长到数百万；疫情期间支持企业远程办公与复工。',
           today: '客户若要把一套核心系统带到新市场或新组织边界，我关注的是文化、权限和运营能否一起交付。',
           diagram: 'dingtalk',
           links: [{ name: '钉钉国际版', url: 'https://www.dingtalk.com/wow/dingtalk/act/en-download' }],
@@ -97,18 +97,18 @@ const Projects = () => {
     : [
         {
           name: 'Manufacturing knowledge and repair assistant',
-          meta: '2023–Present · Anonymized · Glorion Intelligence FDE',
+          meta: '2023–Present · Anonymized · Glorion Intelligence · forward-deployed',
           challenge:
             'Front-line repair and after-sales knowledge lived in documents, veteran technicians, and ticket systems. New hires ramped slowly, the same issues repeated, and a chatbot trial never entered the real workflow.',
           role: 'Embedded as a forward-deployed engineer. Defined the scenario, data boundaries, citations, and human-confirmation steps with the business and the line.',
           changed:
             'Connected knowledge, tickets, and the model into a retrievable, citable, reviewable assistant inside repair and after-sales collaboration—not a separate chat window.',
           proof: 'Landed in live ticket and knowledge flows, with permissions, citations, and operability treated as the product.',
-          today: 'I can help a client decide which shop-floor problems deserve AI, how to attach it to systems they already have, and how to get the line to actually use it.',
+          today: 'I can help a client decide which shop-floor problems deserve AI, how to attach it to systems they already have, and how front-line teams will actually use it.',
         },
         {
           name: 'Public-sector knowledge retrieval and review',
-          meta: '2023–Present · Anonymized · Glorion Intelligence FDE',
+          meta: '2023–Present · Anonymized · Glorion Intelligence · forward-deployed',
           challenge:
             'Policies, internal rules, and documents were large, hard to search, and permission-sensitive. Dumping files into a model was neither safe nor auditable.',
           role: 'Designed permissions, citations, and a human-feedback loop before chasing “smart” answers.',
@@ -117,7 +117,7 @@ const Projects = () => {
           today: 'For government and large organizations I start with: who can see this, where did the answer come from, and how do we take it back if it is wrong. That decides whether AI can enter production.',
         },
         {
-          name: 'Alibaba E-commerce Middle Platform',
+          name: 'Alibaba Business Middle Platform',
           meta: '2007–2015 · Alibaba Taobao · Platform architecture',
           challenge:
             'Multiple businesses were growing fast. Trading, product, and order capabilities could not stay in siloed delivery if the company wanted both scale and speed.',
@@ -134,7 +134,7 @@ const Projects = () => {
           challenge: 'An enterprise collaboration product had to work overseas. Language, identity, operations, and delivery cadence all had to land together.',
           role: 'Staff Engineer / Team Lead. Led ~20 engineers on international R&D and the operations middle platform.',
           changed: 'Turned localization, IDaaS, and operations into a platform that could keep growing—not a one-off launch abroad.',
-          proof: 'Overseas DAU grew from 0 to millions. During COVID-19 the work supported remote work and enterprise recovery.',
+          proof: 'Overseas daily active users grew from 0 to millions. During COVID-19 the work supported remote work and enterprise recovery.',
           today: 'When a client needs a core system to cross a market or organizational boundary, I look at whether culture, permissions, and operations can ship together.',
           diagram: 'dingtalk',
           links: [{ name: 'DingTalk International', url: 'https://www.dingtalk.com/wow/dingtalk/act/en-download' }],
@@ -150,13 +150,13 @@ const Projects = () => {
           today: 'When someone says “we need a platform,” I ask who uses it, what repeats, and which boundaries must stay stable. Platformization is an organizational choice, not only a technical one.',
         },
         {
-          name: 'Mogu Street commerce middle platform',
-          meta: '2015–2018 · Mogu Street · Scaled organization',
+          name: 'Mogujie commerce middle platform',
+          meta: '2015–2018 · Mogujie · Scaled organization',
           challenge: 'A fashion commerce business was expanding under pressure and constant change. The system and a hundred-person team had to stay stable together.',
           role: 'Staff Director. Ran the e-commerce middle platform and quality, led 110 engineers, chaired the Technical Committee.',
-          changed: 'Used platform boundaries and a quality system so multiple product lines could ship in parallel without becoming a free-for-all.',
+          changed: 'Used platform boundaries and a quality system so multiple product lines could ship in parallel without fragmenting into isolated teams.',
           proof: 'Held stability and scale for millions of users, with a 110-person organization that could keep delivering.',
-          today: 'When the real problem is organization and quality—not another system—this is the experience that shapes how I start.',
+          today: 'When the real problem is organization and quality rather than another system, this is the experience that shapes how I start.',
         },
       ];
 
@@ -239,7 +239,7 @@ const Projects = () => {
       <Box sx={{ mt: 8 }}>
         <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
           <Box component={RouterLink} to="/contact" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
-            {isZh ? '带着一个真实交付问题来谈 →' : 'Bring a real delivery problem →'}
+            {isZh ? '带着具体的交付问题来谈 →' : 'Bring a specific delivery problem →'}
           </Box>
         </Typography>
       </Box>

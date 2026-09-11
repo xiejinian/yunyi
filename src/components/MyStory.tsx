@@ -87,8 +87,8 @@ const MyStory = () => {
       <PageTitle>{isZh ? '判断原则' : 'Leadership principles'}</PageTitle>
       <PageLead>
         {isZh
-          ? '客户不需要完整年表，需要理解我如何做判断：平台化、技术债、团队扩张、国际化和 AI 落地。'
-          : 'Clients do not need a full chronology. They need to see how I judge: platformization, debt, team growth, internationalization, and AI in production.'}
+          ? '完整年表另文收录。这里说明我如何做判断：平台化、技术债、团队扩张、国际化和人工智能落地。'
+          : 'The full chronology is available separately. What matters here is how I judge: platformization, technical debt, team growth, internationalization, and putting AI into production.'}
       </PageLead>
 
       <Box sx={{ display: 'grid', gap: 7 }}>
@@ -116,7 +116,7 @@ const MyStory = () => {
                 to={`/mystory/${item.id}`}
                 sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}
               >
-                {isZh ? '相关记录 →' : 'Related chronicle →'}
+                {isZh ? '相关记录 →' : 'Read this chapter →'}
               </Box>
             </Typography>
           </Box>
@@ -126,8 +126,8 @@ const MyStory = () => {
       <Box sx={{ mt: 10, pt: 4, borderTop: '1px solid #E6DCCB' }}>
         <BodyText sx={{ mb: 1.5 }}>
           {isZh
-            ? '如果需要完整职业叙事，二十年的长文仍在。'
-            : 'If you want the full narrative, the twenty-year chronicle is still here.'}
+            ? '如需完整职业叙事，二十年长文仍可阅读。'
+            : 'The twenty-year professional narrative remains available if a full account is needed.'}
         </BodyText>
         <Typography>
           <Box
@@ -135,7 +135,7 @@ const MyStory = () => {
             to="/mystory/biography-twenty-years"
             sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}
           >
-            {isZh ? '阅读《代码人生》 →' : 'Read the 20-year chronicle →'}
+            {isZh ? '阅读《代码人生》 →' : 'Read Code Life, the twenty-year account →'}
           </Box>
         </Typography>
       </Box>

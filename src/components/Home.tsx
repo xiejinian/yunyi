@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { ACCENT, ACCENT_DARK, INK, MUTED, FAINT, displaySerif } from './editorial';
-import { TrustLogos, TrustQuotes } from './Trust';
+import { TrustLogos } from './Trust';
 
 const Home = () => {
   const { language } = useLanguage();
@@ -12,25 +12,25 @@ const Home = () => {
 
   const proofs = isZh
     ? [
-        { kicker: '01', text: '阿里巴巴电商中台联合创始人之一' },
-        { kicker: '02', text: '带领钉钉国际化从 0 到数百万 DAU' },
+        { kicker: '01', text: '阿里巴巴业务中台联合创始人之一' },
+        { kicker: '02', text: '带领钉钉国际化从 0 到数百万日活跃用户' },
         { kicker: '03', text: '带领过 7 至 110 人规模的工程组织' },
       ]
     : [
-        { kicker: '01', text: "Co-founded Alibaba’s E-commerce Middle Platform" },
-        { kicker: '02', text: 'Led DingTalk international growth from 0 to millions of DAU' },
+        { kicker: '01', text: "Co-founded Alibaba’s Business Middle Platform" },
+        { kicker: '02', text: 'Led DingTalk international growth from 0 to millions of daily active users' },
         { kicker: '03', text: 'Led engineering organizations of 7–110 people' },
       ];
 
   const stats = isZh
     ? [
         { value: '20+', label: '年企业工程' },
-        { value: '0→百万', label: '海外日活' },
+        { value: '0→百万', label: '海外日活跃用户' },
         { value: '7–110', label: '人团队' },
       ]
     : [
         { value: '20+', label: 'years in enterprise engineering' },
-        { value: '0→millions', label: 'international DAU' },
+        { value: '0→millions', label: 'international daily active users' },
         { value: '7–110', label: 'engineers led' },
       ];
 
@@ -86,9 +86,7 @@ const Home = () => {
               }}
             />
             <Typography sx={{ mt: 1.25, fontSize: '0.78rem', color: FAINT, letterSpacing: '0.02em', lineHeight: 1.6 }}>
-              {isZh
-                ? '克劳德·莫奈《印象·日出》，1872。光落在水面上，像工程落在真实业务里。'
-                : 'Claude Monet, Impression, Sunrise, 1872. Light on water — the way engineering should land in real work.'}
+              {isZh ? '克劳德·莫奈《印象·日出》，1872 年。' : 'Claude Monet, Impression, Sunrise, 1872.'}
             </Typography>
           </Box>
           </motion.div>
@@ -125,7 +123,7 @@ const Home = () => {
               Xie Jinian · 谢记年
             </Typography>
             <Typography sx={{ color: FAINT, fontSize: '0.88rem', mb: 2.5, lineHeight: 1.6 }}>
-              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Alibaba flower name: Yunyi · Mogu Street flower name: Muhan'}
+              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Known at Alibaba as Yunyi · known at Mogujie as Muhan'}
             </Typography>
             <Typography sx={{ color: INK, fontSize: { xs: '1.02rem', md: '1.08rem' }, lineHeight: 1.8, mb: 2 }}>
               {isZh
@@ -134,8 +132,8 @@ const Home = () => {
             </Typography>
             <Typography sx={{ color: MUTED, fontSize: '1.02rem', lineHeight: 1.8, mb: 3.5 }}>
               {isZh
-                ? '我是谢记年，光荣智能 CTO，并以外顾问身份兼任飞凡科技 CTO 与红熊AI 研发总经理。过去 20 多年在华为、阿里巴巴、蚂蚁集团和高速成长的产品组织工作。我帮助管理层把 AI 嵌入真实工作流，现代化关键平台，并建设能够持续交付的工程团队。'
-                : 'I’m Xie Jinian, CTO at Glorion Intelligence, and an external advisor as CTO at Feifan Tech and Head of R&D at Redbear AI. I have 20+ years across Huawei, Alibaba, Ant Group, and high-growth product organizations. I help leadership teams deploy AI into real workflows, modernize critical platforms, and build engineering organizations that deliver.'}
+                ? '我是谢记年，光荣智能 CTO，并以外部顾问身份兼任飞凡科技 CTO 与红熊 AI 研发总经理。过去二十余年在华为、阿里巴巴、蚂蚁集团及高速成长的产品组织工作。我协助管理层把 AI 嵌入真实工作流，推进关键平台现代化，并建设能够持续交付的工程团队。'
+                : 'I am Xie Jinian, CTO at Glorion Intelligence, and an external advisor serving as CTO at Feifan Tech and Head of R&D at Redbear AI. I have more than twenty years of experience at Huawei, Alibaba, Ant Group, and high-growth product organizations. I help leadership teams put AI into real workflows, modernize critical platforms, and build engineering organizations that deliver.'}
             </Typography>
           </motion.div>
 
@@ -191,10 +189,9 @@ const Home = () => {
         }}
       >
         <Box sx={{ maxWidth: 760, mx: 'auto', width: '100%' }}>
-          <Box sx={{ pt: { xs: 2, md: 4 }, borderTop: '1px solid #E6DCCB', mb: 7 }}>
+          <Box sx={{ pt: { xs: 2, md: 4 }, borderTop: '1px solid #E6DCCB' }}>
             <TrustLogos isZh={isZh} />
           </Box>
-          <TrustQuotes isZh={isZh} />
         </Box>
       </Box>
     </Box>

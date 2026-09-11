@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import BusinessIcon from '@mui/icons-material/Business';
-import CodeIcon from '@mui/icons-material/Code';
-import FlightIcon from '@mui/icons-material/Flight';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import GroupIcon from '@mui/icons-material/Group';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
-import SchoolIcon from '@mui/icons-material/School';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 import FormattedText from './FormattedText';
+import { useLanguage } from '../i18n/LanguageContext';
 import {
   PageShell,
   PageTitle,
-  SectionTitle,
-  NumberedList,
   TextLink,
   ACCENT,
   INK,
@@ -23,24 +13,119 @@ import {
   displaySerif,
 } from './editorial';
 
-interface StoryMilestone {
+type Chronicle = {
   id: string;
   year: string;
-  title: string;
-  category: string;
-  icon: React.ElementType;
-  color: string;
-  type: string;
-  story: string;
-  lessons: string[];
-  challenges: string[];
-  impact: string;
-  isBiography?: boolean;
-}
+  titleZh: string;
+  titleEn: string;
+  bodyZh: string;
+  bodyEn: string;
+};
+
+const chronicles: Chronicle[] = [
+  {
+    id: '2024-entrepreneurship-reflection',
+    year: '2023–Present',
+    titleZh: '从平台专家到企业交付',
+    titleEn: 'From platform specialist to enterprise delivery',
+    bodyZh: `离开大型平台公司之后，工作从内部资源充裕的环境，转到要对客户结果直接负责。当前主职是光荣智能 CTO，并以外部顾问身份兼任飞凡科技 CTO 与红熊 AI 研发总经理。
+
+判断标准也跟着变了：不再先问系统能否支撑更大规模，而先问一个场景是否值得做、能否进入现有流程，以及上线后如何评估和运维。`,
+    bodyEn: `After leaving a large platform company, the work shifted from an internally resourced environment to direct accountability for client outcomes. The primary role is CTO at Glorion Intelligence, with concurrent advisor posts as CTO at Feifan Tech and Head of R&D at Redbear AI.
+
+The standard of judgment changed with it: not first whether a system can scale, but whether a scenario is worth doing, whether it can enter existing workflows, and how it will be evaluated and operated after launch.`,
+  },
+  {
+    id: '2023-cto-journey',
+    year: '2023–Present',
+    titleZh: '企业人工智能要进入生产',
+    titleEn: 'Enterprise AI has to enter production',
+    bodyZh: `担任光荣智能 CTO 以来，交付方式是以前线工程师身份进入制造、政务与贸易现场。模型会过时；工作流、权限和团队机制不会。
+
+因此默认顺序是：先确认场景与可量化目标，再设计数据、权限与人工审核，最后才选择模型与工具。没有组织机制的人工智能，往往停在演示。`,
+    bodyEn: `As CTO at Glorion Intelligence, delivery means working on site with manufacturing, public-sector, and trade teams. Models age; workflows, permissions, and team mechanisms last longer.
+
+The default order is therefore: confirm the scenario and a measurable outcome, then design data, permissions, and human review, and only then choose the model and tools. AI without an organizational mechanism tends to stop at a demonstration.`,
+  },
+  {
+    id: '2021-ant-group-lowcode',
+    year: '2021–2023',
+    titleZh: '蚂蚁集团：把专家知识编进平台',
+    titleEn: 'Ant Group: encoding expertise into a platform',
+    bodyZh: `在蚂蚁集团负责云凤蝶低代码平台基础服务，管理跨职能团队，覆盖数据模型、权限、扩展与多租户隔离。这些能力用户通常看不见，却决定上层应用能否稳定交付。
+
+低代码的关键用户，往往不是“不会写代码的人”，而是需求堆积的专业研发。平台化要把重复劳动收成可复用能力，而不是再做一批一次性项目。`,
+    bodyEn: `At Ant Group I led base services for the Yunfengdie low-code platform, covering data models, permissions, extension, and multi-tenant isolation. Users rarely see these layers, yet they determine whether applications above can be delivered reliably.
+
+The decisive users of low-code are often professional engineers with a backlog, not only people who cannot write code. Platformization means turning repeated work into reusable capability, not producing another string of one-off projects.`,
+  },
+  {
+    id: '2018-dingtalk-internationalization',
+    year: '2018–2021',
+    titleZh: '钉钉国际化：产品要在新边界里被信任',
+    titleEn: 'DingTalk internationalization: a product must be trusted in a new boundary',
+    bodyZh: `在阿里云钉钉带领约二十人，负责国际版研发与运营中台，并参与钉钉技术委员会。海外日活跃用户从零到数百万。身份、语言、合规与运营必须同时成立，产品才能在另一个市场被当作自己的工具。
+
+企业软件还有一层消费产品没有的约束：采购方不等于使用方。管理员要能管，员工要能用，管理层要能看见结果。`,
+    bodyEn: `At Alibaba Cloud DingTalk I led about twenty engineers on international research and development and the operations middle platform, and served on the DingTalk Technical Committee. Overseas daily active users grew from zero to millions. Identity, language, compliance, and operations had to land together before the product could feel native in another market.
+
+Enterprise software also has a constraint consumer products do not: the buyer is not the user. Administrators must be able to govern it, employees must be willing to use it, and leadership must be able to see results.`,
+  },
+  {
+    id: '2015-mogujie-scaling',
+    year: '2015–2018',
+    titleZh: '蘑菇街：规模化与技术债',
+    titleEn: 'Mogujie: scale and technical debt',
+    bodyZh: `在蘑菇街担任技术总监，带领约一百一十人的工程组织，负责电商中台与质量保障，并主持技术委员会。系统支撑了合并后的业务扩张，并为后续上市提供技术基础。
+
+规模化失败，通常不是因为缺少某一种架构名词，而是因为技术债没有被命名、没有负责人、没有进入迭代。团队从数十人扩到百人，改变的是沟通、质量与决策方式，而不是工具清单。`,
+    bodyEn: `As Technical Director at Mogujie I led about 110 engineers on the commerce middle platform and quality, and chaired the Technical Committee. The systems supported post-merger expansion and later listing.
+
+Scaling usually fails not because a team lacked a fashionable architecture term, but because debt is unnamed, unowned, and never enters the iteration. Growing from dozens of people to more than a hundred changes communication, quality, and decision-making—not the tool list.`,
+  },
+  {
+    id: '2007-taobao-witness',
+    year: '2007–2015',
+    titleZh: '淘宝：可复用的能力才是能力',
+    titleEn: 'Taobao: only reusable capability is capability',
+    bodyZh: `2007 年至 2015 年在淘宝参与物流、交易、商品与业务支撑等相关系统，并参与阿里巴巴业务中台建设。核心判断是：烟囱式成功无法被复制；要把交易、商品、订单里稳定的部分抽成组织可共享的能力，同时把变化留给业务。
+
+平台化是边界选择，不是把所有东西收进一个大系统。`,
+    bodyEn: `From 2007 to 2015 I worked on Taobao logistics, trading, product, and business-support systems, and helped build Alibaba’s business middle platform. The core judgment: siloed success does not copy. What is stable in trading, product, and orders should become shared capability; change should stay with the business.
+
+Platformization is a boundary choice, not a bid to absorb everything into one system.`,
+  },
+  {
+    id: '2003-huawei-agile',
+    year: '2003–2007',
+    titleZh: '华为：可预测的工程方法',
+    titleEn: 'Huawei: a more predictable engineering method',
+    bodyZh: `在华为参与电信运营支撑系统研发，服务运营商客户，并推动团队引入更可落地的敏捷实践。生产环境里一个字段的错误，可能影响大量用户账单，因此架构与交付方法必须可预测。
+
+这段经历形成了对“合适比复杂更重要”的判断，也是后来在大型互联网平台工作的工程底子。`,
+    bodyEn: `At Huawei I contributed to telecommunications operations-support systems for carrier customers, and helped introduce more workable agile practices. In production, a single field error can affect a very large number of bills, so architecture and delivery have to be predictable.
+
+That period formed the judgment that fitness matters more than complexity, and it became the engineering foundation for later work on large internet platforms.`,
+  },
+  {
+    id: '2001-career-beginning',
+    year: '2001–2003',
+    titleZh: '起步：企业软件与在线教育',
+    titleEn: 'Beginnings: enterprise software and online education',
+    bodyZh: `2001 年自华侨大学计算机科学与技术专业毕业，取得工学学士，并获国家高级程序员资格。随后在深圳从事企业软件、在线教育与社区平台开发。
+
+那时还谈不上平台或规模，但已经开始理解：用户不看架构图，只看系统是否可用、是否稳定。`,
+    bodyEn: `I graduated from Huaqiao University in 2001 with a Bachelor of Engineering in Computer Science and Technology, and obtained the National Senior Programmer credential. Early work in Shenzhen covered enterprise software, online education, and community platforms.
+
+There was not yet a platform or a large scale to manage, but the lesson was already clear: users do not inspect architecture diagrams. They care whether the system works and remains stable.`,
+  },
+];
 
 const StoryDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  const isZh = language === 'zh';
   const [langTab, setLangTab] = useState(0);
 
   const biographyChapters = [
@@ -73,7 +158,7 @@ This isn't a technical textbook, nor a motivational success story. It's simply a
 
 我加入了尊科信息，做教育软件开发。工作内容用一句话概括：**把教材塞进电脑里**。这话说起来轻巧，实现起来可是相当折腾——你得写一个自有格式的播放器，让各种多媒体内容能够自定义播放；还要做一个Office插件（FlexNotes），让老师可以在Word里直接做课件；最后还要搞一个HTML播放器。
 
-我记得第一次把自己写的自定义播放器跑通的那个下午。屏幕上出现了一段视频，配上我手写的进度条，我盯着看了整整五分钟，觉得自己简直是微软最大的威胁。
+我记得第一次把自己写的自定义播放器跑通的那个下午。屏幕上出现了一段视频，配上我手写的进度条，我盯着看了整整五分钟。
 
 后来我才明白，那个播放器的代码，大概是我职业生涯里写过的最"干净"的——因为那时候我还不知道什么叫技术债，什么叫"先上线再说"。无知者无畏，无畏者无债。`,
       en: `In 2001, I graduated with a copy of "Visual Basic Programming" and limitless fantasies about Shenzhen's Special Economic Zone, cramming onto a southbound train. China had just joined the WTO, the dot-com bubble had just burst, but Shenzhen still believed in miracles.
@@ -82,12 +167,12 @@ This isn't a technical textbook, nor a motivational success story. It's simply a
 
 I joined Zunke Tech to develop educational software. The work could be summarized in one line: **stuffing textbooks into computers**. Simple to say, but complex to implement — you had to write a custom media player for various multimedia content, build an Office plugin (FlexNotes) so teachers could create courseware directly in Word, and build an HTML player because "web-based knowledge presentation sounds very high-tech."
 
-I remember the afternoon I first got my custom media player running. A video appeared on screen with a hand-coded progress bar, and I stared at it for a full five minutes, convinced I was Microsoft's biggest threat.
+I remember the afternoon I first got my custom media player running. A video appeared on screen with a hand-coded progress bar, and I stared at it for a full five minutes.
 
 Later I realized those were probably the "cleanest" lines of code I'd ever write — because I still didn't know what technical debt was, or what "ship first, fix later" meant. Ignorance is fearlessness; fearlessness means no debt.`
     },
     {
-      title: '2002 · 第一次叛逃，拥抱Java · Embracing Java',
+      title: '2002 · 转向 Java · Moving to Java',
       zh: `2002年，我做了第一次跳槽，加入了风林火山。这个公司做的事情分两头——一头是华为的光网络客户端，用VC和ACE框架做后台管理系统；另一头是深圳的社区网站，用J2EE全家桶做网上商城。
 
 技术栈：VC++ · ACE框架 · Java EJB · PostgreSQL · JBoss · J2EE
@@ -116,7 +201,7 @@ That was my first important architecture lesson: **the best technology choice is
 At Fenglinhuoshan I also seriously started studying Spring — Rod Johnson's "Expert One-on-One J2EE Design and Development" had just been published. I ran through Spring from start to finish and had an epiphany: you could do enterprise development without EJB and the code was far more elegant.`
     },
     {
-      title: '2003–2005 · 进了华为，感觉上了贼船 · Huawei: The Enterprise World',
+      title: '2003–2005 · 进入华为 · Joining Huawei',
       zh: `2003年，我加入华为。那一刻我觉得自己终于找到了组织——华为嘛，世界级的公司，管理精细，待遇不错，写到简历上三个字，走到哪儿都响当当。
 
 技术栈：Java EJB · Oracle · Weblogic · Spring（推广期）· Webwork · BOSS/RMS
@@ -132,7 +217,7 @@ At Fenglinhuoshan I also seriously started studying Spring — Rod Johnson's "Ex
 出差也有出差的好处——你能真正理解"生产环境"是什么意思。每一次生产环境爆炸，都是比任何教材都生动的技术课。
 
 2005年，我转到了广东移动的eMip项目——系统涉及移动营业厅前台、后台计费、业务开通全流程。在这里因为多个大型电信项目上的表现，我被评选进入**华为业务与软件产品线专家池**。`,
-      en: `In 2003, I joined Huawei. I felt I'd finally found my tribe — Huawei, a world-class company, refined management, good compensation, and three words that command respect anywhere on a resume.
+      en: `In 2003, I joined Huawei. I felt I had joined a world-class company — refined management, solid compensation, and a name that commands respect on a résumé.
 
 **Tech stack**: Java EJB · Oracle · Weblogic · Spring (evangelism phase) · Webwork · BOSS/RMS
 
@@ -249,7 +334,7 @@ Around 2013, I transitioned from pure technical executor to team leader, managin
 The hardest part of leading teams isn't technology — it's judgment and patience. Technical problems have standard answers; people problems don't.`
     },
     {
-      title: '2015 · 蘑菇街，美丽与悲壮并存 · Mogu Street',
+      title: '2015 · 蘑菇街：中台与规模化 · Mogujie',
       zh: `2015年，我从阿里跳到了蘑菇街，担任电商基础平台负责人，直接向**顶天**汇报。
 
 技术栈：微服务 · Dubbo · Redis集群 · Kafka · Docker（早期）· 中台架构
@@ -265,17 +350,17 @@ The hardest part of leading teams isn't technology — it's judgment and patienc
 关于中台，我有一肚子话要说。当初我们在阿里讨论中台思想的时候，设想的是**可分可合的小中台模式**：共享服务是一个弹性的能力层，跟着业务走，而不是业务跟着它转。但是，后来在整个行业大规模推广的，是另一种版本：**大中台模式**。中台变成了巨型权力中心，前台的任何创新都需要排期等待，整个组织的敏捷性被中台活生生卡死。
 
 **中台不是大中台，正如敏捷不等于不写文档。被误用的方法论，不应该为错误的实践背锅。**`,
-      en: `In 2015, I jumped from Alibaba to Mogu Street as E-commerce Platform Lead, reporting directly to **Dingtian**.
+      en: `In 2015, I moved from Alibaba to Mogujie as E-commerce Platform Lead, reporting directly to **Dingtian**.
 
 **Tech stack**: Microservices · Dubbo · Redis Cluster · Kafka · Docker (early) · Middle platform architecture
 
-Leaving Alibaba wasn't impulsive. Mogu Street was different — it was growing rapidly, needed to build a technical system from scratch, and gave me the opportunity to lead a middle platform from the whole-system perspective. This was my first true 0-to-1 complete middle platform architecture design.
+Leaving Alibaba wasn't impulsive. Mogujie was different — it was growing rapidly, needed to build a technical system from scratch, and gave me the opportunity to lead a middle platform from the whole-system perspective. This was my first true 0-to-1 complete middle platform architecture design.
 
-**The success**: From a technical standpoint, our middle platform was successful. Under my leadership, Mogu Street built a complete e-commerce infrastructure: product domain, transaction domain, user domain, content domain — each evolving independently, collaborating through clearly defined service interfaces. This system supported rapid business expansion after the Mogu-Meilishuo merger and laid the technical foundation for Mogu Street's 2018 NYSE listing.
+**The success**: From a technical standpoint, our middle platform was successful. Under my leadership, Mogujie built a complete e-commerce infrastructure: product domain, transaction domain, user domain, content domain — each evolving independently, collaborating through clearly defined service interfaces. This system supported rapid business expansion after the Mogu-Meilishuo merger and laid the technical foundation for Mogujie's 2018 NYSE listing.
 
 **The failure**: The competitive landscape for e-commerce shifted dramatically from 2016 to 2018 — Pinduoduo appeared and rewrote e-commerce rules in ways nobody anticipated. When the external environment changes fundamentally, even the best technical middle platform can't save a company that's struggling strategically.
 
-**My most important lesson from Mogu Street: technology is a business amplifier — it can make good businesses better, but it cannot turn a wrong direction into a right one.**
+**My most important lesson from Mogujie: technology is a business amplifier — it can make good businesses better, but it cannot turn a wrong direction into a right one.**
 
 I have a lot to say about middle platforms. When we at Alibaba discussed the middle platform concept, we envisioned a **small, flexible middle platform model** — shared services as an elastic capability layer that follows the business rather than forcing business to follow it. But what spread industry-wide was a different version: the **Big Middle Platform model**. The middle platform became a giant power center. Any innovation in the front end required waiting in a queue, the organization's agility slowly killed by the middle platform itself.
 
@@ -297,7 +382,7 @@ I have a lot to say about middle platforms. When we at Alibaba discussed the mid
 
 2020年疫情爆发，钉钉瞬间从"公司强制安装的软件"变成了全国最受关注的协同工具，用户量在短短几周内暴增。我们的系统经历了一次真正意义上的"极限压测"——不是在测试环境里模拟的，而是真实的几千万用户同时涌入。那段时间，技术团队几乎是以天为单位在扩容和优化，能撑过来，是整个团队的荣耀。
 
-**钉钉让我明白：好的企业软件，不是功能最多的那个，而是让人在不得不用的时候，不那么想骂娘的那个。这话听起来是降维打击，做到其实很难。**`,
+**钉钉让我明白：好的企业软件，不是功能最多的那个，而是在必须使用时，仍然清楚、克制、可被接受的那个。听起来标准不高，真正做到很难。**`,
       en: `In 2018, I returned to Alibaba — this time to DingTalk.
 
 **Focus areas**: Enterprise collaboration · Internationalization · Organizational digitalization · Cloud-native · Serverless
@@ -312,7 +397,7 @@ DingTalk work gave me a genuine understanding of the difference between enterpri
 
 When COVID-19 hit in 2020, DingTalk instantly became the nation's most-watched collaboration tool, with users surging in weeks. Our systems went through a true "extreme stress test" — not simulated in a test environment, but tens of millions of real users flooding in simultaneously. The team was expanding capacity and optimizing daily. Surviving it was the entire team's honor.
 
-**DingTalk taught me: great enterprise software isn't the one with the most features — it's the one where people, forced to use it, at least don't feel like cursing it. That sounds like lowering the bar. Actually doing it is incredibly hard.**`
+**DingTalk taught me: strong enterprise software is not the one with the most features. It is the one people can accept—and keep using—when they have no choice. That sounds like a low bar. Meeting it is hard.**`
     },
     {
       title: '2019–2023 · 企业级软件研发之路 · Enterprise Software Journey',
@@ -378,14 +463,14 @@ A strange feeling: something you'd carefully built over years suddenly faces a p
 我同时参与了几个不同方向的项目：
 - **光荣智能**：担任CTO，用AI和软件工程帮助制造、政府、贸易等企业完成数字化转型
 - **飞凡科技**：以外部顾问身份兼任CTO，协助企业软件、智能客服与AI工程
-- **红熊AI**：以外部顾问身份兼任研发总经理，负责AI产品研发方向
+- **红熊 AI**：以外部顾问身份兼任研发总经理，负责 AI 产品研发方向
 - **大头科技**：做AI硬件的技术架构
 
 每一个都在用完全不同的方式回答同一个问题：**AI到底能为真实的业务场景创造什么价值？**
 
 技术栈：大语言模型 · RAG · AI Agent · Dify/FastGPT · 企业AI落地
 
-二十年前，我拖着一箱VB代码到深圳，相信技术可以改变世界。二十年后，我依然相信这一点，只是我对"改变世界"的理解，从宏大的叙事变成了具体的：帮助一个客服团队减少50%的重复工作量，让一个中小企业的信息系统运转得更顺畅，或者用AI帮一个工程师团队把需求评审的效率提升三倍。
+二十年前，我拖着一箱VB代码到深圳，相信技术可以改变世界。二十年后，我依然相信这一点，只是我对"改变世界"的理解，从宏大的叙事变成了具体的：减少客服团队的重复劳动，让一套企业信息系统运转得更顺畅，或用人工智能提高需求评审的效率。
 
 **技术改变世界，是通过无数个具体的"改变一件小事"积累起来的。这是我花了二十年才真正理解的事情。**`,
       en: `In 2023, I left Alibaba and began a new life.
@@ -404,7 +489,7 @@ Each answering the same question in completely different ways: **What value can 
 
 **Tech stack**: Large language models · RAG · AI Agent · Dify/FastGPT · Enterprise AI deployment
 
-Twenty years ago, I dragged a suitcase of VB code to Shenzhen, believing technology could change the world. Twenty years later, I still believe this — but my understanding of "changing the world" has shifted from grand narrative to the concrete: helping a customer service team reduce repetitive work by 50%, making a mid-sized company's information systems run more smoothly, or using AI to triple the efficiency of an engineering team's requirements review.
+Twenty years ago, I dragged a suitcase of VB code to Shenzhen, believing technology could change the world. Twenty years later, I still believe this — but my understanding of "changing the world" has shifted from grand narrative to the concrete: reducing repetitive work for a customer-service team, making an enterprise information system run more smoothly, or using AI to improve the efficiency of requirements review.
 
 **Technology changes the world through countless small, concrete improvements accumulated over time. That's what took me twenty years to truly understand.**`
     },
@@ -427,7 +512,7 @@ while (true) {
 
 如果你是一个刚入行的工程师，正在被某个Bug折磨到深夜，我想告诉你：那个Bug会被解决的，而解决它的过程，比Bug本身更有价值。
 
-如果你是一个中年技术人，正在考虑要不要在AI浪潮里再赌一把，我想告诉你：你所有的技术积累，在新的范式里都不会浪费，因为技术范式会变，但解决问题的思维方式不会。
+如果你是一位资深技术人，正在考虑如何进入人工智能这一轮变化，我想告诉你：你所有的技术积累，在新的范式里都不会浪费，因为技术范式会变，但解决问题的思维方式不会。
 
 ——写于2024年，武汉 / 杭州 / 深圳的某个夜晚
 
@@ -449,7 +534,7 @@ This loop is still running.
 
 If you're a newly-minted engineer, being tormented by a bug late at night: that bug will be resolved. The process of solving it is more valuable than the bug itself.
 
-If you're a middle-aged technologist wondering whether to bet on the AI wave: everything you've accumulated technically won't be wasted in the new paradigm, because technology paradigms change but problem-solving thinking doesn't.
+If you're an experienced technologist considering how to enter this wave of AI: everything you've accumulated technically will not be wasted in the new paradigm, because technology paradigms change but problem-solving thinking does not.
 
 — Written in 2024, on a night in Wuhan / Hangzhou / Shenzhen
 
@@ -457,285 +542,17 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
     }
   ];
 
-  const storyMilestones = [
-    {
-      id: 'biography-twenty-years',
-      year: '2001–2023',
-      title: '代码人生 · Code Life — A Programmer\'s 20-Year Journey',
-      category: '传记 · Full Biography',
-      icon: MenuBookIcon,
-      color: '#C45A38',
-      type: 'biography',
-      isBiography: true,
-      story: '',
-      lessons: [],
-      challenges: [],
-      impact: ''
-    },
-    {
-      id: '2024-entrepreneurship-reflection',
-      year: '2024',
-      title: 'Entrepreneurship & Life Reflection',
-      category: 'Entrepreneurship & Reflection',
-      icon: PsychologyIcon,
-      color: '#8b5cf6',
-      type: 'reflection',
-      story: `On the entrepreneurial journey, I began contemplating the meaning of life. Technology is not just a tool, but a bridge connecting people and creating value. I started documenting these insights, hoping to share this journey with more people.
-
-      Looking back at the past 20+ years, I realize that entrepreneurship is not just about starting a business, but about finding meaning in the process. Every challenge, every failure, every small success has shaped my understanding of life and work.
-
-      Technology entrepreneurship in today's world requires us to think deeper about the relationship between technology and humanity. We need to consider not only how to create valuable products, but also how to ensure that technology serves humanity in a positive way.
-
-      This reflection has led me to think more about sustainable development, ethical technology, and the long-term impact of our work. I hope to share these thoughts with more people and contribute to building a better technological future.`,
-      lessons: [
-        'Technology entrepreneurship requires patience and perseverance',
-        'Entrepreneurship is not just about making money, but creating value',
-        'Personal growth is the most important investment in entrepreneurship',
-        'Sustainable development should be a core consideration for technology companies',
-        'Ethical technology practices are essential for long-term success'
-      ],
-      challenges: [
-        'Balancing business goals with personal values',
-        'Maintaining team motivation during uncertain times',
-        'Finding the right balance between innovation and stability'
-      ],
-      impact: 'This period of reflection has significantly influenced my approach to leadership and business strategy, leading to more thoughtful decision-making and sustainable business practices.'
-    },
-    {
-      id: '2023-cto-journey',
-      year: '2023',
-      title: 'The CTO Journey: Leadership & Innovation',
-      category: 'Leadership',
-      icon: BusinessIcon,
-      color: '#ff6b35',
-      type: 'career',
-      story: `Serving as CTO of Glorion Intelligence, with concurrent advisor roles at Feifan Tech and Redbear AI, has given me a deep understanding of the importance of leadership. From technical decisions to team management, from product planning to business development, every aspect is filled with challenges and opportunities.
-
-      In this role, I learned that technical leadership goes far beyond writing code or making technical decisions. It involves understanding business needs, managing team dynamics, fostering innovation culture, and aligning technical strategy with business objectives.
-
-      One of the biggest challenges was building a high-performing engineering team from scratch. This required not only technical expertise but also people management skills, strategic thinking, and the ability to inspire and motivate others.
-
-      The experience taught me that successful technology leadership requires a delicate balance between technical excellence and business acumen, between innovation and pragmatism, and between individual contribution and team collaboration.`,
-      lessons: [
-        'Technical leaders need business acumen',
-        'Team building is more important than technology selection',
-        'Innovation requires a balance of courage and wisdom',
-        'Leadership is about serving and empowering others',
-        'Strategic thinking is crucial for technical leaders'
-      ],
-      challenges: [
-        'Building and scaling engineering teams',
-        'Balancing innovation with business constraints',
-        'Managing technical debt while moving fast',
-        'Communicating technical concepts to non-technical stakeholders'
-      ],
-      impact: 'This experience transformed my understanding of leadership and equipped me with the skills to lead larger and more complex technology organizations.'
-    },
-    {
-      id: '2021-ant-group-lowcode',
-      year: '2021-2022',
-      title: 'Ant Group: The Birth of Low-Code Platform',
-      category: 'Technical Innovation',
-      icon: CodeIcon,
-      color: '#1677ff',
-      type: 'achievement',
-      story: `My experience developing low-code platforms at Ant Group showed me how technology can transform business processes. We built the platform from scratch to help business staff quickly build applications, realizing the vision of technology empowering business.
-
-      This project was particularly meaningful because it demonstrated how technology could democratize application development. By providing intuitive visual tools and pre-built components, we enabled business users to create applications without extensive coding knowledge.
-
-      The project involved complex challenges including designing an extensible component system, building a robust visual editor, implementing real-time collaboration features, and ensuring enterprise-grade security and performance.
-
-      The success of this platform validated the concept that low-code development could significantly accelerate digital transformation and empower more people to participate in technology creation.`,
-      lessons: [
-        'Low-code platforms are important tools for technology democratization',
-        'Technical innovation requires deep understanding of business needs',
-        'Platform thinking is more important than point solutions',
-        'User experience design is crucial for developer tools',
-        'Scalability and extensibility are key architectural considerations'
-      ],
-      challenges: [
-        'Designing intuitive visual interfaces for complex functionality',
-        'Ensuring platform security and governance',
-        'Managing performance at scale',
-        'Balancing ease of use with powerful capabilities'
-      ],
-      impact: 'This project influenced the direction of low-code development industry and demonstrated the potential of visual programming for enterprise applications.'
-    },
-    {
-      id: '2018-dingtalk-internationalization',
-      year: '2018-2020',
-      title: 'DingTalk Internationalization: From 0 to Millions of Users',
-      category: 'Globalization',
-      icon: FlightIcon,
-      color: '#ff6a00',
-      type: 'growth',
-      story: `Leading the DingTalk internationalization team from zero users to millions of daily active users was a journey full of challenges and surprises. Cultural differences, technical challenges, and market competition all became opportunities for growth.
-
-      This experience taught me the complexities of global product development. We had to consider not only technical implementation but also cultural adaptation, regulatory compliance, and market-specific requirements.
-
-      Key achievements included adapting the product for different languages, time zones, and cultural contexts; building infrastructure for global scale; and establishing local teams and partnerships.
-
-      The most valuable lesson was understanding that successful internationalization requires both technical excellence and cultural intelligence. Products need to be not just translated, but truly adapted to local needs and preferences.`,
-      lessons: [
-        'Internationalization requires deep understanding of local culture',
-        'Technology products need localization adaptation',
-        'Global perspective is essential for technology professionals',
-        'Building local teams is crucial for market penetration',
-        'Regulatory compliance varies significantly across regions'
-      ],
-      challenges: [
-        'Managing distributed teams across time zones',
-        'Adapting products for diverse cultural contexts',
-        'Navigating different regulatory environments',
-        'Maintaining product consistency across markets'
-      ],
-      impact: 'This experience fundamentally changed my approach to product development and gave me a truly global perspective on technology and business.'
-    },
-    {
-      id: '2015-mogujie-scaling',
-      year: '2015-2017',
-      title: 'Mogu Street: E-commerce Platform Scaling Challenges',
-      category: 'Scaling',
-      icon: TrendingUpIcon,
-      color: '#e91e63',
-      type: 'challenge',
-      story: `At Mogu Street, I led a team of 100 engineers responsible for e-commerce middleware development and operations. Facing increasingly complex business scenarios and technical challenges, I learned how to maintain system stability and scalability under high pressure.
-
-      This role involved managing large-scale distributed systems, optimizing performance for millions of users, and ensuring high availability during peak shopping seasons. We had to balance rapid business growth with system reliability and technical excellence.
-
-      Key initiatives included refactoring monolithic systems into microservices, implementing advanced caching strategies, building real-time monitoring and alerting systems, and establishing robust disaster recovery procedures.
-
-      The experience taught me that scaling is not just about handling more traffic, but about building resilient, maintainable, and evolvable systems that can adapt to changing business needs.`,
-      lessons: [
-        'Large-scale systems require good architecture design',
-        'Team collaboration is key to successful scaling',
-        'Technical debt must be addressed early',
-        'Monitoring and observability are crucial for large systems',
-        'Disaster recovery planning is essential'
-      ],
-      challenges: [
-        'Refactoring legacy systems without breaking functionality',
-        'Managing performance during peak traffic periods',
-        'Coordinating large engineering teams',
-        'Balancing innovation with system stability'
-      ],
-      impact: 'This experience built my expertise in large-scale system architecture and gave me the confidence to tackle complex technical challenges.'
-    },
-    {
-      id: '2007-taobao-witness',
-      year: '2007-2014',
-      title: 'Taobao: Witness to the E-commerce Era',
-      category: 'Historical Witness',
-      icon: GroupIcon,
-      color: '#ff6a00',
-      type: 'foundation',
-      story: `My early years at Taobao witnessed the rapid development of Chinese e-commerce. From the initial C2C platform to today's commercial empire, I participated in the development of multiple key systems and personally experienced how technology drives business transformation.
-
-      During this period, I worked on various projects including the trading system, payment integration, search functionality, and recommendation engines. Each project presented unique technical challenges and business opportunities.
-
-      The most significant learning was understanding how technology can create and capture market opportunities. Taobao's success demonstrated the power of technology in transforming traditional industries and creating new business models.
-
-      This experience also taught me the importance of timing, execution, and the ability to scale rapidly in response to market opportunities.`,
-      lessons: [
-        'Technology development must keep pace with business needs',
-        'User experience is the core of product success',
-        'Continuous learning is the survival skill for technology professionals',
-        'Timing and execution are crucial for success',
-        'Technology can fundamentally transform industries'
-      ],
-      challenges: [
-        'Building systems that scale to millions of users',
-        'Managing rapid business growth',
-        'Adapting to changing market conditions',
-        'Balancing innovation with operational stability'
-      ],
-      impact: 'This foundational experience shaped my entire career and gave me a deep understanding of how technology drives business success.'
-    },
-    {
-      id: '2003-huawei-agile',
-      year: '2003-2006',
-      title: 'Huawei & Agile Transformation Enlightenment',
-      category: 'Agile Enlightenment',
-      icon: LightbulbIcon,
-      color: '#ff0000',
-      type: 'transformation',
-      story: `My experience at Huawei was my first exposure to agile development concepts. In an era dominated by waterfall models, introducing agile concepts was revolutionary. This experience shaped my understanding of software engineering.
-
-      At Huawei, I worked on telecommunications operation support systems and was involved in one of the company's early agile transformation initiatives. This involved changing not just development processes, but also organizational culture and mindset.
-
-      The transformation was challenging because it required overcoming resistance to change, training teams in new methodologies, and demonstrating the benefits of agile practices. However, the results were transformative in terms of team productivity and product quality.
-
-      This experience taught me that methodology changes are not just about processes, but about fundamental changes in how people think and work together.`,
-      lessons: [
-        'Agile is not just a methodology, but a way of thinking',
-        'Change requires gradual progress',
-        'The influence of technology professionals goes beyond writing code',
-        'Cultural transformation is harder than process change',
-        'Demonstrating value is key to successful transformation'
-      ],
-      challenges: [
-        'Overcoming organizational resistance to change',
-        'Training large teams in new methodologies',
-        'Measuring and demonstrating the benefits of agile',
-        'Maintaining momentum during transformation'
-      ],
-      impact: 'This experience fundamentally changed my approach to software development and team management, influencing all my subsequent work.'
-    },
-    {
-      id: '2001-career-beginning',
-      year: '2001-2002',
-      title: 'The Beginning of a Programmer Career',
-      category: 'Beginning',
-      icon: SchoolIcon,
-      color: '#4caf50',
-      type: 'beginning',
-      story: `My first step into the workforce after graduation was software development. At that time, I was full of enthusiasm and curiosity about technology. Every bug fix and every feature implementation made me feel the charm and challenges of programming.
-
-      Starting my career in the early 2000s, I worked on various projects including online education software and community platforms. The technology landscape was very different then - no cloud computing, no mobile apps, no social media as we know it today.
-
-      What struck me most was the creative aspect of programming. Each problem had multiple solutions, and finding the elegant one was both challenging and rewarding. I also learned the importance of collaboration, as even individual projects benefited from code reviews and pair programming.
-
-      This period built my foundational skills and sparked my lifelong passion for technology and software development.`,
-      lessons: [
-        'Programming is a craft that requires constant practice',
-        'Fundamental knowledge is always the most important',
-        'Maintaining curiosity is the driving force for growth',
-        'Code quality matters even for small projects',
-        'Learning from others is essential for growth'
-      ],
-      challenges: [
-        'Learning new technologies and frameworks',
-        'Debugging complex issues with limited tools',
-        'Understanding business requirements',
-        'Working with legacy code and systems'
-      ],
-      impact: 'This foundational period established my technical skills and work ethic, setting the stage for my entire career in technology.'
-    }
-  ];
-
-  const story = storyMilestones.find(s => s.id === id) as StoryMilestone | undefined;
-
-  if (!story) {
-    return (
-      <PageShell>
-        <PageTitle>Story not found</PageTitle>
-        <Box sx={{ textAlign: 'center' }}>
-          <TextLink onClick={() => navigate('/mystory')}>Back to My Story</TextLink>
-        </Box>
-      </PageShell>
-    );
-  }
-
+  const backLabel = isZh ? '← 返回原则' : '← Back to Principles';
   const langLabels = ['中文', 'English', '双语 Bilingual'];
 
-  if (story.isBiography) {
+  if (id === 'biography-twenty-years') {
     return (
       <PageShell maxWidth={720}>
         <Box sx={{ mb: 4 }}>
-          <TextLink onClick={() => navigate('/mystory')}>← Back to My Story</TextLink>
+          <TextLink onClick={() => navigate('/mystory')}>{backLabel}</TextLink>
         </Box>
         <Typography sx={{ color: ACCENT, textAlign: 'center', letterSpacing: '0.04em', mb: 1.5 }}>
-          2001–2023 · Full Biography
+          2001–2023
         </Typography>
         <Typography
           component="h1"
@@ -751,13 +568,12 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           代码人生
         </Typography>
         <Typography sx={{ color: MUTED, textAlign: 'center', mb: 2, fontSize: '1.1rem' }}>
-          Code Life — A Programmer's 20-Year Journey
+          Code Life — twenty years in engineering
         </Typography>
         <Typography sx={{ color: MUTED, textAlign: 'center', maxWidth: 520, mx: 'auto', mb: 5, lineHeight: 1.8 }}>
-          一个程序员关于代码、人生与技术变迁的诚实流水账
-          <Box component="span" sx={{ display: 'block', fontStyle: 'italic', mt: 0.5 }}>
-            An engineer's honest account spanning Huawei, Alibaba, and beyond
-          </Box>
+          {isZh
+            ? '一份关于代码、组织与技术变迁的个人记录，供需要完整叙事的读者阅读。'
+            : 'A personal record of code, organizations, and technical change, for readers who want the full narrative.'}
         </Typography>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2.5, mb: 7 }}>
@@ -813,7 +629,20 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
         ))}
 
         <Box sx={{ textAlign: 'center', mt: 4 }}>
-          <TextLink onClick={() => navigate('/mystory')}>← Back to My Story</TextLink>
+          <TextLink onClick={() => navigate('/mystory')}>{backLabel}</TextLink>
+        </Box>
+      </PageShell>
+    );
+  }
+
+  const story = chronicles.find((item) => item.id === id);
+
+  if (!story) {
+    return (
+      <PageShell>
+        <PageTitle>{isZh ? '未找到该记录' : 'Chapter not found'}</PageTitle>
+        <Box sx={{ textAlign: 'center' }}>
+          <TextLink onClick={() => navigate('/mystory')}>{backLabel}</TextLink>
         </Box>
       </PageShell>
     );
@@ -822,7 +651,7 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
   return (
     <PageShell maxWidth={720}>
       <Box sx={{ mb: 4 }}>
-        <TextLink onClick={() => navigate('/mystory')}>← Back to My Story</TextLink>
+        <TextLink onClick={() => navigate('/mystory')}>{backLabel}</TextLink>
       </Box>
       <Typography sx={{ color: ACCENT, textAlign: 'center', letterSpacing: '0.04em', mb: 1.5 }}>
         {story.year}
@@ -835,31 +664,17 @@ If you're a middle-aged technologist wondering whether to bet on the AI wave: ev
           fontSize: { xs: '1.6rem', md: '2rem' },
           color: INK,
           textAlign: 'center',
-          mb: 1,
+          mb: 5,
           lineHeight: 1.35,
         }}
       >
-        {story.title}
+        {isZh ? story.titleZh : story.titleEn}
       </Typography>
-      <Typography sx={{ color: MUTED, textAlign: 'center', mb: 5 }}>{story.category}</Typography>
-
-      <Box sx={{ mb: 5, lineHeight: 1.95, fontSize: '1.05rem', color: INK }}>
-        <FormattedText text={story.story} accentColor={ACCENT} />
+      <Box sx={{ mb: 6, lineHeight: 1.95, fontSize: '1.05rem', color: INK }}>
+        <FormattedText text={isZh ? story.bodyZh : story.bodyEn} accentColor={ACCENT} />
       </Box>
-
-      <SectionTitle>Key Lessons Learned</SectionTitle>
-      <Box sx={{ mb: 5 }}>
-        <NumberedList items={story.lessons} />
-      </Box>
-
-      <SectionTitle>Challenges Faced</SectionTitle>
-      <Box sx={{ mb: 5 }}>
-        <NumberedList items={story.challenges} />
-      </Box>
-
-      <SectionTitle>Long-term Impact</SectionTitle>
-      <Box sx={{ mb: 6, lineHeight: 1.9, color: INK }}>
-        <FormattedText text={story.impact} accentColor={ACCENT} />
+      <Box sx={{ textAlign: 'center' }}>
+        <TextLink onClick={() => navigate('/mystory')}>{backLabel}</TextLink>
       </Box>
     </PageShell>
   );
