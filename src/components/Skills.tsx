@@ -11,11 +11,11 @@ const Skills = () => {
   const modules = isZh
     ? [
         {
-          title: '从 AI 策略到生产',
+          title: '从想法做到上线',
           items: [
-            '识别值得做的业务场景，而不是先绑定某一个模型',
-            'RAG、Agent、工具调用与人工审核如何进入现有系统',
-            '评测、成本、可靠性与权限治理，让试点能停在生产里',
+            '先找值得做的业务场景，而不是先绑某一个模型',
+            'RAG、Agent、工具调用和人工审核怎么接到现有系统',
+            '评测、成本、可靠性和权限，让试点能留在生产里',
           ],
         },
         {
@@ -39,7 +39,7 @@ const Skills = () => {
           items: [
             '把需求澄清成可量化的结果和边界',
             '路线图、ROI 与从试点到推广的节奏',
-            '与客户共创，用 FDE 方式缩短从想法到上线的路径',
+            '与客户一起做，用前线交付缩短从想法到上线的路径',
           ],
         },
       ]
@@ -73,7 +73,7 @@ const Skills = () => {
           items: [
             'Turn requests into measurable outcomes and explicit boundaries',
             'Roadmaps, ROI, and the pace from pilot to wider adoption',
-            'Co-create with the customer; use an FDE posture to shorten idea-to-production',
+            'Co-create with the customer; work on site to shorten the path from idea to launch',
           ],
         },
       ];
@@ -95,8 +95,8 @@ const Skills = () => {
       <PageTitle>{isZh ? '能力与方法' : 'Capabilities'}</PageTitle>
       <PageLead>
         {isZh
-          ? '客户需要的不是某一门语言或某一个框架，而是把人工智能、平台和工程组织连成闭环、降低交付风险的能力。'
-          : 'What matters is not a language or a framework. It is the ability to close the loop across AI, platform, and engineering organization—and to lower delivery risk.'}
+          ? '客户要的不是某门语言或某个框架，而是把 AI、平台和工程团队真正跑起来，少踩交付的坑。'
+          : 'What you need is not a language or a framework. It is getting AI, the platform, and the engineering team to actually run—and lowering delivery risk.'}
       </PageLead>
 
       <Box sx={{ display: 'grid', gap: 6, mb: 7 }}>
@@ -132,7 +132,7 @@ const Skills = () => {
 
       <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
         <Box component={RouterLink} to="/projects" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
-          {isZh ? '看这些能力如何出现在案例里 →' : 'See how this shows up in the work →'}
+          {isZh ? '看这些怎么用在案例里 →' : 'See how this shows up in the work →'}
         </Box>
       </Typography>
     </PageShell>

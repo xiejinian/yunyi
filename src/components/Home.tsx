@@ -117,7 +117,7 @@ const Home = () => {
                 mb: 1.5,
               }}
             >
-              {isZh ? '把 AI 雄心，落成可靠的业务系统。' : 'Turn AI ambition into dependable business systems.'}
+              {isZh ? '把 AI 带进实际业务。' : 'Bring AI into real work.'}
             </Typography>
             <Typography sx={{ color: MUTED, fontSize: '1.02rem', mb: 0.6, letterSpacing: '0.04em' }}>
               Xie Jinian · 谢记年
@@ -127,13 +127,13 @@ const Home = () => {
             </Typography>
             <Typography sx={{ color: INK, fontSize: { xs: '1.02rem', md: '1.08rem' }, lineHeight: 1.8, mb: 2 }}>
               {isZh
-                ? '企业 AI 与平台技术负责人：帮助企业把复杂业务流程，落地为可靠的 AI 系统、可扩展的平台能力和高效的工程组织。'
-                : 'Enterprise AI & Platform CTO — I help companies turn complex business workflows into reliable AI-enabled systems, scalable platforms, and high-performing engineering teams.'}
+                ? '我帮企业把 AI 用进真实业务，把平台做稳，把工程团队带起来。'
+                : 'I help companies put AI into real work, steady the platform, and build engineering teams that can keep delivering.'}
             </Typography>
             <Typography sx={{ color: MUTED, fontSize: '1.02rem', lineHeight: 1.8, mb: 3.5 }}>
               {isZh
-                ? '我是谢记年，光荣智能 CTO，并以外部顾问身份兼任飞凡科技 CTO 与红熊 AI 研发总经理。过去二十余年在华为、阿里巴巴、蚂蚁集团及高速成长的产品组织工作。我协助管理层把 AI 嵌入真实工作流，推进关键平台现代化，并建设能够持续交付的工程团队。'
-                : 'I am Xie Jinian, CTO at Glorion Intelligence, and an external advisor serving as CTO at Feifan Tech and Head of R&D at Redbear AI. I have more than twenty years of experience at Huawei, Alibaba, Ant Group, and high-growth product organizations. I help leadership teams put AI into real workflows, modernize critical platforms, and build engineering organizations that deliver.'}
+                ? '我是谢记年，光荣智能 CTO，同时以外顾问身份做飞凡科技 CTO 和红熊 AI 研发总经理。过去二十多年在华为、阿里巴巴、蚂蚁集团，也在成长很快的产品公司做过。我帮管理层把 AI 用进现有流程，把关键平台理顺，把能持续交付的工程团队建起来。'
+                : 'I am Xie Jinian, CTO at Glorion Intelligence, and an external advisor serving as CTO at Feifan Tech and Head of R&D at Redbear AI. I have more than twenty years at Huawei, Alibaba, Ant Group, and fast-growing product companies. I help leadership teams put AI into existing workflows, get critical platforms in order, and build engineering teams that can keep delivering.'}
             </Typography>
           </motion.div>
 
@@ -171,7 +171,7 @@ const Home = () => {
 
             <Stack spacing={1.1} sx={{ mb: 1 }}>
               <Typography component={RouterLink} to="/contact" sx={ctaSx}>
-                {isZh ? '讨论一个 AI 或平台问题 →' : 'Discuss an AI or platform challenge →'}
+                {isZh ? '谈一个 AI 或平台问题 →' : 'Talk about an AI or platform problem →'}
               </Typography>
               <Typography component={RouterLink} to="/projects" sx={ctaSx}>
                 {isZh ? '查看精选案例 →' : 'View selected work →'}

@@ -31,7 +31,7 @@ const Navbar = () => {
     { label: isZh ? '经历' : 'Experience', path: '/experience' },
     { label: isZh ? '案例' : 'Work', path: '/projects' },
     { label: isZh ? '方法' : 'Method', path: '/skills' },
-    { label: isZh ? '原则' : 'Principles', path: '/mystory' },
+    { label: isZh ? '判断' : 'Principles', path: '/mystory' },
     { label: isZh ? '联系' : 'Contact', path: '/contact' },
   ];
 

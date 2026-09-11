@@ -23,9 +23,9 @@ const About = () => {
 
   const whatIDo = isZh
     ? [
-        '企业 AI：把大模型、RAG 与 Agent 接到真实业务流程，而不是停在演示。',
-        '平台现代化：识别哪些能力应共享、哪些应留在业务侧，并治理长期演进。',
-        '工程组织与交付：让技术方案变成团队能持续交付的工作方式。',
+        '企业 AI：把大模型接到真实业务流程里，而不是只做演示。',
+        '平台：分清哪些能力该共享、哪些留在业务，并管好后面怎么演进。',
+        '工程团队：让技术方案变成团队能持续做下去的方式。',
       ]
     : [
         'Enterprise AI: connect LLMs, RAG, and agents to real business workflows—not demos.',
@@ -35,9 +35,9 @@ const About = () => {
 
   const howIWork = isZh
     ? [
-        '先识别业务流程和可量化目标，而不是先选模型或框架。',
-        '再设计系统边界、数据、权限与人工审核，让 AI 能进现有系统。',
-        '最后建立评估、反馈、运维和团队机制，使试点能够变成生产能力。',
+        '先看业务流程和能衡量的目标，而不是先选模型或框架。',
+        '再把系统边界、数据、权限和人工审核设计好，让 AI 能进现有系统。',
+        '最后把评估、反馈、运维和团队习惯立起来，让试点能变成日常能力。',
       ]
     : [
         'Start with the business workflow and a measurable outcome—not with a model or framework.',
@@ -105,7 +105,7 @@ const About = () => {
                 <TextLink href="https://hz-glory.vercel.app/">光荣智能</TextLink>
                 {' '}CTO，并以外部顾问身份兼任{' '}
                 <TextLink href="https://feifan-tech-website.pages.dev/">飞凡科技</TextLink>
-                {' '}CTO 与红熊 AI 研发总经理。我把人工智能、平台架构和工程组织连成一体，使技术方案能够进入生产并持续运行。
+                {' '}CTO 与红熊 AI 研发总经理。我把 AI、平台和工程团队放在一起做，让方案能上线，也能一直跑下去。
               </>
             ) : (
               <>
@@ -113,7 +113,7 @@ const About = () => {
                 <TextLink href="https://hz-glory.vercel.app/">Glorion Intelligence</TextLink>
                 , and as an external advisor — CTO at{' '}
                 <TextLink href="https://feifan-tech-website.pages.dev/">Feifan Tech</TextLink>
-                {' '}and Head of R&D at Redbear AI. I connect AI, platform architecture, and engineering organization so that technical plans can enter production and keep running.
+                {' '}and Head of R&D at Redbear AI. I work on AI, the platform, and the engineering team together, so plans can ship and keep running.
               </>
             )}
           </BodyText>
@@ -124,8 +124,8 @@ const About = () => {
         <SectionTitle>{isZh ? '我做什么' : 'What I do'}</SectionTitle>
         <BodyText>
           {isZh
-            ? '我帮助企业把复杂业务流程，落地为可靠的 AI 系统、可扩展的平台能力和高效的工程组织。'
-            : 'I help companies turn complex business workflows into reliable AI-enabled systems, scalable platforms, and high-performing engineering teams.'}
+            ? '我帮企业把 AI 用进真实业务，把平台做稳，把工程团队带起来。'
+            : 'I help companies put AI into real work, steady the platform, and build engineering teams that can keep delivering.'}
         </BodyText>
         <NumberedList items={whatIDo} />
       </Box>
@@ -134,7 +134,7 @@ const About = () => {
         <SectionTitle>{isZh ? '怎么合作' : 'How I work'}</SectionTitle>
         <BodyText>
           {isZh
-            ? '合作通常从一件真实的交付问题开始，而不是从技术清单开始。'
+            ? '合作一般从一件手头的问题开始，而不是从技术清单开始。'
             : 'Engagements usually begin with a specific delivery problem, not a catalog of tools.'}
         </BodyText>
         <NumberedList items={howIWork} />
@@ -144,12 +144,12 @@ const About = () => {
         <SectionTitle>{isZh ? '为什么重要' : 'Why it matters'}</SectionTitle>
         <BodyText>
           {isZh
-            ? 'AI 不是一个聊天入口。它要嵌入流程、系统与组织，才能成为生产能力。演示可以很快，但生产级 AI 需要权限、数据边界、评估、人工反馈，以及一支知道如何持续迭代的团队。'
+            ? 'AI 不是一个聊天窗口。它得进到流程、系统和团队里，才能真正创造价值。演示可以很快；要上生产，权限、数据边界、评估、人工反馈和团队迭代都得跟上。'
             : 'AI is not a chat window. It has to live inside workflows, systems, and organizations before it becomes a production capability. Demos can be fast. Production AI needs permissions, data boundaries, evaluation, human feedback, and a team that knows how to keep iterating.'}
         </BodyText>
         <BodyText sx={{ mb: 0 }}>
           {isZh
-            ? '这也是大厂平台经历仍然有用的原因：我见过系统如何在高并发、复杂组织和长期演进中稳定运行，也见过架构图无法变成交付的情况。'
+            ? '这也是大厂平台经历仍然有用的原因：我见过系统在高并发、复杂组织和长期演进里怎么稳住，也见过架构图画完却交不出去的情况。'
             : 'That is why large-scale platform experience still matters: I have seen systems hold under high concurrency, complex organizations, and long evolution—and I have seen architecture diagrams that never became delivery.'}
         </BodyText>
       </Box>
@@ -178,7 +178,7 @@ const About = () => {
       <Box sx={{ mt: { xs: 7, md: 10 } }}>
         <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
           <Box component={RouterLink} to="/contact" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
-            {isZh ? '如果这听起来像你正在面对的问题，欢迎联系 →' : 'If this sounds like the problem in front of you, get in touch →'}
+            {isZh ? '如果这就是你手头的问题，欢迎联系 →' : 'If this is the problem in front of you, get in touch →'}
           </Box>
         </Typography>
       </Box>

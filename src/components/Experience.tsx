@@ -32,12 +32,12 @@ const Experience = () => {
 
   const featured = isZh
     ? {
-        kicker: '代表性经历',
+        kicker: '关键经历',
         title: '阿里巴巴业务中台联合创始人之一',
         detail: '把交易、商品、订单等能力从烟囱式开发，转化为可复用的平台能力；系统服务数亿用户，并支撑包括大促在内的复杂交易场景。',
       }
     : {
-        kicker: 'Signature work',
+        kicker: 'Key work',
         title: 'Co-founded Alibaba’s Business Middle Platform',
         detail:
           'Turned trading, product, and order capabilities from siloed delivery into reusable platform services. Systems serving hundreds of millions of users, including peak commerce events.',
@@ -183,8 +183,8 @@ const Experience = () => {
       <PageTitle>{isZh ? '职业经历' : 'Experience'}</PageTitle>
       <PageLead>
         {isZh
-          ? '一条从基础工程、平台架构、规模化管理到企业 AI 交付的路径。重点看规模、职责和结果。'
-          : 'A path from foundational engineering and platform architecture through scaled organizations to enterprise AI delivery. Scan for scope, responsibility, and results.'}
+          ? '从工程、平台、带团队，到把企业 AI 真正交出去。先看规模、职责和结果。'
+          : 'From engineering and platforms, through leading teams, to actually shipping enterprise AI. Scan for scope, responsibility, and results.'}
       </PageLead>
 
       <Box sx={{ mb: 7, pb: 4, borderBottom: '1px solid #E6DCCB' }}>
@@ -220,7 +220,7 @@ const Experience = () => {
             {field(isZh ? '场景' : 'Context', exp.context)}
             {field(isZh ? '范围' : 'Scope', exp.scope)}
             {field(isZh ? '结果' : 'Result', exp.result)}
-            {field(isZh ? '代表性能力' : 'Capability', exp.capability)}
+            {field(isZh ? '留下什么' : 'What remains', exp.capability)}
           </Box>
         ))}
       </Box>

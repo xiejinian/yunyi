@@ -84,11 +84,11 @@ const MyStory = () => {
 
   return (
     <PageShell>
-      <PageTitle>{isZh ? '判断原则' : 'Leadership principles'}</PageTitle>
+      <PageTitle>{isZh ? '我怎么判断' : 'How I judge'}</PageTitle>
       <PageLead>
         {isZh
-          ? '完整年表另文收录。这里说明我如何做判断：平台化、技术债、团队扩张、国际化和人工智能落地。'
-          : 'The full chronology is available separately. What matters here is how I judge: platformization, technical debt, team growth, internationalization, and putting AI into production.'}
+          ? '完整经历在另一篇。这里只说几条我做判断时会用到的原则：平台、技术债、带团队、国际化和把 AI 用起来。'
+          : 'The full chronology is in another piece. Here are the judgments I actually use: platforms, technical debt, growing teams, going international, and putting AI to work.'}
       </PageLead>
 
       <Box sx={{ display: 'grid', gap: 7 }}>
@@ -126,8 +126,8 @@ const MyStory = () => {
       <Box sx={{ mt: 10, pt: 4, borderTop: '1px solid #E6DCCB' }}>
         <BodyText sx={{ mb: 1.5 }}>
           {isZh
-            ? '如需完整职业叙事，二十年长文仍可阅读。'
-            : 'The twenty-year professional narrative remains available if a full account is needed.'}
+            ? '如果想看完整经历，二十年长文还在。'
+            : 'If you want the full story, the twenty-year account is still here.'}
         </BodyText>
         <Typography>
           <Box
@@ -135,7 +135,7 @@ const MyStory = () => {
             to="/mystory/biography-twenty-years"
             sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}
           >
-            {isZh ? '阅读《代码人生》 →' : 'Read Code Life, the twenty-year account →'}
+            {isZh ? '阅读《代码人生》 →' : 'Read Code Life →'}
           </Box>
         </Typography>
       </Box>
