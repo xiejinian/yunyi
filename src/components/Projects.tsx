@@ -172,8 +172,8 @@ const Projects = () => {
       <PageTitle>{isZh ? '精选案例' : 'Selected work'}</PageTitle>
       <PageLead>
         {isZh
-          ? '每个案例说清四件事：挑战、我做什么、什么变了、对现在的客户意味着什么。当前 AI 案例已脱敏。'
-          : 'Each case answers the same questions: the challenge, my role, what changed, and what it means for clients now. Current AI work is anonymized.'}
+          ? '挑战、角色、变化、结果。当前 AI 案例已脱敏。'
+          : 'Challenge, role, change, result. Current AI work is anonymized.'}
       </PageLead>
 
       <Box sx={{ display: 'grid', gap: 8 }}>
@@ -221,8 +221,8 @@ const Projects = () => {
                 />
               </Box>
             )}
-            {field(isZh ? '规模 / 证据' : 'Scale / proof', item.proof)}
-            {field(isZh ? '对今天客户的意义' : 'What this means for clients today', item.today)}
+            {field(isZh ? '结果' : 'Result', item.proof)}
+            {field(isZh ? '现在' : 'Now', item.today)}
             {item.links && item.links.length > 0 && (
               <Typography sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 1 }}>
                 {item.links.map((link) => (
@@ -239,7 +239,7 @@ const Projects = () => {
       <Box sx={{ mt: 8 }}>
         <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
           <Box component={RouterLink} to="/contact" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
-            {isZh ? '带一个具体问题来谈 →' : 'Bring a specific problem →'}
+            {isZh ? '来信' : 'Write'}
           </Box>
         </Typography>
       </Box>

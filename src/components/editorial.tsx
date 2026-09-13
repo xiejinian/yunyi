@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export const ACCENT = '#C45A38';
 export const ACCENT_DARK = '#A3472C';
@@ -14,7 +15,7 @@ export const bodySerif = '"Source Serif 4", "Noto Serif SC", Georgia, serif';
 export const pageWrapSx = {
   minHeight: '100vh',
   pt: { xs: 10, md: 12 },
-  pb: { xs: 8, md: 14 },
+  pb: { xs: 6, md: 10 },
   px: { xs: 2.5, sm: 4, md: 6 },
 };
 
@@ -39,10 +40,10 @@ export const PageTitle: React.FC<{ children: React.ReactNode }> = ({ children })
     sx={{
       fontFamily: displaySerif,
       fontWeight: 500,
-      fontSize: { xs: '2rem', md: '2.35rem' },
-      color: ACCENT,
-      textAlign: 'center',
-      letterSpacing: '0.04em',
+      fontSize: { xs: '1.85rem', md: '2.15rem' },
+      color: INK,
+      textAlign: 'left',
+      letterSpacing: '0.01em',
       mb: 1.5,
     }}
   >
@@ -54,17 +55,56 @@ export const PageLead: React.FC<{ children: React.ReactNode }> = ({ children }) 
   <Typography
     sx={{
       color: MUTED,
-      textAlign: 'center',
-      maxWidth: 640,
-      mx: 'auto',
+      textAlign: 'left',
+      maxWidth: 560,
       mb: 6,
-      lineHeight: 1.75,
+      lineHeight: 1.8,
       fontSize: '1.05rem',
     }}
   >
     {children}
   </Typography>
 );
+
+export const SiteFooter: React.FC = () => {
+  const { language } = useLanguage();
+  const isZh = language === 'zh';
+
+  return (
+    <Box
+      component="footer"
+      sx={{
+        px: { xs: 2.5, sm: 4, md: 6 },
+        pb: { xs: 6, md: 8 },
+        pt: { xs: 2, md: 3 },
+      }}
+    >
+      <Box
+        sx={{
+          maxWidth: 1180,
+          mx: 'auto',
+          pt: 3,
+          borderTop: '1px solid #E6DCCB',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          gap: 1.5,
+        }}
+      >
+        <Typography sx={{ color: FAINT, fontSize: '0.88rem', lineHeight: 1.7 }}>
+          {isZh ? '谢记年 · 杭州' : 'Xie Jinian · Hangzhou'}
+        </Typography>
+        <Typography
+          component="a"
+          href="mailto:yymhxie@gmail.com"
+          sx={{ color: FAINT, fontSize: '0.88rem', textDecoration: 'none', '&:hover': { color: ACCENT } }}
+        >
+          yymhxie@gmail.com
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
 
 export const SectionTitle: React.FC<{ children: React.ReactNode; sx?: object }> = ({ children, sx }) => (
   <Typography

@@ -42,25 +42,6 @@ a {
   color: var(--ink);
 }
 
-/* ── Custom scrollbar ──────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--cream);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #D4C8B4;
-  border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-
 /* ── Soft paper grain ──────────────────────────────────────── */
 body::after {
   content: '';

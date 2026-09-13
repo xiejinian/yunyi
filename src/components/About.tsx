@@ -28,9 +28,9 @@ const About = () => {
         '工程团队：让技术方案变成团队能持续做下去的方式。',
       ]
     : [
-        'Enterprise AI: connect LLMs, RAG, and agents to real business workflows—not demos.',
-        'Platform modernization: decide what should be shared, what stays in the business, and how the architecture can evolve.',
-        'Engineering organization and delivery: turn a technical plan into a way of working a team can sustain.',
+        'Enterprise AI: connect models to real workflows, not demos.',
+        'Platform: decide what should be shared, what stays with the business, and how it should evolve.',
+        'Engineering teams: turn a plan into a way of working people can keep doing.',
       ];
 
   const howIWork = isZh
@@ -47,7 +47,7 @@ const About = () => {
 
   return (
     <PageShell maxWidth={920}>
-      <PageTitle>{isZh ? '关于我' : 'About'}</PageTitle>
+      <PageTitle>{isZh ? '关于' : 'About'}</PageTitle>
       <Box
         sx={{
           display: 'grid',
@@ -71,13 +71,7 @@ const About = () => {
             }}
           />
           <Typography sx={{ mt: 1.25, fontSize: '0.78rem', color: FAINT, lineHeight: 1.6 }}>
-            Xie Jinian / 谢记年
-            <Box component="span" sx={{ display: 'block' }}>
-              {isZh ? '阿里花名：云翼 · 蘑菇街花名：慕韩' : 'Known at Alibaba as Yunyi · known at Mogujie as Muhan'}
-            </Box>
-            <Box component="span" sx={{ display: 'block' }}>
-              {isZh ? '企业 AI 与平台技术负责人' : 'Enterprise AI & Platform CTO'}
-            </Box>
+            {isZh ? '光荣智能 CTO' : 'CTO, Glorion Intelligence'}
           </Typography>
         </Box>
 
@@ -91,7 +85,7 @@ const About = () => {
               mb: 0.5,
             }}
           >
-            Xie <Box component="span" sx={{ color: ACCENT }}>Jinian</Box>
+            Xie Jinian
           </Typography>
           <Typography sx={{ color: MUTED, letterSpacing: '0.22em', mb: 0.75 }}>谢记年</Typography>
           <Typography sx={{ color: FAINT, fontSize: '0.92rem', mb: 4, lineHeight: 1.7 }}>
@@ -122,11 +116,6 @@ const About = () => {
 
       <Box sx={{ mt: { xs: 7, md: 9 } }}>
         <SectionTitle>{isZh ? '我做什么' : 'What I do'}</SectionTitle>
-        <BodyText>
-          {isZh
-            ? '我帮企业把 AI 用进真实业务，把平台做稳，把工程团队带起来。'
-            : 'I help companies put AI into real work, steady the platform, and build engineering teams that can keep delivering.'}
-        </BodyText>
         <NumberedList items={whatIDo} />
       </Box>
 
@@ -141,7 +130,7 @@ const About = () => {
       </Box>
 
       <Box sx={{ mt: { xs: 7, md: 8 } }}>
-        <SectionTitle>{isZh ? '为什么重要' : 'Why it matters'}</SectionTitle>
+        <SectionTitle>{isZh ? '我怎么看' : 'How I see it'}</SectionTitle>
         <BodyText>
           {isZh
             ? 'AI 不是一个聊天窗口。它得进到流程、系统和团队里，才能真正创造价值。演示可以很快；要上生产，权限、数据边界、评估、人工反馈和团队迭代都得跟上。'
@@ -178,7 +167,7 @@ const About = () => {
       <Box sx={{ mt: { xs: 7, md: 10 } }}>
         <Typography sx={{ color: ACCENT, fontSize: '1.05rem' }}>
           <Box component={RouterLink} to="/contact" sx={{ color: ACCENT, textDecoration: 'none', '&:hover': { color: '#A3472C' } }}>
-            {isZh ? '如果这就是你手头的问题，欢迎联系 →' : 'If this is the problem in front of you, get in touch →'}
+            {isZh ? '来信' : 'Write'}
           </Box>
         </Typography>
       </Box>

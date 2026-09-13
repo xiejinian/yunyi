@@ -19,10 +19,7 @@ type Role = {
   title: string;
   company: string;
   companyLink?: string;
-  context: string;
-  scope: string;
-  result: string;
-  capability: string;
+  body: string;
   emphasize?: boolean;
 };
 
@@ -34,13 +31,13 @@ const Experience = () => {
     ? {
         kicker: '关键经历',
         title: '阿里巴巴业务中台联合创始人之一',
-        detail: '把交易、商品、订单等能力从烟囱式开发，转化为可复用的平台能力；系统服务数亿用户，并支撑包括大促在内的复杂交易场景。',
+        detail: '把交易、商品、订单从各做各的，收成可以共用的平台能力。系统服务数亿用户，也撑过包括大促在内的复杂交易。',
       }
     : {
         kicker: 'Key work',
         title: 'Co-founded Alibaba’s Business Middle Platform',
         detail:
-          'Turned trading, product, and order capabilities from siloed delivery into reusable platform services. Systems serving hundreds of millions of users, including peak commerce events.',
+          'Turned trading, product, and order work from siloed delivery into shared platform services. The systems served hundreds of millions of users, including peak commerce events.',
       };
 
   const roles: Role[] = isZh
@@ -50,47 +47,32 @@ const Experience = () => {
           title: 'CTO',
           company: '光荣智能 (Glorion Intelligence)',
           companyLink: 'https://hz-glory.vercel.app/',
-          context: '制造、政务与贸易客户需要把大模型用进真实业务，而不是停留在试用。',
-          scope: '主职负责技术战略与交付；同时以外部顾问兼任飞凡科技 CTO、红熊 AI 研发总经理。',
-          result: '以前线交付工程师（FDE）方式驻场，把大语言模型、检索增强生成与智能体接到现有流程、权限和系统里。',
-          capability: '企业 AI 从试点走到生产，并把平台能力与组织交付连在一起。',
+          body: '面向制造、政务和贸易客户。主职负责技术战略与交付，同时以外顾问做飞凡科技 CTO、红熊 AI 研发总经理。以前线交付的方式驻场，把大模型接到现有流程、权限和系统里，让试点能走到生产。',
         },
         {
           year: '2021–2023',
           title: '资深工程师 / 团队负责人',
           company: '蚂蚁集团，杭州',
-          context: '业务团队需要更快地构建应用，平台必须把复杂能力变成可复用服务。',
-          scope: '负责云凤蝶低代码平台基础服务，管理 7 人跨职能团队。',
-          result: '用平台化与自动化支撑业务扩张，降低应用交付门槛。',
-          capability: '把专家知识编码进平台，让组织交付效率可复制。',
+          body: '负责云凤蝶低代码平台基础服务，带 7 人跨职能团队。把数据模型、权限和多租户做成可复用能力，让业务方能更快地构建应用。',
         },
         {
           year: '2018–2021',
           title: '资深工程师 / 团队负责人',
           company: '阿里云钉钉事业部，杭州',
-          context: '企业协同产品要走向海外，本地化、身份与运营中台必须同时成立。',
-          scope: '带领约 20 人研发国际化产品，并主导运营中台；钉钉技术委员会成员。',
-          result: '海外日活跃用户从 0 增长到数百万；交付疫情时期企业复工所需的身份平台（IDaaS）。',
-          capability: '在增长约束下同时做产品、本地化与组织协同。',
+          body: '带约 20 人做国际版和运营中台，并参与钉钉技术委员会。海外日活跃用户从 0 到数百万，并交付疫情时期企业复工所需的身份平台。',
         },
         {
           year: '2007–2015',
           title: '高级工程师至资深工程师',
           company: '阿里巴巴集团淘宝，杭州',
           emphasize: true,
-          context: '多个业务高速增长，交易与商品能力若继续烟囱式开发，将无法支撑规模。',
-          scope: '负责淘宝交易平台与业务支撑平台研发管理，带领 30+ 人团队；阿里交易技术委员会成员。',
-          result: '联合创建阿里巴巴业务中台，架构服务数亿用户的核心交易系统。',
-          capability: '判断哪些能力应平台化，并让架构演进与组织协作保持一致。',
+          body: '负责淘宝交易平台与业务支撑平台，带 30 余人，并参与阿里交易技术委员会。联合创建阿里巴巴业务中台，核心交易系统服务数亿用户。',
         },
         {
           year: '2003–2007',
           title: '项目经理 / 架构师 / 工程师',
           company: '华为技术，深圳',
-          context: '通信运营支撑系统交付仍以瀑布为主，复杂系统需要更可预测的工程方法。',
-          scope: '参与电信运营支撑系统研发，推动团队敏捷实践，管理约 15 人。',
-          result: '完成运营支撑系统产品交付，并在华为期间获得 PMP 认证。',
-          capability: '在传统工程环境里引入可落地的敏捷与架构约束。',
+          body: '参与电信运营支撑系统研发，带约 15 人，推动更可落地的工程方法，并在此期间获得 PMP 认证。',
         },
       ]
     : [
@@ -99,49 +81,32 @@ const Experience = () => {
           title: 'CTO',
           company: 'Glorion Intelligence',
           companyLink: 'https://hz-glory.vercel.app/',
-          context: 'Manufacturing, government, and trade clients need large models inside real work—not another trial.',
-          scope:
-            'Own technical strategy and delivery as primary CTO; concurrently advise as CTO at Feifan Tech and Head of R&D at Redbear AI.',
-          result: 'Embed with customers as a forward-deployed engineer (FDE) so large language models, retrieval-augmented generation, and agents enter existing workflows, permissions, and systems.',
-          capability: 'Move enterprise AI from pilot to production, and connect platform capability with organizational delivery.',
+          body: 'Primary CTO for manufacturing, government, and trade clients; also an external advisor as CTO at Feifan Tech and Head of R&D at Redbear AI. I work on site so models enter existing workflows, permissions, and systems—and so a pilot can become production.',
         },
         {
           year: '2021–2023',
           title: 'Staff Engineer / Team Lead',
           company: 'Ant Group, Hangzhou',
-          context: 'Business teams needed to build applications faster; the platform had to turn complexity into reusable services.',
-          scope: 'Led Yunfengdie low-code platform base services and a cross-functional team of 7.',
-          result: 'Lowered the cost of application delivery and supported business expansion through platform automation.',
-          capability: 'Encode expert knowledge into a platform so delivery speed becomes repeatable.',
+          body: 'Led Yunfengdie low-code platform base services and a team of 7. Encoded data models, permissions, and multi-tenant isolation so business teams could build applications faster.',
         },
         {
           year: '2018–2021',
           title: 'Staff Engineer / Team Lead',
           company: 'Alibaba Cloud DingTalk Division, Hangzhou',
-          context: 'An enterprise collaboration product had to work overseas; localization, identity, and operations had to land together.',
-          scope: 'Led ~20 engineers on international R&D and the operations middle platform; DingTalk Technical Committee member.',
-          result: 'Grew overseas daily active users from 0 to millions and shipped the identity platform (IDaaS) for enterprise recovery during COVID-19.',
-          capability: 'Hold product, localization, and organizational coordination under growth constraints.',
+          body: 'Led about 20 engineers on the international product and operations middle platform; DingTalk Technical Committee member. Overseas daily active users grew from 0 to millions. We also shipped the identity platform used for enterprise recovery during COVID-19.',
         },
         {
           year: '2007–2015',
           title: 'Senior Engineer to Staff Engineer',
           company: 'Alibaba Group, Taobao, Hangzhou',
           emphasize: true,
-          context: 'Multiple businesses were growing too fast for siloed trading and product systems to keep up.',
-          scope:
-            'Managed R&D for Taobao’s trading and business-support platforms, 30+ engineers; Alibaba Trading Technical Committee member.',
-          result: 'Co-founded Alibaba’s Business Middle Platform and architected core trading systems serving hundreds of millions of users.',
-          capability: 'Decide what should become platform capability, and keep architecture evolution aligned with how teams work.',
+          body: 'Managed R&D for Taobao’s trading and business-support platforms, 30+ engineers; Alibaba Trading Technical Committee member. Co-founded the Business Middle Platform. Core trading systems served hundreds of millions of users.',
         },
         {
           year: '2003–2007',
           title: 'Project Manager / Architect / Engineer',
           company: 'Huawei Technologies, Shenzhen',
-          context: 'Telecom operations-support delivery was still waterfall-heavy; complex systems needed a more predictable engineering method.',
-          scope: 'Contributed to OSS product R&D, introduced agile practices, and led a team of about 15.',
-          result: 'Delivered operations-support products and earned PMP certification during the Huawei years.',
-          capability: 'Bring workable agile and architectural constraints into a traditional engineering environment.',
+          body: 'Worked on telecommunications operations-support systems, led about 15 people, introduced more workable engineering methods, and earned PMP certification.',
         },
       ];
 
@@ -155,7 +120,7 @@ const Experience = () => {
         {
           year: '2001–2003',
           title: '深圳起步',
-          detail: '企业软件、在线教育与社区平台；计算机科学学士、国家高级程序员。',
+          detail: '企业软件、在线教育与社区平台；工学学士、国家高级程序员。',
         },
       ]
     : [
@@ -171,62 +136,52 @@ const Experience = () => {
         },
       ];
 
-  const field = (label: string, value: string) => (
-    <Box sx={{ mb: 1.75 }}>
-      <Typography sx={{ color: ACCENT, fontSize: '0.82rem', letterSpacing: '0.04em', mb: 0.4 }}>{label}</Typography>
-      <Typography sx={{ color: INK, fontSize: '1.02rem', lineHeight: 1.75 }}>{value}</Typography>
-    </Box>
-  );
-
   return (
     <PageShell>
-      <PageTitle>{isZh ? '职业经历' : 'Experience'}</PageTitle>
+      <PageTitle>{isZh ? '经历' : 'Experience'}</PageTitle>
       <PageLead>
         {isZh
-          ? '从工程、平台、带团队，到把企业 AI 真正交出去。先看规模、职责和结果。'
-          : 'From engineering and platforms, through leading teams, to actually shipping enterprise AI. Scan for scope, responsibility, and results.'}
+          ? '从工程、平台、带团队，到把企业 AI 真正交出去。'
+          : 'Engineering, platforms, leading teams, and shipping enterprise AI.'}
       </PageLead>
 
       <Box sx={{ mb: 7, pb: 4, borderBottom: '1px solid #E6DCCB' }}>
-        <Typography sx={{ color: ACCENT, letterSpacing: '0.06em', mb: 1, fontSize: '0.88rem' }}>{featured.kicker}</Typography>
+        <Typography sx={{ color: ACCENT, letterSpacing: '0.04em', mb: 1, fontSize: '0.88rem' }}>{featured.kicker}</Typography>
         <Typography sx={{ fontFamily: displaySerif, fontSize: { xs: '1.25rem', md: '1.4rem' }, color: INK, mb: 1.25, lineHeight: 1.4 }}>
           {featured.title}
         </Typography>
         <BodyText sx={{ mb: 0 }}>{featured.detail}</BodyText>
       </Box>
 
-      <Box sx={{ display: 'grid', gap: 7 }}>
+      <Box sx={{ display: 'grid', gap: 6 }}>
         {roles.map((exp) => (
           <Box
             key={`${exp.year}-${exp.company}`}
-            sx={exp.emphasize ? { pl: { xs: 0, md: 2 }, borderLeft: { md: `2px solid ${ACCENT}` } } : undefined}
+            sx={exp.emphasize ? { pl: { xs: 0, md: 2 }, borderLeft: { md: `1px solid ${ACCENT}` } } : undefined}
           >
             <Typography sx={{ color: ACCENT, letterSpacing: '0.04em', mb: 0.75 }}>{exp.year}</Typography>
             <Typography
               component="h2"
               sx={{
                 fontFamily: displaySerif,
-                fontSize: { xs: '1.22rem', md: '1.38rem' },
+                fontSize: { xs: '1.18rem', md: '1.32rem' },
                 color: INK,
-                mb: 0.5,
+                mb: 0.4,
                 lineHeight: 1.35,
               }}
             >
               {exp.title}
             </Typography>
-            <Typography sx={{ color: MUTED, mb: 2.25, fontSize: '1.02rem' }}>
+            <Typography sx={{ color: MUTED, mb: 1.75, fontSize: '1.02rem' }}>
               {exp.companyLink ? <TextLink href={exp.companyLink}>{exp.company}</TextLink> : exp.company}
             </Typography>
-            {field(isZh ? '场景' : 'Context', exp.context)}
-            {field(isZh ? '范围' : 'Scope', exp.scope)}
-            {field(isZh ? '结果' : 'Result', exp.result)}
-            {field(isZh ? '留下什么' : 'What remains', exp.capability)}
+            <BodyText sx={{ mb: 0 }}>{exp.body}</BodyText>
           </Box>
         ))}
       </Box>
 
       <Box sx={{ mt: 8 }}>
-        <SectionTitle>{isZh ? '更早的领导经历' : 'Earlier leadership experience'}</SectionTitle>
+        <SectionTitle>{isZh ? '更早' : 'Earlier'}</SectionTitle>
         <Box sx={{ display: 'grid', gap: 3.5, mt: 1 }}>
           {earlier.map((item) => (
             <Box key={item.year}>
