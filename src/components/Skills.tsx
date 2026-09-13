@@ -92,7 +92,7 @@ const Skills = () => {
 
   return (
     <PageShell>
-      <PageTitle>{isZh ? '能力与方法' : 'Capabilities'}</PageTitle>
+      <PageTitle>{isZh ? '方法' : 'Method'}</PageTitle>
       <PageLead>
         {isZh
           ? '客户要的不是某门语言或某个框架，而是把 AI、平台和工程团队真正跑起来，少踩交付的坑。'

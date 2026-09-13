@@ -12,6 +12,7 @@ import StoryDetail from './components/StoryDetail';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import { SiteFooter } from './components/editorial';
 import { LanguageProvider } from './i18n/LanguageContext';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <SiteFooter />
         </Router>
       </ThemeProvider>
     </LanguageProvider>
